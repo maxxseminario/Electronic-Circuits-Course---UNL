@@ -1,10 +1,11 @@
 # Digital Signal Processing Course – University of Nebraska–Lincoln
 
-**Author:** Maxx Seminario 
-**Instructor:** Maxx Seminario  
-**First Taught:** Fall 2025
-**About the Author:** Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln, and is responsible for creating and curating this course - Digital Signal Processing - ECEN 863.
-**Author Contact:** mseminario2@huskers.unl.edu
+**Author:** Maxx Seminario   
+**Instructor:** Maxx Seminario    
+**First Taught:** Fall 2025  
+>**About the Author:**   
+>Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln, and is responsible for creating and curating this course - Digital Signal Processing - ECEN 863.  
+**Author Contact:** mseminario2@huskers.unl.edu  
 
 This repository contains LaTeX code and course materials for ECEN 463: Digital Signal Processing, offered at the University of Nebraska–Lincoln. The course is organized into lectures, assignments, and quizzes.
 
