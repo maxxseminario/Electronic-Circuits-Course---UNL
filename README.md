@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Lecture notes
 
 1. [Introduction](https://github.com/jkperin/ee264/tree/master/docs/lectures/01_introduction.pdf)
@@ -63,3 +64,6 @@
 # Homework assignments
 
 Homework assignments and their solution can be found in this [folder](https://github.com/jkperin/ee264/tree/master/docs/homework).
+=======
+# Digital-Signal-Processing-Course---UNL
+>>>>>>> 77bc970260c3659f4dddc11c7bc0d9c1bd8160b7
