@@ -1,9 +1,9 @@
-PWD c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment02_parametric_resonator
+PWD c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment03
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment02_parametric_resonator/assignment02_parametric_resonator.tex
-OUTPUT assignment02_parametric_resonator.log
+INPUT c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment03/assignment03_parametric_resonator.tex
+OUTPUT assignment03_parametric_resonator.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/base/size11.clo
@@ -229,10 +229,10 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/listings/lstlang1.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./assignment02_parametric_resonator.aux
-INPUT ./assignment02_parametric_resonator.aux
-INPUT assignment02_parametric_resonator.aux
-OUTPUT assignment02_parametric_resonator.aux
+INPUT ./assignment03_parametric_resonator.aux
+INPUT ./assignment03_parametric_resonator.aux
+INPUT assignment03_parametric_resonator.aux
+OUTPUT assignment03_parametric_resonator.aux
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -276,7 +276,7 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmbx10.tfm
-OUTPUT assignment02_parametric_resonator.pdf
+OUTPUT assignment03_parametric_resonator.pdf
 INPUT c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmtt10.tfm
@@ -301,7 +301,7 @@ INPUT ./Freqz_FSweep.png
 INPUT ./Freqz_FSweep.png
 INPUT ./Freqz_FSweep.png
 INPUT ./Freqz_FSweep.png
-INPUT assignment02_parametric_resonator.aux
+INPUT assignment03_parametric_resonator.aux
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb

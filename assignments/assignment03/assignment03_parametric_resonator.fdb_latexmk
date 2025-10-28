@@ -1,12 +1,12 @@
 # Fdb version 4
-["pdflatex"] 1760311387.45619 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment02_parametric_resonator/assignment02_parametric_resonator.tex" "assignment02_parametric_resonator.pdf" "assignment02_parametric_resonator" 1760311391.19801 0
+["pdflatex"] 1761663945.04434 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment03/assignment03_parametric_resonator.tex" "assignment03_parametric_resonator.pdf" "assignment03_parametric_resonator" 1761663948.86578 0
   "Frequency_Sweep.png" 1696807688 229698 2f477114f059be68b061a6f6be27a925 ""
   "Freqz_FSweep.png" 1696808670 90039 01c0a0619fa4be235ddfc7165f22d865 ""
   "Freqz_RSweep.png" 1696811308 112485 53feaaeef65d186a92e1bad0cded68f3 ""
   "Resonance_Sweep.png" 1696807584 214069 970bffd9bc0ae5b83cc1d28b385cf711 ""
-  "assignment02_parametric_resonator.aux" 1760311390 2199 72ea0538cabead0922051a77c1e476d7 "pdflatex"
-  "assignment02_parametric_resonator.tex" 1760311382 12073 5ec2ee4faddb1f1fae267de08d6d4ba7 ""
-  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment02_parametric_resonator/assignment02_parametric_resonator.tex" 1760311382 12073 5ec2ee4faddb1f1fae267de08d6d4ba7 ""
+  "assignment03_parametric_resonator.aux" 1761663948 2199 72ea0538cabead0922051a77c1e476d7 "pdflatex"
+  "assignment03_parametric_resonator.tex" 1760311384 12073 5ec2ee4faddb1f1fae267de08d6d4ba7 ""
+  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/assignments/assignment03/assignment03_parametric_resonator.tex" 1760311384 12073 5ec2ee4faddb1f1fae267de08d6d4ba7 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1753825671 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1753826901 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1095.tfm" 1753826363 1536 02c06700a42be0f5a28664c7273f82e7 ""
@@ -184,7 +184,7 @@
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1753832213 3604480 926ba6b19f7f90086b4f7d3958bf353f ""
   "c:/texlive/2025/texmf.cnf" 1753831940 713 e69b156964470283e0530f5060668171 ""
   (generated)
-  "assignment02_parametric_resonator.aux"
-  "assignment02_parametric_resonator.log"
-  "assignment02_parametric_resonator.pdf"
+  "assignment03_parametric_resonator.aux"
+  "assignment03_parametric_resonator.log"
+  "assignment03_parametric_resonator.pdf"
   (rewritten before read)
