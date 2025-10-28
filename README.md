@@ -15,11 +15,11 @@ This repository contains LaTeX code and course materials for ECEN 463: Digital S
   1. Introduction
   2. Discrete Time Signals
   3. Discrete Time Systems
-  4. LTI Systems
-  5. LTI Difference Equations
-  6. LCC Difference Equations
+  4. Linear Time Invariant Systems
+  5. Linear Time Invariant Difference Equations
+  6. Linear Constant Coefficient Difference Equations
   7. Frequency Response
-  8. DTFT (Discrete-Time Fourier Transform)
+  8. Discrete-Time Fourier Transform
   9. Z Transform
   10. Inverse Z Transform
   11. Z Transform Properties
