@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 ![Cover Image](./assets/cover_image.png)
+=======
+>>>>>>> a52c6ddc8838154e3b139f1d86cf1ebb8f6f7b9d
 # Digital Signal Processing Course – University of Nebraska–Lincoln
 
 **Author:** Maxx Seminario   
