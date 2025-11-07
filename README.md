@@ -26,6 +26,7 @@ This repository contains LaTeX code and course materials for ECEN 463: Digital S
   9. Z Transform
   10. Inverse Z Transform
   11. Z Transform Properties
+  12. Sampling
 
 - **assignments/**  
   Homework and project assignments for the course.
