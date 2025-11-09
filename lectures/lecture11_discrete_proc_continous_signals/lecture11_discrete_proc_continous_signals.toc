@@ -1,0 +1,7 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{LTI Processing}{5}{0}{2}
+\beamer@sectionintoc {3}{Example: Ideal Lowpass Filter}{8}{0}{3}
+\beamer@sectionintoc {4}{Example: Ideal Differentiator}{13}{0}{4}
+\beamer@sectionintoc {5}{Impulse Invariance}{16}{0}{5}
+\beamer@sectionintoc {6}{Summary}{23}{0}{6}
