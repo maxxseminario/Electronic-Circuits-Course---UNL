@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  9 NOV 2025 15:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  9 NOV 2025 18:13
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continous_signals/lecture11_discrete_proc_continous_signals.tex"
-(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continous_signals/lecture11_discrete_proc_continous_signals.tex
+**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex"
+(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
@@ -1220,27 +1220,27 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 57.
  (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count388
-) (./lecture11_discrete_proc_continous_signals.aux)
-\openout1 = `lecture11_discrete_proc_continous_signals.aux'.
+) (./lecture11_discrete_proc_continuous_signals.aux)
+\openout1 = `lecture11_discrete_proc_continuous_signals.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 64.
-LaTeX Font Info:    ... okay on input line 64.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 63.
+LaTeX Font Info:    ... okay on input line 63.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1290,10 +1290,10 @@ LaTeX Font Info:    ... okay on input line 64.
 \makeMPintoPDFobject=\count394
 \everyMPtoPDFconversion=\toks63
 )
-Package hyperref Info: Link coloring ON on input line 64.
- (./lecture11_discrete_proc_continous_signals.out) (./lecture11_discrete_proc_continous_signals.out)
+Package hyperref Info: Link coloring ON on input line 63.
+ (./lecture11_discrete_proc_continuous_signals.out) (./lecture11_discrete_proc_continuous_signals.out)
 \@outlinefile=\write5
-\openout5 = `lecture11_discrete_proc_continous_signals.out'.
+\openout5 = `lecture11_discrete_proc_continuous_signals.out'.
 
  (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1312,16 +1312,16 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./lecture11_discrete_proc_continous_signals.nav)
+(./lecture11_discrete_proc_continuous_signals.nav)
 
 [1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 107.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 106.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 107.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 106.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1418,32 +1418,32 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 
 ]
 \tf@nav=\write6
-\openout6 = `lecture11_discrete_proc_continous_signals.nav'.
+\openout6 = `lecture11_discrete_proc_continuous_signals.nav'.
 
 \tf@toc=\write7
-\openout7 = `lecture11_discrete_proc_continous_signals.toc'.
+\openout7 = `lecture11_discrete_proc_continuous_signals.toc'.
 
 \tf@snm=\write8
-\openout8 = `lecture11_discrete_proc_continous_signals.snm'.
+\openout8 = `lecture11_discrete_proc_continuous_signals.snm'.
 
- (./lecture11_discrete_proc_continous_signals.aux)
+ (./lecture11_discrete_proc_continuous_signals.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
-Package rerunfilecheck Info: File `lecture11_discrete_proc_continous_signals.out' has not changed.
+Package rerunfilecheck Info: File `lecture11_discrete_proc_continuous_signals.out' has not changed.
 (rerunfilecheck)             Checksum: 20DA620B3E20D997278D406B070E09A1;824.
  ) 
 Here is how much of TeX's memory you used:
  39614 strings out of 467815
- 939785 string characters out of 5436410
- 1431354 words of memory out of 5000000
+ 939812 string characters out of 5436410
+ 1430877 words of memory out of 5000000
  67435 multiletter control sequences out of 15000+600000
  638341 words of font info for 82 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,876b,2130s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,878b,2130s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on lecture11_discrete_proc_continous_signals.pdf (24 pages, 210382 bytes).
+Output written on lecture11_discrete_proc_continuous_signals.pdf (24 pages, 209004 bytes).
 PDF statistics:
  425 PDF objects out of 1000 (max. 8388607)
  359 compressed objects within 4 object streams

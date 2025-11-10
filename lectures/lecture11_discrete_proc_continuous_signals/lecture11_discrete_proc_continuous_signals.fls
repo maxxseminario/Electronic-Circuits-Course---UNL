@@ -1,9 +1,9 @@
-PWD c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continous_signals
+PWD c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continous_signals/lecture11_discrete_proc_continous_signals.tex
-OUTPUT lecture11_discrete_proc_continous_signals.log
+INPUT c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex
+OUTPUT lecture11_discrete_proc_continuous_signals.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamerbasemodes.sty
@@ -260,7 +260,7 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamercolorthemedefault.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamerinnerthemedefault.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamericonbook.pdf
-OUTPUT lecture11_discrete_proc_continous_signals.pdf
+OUTPUT lecture11_discrete_proc_continuous_signals.pdf
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamericonbook.pdf
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamericonbook.20.pdf
 INPUT c:/texlive/2025/texmf-dist/tex/latex/beamer/beamericonbook.20.pdf
@@ -456,21 +456,21 @@ INPUT c:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.g
 INPUT c:/texlive/2025/texmf-dist/tex/generic/pgfplots/libs/tikzlibrarypgfplots.groupplots.code.tex
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 INPUT c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
-INPUT ./lecture11_discrete_proc_continous_signals.aux
-INPUT ./lecture11_discrete_proc_continous_signals.aux
-INPUT lecture11_discrete_proc_continous_signals.aux
-OUTPUT lecture11_discrete_proc_continous_signals.aux
+INPUT ./lecture11_discrete_proc_continuous_signals.aux
+INPUT ./lecture11_discrete_proc_continuous_signals.aux
+INPUT lecture11_discrete_proc_continuous_signals.aux
+OUTPUT lecture11_discrete_proc_continuous_signals.aux
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/latex/graphics/color.sty
-INPUT ./lecture11_discrete_proc_continous_signals.out
-INPUT ./lecture11_discrete_proc_continous_signals.out
-INPUT lecture11_discrete_proc_continous_signals.out
-INPUT lecture11_discrete_proc_continous_signals.out
-INPUT ./lecture11_discrete_proc_continous_signals.out
-INPUT ./lecture11_discrete_proc_continous_signals.out
-OUTPUT lecture11_discrete_proc_continous_signals.out
+INPUT ./lecture11_discrete_proc_continuous_signals.out
+INPUT ./lecture11_discrete_proc_continuous_signals.out
+INPUT lecture11_discrete_proc_continuous_signals.out
+INPUT lecture11_discrete_proc_continuous_signals.out
+INPUT ./lecture11_discrete_proc_continuous_signals.out
+INPUT ./lecture11_discrete_proc_continuous_signals.out
+OUTPUT lecture11_discrete_proc_continuous_signals.out
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
@@ -489,9 +489,9 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-numbers-diction
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
 INPUT c:/texlive/2025/texmf-dist/tex/latex/translator/translator-theorem-dictionary-English.dict
-INPUT ./lecture11_discrete_proc_continous_signals.nav
-INPUT ./lecture11_discrete_proc_continous_signals.nav
-INPUT lecture11_discrete_proc_continous_signals.nav
+INPUT ./lecture11_discrete_proc_continuous_signals.nav
+INPUT ./lecture11_discrete_proc_continuous_signals.nav
+INPUT lecture11_discrete_proc_continuous_signals.nav
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/cm/cmss8.tfm
@@ -539,12 +539,12 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib9.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmmib6.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy9.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm
-OUTPUT lecture11_discrete_proc_continous_signals.nav
-OUTPUT lecture11_discrete_proc_continous_signals.toc
-OUTPUT lecture11_discrete_proc_continous_signals.snm
-INPUT lecture11_discrete_proc_continous_signals.aux
-INPUT ./lecture11_discrete_proc_continous_signals.out
-INPUT ./lecture11_discrete_proc_continous_signals.out
+OUTPUT lecture11_discrete_proc_continuous_signals.nav
+OUTPUT lecture11_discrete_proc_continuous_signals.toc
+OUTPUT lecture11_discrete_proc_continuous_signals.snm
+INPUT lecture11_discrete_proc_continuous_signals.aux
+INPUT ./lecture11_discrete_proc_continuous_signals.out
+INPUT ./lecture11_discrete_proc_continuous_signals.out
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
