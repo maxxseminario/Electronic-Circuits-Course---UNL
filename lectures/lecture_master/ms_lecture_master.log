@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  9 NOV 2025 18:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  9 NOV 2025 19:04
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,288 +195,635 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=1, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf  used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=1, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf  used on input line 48.
 (pdftex.def)             Requested size: 455.24268pt x 256.07405pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=3, page=1, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=3, page=1, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page1 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page1 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page1 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=4, page=2, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 2>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page2 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=4, page=2, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 2>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page2 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 2>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page2 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 2>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page2 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=5, page=3, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 3>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page3 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 3>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page3 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=6, page=4, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 4>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page4 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 4>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page4 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page1 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 2>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page2 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 2>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page2 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 3>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page3 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 4>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page4 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [1
 
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=65, page=3, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 3>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page3 used on input line 21.
+ <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>]
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=79, page=5, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 5>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page5 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 3>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page3 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 5>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page5 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=66, page=4, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 4>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page4 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=80, page=6, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 6>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page6 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 4>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page4 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 6>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page6 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=81, page=7, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 7>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page7 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 7>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page7 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=82, page=8, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 8>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page8 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 8>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page8 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 3>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page3 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 5>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page5 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 4>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page4 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 6>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page6 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 7>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page7 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 8>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page8 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [2
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=112, page=5, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 5>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page5 used on input line 21.
+ <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>]
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=86, page=9, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 9>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page9 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 5>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page5 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 9>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page9 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=113, page=6, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 6>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page6 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=87, page=10, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 10>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page10 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 6>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page6 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 10>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page10 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=88, page=11, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 11>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page11 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 11>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page11 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=89, page=12, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 12>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page12 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 12>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page12 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 5>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page5 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 9>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page9 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 6>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page6 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 10>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page10 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 11>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page11 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 12>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page12 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [3
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=117, page=7, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 7>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page7 used on input line 21.
+ <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>]
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=93, page=13, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 13>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page13 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 7>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page7 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 13>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page13 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=118, page=8, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 8>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page8 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=94, page=14, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 14>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page14 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 8>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page8 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 14>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page14 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=95, page=15, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 15>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page15 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 15>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page15 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=96, page=16, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 16>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page16 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 16>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page16 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 7>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page7 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 13>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page13 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 8>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page8 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 14>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page14 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 15>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page15 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 16>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page16 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [4
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=122, page=9, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 9>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page9 used on input line 21.
+ <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>]
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=118, page=17, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 17>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page17 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 9>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page9 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 17>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page17 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=123, page=10, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 10>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page10 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=119, page=18, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 18>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page18 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 10>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page10 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 18>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page18 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=120, page=19, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 19>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page19 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 19>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page19 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=121, page=20, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 20>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page20 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 20>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page20 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 9>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page9 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 17>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page17 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 10>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page10 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 18>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page18 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 19>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page19 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 20>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page20 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [5
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=127, page=11, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 11>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page11 used on input line 21.
+ <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>]
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=125, page=21, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 21>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page21 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 11>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page11 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 21>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page21 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=128, page=12, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 12>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page12 used on input line 21.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=126, page=22, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 22>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page22 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 12>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page12 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 22>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page22 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=127, page=23, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 23>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page23 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 23>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page23 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, id=128, page=24, 455.24379pt x 256.07469pt>
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 24>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page24 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 24>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page24 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 11>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page11 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 21>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page21 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 12>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page12 used on input line 21.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 22>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page22 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 23>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page23 used on input line 48.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf Graphic file (type pdf)
+<use ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf, page 24>
+Package pdftex.def Info: ../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf , page24 used on input line 48.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [6
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=150, page=13, 455.24379pt x 256.07469pt>
+ <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf> <../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf>]
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=138, 455.24379pt x 256.07469pt>
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 13>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page13 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf  used on input line 49.
+(pdftex.def)             Requested size: 455.24268pt x 256.07405pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=140, page=1, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 13>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page13 used on input line 21.
-(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=151, page=14, 455.24379pt x 256.07469pt>
-File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 14>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page14 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 14>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page14 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=141, page=2, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 2>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page2 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 2>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page2 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=142, page=3, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 3>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page3 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 3>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page3 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=143, page=4, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 4>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page4 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 4>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page4 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 13>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page13 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 14>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page14 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 2>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page2 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 3>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page3 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 4>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page4 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [7
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=162, page=15, 455.24379pt x 256.07469pt>
+ <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=224, page=5, 455.24379pt x 256.07469pt>
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 15>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page15 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 5>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page5 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 15>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page15 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 5>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page5 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=163, page=16, 455.24379pt x 256.07469pt>
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=225, page=6, 455.24379pt x 256.07469pt>
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 16>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page16 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 6>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page6 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 16>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page16 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 6>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page6 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=226, page=7, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 7>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page7 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 7>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page7 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=227, page=8, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 8>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page8 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 8>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page8 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 15>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page15 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 5>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page5 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 16>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page16 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 6>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page6 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 7>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page7 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 8>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page8 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [8
 
- <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
-<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=191, page=17, 455.24379pt x 256.07469pt>
+ <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=231, page=9, 455.24379pt x 256.07469pt>
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 17>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page17 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 9>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page9 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 17>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page17 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 9>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page9 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=232, page=10, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 10>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page10 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 10>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page10 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=233, page=11, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 11>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page11 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 11>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page11 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=234, page=12, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 12>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page12 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 12>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page12 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
 File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
-<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 17>
-Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page17 used on input line 21.
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 9>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page9 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 10>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page10 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 11>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page11 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 12>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page12 used on input line 49.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [9
+
+ <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=256, page=13, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 13>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page13 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 13>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page13 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=257, page=14, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 14>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page14 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 14>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page14 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=258, page=15, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 15>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page15 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 15>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page15 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=259, page=16, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 16>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page16 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 16>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page16 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 13>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page13 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 14>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page14 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 15>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page15 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 16>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page16 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[10
+
+ <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf> <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>]
+<../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, id=287, page=17, 455.24379pt x 256.07469pt>
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 17>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page17 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 17>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page17 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 1>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page1 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf Graphic file (type pdf)
+<use ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf, page 17>
+Package pdftex.def Info: ../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf , page17 used on input line 49.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[11
 
  <../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf>] (./ms_lecture_master.aux)
  ***********
@@ -485,18 +832,18 @@ L3 programming layer <2025-07-19>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 3588 strings out of 467815
- 61741 string characters out of 5436410
- 472182 words of memory out of 5000000
- 32209 multiletter control sequences out of 15000+600000
+ 3669 strings out of 467815
+ 70578 string characters out of 5436410
+ 474184 words of memory out of 5000000
+ 32290 multiletter control sequences out of 15000+600000
  626825 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,79p,417b,469s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on ms_lecture_master.pdf (9 pages, 297753 bytes).
+ 72i,19n,79p,417b,466s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on ms_lecture_master.pdf (11 pages, 377131 bytes).
 PDF statistics:
- 223 PDF objects out of 1000 (max. 8388607)
- 143 compressed objects within 2 object streams
+ 319 PDF objects out of 1000 (max. 8388607)
+ 195 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 96 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 226 words of extra memory for PDF output out of 10000 (max. 10000000)
 

@@ -1,7 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1762735921.41639 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture_master/ms_lecture_master.tex" "ms_lecture_master.pdf" "ms_lecture_master" 1762735923.5631 0
+["pdflatex"] 1762736644.36155 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture_master/ms_lecture_master.tex" "ms_lecture_master.pdf" "ms_lecture_master" 1762736646.70235 0
+  "../lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.pdf" 1762736569 209007 e950f53a2b1d8ce62b97bddaca3b77ce ""
   "../lecture12_continuous_proc_discrete_signals/lecture12_continuous_proc_discrete_signals.pdf" 1762733558 290423 d33fc26c3b67a7eaeeb15b0016f58712 ""
-  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture_master/ms_lecture_master.tex" 1762735918 4238 38ff162f98469ab4e9518cd6f5d44f71 ""
+  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture_master/ms_lecture_master.tex" 1762736253 4236 65e60857637f2bc82b3193dc1aeb94ff ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1753824694 30251 6afa5cb1d0204815a708a080681d4674 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1753824694 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1753824694 37912 07513ec114ac737ab54cea0152f4424b ""
@@ -10,6 +11,7 @@
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb" 1753824694 35469 dcf3a5f2fc1862f5952e3ee5eb1d98c4 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb" 1753824694 36094 798f80770b3b148ceedd006d487db67c ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1753824694 35752 024fb6c41858982481f6968b5fc26508 ""
+  "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1753824694 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb" 1753824694 32734 69e00a6b65cedb993666e42eedb3d48f ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1753824694 32762 7fee39e011c23b3589931effd97b9702 ""
   "c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr8.pfb" 1753824694 32726 39f0f9e62e84beb801509898a605dbd5 ""
@@ -57,8 +59,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753831974 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1753832213 3604480 926ba6b19f7f90086b4f7d3958bf353f ""
   "c:/texlive/2025/texmf.cnf" 1753831940 713 e69b156964470283e0530f5060668171 ""
-  "ms_lecture_master.aux" 1762735923 32 1b174032087fb90900fa6203d3bb0a7e "pdflatex"
-  "ms_lecture_master.tex" 1762735918 4238 38ff162f98469ab4e9518cd6f5d44f71 ""
+  "ms_lecture_master.aux" 1762736646 33 cd8a9e253be16178be412705367a589a "pdflatex"
+  "ms_lecture_master.tex" 1762736253 4236 65e60857637f2bc82b3193dc1aeb94ff ""
   (generated)
   "ms_lecture_master.aux"
   "ms_lecture_master.log"

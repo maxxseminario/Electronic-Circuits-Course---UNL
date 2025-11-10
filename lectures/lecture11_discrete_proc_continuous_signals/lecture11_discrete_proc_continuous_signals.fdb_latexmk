@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1762733584.24781 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex" "lecture11_discrete_proc_continuous_signals.pdf" "lecture11_discrete_proc_continuous_signals" 1762733589.84407 0
-  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex" 1762733583 23008 c6a0999d1feefdb76c874e7966eec423 ""
+["pdflatex"] 1762736564.98299 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex" "lecture11_discrete_proc_continuous_signals.pdf" "lecture11_discrete_proc_continuous_signals" 1762736569.72962 0
+  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/lecture11_discrete_proc_continuous_signals/lecture11_discrete_proc_continuous_signals.tex" 1762736563 23008 10849a18fb3b488a245f2645fdfdaada ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1753826901 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1753824694 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1753824694 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -307,10 +307,10 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753831974 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1753832213 3604480 926ba6b19f7f90086b4f7d3958bf353f ""
   "c:/texlive/2025/texmf.cnf" 1753831940 713 e69b156964470283e0530f5060668171 ""
-  "lecture11_discrete_proc_continuous_signals.aux" 1762733589 5416 81ee8a7be8cb3fa18df310e726fb464a "pdflatex"
-  "lecture11_discrete_proc_continuous_signals.nav" 1762733589 3421 bd24713775864f9ee53685208aa8b42e "pdflatex"
-  "lecture11_discrete_proc_continuous_signals.out" 1762733589 824 20da620b3e20d997278d406b070e09a1 "pdflatex"
-  "lecture11_discrete_proc_continuous_signals.tex" 1762733583 23008 c6a0999d1feefdb76c874e7966eec423 ""
+  "lecture11_discrete_proc_continuous_signals.aux" 1762736569 5416 81ee8a7be8cb3fa18df310e726fb464a "pdflatex"
+  "lecture11_discrete_proc_continuous_signals.nav" 1762736569 3421 bd24713775864f9ee53685208aa8b42e "pdflatex"
+  "lecture11_discrete_proc_continuous_signals.out" 1762736569 824 20da620b3e20d997278d406b070e09a1 "pdflatex"
+  "lecture11_discrete_proc_continuous_signals.tex" 1762736563 23008 10849a18fb3b488a245f2645fdfdaada ""
   (generated)
   "lecture11_discrete_proc_continuous_signals.aux"
   "lecture11_discrete_proc_continuous_signals.log"
