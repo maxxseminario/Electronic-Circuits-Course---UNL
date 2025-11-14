@@ -1,0 +1,113 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ECEN 463 - Digital Signal Processing}
+\fancyhead[R]{Fall 2024}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Title page information
+\title{\vspace{-1cm}\textbf{Homework Assignment 5\\Interpolation Filters for Upsampling}}
+\author{ECEN 463 - Digital Signal Processing \\ University of Nebraska-Lincoln \\ Instructor: Maxx Seminario}
+\date{Due: November 21, 2024}
+
+\begin{document}
+
+\maketitle
+
+\section*{Assignment Overview}
+
+This homework assignment focuses on interpolation filters for upsampling digital audio signals. You will implement and compare various interpolation techniques, analyze their frequency responses, and evaluate their performance through both objective plots and subjective listening tests.
+
+\section*{Instructions}
+
+\begin{itemize}
+    \item Complete all programming tasks with detailed MATLAB implementation
+    \item Submit your solutions as a \textbf{single PDF report} (2-3 pages using IEEE format template) via Canvas
+    \item Attach your \textbf{MATLAB code as a separate document}
+    \item Include nicely labeled plots with time-aligned signal segments
+    \item Provide concise descriptions of audio quality and observations
+    \item IEEE formatting templates available at: \url{https://www.ieee.org/conferences/publishing/templates.html}
+\end{itemize}
+
+\section*{Problem Statement}
+
+Write a MATLAB program to read and upsample the provided \texttt{voice\_samp\_8k.wav} file (sampled at $F_s = 8000$ samples per second) by an integer factor $L$ (choose a value in the range 3 to 7).
+
+\subsection*{Required Implementations}
+
+Implement and compare the following five interpolation approaches:
+
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{No Interpolation Filtering:} Upsample only with zero insertion, no filtering
+    
+    \item \textbf{Hold Interpolation:} Implement as a causal FIR filter using the \texttt{filter()} function
+    
+    \item \textbf{Linear Interpolation:} Implement as a causal FIR filter using the \texttt{filter()} function
+    
+    \item \textbf{Short FIR Lowpass Filter:} Design a shorter FIR interpolation filter ($\sim$20--200 taps) using \texttt{fir1()}
+    
+    \item \textbf{Long FIR Lowpass Filter:} Design a longer FIR interpolation filter ($\sim$200--2000 taps) using \texttt{fir1()}
+\end{enumerate}
+
+\subsection*{Analysis Requirements}
+
+For each interpolation method:
+\begin{itemize}
+    \item Listen to the output using \texttt{soundsc()}
+    \item Plot short segments ($\sim$50--100 samples) of the output signals
+    \item Create time-aligned plots comparing all five methods
+    \item Plot frequency responses using \texttt{freqz()} where applicable
+    \item Verify correct operation through visual inspection of plots
+\end{itemize}
+
+\subsection*{Report Requirements}
+
+Your write-up should include:
+\begin{itemize}
+    \item Description of the sounds heard for each interpolation approach
+    \item Analysis of the time-aligned output segment plots
+    \item Discussion of frequency response characteristics
+    \item Any interesting observations about filter performance
+    \item Comparison of computational complexity vs. audio quality
+\end{itemize}
+
+\section*{Helpful MATLAB Functions}
+
+\begin{itemize}
+    \item \texttt{audioread()} -- Read the input speech file (12.5 seconds)
+    \item \texttt{kron()} -- Single-line upsampling implementation
+    \item \texttt{fir1()} -- FIR filter design
+    \item \texttt{filter()} -- Apply filtering to upsampled signals
+    \item \texttt{freqz()} -- Frequency response analysis
+    \item \texttt{soundsc()} -- Listen to audio outputs
+    \item \texttt{plot()} -- Create visualizations
+\end{itemize}
+
+\section*{Additional Notes}
+
+\begin{itemize}
+    \item The value of concision (complete and brief) is important in technical writing
+    \item Bring questions to class for discussion
+    \item Consider: ``What do you mean by time-aligned plot?''
+    \item Ensure all plots are properly labeled with axes, titles, and legends
+\end{itemize}
+
+\section*{Academic Integrity}
+
+This is an individual assignment. While you may discuss general concepts with classmates, all submitted work must be your own. Copying solutions from other students, online sources, or solution manuals constitutes academic dishonesty and will result in a failing grade for the assignment.
+
+\end{document}
