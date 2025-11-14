@@ -28,6 +28,8 @@ This repository contains LaTeX code and course materials for ECEN 463: Digital S
   11. Sampling
   12. Discrete Processing of Continous Time Signals
   13. Continuous Time Processing of Discrete Signals
+  14. Downsampling
+  15. Upsampling
 
 - **assignments/**  
   Homework and project assignments for the course.
