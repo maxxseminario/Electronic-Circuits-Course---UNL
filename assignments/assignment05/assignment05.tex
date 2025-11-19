@@ -14,7 +14,7 @@
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{ECEN 463 - Digital Signal Processing}
-\fancyhead[R]{Fall 2024}
+\fancyhead[R]{Fall 2025}
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\footrulewidth}{0.4pt}
@@ -22,7 +22,7 @@
 % Title page information
 \title{\vspace{-1cm}\textbf{Homework Assignment 5\\Interpolation Filters for Upsampling}}
 \author{ECEN 463 - Digital Signal Processing \\ University of Nebraska-Lincoln \\ Instructor: Maxx Seminario}
-\date{Due: November 21, 2024}
+\date{Due: November 24, 2025}
 
 \begin{document}
 
@@ -36,9 +36,9 @@ This homework assignment focuses on interpolation filters for upsampling digital
 
 \begin{itemize}
     \item Complete all programming tasks with detailed MATLAB implementation
-    \item Submit your solutions as a \textbf{single PDF report} (2-3 pages using IEEE format template) via Canvas
-    \item Attach your \textbf{MATLAB code as a separate document}
-    \item Include nicely labeled plots with time-aligned signal segments
+    \item Submit your solutions as a \textbf{single PDF report} via Canvas
+    \item Attach your \textbf{MATLAB code as a separate document or as appendix}
+    \item Include labeled plots with time-aligned signal segments
     \item Provide concise descriptions of audio quality and observations
     \item IEEE formatting templates available at: \url{https://www.ieee.org/conferences/publishing/templates.html}
 \end{itemize}
@@ -53,14 +53,14 @@ Implement and compare the following five interpolation approaches:
 
 \begin{enumerate}[label=(\roman*)]
     \item \textbf{No Interpolation Filtering:} Upsample only with zero insertion, no filtering
-    
-    \item \textbf{Hold Interpolation:} Implement as a causal FIR filter using the \texttt{filter()} function
-    
-    \item \textbf{Linear Interpolation:} Implement as a causal FIR filter using the \texttt{filter()} function
-    
-    \item \textbf{Short FIR Lowpass Filter:} Design a shorter FIR interpolation filter ($\sim$20--200 taps) using \texttt{fir1()}
-    
-    \item \textbf{Long FIR Lowpass Filter:} Design a longer FIR interpolation filter ($\sim$200--2000 taps) using \texttt{fir1()}
+
+    \item \textbf{Hold Interpolation:} Implement as a causal FIR filter - you may use the \texttt{filter()} function
+
+    \item \textbf{Linear Interpolation:} Implement as a causal FIR filter using - you may use the \texttt{filter()} function
+
+    \item \textbf{Short FIR Lowpass Filter:} Design a shorter FIR interpolation filter ($\sim$20--200 taps) - you may use \texttt{fir1()}
+
+    \item \textbf{Long FIR Lowpass Filter:} Design a longer FIR interpolation filter ($\sim$200--2000 taps) - you may use \texttt{fir1()}
 \end{enumerate}
 
 \subsection*{Analysis Requirements}
@@ -71,7 +71,6 @@ For each interpolation method:
     \item Plot short segments ($\sim$50--100 samples) of the output signals
     \item Create time-aligned plots comparing all five methods
     \item Plot frequency responses using \texttt{freqz()} where applicable
-    \item Verify correct operation through visual inspection of plots
 \end{itemize}
 
 \subsection*{Report Requirements}
@@ -85,17 +84,6 @@ Your write-up should include:
     \item Comparison of computational complexity vs. audio quality
 \end{itemize}
 
-\section*{Helpful MATLAB Functions}
-
-\begin{itemize}
-    \item \texttt{audioread()} -- Read the input speech file (12.5 seconds)
-    \item \texttt{kron()} -- Single-line upsampling implementation
-    \item \texttt{fir1()} -- FIR filter design
-    \item \texttt{filter()} -- Apply filtering to upsampled signals
-    \item \texttt{freqz()} -- Frequency response analysis
-    \item \texttt{soundsc()} -- Listen to audio outputs
-    \item \texttt{plot()} -- Create visualizations
-\end{itemize}
 
 \section*{Additional Notes}
 
