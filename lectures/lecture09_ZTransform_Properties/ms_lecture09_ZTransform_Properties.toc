@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{Basic Properties}{3}{0}{2}
+\beamer@sectionintoc {3}{Additional Properties}{7}{0}{3}
+\beamer@sectionintoc {4}{z-Transforms and LTI Systems}{11}{0}{4}
+\beamer@sectionintoc {5}{Summary}{16}{0}{5}

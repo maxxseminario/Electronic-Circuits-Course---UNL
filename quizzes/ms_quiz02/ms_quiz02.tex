@@ -1,0 +1,130 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Digital Signal Processing: Quiz 2}} 
+\date{\vspace{-0.5cm}\small\textbf{September 05, 2025}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(3 points)} Consider the discrete-time sequence \( x[n] = 2\delta[n+3] - \delta[n+1] + 3\delta[n] + 1.5\delta[n-2] \). Sketch the sequence \( x[n] \) on the discrete-time axis.
+    \vspace{4cm}
+    \ifthenelse{\boolean{showresults}}{
+        \vspace{-4cm}
+    \textbf{Solution:}
+    
+    \begin{center}
+    \begin{tikzpicture}[scale=0.8]
+        % Draw axes
+        \draw[->] (-5,0) -- (5,0) node[right] {$n$};
+        \draw[->] (0,-2) -- (0,4) node[above] {$x[n]$};
+        
+        % Draw grid
+        \foreach \x in {-4,-3,-2,-1,0,1,2,3,4}
+            \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
+        \foreach \y in {-1,1,2,3}
+            \draw (0.1,\y) -- (-0.1,\y) node[left] {\y};
+        
+        % Draw impulses
+        \draw[thick,blue] (-3,0) -- (-3,2) node[above] {2};
+        \draw[thick,blue] (-1,0) -- (-1,-1) node[below] {-1};
+        \draw[thick,blue] (0,0) -- (0,3) node[above] {3};
+        \draw[thick,blue] (2,0) -- (2,1.5) node[above] {1.5};
+        
+        % Draw dots at impulse locations
+        \fill[blue] (-3,2) circle (2pt);
+        \fill[blue] (-1,-1) circle (2pt);
+        \fill[blue] (0,3) circle (2pt);
+        \fill[blue] (2,1.5) circle (2pt);
+        
+        % % Draw zero values
+        % \foreach \x in {-4,-2,1,3,4}
+        %     \fill (x,0) circle (1pt);
+    \end{tikzpicture}
+    \end{center}
+    }{}
+
+
+    \item \textbf{(3 points)} A discrete-time sinusoidal signal is given as \( x[n] = \cos\left(\frac{\pi n}{4}\right) \). Determine whether this sequence is periodic. If it is, find the period \( N \).
+    \vspace{4cm}
+    \ifthenelse{\boolean{showresults}}{
+    \vspace{-4cm}
+    \textbf{Solution:}
+    
+    For a discrete-time sinusoidal signal $x[n] = \cos(\omega_0 n)$ to be periodic, we need:
+    $$x[n+N] = x[n]$$
+    
+    This means: $\cos(\omega_0(n+N)) = \cos(\omega_0 n)$
+    
+    For this to be true: $\omega_0 N = 2\pi k$ where $k$ is an integer.
+    
+    Given $\omega_0 = \frac{\pi}{4}$:
+    $$\frac{\pi}{4} \cdot N = 2\pi k$$
+    $$N = 8k$$
+    
+    The smallest positive integer value is when $k = 1$, giving us $N = 8$.
+    
+    \textbf{Verification:}
+    $x[n+8] = \cos\left(\frac{\pi(n+8)}{4}\right) = \cos\left(\frac{\pi n}{4} + 2\pi\right) = \cos\left(\frac{\pi n}{4}\right) = x[n]$
+    
+    Therefore, the sequence is periodic with period $N = 8$.
+    }{}
+
+    \item \textbf{(3 points)} Express the unit impulse sequence \( \delta[n] \) in terms of the unit step function \( u[n] \). 
+
+    \vspace{4cm}
+    \ifthenelse{\boolean{showresults}}{
+    \vspace{-4cm}
+    \textbf{Solution:}
+    
+    The unit impulse sequence can be expressed as the first difference of the unit step function:
+    
+    $$\delta[n] = u[n] - u[n-1]$$
+    
+    \textbf{Verification:}
+    \begin{itemize}
+        \item For $n = 0$: $\delta[0] = u[0] - u[-1] = 1 - 0 = 1$ 
+        \item For $n > 0$: $\delta[n] = u[n] - u[n-1] = 1 - 1 = 0$ 
+        \item For $n < 0$: $\delta[n] = u[n] - u[n-1] = 0 - 0 = 0$ 
+    \end{itemize}
+    }{}
+
+    \item \textbf{(1 point)} Explain the difference between a continuous-time signal and a discrete-time signal, providing one example of each.
+    \vspace{4cm}
+    \ifthenelse{\boolean{showresults}}{
+    \vspace{-4cm}
+    \textbf{Solution:}
+    
+    \textbf{Continuous-time signal:} A signal that is defined for all values of time $t$ in a continuous interval. The signal exists at every instant of time.
+    
+    \textbf{Example:} $x(t) = \sin(2\pi f t)$ where $t$ can take any real value.
+    
+    \textbf{Discrete-time signal:} A signal that is defined only at discrete instances of time, typically at integer multiples of a sampling period. The signal exists only at specific time instants.
+    
+    \textbf{Example:} $x[n] = \sin(2\pi f n T_s)$ where $n$ is an integer and $T_s$ is the sampling period.
+    }{}
+\end{enumerate}
+
+
+\end{document}

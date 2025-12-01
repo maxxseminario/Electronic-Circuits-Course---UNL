@@ -1,0 +1,9 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{The Fourier Transform Pair}{3}{0}{2}
+\beamer@sectionintoc {3}{Convergence Conditions}{5}{0}{3}
+\beamer@sectionintoc {4}{Special Cases}{10}{0}{4}
+\beamer@sectionintoc {5}{Symmetry Properties}{12}{0}{5}
+\beamer@sectionintoc {6}{Fourier Transform Theorems}{16}{0}{6}
+\beamer@sectionintoc {7}{Examples}{23}{0}{7}
+\beamer@sectionintoc {8}{Summary}{27}{0}{8}

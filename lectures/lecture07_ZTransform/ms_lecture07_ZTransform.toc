@@ -1,0 +1,7 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@sectionintoc {2}{z-Transform Definition}{3}{0}{2}
+\beamer@sectionintoc {3}{Region of Convergence}{5}{0}{3}
+\beamer@sectionintoc {4}{Properties of ROC}{8}{0}{4}
+\beamer@sectionintoc {5}{Common z-Transform Pairs}{13}{0}{5}
+\beamer@sectionintoc {6}{Summary}{17}{0}{6}

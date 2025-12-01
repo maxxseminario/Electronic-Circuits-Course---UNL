@@ -1,0 +1,111 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{true}
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Digital Signal Processing: Quiz 5}} 
+\date{\vspace{-0.5cm}\small\textbf{October 10, 2025}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+\vspace{0.5cm}
+
+\textbf{Given:} A discrete-time LTI system has the following impulse response:
+$$h[n] = \delta[n] - \delta[n-1]$$
+
+where $\delta[n]$ is the unit impulse function.
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(10 points)} Find the frequency response $H(e^{j\omega})$ of this system and determine:
+    \begin{enumerate}[label=(\alph*)]
+        \item The magnitude response $|H(e^{j\omega})|$
+        \item The phase response $\angle H(e^{j\omega})$
+        \item Evaluate both the magnitude and phase at $\omega = 0$ and $\omega = \pi$
+    \end{enumerate}
+    
+    \textbf{Hints:}
+    $$H(e^{j\omega}) = \sum_{n=-\infty}^{\infty} h[n]e^{-j\omega n}$$
+    $$H(e^{j\omega}) = |H(e^{j\omega})|e^{j\angle H(e^{j\omega})}$$
+    
+    \textbf{Useful Euler's identities:}
+    \begin{align}
+    e^{j\theta} &= \cos(\theta) + j\sin(\theta) \\
+    e^{j\theta} - e^{-j\theta} &= 2j\sin(\theta) \\
+    e^{j\theta} + e^{-j\theta} &= 2\cos(\theta) \\
+    j &= e^{j\pi/2}
+    \end{align}
+    
+    \textbf{Note:} You may express your final answer either in terms of complex exponentials or sinusoids/cosines.
+    
+    \vspace{8cm}
+    
+    \ifthenelse{\boolean{showresults}}{
+        \vspace{-6cm}
+        \textbf{Solution:}
+        
+        The frequency response is the DTFT of the impulse response:
+        $$H(e^{j\omega}) = \sum_{n=-\infty}^{\infty} h[n]e^{-j\omega n}$$
+        
+        % $$H(e^{j\omega}) = 1 \cdot e^{-j\omega \cdot 0} - 1 \cdot e^{-j\omega \cdot 1}$$
+        
+        $$H(e^{j\omega}) = 1 - e^{-j\omega}$$
+        
+        % Factor out $e^{-j\omega/2}$:
+        $$H(e^{j\omega}) = e^{-j\omega/2}(e^{j\omega/2} - e^{-j\omega/2})$$
+        
+        % Using Euler's identity $e^{j\theta} - e^{-j\theta} = 2j\sin(\theta)$:
+        $$H(e^{j\omega}) = e^{-j\omega/2} \cdot 2j\sin(\omega/2)$$
+        
+        % Since $j = e^{j\pi/2}$:
+        $$H(e^{j\omega}) = 2\sin(\omega/2)e^{j(\pi/2 - \omega/2)}$$
+        
+        \textbf{(a) Magnitude response:}
+        $$|H(e^{j\omega})| = 2|\sin(\omega/2)|$$
+        
+        \textbf{(b) Phase response:}
+        $$\angle H(e^{j\omega}) = \pi/2 - \omega/2$$
+        
+        % \textbf{Method 2: Using rectangular form}
+        % $$H(e^{j\omega}) = 1 - (\cos(\omega) - j\sin(\omega)) = (1-\cos(\omega)) + j\sin(\omega)$$
+        
+        % \textbf{(a) Magnitude response:}
+        % $$|H(e^{j\omega})| = \sqrt{(1-\cos(\omega))^2 + \sin^2(\omega)} = \sqrt{2-2\cos(\omega)} = 2|\sin(\omega/2)|$$
+        
+        % \textbf{(b) Phase response:}
+        % $$\angle H(e^{j\omega}) = \arctan\left(\frac{\sin(\omega)}{1-\cos(\omega)}\right) = \pi/2 - \omega/2$$
+        
+        \textbf{(c) Evaluations:}
+        
+        At $\omega = 0$:
+        $$|H(e^{j0})| = 2|\sin(0)| = 0$$
+        $$\angle H(e^{j0}) = \pi/2 - 0 = \pi/2$$
+        
+        At $\omega = \pi$:
+        $$|H(e^{j\pi})| = 2|\sin(\pi/2)| = 2$$
+        $$\angle H(e^{j\pi}) = \pi/2 - \pi/2 = 0$$
+    }{}
+
+\end{enumerate}
+
+\end{document}
+
+

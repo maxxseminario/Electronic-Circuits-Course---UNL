@@ -1,0 +1,900 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  13 OCT 2025 12:21
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/ms_lecture_master/ms_lecture_master.tex"
+(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-463(Inst)(DSP)/latek/lectures/ms_lecture_master/ms_lecture_master.tex
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-19>
+(c:/texlive/2025/texmf-dist/tex/latex/base/article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(c:/texlive/2025/texmf-dist/tex/latex/base/size10.clo
+File: size10.clo 2025/01/22 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count275
+\c@section=\count276
+\c@subsection=\count277
+\c@subsubsection=\count278
+\c@paragraph=\count279
+\c@subparagraph=\count280
+\c@figure=\count281
+\c@table=\count282
+\abovecaptionskip=\skip49
+\belowcaptionskip=\skip50
+\bibindent=\dimen148
+) (c:/texlive/2025/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+Package: pdfpages 2025/07/23 v0.6g Insert pages of external PDF documents (AM)
+ (c:/texlive/2025/texmf-dist/tex/latex/base/ifthen.sty
+Package: ifthen 2024/03/16 v1.1e Standard LaTeX ifthen package (DPC)
+) (c:/texlive/2025/texmf-dist/tex/latex/tools/calc.sty
+Package: calc 2025/03/01 v4.3b Infix arithmetic (KKT,FJ)
+\calc@Acount=\count283
+\calc@Bcount=\count284
+\calc@Adimen=\dimen149
+\calc@Bdimen=\dimen150
+\calc@Askip=\skip51
+\calc@Bskip=\skip52
+LaTeX Info: Redefining \setlength on input line 86.
+LaTeX Info: Redefining \addtolength on input line 87.
+\calc@Ccount=\count285
+\calc@Cskip=\skip53
+) (c:/texlive/2025/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+Package: eso-pic 2023/05/03 v3.0c eso-pic (RN)
+\ESO@tempdima=\dimen151
+\ESO@tempdimb=\dimen152
+ (c:/texlive/2025/texmf-dist/tex/latex/graphics/keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
+) (c:/texlive/2025/texmf-dist/tex/latex/xcolor/xcolor.sty
+Package: xcolor 2024/09/29 v3.02 LaTeX color extensions (UK)
+ (c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package xcolor Info: Driver file: pdftex.def on input line 274.
+ (c:/texlive/2025/texmf-dist/tex/latex/graphics-def/pdftex.def
+File: pdftex.def 2024/04/13 v1.2c Graphics/color driver for pdftex
+) (c:/texlive/2025/texmf-dist/tex/latex/graphics/mathcolor.ltx)
+Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1349.
+Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1353.
+Package xcolor Info: Model `RGB' extended on input line 1365.
+Package xcolor Info: Model `HTML' substituted by `rgb' on input line 1367.
+Package xcolor Info: Model `Hsb' substituted by `hsb' on input line 1368.
+Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1369.
+Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1370.
+Package xcolor Info: Model `Gray' substituted by `gray' on input line 1371.
+Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
+)) (c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2025/02/11 v2.5l e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count286
+) (c:/texlive/2025/texmf-dist/tex/latex/graphics/graphicx.sty
+Package: graphicx 2024/12/31 v1.2e Enhanced LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2025/texmf-dist/tex/latex/graphics/graphics.sty
+Package: graphics 2024/08/06 v1.4g Standard LaTeX Graphics (DPC,SPQR)
+ (c:/texlive/2025/texmf-dist/tex/latex/graphics/trig.sty
+Package: trig 2023/12/02 v1.11 sin cos tan (DPC)
+) (c:/texlive/2025/texmf-dist/tex/latex/graphics-cfg/graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 106.
+)
+\Gin@req@height=\dimen153
+\Gin@req@width=\dimen154
+)
+\AM@pagewidth=\dimen155
+\AM@pageheight=\dimen156
+\AM@fboxrule=\dimen157
+ (c:/texlive/2025/texmf-dist/tex/latex/pdfpages/pppdftex.def
+File: pppdftex.def 2025/07/23 v0.6g Pdfpages driver for pdfTeX (AM)
+)
+\pdfpages@includegraphics@status=\count287
+\AM@pagebox=\box53
+\AM@global@opts=\toks18
+\AM@pagecnt=\count288
+\AM@toc@title=\toks19
+\AM@lof@heading=\toks20
+\c@AM@survey=\count289
+\AM@templatesizebox=\box54
+) (c:/texlive/2025/texmf-dist/tex/latex/geometry/geometry.sty
+Package: geometry 2020/01/02 v5.9 Page Geometry
+ (c:/texlive/2025/texmf-dist/tex/generic/iftex/ifvtex.sty
+Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
+ (c:/texlive/2025/texmf-dist/tex/generic/iftex/iftex.sty
+Package: iftex 2024/12/12 v1.0g TeX engine tests
+))
+\Gm@cnth=\count290
+\Gm@cntv=\count291
+\c@Gm@tempcnt=\count292
+\Gm@bindingoffset=\dimen158
+\Gm@wd@mp=\dimen159
+\Gm@odd@mp=\dimen160
+\Gm@even@mp=\dimen161
+\Gm@layoutwidth=\dimen162
+\Gm@layoutheight=\dimen163
+\Gm@layouthoffset=\dimen164
+\Gm@layoutvoffset=\dimen165
+\Gm@dimlist=\toks21
+) (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
+File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count293
+) (./ms_lecture_master.aux)
+\openout1 = `ms_lecture_master.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 5.
+LaTeX Font Info:    ... okay on input line 5.
+ (c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count294
+\scratchdimen=\dimen166
+\scratchbox=\box55
+\nofMPsegments=\count295
+\nofMParguments=\count296
+\everyMPshowfont=\toks22
+\MPscratchCnt=\count297
+\MPscratchDim=\dimen167
+\MPnumerator=\count298
+\makeMPintoPDFobject=\count299
+\everyMPtoPDFconversion=\toks23
+) (c:/texlive/2025/texmf-dist/tex/latex/epstopdf-pkg/epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
+ (c:/texlive/2025/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
+)) (c:/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape.sty
+Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
+ (c:/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape-nometadata.sty
+Package: pdflscape-nometadata 2025-06-23 v0.14 Display of landscape pages in PDF (HO)
+ (c:/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
+Package: lscape 2020/05/28 v3.02 Landscape Pages (DPC)
+)
+Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
+))
+*geometry* driver: auto-detecting
+*geometry* detected driver: pdftex
+*geometry* verbose mode - [ preamble ] result:
+* driver: pdftex
+* paper: a4paper
+* layout: <same size as paper>
+* layoutoffset:(h,v)=(0.0pt,0.0pt)
+* modes: landscape 
+* h-part:(L,W,R)=(72.26999pt, 700.50687pt, 72.26999pt)
+* v-part:(T,H,B)=(36.135pt, 489.10289pt, 72.26999pt)
+* \paperwidth=845.04684pt
+* \paperheight=597.50787pt
+* \textwidth=700.50687pt
+* \textheight=489.10289pt
+* \oddsidemargin=0.0pt
+* \evensidemargin=0.0pt
+* \topmargin=-73.135pt
+* \headheight=12.0pt
+* \headsep=25.0pt
+* \topskip=10.0pt
+* \footskip=30.0pt
+* \marginparwidth=144.0pt
+* \marginparsep=11.0pt
+* \columnsep=10.0pt
+* \skip\footins=9.0pt plus 4.0pt minus 2.0pt
+* \hoffset=0.0pt
+* \voffset=0.0pt
+* \mag=1000
+* \@twocolumnfalse
+* \@twosidefalse
+* \@mparswitchfalse
+* \@reversemarginfalse
+* (1in=72.27pt=25.4mm, 1cm=28.453pt)
+
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=1, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf  used on input line 35.
+(pdftex.def)             Requested size: 455.24268pt x 256.07405pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=3, page=1, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=4, page=2, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page2 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page2 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=5, page=3, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page3 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page3 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=6, page=4, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page4 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page4 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page2 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page3 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page4 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[1
+
+
+ <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf>]
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=121, page=5, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page5 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page5 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=122, page=6, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page6 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page6 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=123, page=7, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page7 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page7 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=124, page=8, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page8 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page8 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page5 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page6 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page7 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page8 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[2
+
+ <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf>]
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=128, page=9, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page9 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page9 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=129, page=10, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 10>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page10 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 10>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page10 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=130, page=11, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 11>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page11 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 11>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page11 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=131, page=12, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 12>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page12 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 12>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page12 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page9 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 10>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page10 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 11>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page11 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 12>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page12 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[3
+
+ <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf>]
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=135, page=13, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 13>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page13 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 13>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page13 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=136, page=14, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 14>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page14 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 14>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page14 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=137, page=15, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 15>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page15 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 15>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page15 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=138, page=16, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 16>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page16 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 16>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page16 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 13>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page13 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 14>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page14 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 15>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page15 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 16>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page16 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[4
+
+ <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf> <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf>]
+<../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, id=160, page=17, 455.24379pt x 256.07469pt>
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 17>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page17 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 17>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page17 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page1 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf, page 17>
+Package pdftex.def Info: ../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf , page17 used on input line 35.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[5
+
+ <../ms_lecture07_ZTransform/ms_lecture07_ZTransform.pdf>]
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=164, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf  used on input line 36.
+(pdftex.def)             Requested size: 455.24268pt x 256.07405pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=166, page=1, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=167, page=2, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page2 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page2 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=168, page=3, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page3 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page3 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=169, page=4, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page4 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page4 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page2 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page3 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page4 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[6
+
+ <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf> <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf> <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf> <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf>]
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=265, page=5, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page5 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page5 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=266, page=6, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page6 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page6 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=267, page=7, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page7 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page7 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=268, page=8, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page8 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page8 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page5 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page6 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page7 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page8 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[7
+
+ <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf> <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf> <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf> <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf>]
+<../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, id=279, page=9, 455.24379pt x 256.07469pt>
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page9 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page9 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page1 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf Graphic file (type pdf)
+<use ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf , page9 used on input line 36.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[8
+
+ <../ms_lecture08_InvZTransform/ms_lecture08_InvZTransform.pdf>]
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=283, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf  used on input line 37.
+(pdftex.def)             Requested size: 455.24268pt x 256.07405pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=285, page=1, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=286, page=2, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page2 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page2 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=287, page=3, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page3 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page3 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=288, page=4, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page4 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page4 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 1>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page1 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 2>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page2 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 3>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page3 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 4>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page4 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[9
+
+ <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf>]
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=349, page=5, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page5 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page5 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=350, page=6, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page6 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page6 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=351, page=7, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page7 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page7 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=352, page=8, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page8 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page8 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 5>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page5 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 6>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page6 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 7>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page7 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 8>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page8 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[10
+
+ <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf>]
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=367, page=9, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page9 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page9 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=368, page=10, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 10>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page10 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 10>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page10 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=369, page=11, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 11>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page11 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 11>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page11 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=370, page=12, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 12>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page12 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 12>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page12 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 9>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page9 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 10>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page10 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 11>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page11 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 12>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page12 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[11
+
+ <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf>]
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=398, page=13, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 13>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page13 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 13>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page13 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=399, page=14, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 14>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page14 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 14>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page14 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=400, page=15, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 15>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page15 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 15>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page15 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+<../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, id=401, page=16, 455.24379pt x 256.07469pt>
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 16>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page16 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 16>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page16 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+
+
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 13>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page13 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 14>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page14 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 15>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page15 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+File: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf Graphic file (type pdf)
+<use ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf, page 16>
+Package pdftex.def Info: ../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf , page16 used on input line 37.
+(pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
+[12
+
+ <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf> <../ms_lecture09_ZTransform_Properties/ms_lecture09_ZTransform_Properties.pdf>] (./ms_lecture_master.aux)
+ ***********
+LaTeX2e <2025-06-01> patch level 1
+L3 programming layer <2025-07-19>
+ ***********
+ ) 
+Here is how much of TeX's memory you used:
+ 3681 strings out of 467815
+ 67467 string characters out of 5436410
+ 474184 words of memory out of 5000000
+ 32302 multiletter control sequences out of 15000+600000
+ 626825 words of font info for 40 fonts, out of 8000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 72i,19n,79p,420b,467s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb>
+Output written on ms_lecture_master.pdf (12 pages, 409737 bytes).
+PDF statistics:
+ 432 PDF objects out of 1000 (max. 8388607)
+ 277 compressed objects within 3 object streams
+ 0 named destinations out of 1000 (max. 500000)
+ 241 words of extra memory for PDF output out of 10000 (max. 10000000)
+

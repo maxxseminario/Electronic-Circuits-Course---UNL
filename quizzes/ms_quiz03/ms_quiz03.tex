@@ -1,0 +1,52 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Digital Signal Processing: Quiz 3}} 
+\date{\vspace{-0.5cm}\small\textbf{September 17, 2025}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(8 points)} A linear time-invariant system has the impulse response $ h[n] = a^ncos[\frac{\pi n}{2}]$. Find the output y[n] for input $ x[n] = \delta[n-n_d]$.
+    \vspace{12cm}
+    \ifthenelse{\boolean{showresults}}{
+        \vspace{-10cm}
+    \textbf{Solution:}
+    
+    
+    }{}
+
+
+    \item \textbf{(2 points)} What is the range of a ?
+    \vspace{4cm}
+    \ifthenelse{\boolean{showresults}}{
+    \vspace{-4cm}
+    \textbf{Solution:}
+     }{}
+
+
+\end{enumerate}
+
+
+\end{document}

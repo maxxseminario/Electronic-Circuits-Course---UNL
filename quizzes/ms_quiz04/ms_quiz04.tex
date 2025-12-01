@@ -1,0 +1,74 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{true}
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Digital Signal Processing: Quiz 4}} 
+\date{\vspace{-0.5cm}\small\textbf{September 26, 2025}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+\vspace{0.5cm}
+
+\textbf{Given:} A linear time-invariant (LTI) system has the impulse response:
+$$h[n] = (0.8)^n u[n] - (0.5)^n u[n-3]$$
+
+where $u[n]$ is the unit step function.
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(5 points)} Determine if this system is \textbf{stable}. Show your work and justify your answer using the appropriate stability criterion for discrete-time LTI systems.
+    \vspace{8cm}
+    \ifthenelse{\boolean{showresults}}{
+        \vspace{-6cm}
+    \textbf{Solution:}
+    
+    For a discrete-time LTI system to be stable, the impulse response must be absolutely summable:
+    $$\sum_{n=-\infty}^{\infty} |h[n]| < \infty$$
+    
+    For $n \geq 3$:
+    $$|h[n]| = |(0.8)^n - (0.5)^n| \leq (0.8)^n + (0.5)^n$$
+    
+    For $0 \leq n < 3$:
+    $$|h[n]| = (0.8)^n$$
+    
+    Since both $(0.8)^n$ and $(0.5)^n$ are geometrically convergent series, the system is \textbf{stable}.
+    }{}
+
+    \item \textbf{(5 points)} Determine if this system is \textbf{causal}. Show your work and justify your answer using the appropriate causality criterion for discrete-time LTI systems.
+    \vspace{8cm}
+    \ifthenelse{\boolean{showresults}}{
+    \vspace{-6cm}
+    \textbf{Solution:}
+    
+    For a discrete-time LTI system to be causal, the impulse response must satisfy:
+    $$h[n] = 0 \text{ for } n < 0$$
+    
+    Analyzing $h[n] = (0.8)^n u[n] - (0.5)^n u[n-3]$:
+    
+    For $n < 0$: Both $u[n] = 0$ and $u[n-3] = 0$, so $h[n] = 0$.
+    
+    Since $h[n] = 0$ for all $n < 0$, the system is \textbf{causal}.
+     }{}
+
+\end{enumerate}
+
+\end{document}

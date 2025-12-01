@@ -1,0 +1,856 @@
+
+\documentclass[10pt, aspectratio=169, handout]{beamer}
+\usefonttheme{professionalfonts}
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  \usecolortheme{beaver}
+  \usefonttheme{default}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.85\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}Digital Signal Processing, Fall 2025%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \hspace*{0.5em}\insertframenumber{} / \inserttotalframenumber\hspace*{0.5em}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{epstopdf}
+\captionsetup{compatibility=false}
+
+\usetikzlibrary{calc}
+\usetikzlibrary{pgfplots.fillbetween, backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{calc}
+
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest} 
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\title[ECEN 463/863]{The Discrete Fourier Transform}
+\author{Maxx Seminario}
+\institute{University of Nebraska-Lincoln}
+\date{October 3, 2025}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction}
+
+\begin{frame}{Overview: Representation of Sequences}
+\begin{itemize}
+    \item \textbf{Motivation}: How to represent arbitrary input sequences in frequency domain?
+    \begin{itemize}
+        \item We know LTI system response to $e^{j\omega n}$ is $H(e^{j\omega})e^{j\omega n}$
+        \item Need to decompose arbitrary signals into complex exponentials
+    \end{itemize}
+    
+    \item \textbf{Key Questions}:
+    \begin{itemize}
+        \item Can we represent any sequence as a sum of complex exponentials?
+        \item What are the conditions for such representations to exist?
+        \item How do we compute the representation?
+    \end{itemize}
+    
+    \item \textbf{Today's Topics}:
+    \begin{itemize}
+        \item Fourier Transform pair for discrete-time signals
+        \item Convergence conditions
+        \item Symmetry properties
+        \item Fourier Transform theorems
+    \end{itemize}
+\end{itemize}
+\end{frame}
+
+\section{The Fourier Transform Pair}
+
+\begin{frame}{The Discrete-Time Fourier Transform (DTFT)}
+\textbf{Fourier Transform Pair}:
+\begin{align}
+    x[n] &= \frac{1}{2\pi} \int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n}d\omega \quad \text{(Synthesis)} \\
+    X(e^{j\omega}) &= \sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n} \quad \text{(Analysis)}
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Key Interpretations}:
+\begin{itemize}
+    \item \textbf{Synthesis}: Represents $x[n]$ as superposition of complex sinusoids
+    \item \textbf{Analysis}: Determines "how much" of each frequency is in $x[n]$
+    \item $X(e^{j\omega})$ is generally complex-valued
+    \item Integration can be over any interval of length $2\pi$
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{Connection to LTI Systems}:
+\[
+    H(e^{j\omega}) = \sum_{n=-\infty}^{\infty} h[n]e^{-j\omega n}
+\]
+Frequency response = DTFT of impulse response
+\end{frame}
+
+\begin{frame}{Complex Representation of DTFT}
+\textbf{Rectangular Form}:
+\[
+    X(e^{j\omega}) = X_R(e^{j\omega}) + jX_I(e^{j\omega})
+\]
+
+% \vspace{0.3cm}
+\textbf{Polar Form}:
+\[
+    X(e^{j\omega}) = |X(e^{j\omega})|e^{j\angle X(e^{j\omega})}
+\]
+
+% \vspace{0.3cm}
+\textbf{Phase Considerations}:
+\begin{itemize}
+    \item Phase is not unique (can add multiples of $2\pi$)
+    \item \textbf{Principal value}: $\text{ARG}[X(e^{j\omega})] \in [-\pi, \pi]$
+    \item \textbf{Continuous phase}: $\arg[X(e^{j\omega})]$ (unwrapped phase)
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{Periodicity}:
+\begin{itemize}
+    \item $X(e^{j\omega})$ is periodic in $\omega$ with period $2\pi$
+    \item Similar to Fourier series for periodic functions
+    \item Eq. (2.131) is Fourier series of periodic function $X(e^{j\omega})$
+\end{itemize}
+\end{frame}
+
+\section{Convergence Conditions}
+
+\begin{frame}{Convergence of the DTFT}
+\textbf{Question}: When does $X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n}$ converge?
+
+% \vspace{0.3cm}
+\textbf{Absolute Summability (Sufficient Condition)}:
+\begin{align}
+    |X(e^{j\omega})| &= \left|\sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n}\right| \\
+    &\leq \sum_{n=-\infty}^{\infty} |x[n]||e^{-j\omega n}| \\
+    &= \sum_{n=-\infty}^{\infty} |x[n]| < \infty
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Implications}:
+\begin{itemize}
+    \item If $\sum_{n=-\infty}^{\infty} |x[n]| < \infty$, then $X(e^{j\omega})$ exists
+    \item Series converges uniformly to a continuous function
+    \item All stable sequences have Fourier transforms
+    \item All FIR systems have finite, continuous frequency responses
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Suddenly-Applied Exponential}
+\textbf{Sequence}: $x[n] = a^n u[n]$
+
+% \vspace{0.3cm}
+\textbf{DTFT Calculation}:
+\begin{align}
+    X(e^{j\omega}) &= \sum_{n=0}^{\infty} a^n e^{-j\omega n} \\
+    &= \sum_{n=0}^{\infty} (ae^{-j\omega})^n \\
+    &= \frac{1}{1 - ae^{-j\omega}} \quad \text{if } |ae^{-j\omega}| < 1
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Convergence Condition}: $|a| < 1$
+
+% \vspace{0.3cm}
+\textbf{Absolute Summability Check}:
+\[
+    \sum_{n=0}^{\infty} |a|^n = \frac{1}{1 - |a|} < \infty \quad \text{if } |a| < 1
+\]
+
+This confirms that absolute summability guarantees convergence.
+\end{frame}
+
+\begin{frame}{Square Summability}
+\textbf{Alternative Condition}: Some sequences are not absolutely summable but are square summable:
+\[
+    \sum_{n=-\infty}^{\infty} |x[n]|^2 < \infty
+\]
+
+% \vspace{0.3cm}
+\textbf{Mean-Square Convergence}:
+\[
+    \lim_{M \to \infty} \int_{-\pi}^{\pi} |X(e^{j\omega}) - X_M(e^{j\omega})|^2 d\omega = 0
+\]
+where $X_M(e^{j\omega}) = \sum_{n=-M}^{M} x[n]e^{-j\omega n}$
+
+% \vspace{0.3cm}
+\textbf{Important Distinction}:
+\begin{itemize}
+    \item Error may not approach zero at each $\omega$
+    \item Total "energy" in error approaches zero
+    \item Leads to Gibbs phenomenon at discontinuities
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Example: Ideal Lowpass Filter}
+\textbf{Frequency Response}:
+\[
+    H_{lp}(e^{j\omega}) = \begin{cases}
+        1, & |\omega| < \omega_c \\
+        0, & \omega_c < |\omega| \leq \pi
+    \end{cases}
+\]
+
+% \vspace{0.3cm}
+\textbf{Impulse Response}:
+\begin{align}
+    h_{lp}[n] &= \frac{1}{2\pi} \int_{-\omega_c}^{\omega_c} e^{j\omega n} d\omega \\
+    &= \frac{1}{2\pi jn} [e^{j\omega_c n} - e^{-j\omega_c n}] \\
+    &= \frac{\sin(\omega_c n)}{\pi n}, \quad -\infty < n < \infty
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Properties}:
+\begin{itemize}
+    \item \textbf{Noncausal}: $h_{lp}[n] \neq 0$ for $n < 0$
+    \item \textbf{Not absolutely summable}: Decays as $1/n$
+    \item \textbf{Square summable}: Mean-square convergence
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}{Gibbs Phenomenon}
+\textbf{Finite Sum Approximation}:
+\[
+    H_M(e^{j\omega}) = \sum_{n=-M}^{M} \frac{\sin(\omega_c n)}{\pi n} e^{-j\omega n}
+\]
+
+% \vspace{0.3cm}
+% \textbf{Gibbs Phenomenon Illustration}:
+% \begin{itemize}
+%     \item As $M$ increases, oscillations near $\omega = \pm\omega_c$ become more rapid
+%     \item Maximum overshoot remains approximately 9\%
+%     \item Oscillations converge in location toward discontinuities
+% \end{itemize}
+
+% \vspace{0.3cm}
+\begin{center}
+\includegraphics[width=0.4\textwidth]{gibbs_phenom.png}
+\end{center}
+% Note: Replace with actual figure or use simpler TikZ code
+
+\textbf{Key Points}:
+\begin{itemize}
+    \item Oscillations near discontinuity persist as $M \to \infty$
+    \item Maximum overshoot $\approx 9\%$ (doesn't decrease)
+    \item Oscillations become more rapid but localized
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\section{Special Cases}
+
+\begin{frame}{Fourier Transform of Special Sequences}
+\textbf{Case 1: Constant Sequence}
+\begin{itemize}
+    \item Sequence: $x[n] = 1$ for all $n$
+    \item Neither absolutely nor square summable
+    \item DTFT (using impulse functions):
+    \[
+        X(e^{j\omega}) = \sum_{r=-\infty}^{\infty} 2\pi\delta(\omega + 2\pi r)
+    \]
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{Case 2: Complex Exponential}
+\begin{itemize}
+    \item Sequence: $x[n] = e^{j\omega_0 n}$, $-\pi < \omega_0 \leq \pi$
+    \item DTFT:
+    \[
+        X(e^{j\omega}) = \sum_{r=-\infty}^{\infty} 2\pi\delta(\omega - \omega_0 + 2\pi r)
+    \]
+    \item Verification: Substituting into synthesis equation yields $x[n] = e^{j\omega_0 n}$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Unit Step Sequence}
+\textbf{Sequence}: $u[n]$
+
+% \vspace{0.3cm}
+\textbf{DTFT}:
+\[
+    U(e^{j\omega}) = \frac{1}{1 - e^{-j\omega}} + \sum_{r=-\infty}^{\infty} \pi\delta(\omega + 2\pi r)
+\]
+
+% \vspace{0.3cm}
+\textbf{Interpretation}:
+\begin{itemize}
+    \item First term: Response for $\omega \neq 0$
+    \item Second term: DC component (impulses at $\omega = 2\pi r$)
+    \item Neither absolutely nor square summable
+    \item Requires generalized function theory
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{General Form}: For sequences with discrete frequency components:
+\[
+    x[n] = \sum_k a_k e^{j\omega_k n} \Rightarrow X(e^{j\omega}) = \sum_{r=-\infty}^{\infty} \sum_k 2\pi a_k \delta(\omega - \omega_k + 2\pi r)
+\]
+\end{frame}
+
+\section{Symmetry Properties}
+
+\begin{frame}{Conjugate Symmetry Definitions}
+\textbf{For Sequences}:
+\begin{itemize}
+    \item \textbf{Conjugate-symmetric}: $x_e[n] = x_e^*[-n]$
+    \item \textbf{Conjugate-antisymmetric}: $x_o[n] = -x_o^*[-n]$
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{Decomposition}: Any sequence can be written as:
+\begin{align}
+    x[n] &= x_e[n] + x_o[n] \\
+    x_e[n] &= \frac{1}{2}(x[n] + x^*[-n]) \\
+    x_o[n] &= \frac{1}{2}(x[n] - x^*[-n])
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{For Real Sequences}:
+\begin{itemize}
+    \item \textbf{Even}: $x_e[n] = x_e[-n]$ (conjugate-symmetric when real)
+    \item \textbf{Odd}: $x_o[n] = -x_o[-n]$ (conjugate-antisymmetric when real)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Symmetry Properties of DTFT}
+\textbf{General Complex Sequences}:
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Sequence} & \textbf{Fourier Transform} \\
+\hline
+$x^*[n]$ & $X^*(e^{-j\omega})$ \\
+$x^*[-n]$ & $X^*(e^{j\omega})$ \\
+$\text{Re}\{x[n]\}$ & $X_e(e^{j\omega})$ (conjugate-symmetric part) \\
+$j\text{Im}\{x[n]\}$ & $X_o(e^{j\omega})$ (conjugate-antisymmetric part) \\
+$x_e[n]$ & $X_R(e^{j\omega}) = \text{Re}\{X(e^{j\omega})\}$ \\
+$x_o[n]$ & $jX_I(e^{j\omega}) = j\text{Im}\{X(e^{j\omega})\}$ \\
+\hline
+\end{tabular}
+\end{center}
+
+% \vspace{0.3cm}
+\textbf{Key Insight}: 
+\begin{itemize}
+    \item Conjugate-symmetric sequences $\leftrightarrow$ Real transforms
+    \item Conjugate-antisymmetric sequences $\leftrightarrow$ Imaginary transforms
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Symmetry Properties for Real Sequences}
+\textbf{If $x[n]$ is real}:
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Property} & \textbf{Result} \\
+\hline
+DTFT & $X(e^{j\omega}) = X^*(e^{-j\omega})$ (conjugate symmetric) \\
+Real part & $X_R(e^{j\omega}) = X_R(e^{-j\omega})$ (even function) \\
+Imaginary part & $X_I(e^{j\omega}) = -X_I(e^{-j\omega})$ (odd function) \\
+Magnitude & $|X(e^{j\omega})| = |X(e^{-j\omega})|$ (even function) \\
+Phase & $\angle X(e^{j\omega}) = -\angle X(e^{-j\omega})$ (odd function) \\
+Even part of $x[n]$ & Transforms to $X_R(e^{j\omega})$ \\
+Odd part of $x[n]$ & Transforms to $jX_I(e^{j\omega})$ \\
+\hline
+\end{tabular}
+\end{center}
+
+% \vspace{0.3cm}
+\textbf{Practical Implication}: For real signals, we only need to compute DTFT for $\omega \in [0, \pi]$
+\end{frame}
+
+
+
+\begin{frame}{Example: Symmetry Properties}
+\textbf{Sequence}: $x[n] = a^n u[n]$, $|a| < 1$ (real)
+
+% \vspace{0.3cm}
+\textbf{DTFT}: $X(e^{j\omega}) = \frac{1}{1 - ae^{-j\omega}}$
+
+% \vspace{0.3cm}
+\textbf{Components}:
+\begin{align}
+    X_R(e^{j\omega}) &= \frac{1 - a\cos\omega}{1 + a^2 - 2a\cos\omega} \quad \text{(even)} \\
+    X_I(e^{j\omega}) &= \frac{-a\sin\omega}{1 + a^2 - 2a\cos\omega} \quad \text{(odd)} \\
+    |X(e^{j\omega})| &= \frac{1}{(1 + a^2 - 2a\cos\omega)^{1/2}} \quad \text{(even)} \\
+    \angle X(e^{j\omega}) &= \tan^{-1}\left(\frac{-a\sin\omega}{1 - a\cos\omega}\right) \quad \text{(odd)}
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Verification}: Each property satisfies the symmetry conditions for real sequences
+\end{frame}
+
+\section{Fourier Transform Theorems}
+
+\begin{frame}{Overview of DTFT Theorems}
+\textbf{Key Theorems}:
+\begin{enumerate}
+    \item \textbf{Linearity}: $ax[n] + by[n] \leftrightarrow aX(e^{j\omega}) + bY(e^{j\omega})$
+    \item \textbf{Time Shifting}: $x[n-n_d] \leftrightarrow e^{-j\omega n_d}X(e^{j\omega})$
+    \item \textbf{Frequency Shifting}: $e^{j\omega_0 n}x[n] \leftrightarrow X(e^{j(\omega-\omega_0)})$
+    \item \textbf{Time Reversal}: $x[-n] \leftrightarrow X(e^{-j\omega})$
+    \item \textbf{Differentiation}: $nx[n] \leftrightarrow j\frac{dX(e^{j\omega})}{d\omega}$
+    \item \textbf{Convolution}: $x[n] * y[n] \leftrightarrow X(e^{j\omega})Y(e^{j\omega})$
+    \item \textbf{Multiplication}: $x[n]y[n] \leftrightarrow \frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\theta})Y(e^{j(\omega-\theta)})d\theta$
+\end{enumerate}
+
+% \vspace{0.3cm}
+\textbf{Why Important?}
+\begin{itemize}
+    \item Simplify analysis of complex signals
+    \item Transform difficult operations into simple ones
+    \item Foundation for filter design and signal processing
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Linearity and Time Shifting}
+\textbf{1. Linearity}:
+\[
+    ax_1[n] + bx_2[n] \overset{\mathcal{F}}{\longleftrightarrow} aX_1(e^{j\omega}) + bX_2(e^{j\omega})
+\]
+
+% \vspace{0.3cm}
+\textbf{2. Time Shifting}:
+\[
+    x[n - n_d] \overset{\mathcal{F}}{\longleftrightarrow} e^{-j\omega n_d}X(e^{j\omega})
+\]
+
+% \vspace{0.3cm}
+\textbf{Proof of Time Shifting}:
+\begin{align}
+    \mathcal{F}\{x[n-n_d]\} &= \sum_{n=-\infty}^{\infty} x[n-n_d]e^{-j\omega n} \\
+    &= \sum_{m=-\infty}^{\infty} x[m]e^{-j\omega(m+n_d)} \quad (m = n-n_d) \\
+    &= e^{-j\omega n_d} \sum_{m=-\infty}^{\infty} x[m]e^{-j\omega m} \\
+    &= e^{-j\omega n_d}X(e^{j\omega})
+\end{align}
+\end{frame}
+
+\begin{frame}{Frequency Shifting and Time Reversal}
+\textbf{3. Frequency Shifting (Modulation)}:
+\[
+    e^{j\omega_0 n}x[n] \overset{\mathcal{F}}{\longleftrightarrow} X(e^{j(\omega-\omega_0)})
+\]
+
+\textbf{Application}: Modulation shifts spectrum by $\omega_0$
+
+% \vspace{0.5cm}
+\textbf{4. Time Reversal}:
+\[
+    x[-n] \overset{\mathcal{F}}{\longleftrightarrow} X(e^{-j\omega})
+\]
+
+For real sequences: $x[-n] \overset{\mathcal{F}}{\longleftrightarrow} X^*(e^{j\omega})$
+
+% \vspace{0.3cm}
+\textbf{Example Application}:
+\begin{itemize}
+    \item Signal $x[n] = \cos(\omega_0 n) = \frac{1}{2}(e^{j\omega_0 n} + e^{-j\omega_0 n})$
+    \item Using frequency shifting: spectrum has impulses at $\pm\omega_0$
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Differentiation in Frequency}
+\textbf{5. Differentiation Theorem}:
+\[
+    nx[n] \overset{\mathcal{F}}{\longleftrightarrow} j\frac{dX(e^{j\omega})}{d\omega}
+\]
+
+% \vspace{0.3cm}
+\textbf{Proof Sketch}:
+\begin{align}
+    \frac{dX(e^{j\omega})}{d\omega} &= \frac{d}{d\omega}\sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n} \\
+    &= \sum_{n=-\infty}^{\infty} x[n](-jn)e^{-j\omega n} \\
+    &= -j\sum_{n=-\infty}^{\infty} nx[n]e^{-j\omega n}
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Applications}:
+\begin{itemize}
+    \item Finding moments of sequences
+    \item Analyzing group delay of filters
+    \item Computing derivatives of frequency response
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Parseval's Theorem}
+\textbf{Energy Conservation}:
+\[
+    E = \sum_{n=-\infty}^{\infty} |x[n]|^2 = \frac{1}{2\pi} \int_{-\pi}^{\pi} |X(e^{j\omega})|^2 d\omega
+\]
+
+% \vspace{0.3cm}
+\textbf{Interpretation}:
+\begin{itemize}
+    \item Total energy in time domain = Total energy in frequency domain
+    \item $|X(e^{j\omega})|^2$ is the \textbf{energy density spectrum}
+    \item Shows how energy is distributed across frequencies
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{General Form}:
+\[
+    \sum_{n=-\infty}^{\infty} x[n]y^*[n] = \frac{1}{2\pi} \int_{-\pi}^{\pi} X(e^{j\omega})Y^*(e^{j\omega}) d\omega
+\]
+
+% \vspace{0.3cm}
+\textbf{Application}: Signal power calculation, filter energy analysis
+\end{frame}
+
+\begin{frame}{The Convolution Theorem}
+\textbf{Time Domain Convolution $\leftrightarrow$ Frequency Domain Multiplication}:
+\[
+    y[n] = x[n] * h[n] \overset{\mathcal{F}}{\longleftrightarrow} Y(e^{j\omega}) = X(e^{j\omega})H(e^{j\omega})
+\]
+
+% \vspace{0.3cm}
+\textbf{Why This Works}:
+\begin{itemize}
+    \item Complex exponentials are eigenfunctions of LTI systems
+    \item Input $e^{j\omega n}$ produces output $H(e^{j\omega})e^{j\omega n}$
+    \item By superposition, each frequency component is scaled by $H(e^{j\omega})$
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{Practical Impact}:
+\begin{itemize}
+    \item Convolution (complex operation) $\rightarrow$ Multiplication (simple)
+    \item Foundation for frequency-domain filtering
+    \item Basis for fast convolution algorithms
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}{The Modulation (Windowing) Theorem}
+\textbf{Time Domain Multiplication $\leftrightarrow$ Frequency Domain Convolution}:
+\[
+    y[n] = x[n]w[n] \overset{\mathcal{F}}{\longleftrightarrow} Y(e^{j\omega}) = \frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\theta})W(e^{j(\omega-\theta)})d\theta
+\]
+
+% \vspace{0.3cm}
+\textbf{Key Points}:
+\begin{itemize}
+    \item This is \textbf{periodic convolution} (circular convolution)
+    \item Integration over one period only
+    \item Dual to the convolution theorem
+\end{itemize}
+
+% \vspace{0.3cm}
+\textbf{Applications}:
+\begin{itemize}
+    \item \textbf{Windowing}: Multiplying by window function in time domain
+    \item \textbf{Modulation}: Shifting spectrum by multiplication with $e^{j\omega_0 n}$
+    \item \textbf{Spectral analysis}: Effect of finite-length observation
+\end{itemize}
+
+
+\end{frame}
+
+\section{Examples}
+
+
+\begin{frame}{Example: Using Tables and Theorems}
+\textbf{Problem}: Find DTFT of $x[n] = a^n u[n-5]$
+\end{frame}
+
+
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example: Using Tables and Theorems}
+\textbf{Problem}: Find DTFT of $x[n] = a^n u[n-5]$
+
+% \vspace{0.3cm}
+
+  \textbf{Solution}:
+  \begin{enumerate}
+      \item Start with known transform: $a^n u[n] \leftrightarrow \frac{1}{1-ae^{-j\omega}}$
+      
+      \item Apply time-shifting theorem:
+      \[
+          a^n u[n-5] \leftrightarrow e^{-j5\omega} \cdot \frac{1}{1-ae^{-j\omega}}
+      \]
+      
+      \item Account for the factor $a^5$:
+      \[
+          x[n] = a^5 \cdot a^{n-5} u[n-5]
+      \]
+      
+      \item Final result:
+      \[
+          X(e^{j\omega}) = \frac{a^5 e^{-j5\omega}}{1-ae^{-j\omega}}
+      \]
+  \end{enumerate}
+\end{frame}
+}
+
+
+\begin{frame}{Example: Inverse Transform Using Partial Fractions}
+\textbf{Given}: $X(e^{j\omega}) = \frac{1}{(1-ae^{-j\omega})(1-be^{-j\omega})}$
+\end{frame}
+
+
+\ifthenelse{\boolean{showresults}}{
+  \begin{frame}{Example: Inverse Transform Using Partial Fractions}
+  \textbf{Given}: $X(e^{j\omega}) = \frac{1}{(1-ae^{-j\omega})(1-be^{-j\omega})}$
+
+  % \vspace{0.3cm}
+  \textbf{Partial Fraction Expansion}:
+  \[
+      X(e^{j\omega}) = \frac{A}{1-ae^{-j\omega}} + \frac{B}{1-be^{-j\omega}}
+  \]
+
+  % \vspace{0.3cm}
+  \textbf{Finding Constants}:
+  \begin{itemize}
+      \item $A = \frac{a}{a-b}$ (residue at $e^{j\omega} = a$)
+      \item $B = \frac{-b}{a-b}$ (residue at $e^{j\omega} = b$)
+  \end{itemize}
+
+  % \vspace{0.3cm}
+  \textbf{Inverse Transform}:
+  \[
+      x[n] = \frac{a}{a-b} a^n u[n] - \frac{b}{a-b} b^n u[n]
+  \]
+
+  % \vspace{0.3cm}
+  \textbf{Key Technique}: Decompose complex transforms into simpler known forms
+  \end{frame}
+}
+
+
+
+
+
+\begin{frame}{Example: Highpass Filter Design}
+\textbf{Desired Frequency Response}:
+\[
+    H(e^{j\omega}) = \begin{cases}
+        e^{-j\omega n_d}, & \omega_c < |\omega| < \pi \\
+        0, & |\omega| < \omega_c
+    \end{cases}
+\]
+
+% \vspace{0.3cm}
+\textbf{Approach}: Express as $H(e^{j\omega}) = e^{-j\omega n_d}(1 - H_{lp}(e^{j\omega}))$
+
+\end{frame}
+
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example: Highpass Filter Design}
+\textbf{Desired Frequency Response}:
+\[
+    H(e^{j\omega}) = \begin{cases}
+        e^{-j\omega n_d}, & \omega_c < |\omega| < \pi \\
+        0, & |\omega| < \omega_c
+    \end{cases}
+\]
+
+% \vspace{0.3cm}
+\textbf{Approach}: Express as $H(e^{j\omega}) = e^{-j\omega n_d}(1 - H_{lp}(e^{j\omega}))$
+
+% \vspace{0.3cm}
+\textbf{Impulse Response}:
+\begin{align}
+    h[n] &= \delta[n-n_d] - h_{lp}[n-n_d] \\
+    &= \delta[n-n_d] - \frac{\sin(\omega_c(n-n_d))}{\pi(n-n_d)}
+\end{align}
+
+% \vspace{0.3cm}
+\textbf{Design Insights}:
+\begin{itemize}
+    \item Linear phase: $e^{-j\omega n_d}$ (constant group delay)
+    \item Noncausal for $n_d < \infty$
+    \item Practical implementation requires windowing/truncation
+\end{itemize}
+\end{frame}
+}
+
+
+
+
+
+\begin{frame}{Example: Solving Difference Equations}
+\textbf{System}: $y[n] - \frac{1}{2}y[n-1] = x[n] - \frac{1}{4}x[n-1]$
+
+% \vspace{0.3cm}
+\textbf{Finding Frequency Response}:
+\begin{enumerate}
+    \item Apply DTFT to both sides:
+    % \[
+    %     Y(e^{j\omega}) - \frac{1}{2}e^{-j\omega}Y(e^{j\omega}) = X(e^{j\omega}) - \frac{1}{4}e^{-j\omega}X(e^{j\omega})
+    % \]
+    
+    \item Factor and solve:
+    % \[
+    %     H(e^{j\omega}) = \frac{Y(e^{j\omega})}{X(e^{j\omega})} = \frac{1 - \frac{1}{4}e^{-j\omega}}{1 - \frac{1}{2}e^{-j\omega}}
+    % \]
+    
+    \item Partial fractions:
+    % \[
+    %     H(e^{j\omega}) = \frac{1}{1 - \frac{1}{2}e^{-j\omega}} - \frac{\frac{1}{4}e^{-j\omega}}{1 - \frac{1}{2}e^{-j\omega}}
+    % \]
+
+   \item Inverse Transform:
+
+  
+\end{enumerate}
+\end{frame}
+
+
+\ifthenelse{\boolean{showresults}}{
+  \begin{frame}{Example: Solving Difference Equations}
+  \textbf{System}: $y[n] - \frac{1}{2}y[n-1] = x[n] - \frac{1}{4}x[n-1]$
+
+  % \vspace{0.3cm}
+  \textbf{Finding Frequency Response}:
+  \begin{enumerate}
+      \item Apply DTFT to both sides:
+      \[
+          Y(e^{j\omega}) - \frac{1}{2}e^{-j\omega}Y(e^{j\omega}) = X(e^{j\omega}) - \frac{1}{4}e^{-j\omega}X(e^{j\omega})
+      \]
+      
+      \item Factor and solve:
+      \[
+          H(e^{j\omega}) = \frac{Y(e^{j\omega})}{X(e^{j\omega})} = \frac{1 - \frac{1}{4}e^{-j\omega}}{1 - \frac{1}{2}e^{-j\omega}}
+      \]
+      
+      \item Partial fractions:
+      \[
+          H(e^{j\omega}) = \frac{1}{1 - \frac{1}{2}e^{-j\omega}} - \frac{\frac{1}{4}e^{-j\omega}}{1 - \frac{1}{2}e^{-j\omega}}
+      \]
+  \end{enumerate}
+  \end{frame}
+
+  \begin{frame}{Example: Impulse Response from Difference Equation}
+    \textbf{Continuing from previous slide}:
+
+    % \vspace{0.3cm}
+    \textbf{Inverse Transform}:
+    \begin{itemize}
+        \item First term: $\left(\frac{1}{2}\right)^n u[n]$
+        \item Second term uses time-shifting: $-\frac{1}{4}\left(\frac{1}{2}\right)^{n-1} u[n-1]$
+    \end{itemize}
+
+    % \vspace{0.3cm}
+    \textbf{Final Result}:
+    \[
+        h[n] = \left(\frac{1}{2}\right)^n u[n] - \frac{1}{4}\left(\frac{1}{2}\right)^{n-1} u[n-1]
+    \]
+
+    % \vspace{0.3cm}
+    \textbf{Verification}:
+    \begin{itemize}
+        \item $h[0] = 1 - 0 = 1$ 
+        \item $h[1] = \frac{1}{2} - \frac{1}{4} = \frac{1}{4}$ 
+        \item System is causal and stable ($|a| = \frac{1}{2} < 1$)
+    \end{itemize}
+\end{frame}
+}
+
+
+
+
+
+\section{Summary}
+
+\begin{frame}{Summary of DTFT}
+\textbf{Key Concepts}:
+\begin{enumerate}
+    \item \textbf{DTFT Pair}:
+    \begin{itemize}
+        \item Analysis: $X(e^{j\omega}) = \sum_{n=-\infty}^{\infty} x[n]e^{-j\omega n}$
+        \item Synthesis: $x[n] = \frac{1}{2\pi}\int_{-\pi}^{\pi} X(e^{j\omega})e^{j\omega n}d\omega$
+    \end{itemize}
+    
+    \item \textbf{Convergence}:
+    \begin{itemize}
+        \item Absolute summability $\rightarrow$ uniform convergence
+        \item Square summability $\rightarrow$ mean-square convergence
+    \end{itemize}
+    
+    \item \textbf{Symmetry Properties}:
+    \begin{itemize}
+        \item Real sequences have conjugate-symmetric DTFTs
+        \item Even/odd decomposition in both domains
+    \end{itemize}
+    
+    \item \textbf{Transform Theorems}:
+    \begin{itemize}
+        \item Convolution $\leftrightarrow$ Multiplication
+        \item Time shift $\leftrightarrow$ Linear phase
+        \item Differentiation, modulation, Parseval's theorem
+    \end{itemize}
+\end{enumerate}
+\end{frame}
+
+\begin{frame}{Important Transform Pairs}
+\begin{center}
+\begin{tabular}{|l|l|}
+\hline
+\textbf{Sequence} & \textbf{DTFT} \\
+\hline
+$\delta[n]$ & $1$ \\
+$\delta[n-n_0]$ & $e^{-j\omega n_0}$ \\
+$a^n u[n]$, $|a|<1$ & $\frac{1}{1-ae^{-j\omega}}$ \\
+$e^{j\omega_0 n}$ & $2\pi\sum_r \delta(\omega-\omega_0+2\pi r)$ \\
+$\cos(\omega_0 n)$ & $\pi\sum_r[\delta(\omega-\omega_0+2\pi r)+\delta(\omega+\omega_0+2\pi r)]$ \\
+$\frac{\sin(\omega_c n)}{\pi n}$ & Ideal lowpass filter \\
+$u[n]$ & $\frac{1}{1-e^{-j\omega}} + \pi\sum_r\delta(\omega+2\pi r)$ \\
+\hline
+\end{tabular}
+\end{center}
+
+% \vspace{0.3cm}
+\textbf{Remember}: DTFT is periodic with period $2\pi$, so we only need to consider $\omega \in [-\pi, \pi]$
+\end{frame}
+
+
+
+\end{document}
+
+

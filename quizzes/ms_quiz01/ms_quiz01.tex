@@ -1,0 +1,109 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{ifthen}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Digital Signal Processing: Quiz 1}} % Add institution and make title larger
+\date{\vspace{-0.5cm}\small\textbf{August 29, 2025}} % Format the date professionally
+
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(10 points)} Consider the frequency response
+    \[
+    H(e^{j\omega}) = \frac{1 + e^{-j\omega}}{3 - 2e^{-j\omega}}
+    \]
+     Find the \textbf{real part} of $H(e^{j\omega})$ as a function of $\omega$. \textbf{Note:} don't leave any $j$'s, $i$'s, $\sqrt{-1}$'s, etc. \\
+    
+    
+    % \vspace{8cm}
+
+    \ifthenelse{\boolean{showresults}}{
+        \textbf{Solution:}
+    
+            First, express all terms in terms of sines and cosines:
+            \[
+            e^{-j\omega} = \cos\omega - j\sin\omega
+            \]
+            \[
+            1 + e^{-j\omega} = 1 + \cos\omega - j\sin\omega
+            \]
+            \[
+            3 - 2e^{-j\omega} = 3 - 2\cos\omega + j2\sin\omega
+            \]
+            Let $A = 1 + \cos\omega$, $B = -\sin\omega$, $C = 3 - 2\cos\omega$, $D = 2\sin\omega$,
+            so
+            \[
+            H(e^{j\omega}) = \frac{A + jB}{C + jD}
+            \]
+            Multiply numerator and denominator by the complex conjugate of the denominator:
+            \[
+            (C - jD)
+            \]
+            \[
+            H(e^{j\omega}) = \frac{(A + jB)(C - jD)}{(C + jD)(C - jD)}
+            \]
+            \[
+            = \frac{AC + BD + j(BC - AD)}{C^2 + D^2}
+            \]
+            The real part is:
+            \[
+            \operatorname{Re}\left\{ H(e^{j\omega}) \right\} = \frac{AC + BD}{C^2 + D^2}
+            \]
+            Substitute back:
+            \[
+            AC = (1 + \cos\omega)(3 - 2\cos\omega) = 3 + 3\cos\omega - 2\cos\omega - 2\cos^2\omega = 3 + \cos\omega - 2\cos^2\omega
+            \]
+            \[
+            BD = (-\sin\omega)(2\sin\omega) = -2\sin^2\omega
+            \]
+            \[
+            AC + BD = 3 + \cos\omega - 2\cos^2\omega - 2\sin^2\omega
+            \]
+            Recall that $\sin^2\omega + \cos^2\omega = 1$, so:
+            \[
+            -2\cos^2\omega - 2\sin^2\omega = -2(\cos^2\omega + \sin^2\omega) = -2
+            \]
+            \[
+            AC + BD = 3 + \cos\omega - 2 = 1 + \cos\omega
+            \]
+            The denominator:
+            \[
+            C^2 + D^2 = (3 - 2\cos\omega)^2 + [2\sin\omega]^2 = 9 -12\cos\omega + 4\cos^2\omega + 4\sin^2\omega
+            \]
+            \[
+            = 9 - 12\cos\omega + 4(\cos^2\omega + \sin^2\omega)
+            \]
+            \[
+            = 9 - 12\cos\omega + 4(1) = 13 - 12\cos\omega
+            \]
+            Therefore,
+            \[
+            \boxed{
+            \operatorname{Re}\left\{ H(e^{j\omega}) \right\} = \frac{1 + \cos\omega}{13 - 12\cos\omega}
+            }
+            \]
+        
+    }{}
+    \end{enumerate}
+
+\end{document}

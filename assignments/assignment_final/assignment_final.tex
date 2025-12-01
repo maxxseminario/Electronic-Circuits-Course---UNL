@@ -1,0 +1,121 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ECEN 463 - Digital Signal Processing}
+\fancyhead[R]{Fall 2025}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Title page information
+\title{\vspace{-1cm}\textbf{DSP Final Project}}
+\author{ECEN 463 - Digital Signal Processing \\ University of Nebraska-Lincoln \\ Instructor: Maxx Seminario}
+\date{Due: December 17, 2025 by 11:59 PM}
+
+\begin{document}
+
+\maketitle
+
+\section*{Project Overview}
+
+This final project allows you to explore a DSP topic of your interest in depth. This final project has the weight of 3 standard assignments: the proposal is worth 100 assignment points, and the final report is worth 200 assignment points.
+
+\section*{Submission Requirements}  
+
+\begin{itemize}
+    \item Submit a \textbf{single PDF report}
+    \item Include your code as an appendix or separate file
+    \item As always, if you would like to take advantage, IEEE formatting templates available at: \url{https://www.ieee.org/conferences/publishing/templates.html}
+\end{itemize}
+
+\section*{Project Ideas}
+
+Select \textbf{one} of the following projects, or propose your own (both of which need to be approved via the project proposal).
+
+\begin{itemize}
+    \item \textbf{Least Squares FIR Filter Design:} Design an arbitrary linear phase FIR filter using least squares method. Include at least 40 dB of range in your target magnitude response. Demonstrate target response versus actual response.
+    
+    \item \textbf{Sigma-Delta ADC Simulation:} Take a sampled signal, upsample it (like HW 5), then quantize with a 1-bit Sigma-Delta ADC model. Filter and downsample the 1-bit output back to the original rate. Compare to original signal. How many bits resolution do you have?
+    
+    \item \textbf{Adaptive Filter Implementation:} Implement adaptive filtering for noise cancellation.
+    
+    \item \textbf{Audio Effects Processor:} Design and implement digital audio effects such as reverb, pitch shifting, or parametric equalization.
+    
+    \item \textbf{Multirate Filter Bank:} Design and analyze a multirate filter bank system for signal decomposition and reconstruction.
+    
+    \item \textbf{Speech Analysis System:} Implement speech processing techniques such as formant analysis, pitch detection, or compression.
+    
+    \item \textbf{Image Processing Application:} Apply 2D filtering techniques for edge detection, noise reduction, or feature enhancement.
+    
+    \item \textbf{Your Own Idea:} Propose a DSP project related to course topics. Submit a proposal for approval before December 10.
+\end{itemize}
+
+\section*{Project Proposal}
+
+\textbf{Project proposals are due no later than December 10, 2025.} These may be a single paragraph describing what your project is. I will approve these as they come in, so submit sooner if you would like to start the project sooner.
+
+\section*{Report Structure}
+
+Your report should include the following sections:
+
+\begin{enumerate}
+    \item \textbf{Introduction:} Brief overview of your chosen project and objectives
+    
+    \item \textbf{Theory:} Relevant equations and DSP concepts used in your design
+    
+    \item \textbf{Implementation:} Description of your code and design choices
+    
+    \item \textbf{Results:} Plots, measurements, and analysis of system performance
+    \begin{itemize}
+        \item Include properly labeled figures with captions
+        \item Show frequency responses, time-domain signals, or spectrograms as appropriate
+        \item Provide quantitative performance metrics
+    \end{itemize}
+    
+    \item \textbf{Discussion:} Interpretation of results, design tradeoffs, and challenges encountered
+    
+    \item \textbf{Conclusion:} Summary of findings and potential improvements
+    
+    \item \textbf{Appendix:} Complete code.
+\end{enumerate}
+
+\section*{Evaluation Criteria}
+
+Your project will be evaluated based on:
+
+\begin{itemize}
+    \item \textbf{Technical correctness (40\%):} Proper implementation of DSP concepts
+    \item \textbf{Analysis (30\%):} Quality of results, plots, and performance evaluation
+    \item \textbf{Clarity (20\%):} Organization and conciseness of written explanations
+    \item \textbf{Code quality (10\%):} Readability, comments, and efficiency
+\end{itemize}
+
+\section*{Additional Notes}
+
+\begin{itemize}
+    \item Value concision: technical reports should be complete yet brief
+    \item All plots must include axes labels, titles, and legends
+    \item Cite any external resources or references used
+    \item Come to office hours with questions—don't wait until the last week
+\end{itemize}
+
+\section*{Academic Integrity}
+
+This is an individual project. While you may discuss general concepts with classmates, all submitted work must be your own. Using code from online sources without citation or copying from others constitutes academic dishonesty and will result in a failing grade for the project.
+
+\vspace{1cm}
+\noindent{Good luck! I look forward to seeing your projects.}
+
+\end{document}
