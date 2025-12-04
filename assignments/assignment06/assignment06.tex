@@ -1,0 +1,329 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{booktabs}
+\usepackage{hyperref}
+\usepackage{listings}
+
+% MATLAB code listing settings
+\lstdefinestyle{matlabstyle}{
+    language=Matlab,
+    basicstyle=\footnotesize\ttfamily,
+    keywordstyle=\color{blue},
+    commentstyle=\color{green!60!black},
+    stringstyle=\color{purple},
+    numbers=left,
+    numberstyle=\tiny\color{gray},
+    stepnumber=1,
+    numbersep=8pt,
+    backgroundcolor=\color{gray!5},
+    frame=single,
+    rulecolor=\color{black!30},
+    breaklines=true,
+    breakatwhitespace=false,
+    tabsize=4,
+    captionpos=b,
+    xleftmargin=2em,
+    framexleftmargin=1.5em,
+    showstringspaces=false
+}
+
+% Header and footer setup
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{ECEN 463 - Digital Signal Processing}
+\fancyhead[R]{Fall 2025}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+% Title page information
+\title{\vspace{-1cm}\textbf{Homework Assignment 6\\Digital Filter Design and Evaluation}}
+\author{ECEN 463 - Digital Signal Processing \\ University of Nebraska-Lincoln \\ Instructor: Maxx Seminario}
+\date{Due: December 12, 2025}
+\begin{document}
+
+\maketitle
+
+\section*{Assignment Overview}
+
+This MATLAB assignment focuses on the design, simulation, and performance evaluation of IIR and FIR digital filters. You will design bandpass filters using different design methods, analyze their frequency and time-domain characteristics, and evaluate their performance with various input signals.
+
+\section*{Instructions}
+
+\begin{itemize}
+    \item Complete all programming tasks with detailed MATLAB implementation
+    \item Submit your solutions as a \textbf{single PDF report} via Canvas
+    \item Attach your \textbf{MATLAB code as an appendix}
+    \item Include well-labeled plots with clear axes and titles
+    \item Provide concise descriptions of results with predictions and observations
+    \item A premium will be placed on \textbf{brief and complete} descriptions
+    \item IEEE formatting templates available at: \url{https://www.ieee.org/conferences/publishing/templates.html}
+\end{itemize}
+
+\section*{Problem Statement}
+
+Design and evaluate three bandpass filters using different design methodologies.  Assume a sampling rate of $F_s = 32$ kHz throughout this assignment.
+
+\subsection*{Filter Design Requirements}
+
+Design the following three bandpass filters with \textbf{identical specifications}:
+
+\begin{enumerate}[label=(\roman*)]
+    \item \textbf{Elliptical IIR Filter}
+    
+    \item \textbf{Chebyshev IIR Filter} (either Type I or Type II - your choice)
+    
+    \item \textbf{FIR Filter} with linear phase
+\end{enumerate}
+
+\subsection*{Filter Specifications}
+
+\subsubsection*{Specifications 1: Personalized Parameters}
+
+Your phone number can be written as: \textbf{1 (X$_1$,X$_2$,X$_3$) Y$_1$,Y$_2$,Y$_3$-Z$_1$,Z$_2$,Z$_3$,Z$_4$}
+
+\begin{itemize}
+    \item \textbf{Center Frequency ($f_c$):} Z$_1$,Z$_2$,Z$_3$,Z$_4$ Hz
+    \begin{itemize}
+        \item If Z$_1$ = 0, left-shift the digits and use Z$_2$,Z$_3$,Z$_4$,0 Hz
+        \item If Z$_2$ = 0, continue left-shifting as needed
+    \end{itemize}
+    
+    \item \textbf{Bandwidth (BW):} Y$_1$,Y$_2$,Y$_3$ Hz
+    \begin{itemize}
+        \item If Y$_1$ = 0, contact your phone provider for a new number
+    \end{itemize}
+\end{itemize}
+
+\subsubsection*{Specifications 2: Performance Parameters}
+
+You must choose the following parameters (use \textbf{same specifications for all three filters}):
+
+\begin{itemize}
+    \item \textbf{Stopband Attenuation:} $\geq 40$ dB (you choose the exact value)
+    \item \textbf{Passband Ripple:} $\leq 1$ dB (you choose the exact value)
+    \item \textbf{Stopband Frequencies:} You must define appropriate stopband edge frequencies based on your center frequency and bandwidth
+\end{itemize}
+
+\textbf{Note:} If your filters don't provide the specified magnitude response, relax your specifications slightly to avoid numerical issues.  Some phone number digit combinations may be challenging - don't hesitate to ask for assistance.
+
+\section*{Analysis Requirements}
+
+\subsection*{Part 1: Frequency Domain Analysis}
+
+For each of the three filters, generate and analyze:
+
+\begin{enumerate}
+    \item \textbf{Magnitude Response Plot}
+    \begin{itemize}
+        \item Linear and/or logarithmic (dB) scale
+        \item Clearly show passband, transition band, and stopband regions
+        \item Verify that specifications are met
+    \end{itemize}
+    
+    \item \textbf{Phase Response Plot}
+    \begin{itemize}
+        \item Show phase characteristics across the frequency range
+        \item Note any phase linearity (especially for FIR filter)
+    \end{itemize}
+    
+\end{enumerate}
+
+\subsection*{Part 2: Time Domain Performance Evaluation}
+
+Test each filter with sinusoidal inputs at three different frequencies:
+
+\begin{enumerate}
+    \item One sinusoid in the \textbf{passband}
+    \item One sinusoid in the \textbf{stopband}
+    \item One sinusoid in the \textbf{transition band}
+\end{enumerate}
+
+For each test:
+\begin{itemize}
+    \item Plot the output signal in the time domain
+    \item Compare the observed output with the expected result
+    \item Determine when each filter reaches \textbf{steady state}
+\end{itemize}
+
+\subsection*{Part 3: Impulse Response Analysis}
+
+For each filter:
+\begin{itemize}
+    \item Plot the complete impulse response - zoom in to evaluate the characteristics
+    \item Compare IIR vs. FIR responses
+    \item Include comments about observations in your write-up
+\end{itemize}
+
+\subsection*{Part 4: Random Noise Input Testing}
+
+Test all three filters with random noise input:
+\begin{itemize}
+    \item Generate white noise using \texttt{randn()}
+    \item Filter the noise and analyze in the time domain
+    \item Optionally, analyze in the frequency domain using \texttt{pwelch()}, Goldwave, Audacity, or other spectral analysis tools
+    \item Verify that the filter properly attenuates out-of-band noise
+    \item Have fun.
+\end{itemize}
+
+\newpage
+
+\section{Reference Code: FIR Lowpass Filter Design Example}
+
+The following MATLAB code demonstrates the design and visualization of an FIR lowpass filter using the \texttt{fir1()} function. 
+
+\begin{lstlisting}[style=matlabstyle, caption={FIR Lowpass Filter Design Example}]
+% Specifications
+fp = 929;          % passband edge in Hz
+Fs = 20000;        % sampling frequency
+Feby2 = Fs / 2;    % useful for our plotting ranges
+Rp = 1;            % passband ripple in dB
+Rs = 40;           % stop band attenuation in dB
+
+fdco = 1.2 * fp;   % design cut-off freq (-6dB point for FIR1)
+fst = fp * 1.5;    % stop band start frequency
+
+fpass = [0 fp fp]; % used for plotting specs below
+Rpass = [-Rp -Rp -Rs];
+
+fstop = [fst fst Feby2]; % used for plotting specs below
+Rstop = [-Rp -Rs -Rs];
+
+Wm = [fdco / Feby2]; % design cut-off spec in Matlab normalized freq
+
+% Nlo = 2/((fst - fdco)/Feby2);
+% N = ceil(Nlo);    % pick a filter length
+N = 128;
+
+% wblkbar = window(@blackmanharris, N+1);
+% BloN = fir1(N, Wm, wblkbar);
+
+BloN = fir1(N, Wm);
+[HlOW, fplot] = freqz(BloN, 1, 2^16, Fs);
+
+plot(fplot, 20*log10(abs(HlOW)), fpass, Rpass, 'r--', fstop, Rstop, 'r', 'linewidth', 2)
+axis([0 Feby2 -100 10])
+xlabel('frequency in Hz')
+ylabel('magnitude in dB')
+title('lowpass FIR filter')
+grid on
+legend('filter response', 'passband spec', 'stopband spec')
+\end{lstlisting}
+
+
+\newpage
+
+\section{Reference Code: IIR Bandpass Filter Design Example}
+
+The following MATLAB code demonstrates the design and visualization of IIR bandpass filters using multiple design methods.  
+
+\begin{lstlisting}[style=matlabstyle, caption={IIR Bandpass Filter Design Example}]
+% bandpass filter design
+% wp and ws here are normalized frequencies in the range [0 1],
+% where 1 corresponds to pi rad/sample (MATLAB's normalized freq).
+wp = [0.3 0.5]; % passband cutoff (fraction of Nyquist = 0..1)
+ws = [0.2 0.6]; % stopband start (fraction of Nyquist = 0..1)
+
+Rp = 1;  % passband amplitude variation in dB
+Rs = 30; % stopband amplitude attenuation in dB
+
+% Butterworth
+[N, Wn] = buttord(wp, ws, Rp, Rs);
+[b, a] = butter(N, Wn);
+
+% % Chebyshev Type 1 (ripple in passband)
+% [N, Wn] = cheb1ord(wp, ws, Rp, Rs);
+% [b, a] = cheby1(N, Rp, Wn);
+
+% % Chebyshev Type 2 (ripple in stopband)
+% [N, Wn] = cheb2ord(wp, ws, Rp, Rs);
+% [b, a] = cheby2(N, Rs, Wn);
+
+% % Elliptical (ripple in pass and stop bands)
+% [N, Wn] = ellipord(wp, ws, Rp, Rs);
+% [b, a] = ellip(N, Rp, Rs, Wn);
+
+[H, w] = freqz(b, a, 1024);
+
+plot(w/pi, 20*log10(abs(H)), 'b', ... 
+    [0 ws(1) ws(1)], [-Rs -Rs 0], 'r', ... 
+    [wp(1) wp(1) wp(2) wp(2)], [-1000 -Rp -Rp -1000], 'r', ...
+    [ws(2) ws(2) 1], [0 -Rs -Rs], 'r')
+axis([0 1 -2*Rs, 5])
+grid on
+xlabel('Matlab normalized freq')
+ylabel('Magnitude in dB')
+
+% Display order and coefficient sizes
+N
+size(b)
+size(a)
+\end{lstlisting}
+
+\vspace{1em}
+
+
+\newpage
+
+\section*{Report Requirements}
+
+Your write-up must include:
+
+\begin{enumerate}
+    \item \textbf{Filter Specifications:}
+    \begin{itemize}
+        \item Center frequency and bandwidth
+        \item Passband ripple, stopband attenuation
+        \item Passband and stopband edge frequencies
+        \item Resulting filter orders for each design
+    \end{itemize}
+    
+    \item \textbf{Design Methodology:}
+    \begin{itemize}
+        \item Brief description of design approach for each filter type
+        
+    \end{itemize}
+    
+    \item \textbf{Frequency Response Plots:}
+    \begin{itemize}
+        \item Magnitude and phase for all three filters
+        \item Consider plotting multiple curves on one plot for comparison
+        \item Ensure all plots have complete labels
+    \end{itemize}
+    
+    \item \textbf{Time Domain Results:}
+    \begin{itemize}
+        \item Sinusoidal input/output plots
+        \item Steady-state analysis
+        \item Impulse response plots and observations
+        \item Random noise filtering results
+    \end{itemize}
+    
+    \item \textbf{Analysis and Observations:}
+    \begin{itemize}
+        \item Compare filter performance (IIR vs.  FIR)
+        \item Discuss computational complexity (filter orders)
+        \item Note any interesting characteristics or unexpected results
+        \item Predictions vs. actual results
+    \end{itemize}
+    
+    \item \textbf{MATLAB Code:}
+    \begin{itemize}
+        \item Attach program at the end of the report
+        \item Include comments in your code
+    \end{itemize}
+\end{enumerate}
+
+
+\section*{Academic Integrity}
+
+This is an individual assignment. While you may discuss general concepts with classmates, all submitted work must be your own. Copying solutions from other students, online sources, or solution manuals constitutes academic dishonesty and will result in a failing grade for the assignment and potential disciplinary action.
+
+\end{document}

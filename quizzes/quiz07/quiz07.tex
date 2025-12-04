@@ -1,0 +1,72 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tikz}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Digital Signal Processing: Quiz 7}} 
+\date{\vspace{-0.5cm}\small\textbf{December 3, 2025}}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+\vspace{0.5cm}
+
+In digital signal processing, upsampling (interpolation) is an operation used to increase the sampling rate of a discrete-time signal by an integer factor $L$.  This operation involves inserting $L-1$ zero-valued samples between consecutive samples of the original sampled signal, followed by low-pass filtering to remove spectral copies (or images). 
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(10 points)} Discuss the advantages of upsampling in digital signal processing applications. Your response should address the following:
+    \begin{enumerate}[label=(\alph*)]
+        \item \textbf{(6 points)} Describe a practical application or scenario where upsampling is beneficial, explaining the specific advantage gained.
+        \item \textbf{(2 points)} Explain how upsampling affects the frequency domain representation of a signal.
+        \item \textbf{(2 points)} Identify one potential challenge or consideration that must be addressed when implementing upsampling in a real-world system.
+    \end{enumerate}
+\end{enumerate}
+
+\vspace{10cm}
+
+% Written solutions (only if showresults is true)
+\ifthenelse{\boolean{showresults}}{
+    \textbf{Solution:}
+    
+    \textbf{(a) Practical Applications:}
+    
+    \begin{itemize}
+        \item \textbf{Sample Rate Conversion:} Upsampling enables conversion between different digital audio/video standards (e.g., converting 44.1 kHz audio to 48 kHz).  This allows interoperability between systems with different native sampling rates.
+        
+        \item \textbf{DAC Interface and Reconstruction:} Upsampling before digital-to-analog conversion improves reconstruction quality by moving spectral images farther from the baseband, simplifying analog anti-imaging filter requirements and reducing analog filter complexity/cost.
+        
+        \item \textbf{Improved Resolution in Signal Processing:} Higher sampling rates provide finer time resolution for operations like time-delay estimation, synchronization, and accurate signal alignment in communication systems.
+    \end{itemize}
+    
+    \vspace{0.5cm}
+    
+    \textbf{(b) Frequency Domain Effects:}
+    
+    Upsampling by factor $L$ increases the sampling rate from $F_s$ to $LF_s$, which extends the Nyquist frequency from $\pi$ to $L\pi$ (or from $F_s/2$ to $LF_s/2$ in Hz). In the frequency domain, the original spectrum is compressed by factor $L$ and replicated at intervals of $2\pi$, creating spectral images.  The interpolation filter removes these images, leaving only the desired baseband spectrum.  This provides a wider guard band between the signal bandwidth and the new Nyquist frequency, relaxing anti-aliasing requirements.
+    
+    \vspace{0.5cm}
+    
+    \textbf{(c) Implementation Challenge:}
+    
+    Upsampling requires a high-quality low-pass interpolation filter with sharp cutoff characteristics to effectively suppress spectral images while preserving the original signal content.  Designing and implementing such filters (especially with linear phase) can be computationally expensive and may introduce significant processing latency. Additionally, the upsampling operation increases the data rate by factor $L$, increasing computational and memory requirements for subsequent processing stages.
+}{}
+
+\end{document}

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  1 DEC 2025 12:40
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  3 DEC 2025 08:34
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -195,229 +195,229 @@ Package pdflscape Info: Auto-detected driver: pdftex on input line 81.
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=1, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf  used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=1, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf  used on input line 68.
 (pdftex.def)             Requested size: 455.24268pt x 256.07405pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=3, page=1, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=3, page=1, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=4, page=2, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 2>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page2 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=4, page=2, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 2>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page2 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 2>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page2 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 2>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page2 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=5, page=3, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 3>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page3 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=5, page=3, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 3>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page3 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 3>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page3 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 3>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page3 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=6, page=4, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 4>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page4 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=6, page=4, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 4>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page4 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 4>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page4 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 4>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page4 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 2>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page2 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 2>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page2 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 3>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page3 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 3>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page3 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 4>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page4 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 4>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page4 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [1
 
 
- <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf>]
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=103, page=5, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 5>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page5 used on input line 64.
+ <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf>]
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=85, page=5, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 5>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page5 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 5>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page5 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 5>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page5 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=104, page=6, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 6>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page6 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=86, page=6, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 6>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page6 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 6>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page6 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 6>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page6 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=105, page=7, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 7>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page7 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=87, page=7, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 7>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page7 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 7>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page7 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 7>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page7 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=106, page=8, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 8>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page8 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=88, page=8, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 8>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page8 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 8>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page8 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 8>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page8 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 5>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page5 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 5>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page5 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 6>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page6 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 6>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page6 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 7>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page7 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 7>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page7 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 8>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page8 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 8>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page8 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [2
 
- <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf>]
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=110, page=9, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 9>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page9 used on input line 64.
+ <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf>]
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=116, page=9, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 9>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page9 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 9>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page9 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 9>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page9 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=111, page=10, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 10>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page10 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=117, page=10, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 10>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page10 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 10>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page10 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 10>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page10 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=112, page=11, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 11>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page11 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=118, page=11, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 11>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page11 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 11>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page11 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 11>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page11 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=113, page=12, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 12>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page12 used on input line 64.
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=119, page=12, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 12>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page12 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 12>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page12 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 12>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page12 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 9>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page9 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 9>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page9 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 10>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page10 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 10>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page10 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 11>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page11 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 11>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page11 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 12>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page12 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 12>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page12 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [3
 
- <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf> <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf>]
-<../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, id=117, page=13, 455.24379pt x 256.07469pt>
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 13>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page13 used on input line 64.
+ <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf> <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf>]
+<../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, id=147, page=13, 455.24379pt x 256.07469pt>
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 13>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page13 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 13>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page13 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 13>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page13 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 1>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page1 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 1>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page1 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 
 
-File: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf Graphic file (type pdf)
-<use ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf, page 13>
-Package pdftex.def Info: ../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf , page13 used on input line 64.
+File: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf Graphic file (type pdf)
+<use ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf, page 13>
+Package pdftex.def Info: ../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf , page13 used on input line 68.
 (pdftex.def)             Requested size: 364.19553pt x 204.86002pt.
 [4
 
- <../lecture16_IIR_filtering/lecture16_IIR_filtering.pdf>] (./ms_lecture_master.aux)
+ <../lecture17_FIR_filtering/lecture17_FIR_filtering.pdf>] (./ms_lecture_master.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
@@ -431,11 +431,11 @@ Here is how much of TeX's memory you used:
  626825 words of font info for 40 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,19n,79p,417b,467s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on ms_lecture_master.pdf (4 pages, 263098 bytes).
+<c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam7.pfb>
+Output written on ms_lecture_master.pdf (4 pages, 247761 bytes).
 PDF statistics:
- 138 PDF objects out of 1000 (max. 8388607)
- 86 compressed objects within 1 object stream
+ 174 PDF objects out of 1000 (max. 8388607)
+ 111 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
