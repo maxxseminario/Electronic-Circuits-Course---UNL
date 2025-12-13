@@ -118,7 +118,7 @@ where $k = 1.38 \times 10^{-23}$ J/K is Boltzmann's constant, $T$ is the absolut
 
 \subsubsection{Forward-Bias Operation}
 
-When a positive voltage is applied to the anode relative to the cathode ($v_D > 0$), the diode is forward biased. In this condition, the depletion region narrows, allowing majority carriers to cross the junction and conduct current. The exponential term in Equation \ref{eq: shockley} dominates, causing the current to increase exponentially with voltage. For silicon diodes, negligible current flows until the forward voltage reaches approximately 0.5 V, after which current increases rapidly.  The voltage at which significant current begins to flow is often referred to as the "turn-on" voltage or "cut-in" voltage, typically around 0.6 to 0.7 V for silicon diodes at room temperature.  Once the diode is conducting appreciable current (several milliamperes or more), the voltage across it remains relatively constant at approximately 0.7 V, a value commonly used in circuit analysis for simplification.
+When a positive voltage is applied to the anode relative to the cathode ($v_D > 0$), the diode is forward biased. In this condition, the depletion region narrows, allowing majority carriers to cross the junction and conduct current. The exponential term in Equation \ref{eq:shockley} dominates, causing the current to increase exponentially with voltage. For silicon diodes, negligible current flows until the forward voltage reaches approximately 0.5 V, after which current increases rapidly.  The voltage at which significant current begins to flow is often referred to as the "turn-on" voltage or "cut-in" voltage, typically around 0.6 to 0.7 V for silicon diodes at room temperature.  Once the diode is conducting appreciable current (several milliamperes or more), the voltage across it remains relatively constant at approximately 0.7 V, a value commonly used in circuit analysis for simplification.
 
 \subsubsection{Reverse-Bias Operation}
 
@@ -130,7 +130,7 @@ While the large-signal behavior of a diode is described by the nonlinear Shockle
 
 \begin{equation}
     r_d = \frac{dv_D}{di_D} \bigg|_{Q} = \frac{nV_T}{I_D}
-    \label{eq: dynamic_r}
+    \label{eq:dynamic_r}
 \end{equation}
 
 where $I_D$ is the DC bias current at the operating point.  This equation shows that the small signal resistance decreases as the DC current increases, which is an important consideration in amplifier design and small-signal analysis. For example, at a forward current of 1 mA and assuming $n = 1$, the small signal resistance would be approximately 26 $\Omega$ at room temperature. 

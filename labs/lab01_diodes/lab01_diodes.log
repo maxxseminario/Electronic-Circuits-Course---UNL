@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.2)  13 DEC 2025 16:54
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.2)  13 DEC 2025 16:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1027,13 +1027,10 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 ====>grabbed math=macro:->T
 ====>grabbed math=macro:->q = 1.60 \times 10^{-19}
 ====>grabbed math=macro:->v_D > 0
-
-LaTeX Warning: Reference `eq: shockley' on page 2 undefined on input line 121.
-
 ====>grabbed math=macro:->v_D < 0
 ====>grabbed math=macro:->i_D \approx -I_S
 ====>grabbed math=macro:->I_S
-====>grabbed math=macro:->r_d = \frac {dv_D}{di_D} \bigg |_{Q} = \frac {nV_T}{I_D} \label {eq: dynamic_r}
+====>grabbed math=macro:->r_d = \frac {dv_D}{di_D} \bigg |_{Q} = \frac {nV_T}{I_D} \label {eq:dynamic_r}
 ====>grabbed math=macro:->I_D
 ====>grabbed math=macro:->n = 1
 ====>grabbed math=macro:->\Omega 
@@ -1051,7 +1048,7 @@ LaTeX Warning: Reference `eq: shockley' on page 2 undefined on input line 121.
 ====>grabbed math=macro:->V_D
 ====>grabbed math=macro:->I_D
 ====>grabbed math=macro:->I_D = V_R / R
-Floatstructure:169
+Floatstructure:170
 ====>grabbed math=macro:->\vphantom {+}-
 ====>grabbed math=macro:->+
 ====>grabbed math=macro:->V_S
@@ -1076,15 +1073,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
 ====>grabbed math=macro:->r_d \approx \frac {\Delta V_D}{\Delta I_D}
 ====>grabbed math=macro:->\Delta V_D
 ====>grabbed math=macro:->\Delta I_D
-
-LaTeX Warning: Reference `eq:dynamic_r' on page 4 undefined on input line 211.
-
 ====>grabbed math=macro:->n
 
 
 [4]
 ====>grabbed math=macro:->\Omega 
-Floatstructure:219
+Floatstructure:221
 ====>grabbed math=macro:->\vphantom {+}-
 ====>grabbed math=macro:->+
 ====>grabbed math=macro:->V_S
@@ -1099,7 +1093,7 @@ Floatstructure:219
 ====>grabbed math=macro:->I_D
 ====>grabbed math=macro:->I_S
 ====>grabbed math=macro:->\Omega 
-Floatstructure:250
+Floatstructure:252
 ====>grabbed math=macro:->\vphantom {+}-
 ====>grabbed math=macro:->+
 ====>grabbed math=macro:->V_S
@@ -1158,12 +1152,9 @@ L3 programming layer <2025-07-20>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~351 structure objects
-(tagpdf)             with ~326 'MC' leaf nodes.
+(tagpdf)             Writing out ~353 structure objects
+(tagpdf)             with ~330 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 
 Package tagpdf Info: writing ParentTree
@@ -1175,18 +1166,18 @@ Package tagpdf Info: writing StructElems
 Package tagpdf Info: writing Root
  ) 
 Here is how much of TeX's memory you used:
- 67533 strings out of 467801
- 1768359 string characters out of 5436090
- 2841213 words of memory out of 5000000
- 95297 multiletter control sequences out of 15000+600000
+ 67561 strings out of 467801
+ 1769171 string characters out of 5436090
+ 2842067 words of memory out of 5000000
+ 95325 multiletter control sequences out of 15000+600000
  657044 words of font info for 79 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,12n,100p,1076b,1311s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,12n,100p,1076b,1331s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/pdftex/pdftexspace.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on lab01_diodes.pdf (7 pages, 283231 bytes).
+Output written on lab01_diodes.pdf (7 pages, 283209 bytes).
 PDF statistics:
- 887 PDF objects out of 1000 (max. 8388607)
- 730 compressed objects within 8 object streams
+ 894 PDF objects out of 1000 (max. 8388607)
+ 737 compressed objects within 8 object streams
  51 named destinations out of 1000 (max. 500000)
- 2497 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2517 words of extra memory for PDF output out of 10000 (max. 10000000)
 

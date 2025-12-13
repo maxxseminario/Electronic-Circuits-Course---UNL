@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1765666480.36179 "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab01_diodes/lab01_diodes.tex" "lab01_diodes.pdf" "lab01_diodes" 1765666489.33895 0
-  "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab01_diodes/lab01_diodes.tex" 1765666469 24049 f334d044ffceb09d317eb798b8b97178 ""
+["pdflatex"] 1765666558.18621 "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab01_diodes/lab01_diodes.tex" "lab01_diodes.pdf" "lab01_diodes" 1765666566.39397 0
+  "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab01_diodes/lab01_diodes.tex" 1765666539 24047 b180c88d9299329eca3e63cc75c3e84d ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1754165087 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1754165087 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1754166916 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -315,8 +315,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1754174620 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1754174821 3605796 359cbae20affdd80e12c83a2a7337830 ""
   "c:/texlive/2025/texmf.cnf" 1754174592 713 e69b156964470283e0530f5060668171 ""
-  "lab01_diodes.aux" 1765666488 33325 0b43ef949421bcf026442ad0a84be886 "pdflatex"
-  "lab01_diodes.tex" 1765666469 24049 f334d044ffceb09d317eb798b8b97178 ""
+  "lab01_diodes.aux" 1765666565 33724 b9aec9025928dc8e6d972519987b2dfb "pdflatex"
+  "lab01_diodes.tex" 1765666539 24047 b180c88d9299329eca3e63cc75c3e84d ""
   (generated)
   "lab01_diodes.aux"
   "lab01_diodes.log"
