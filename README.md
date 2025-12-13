@@ -2,12 +2,12 @@
 
 **Author:** Maxx Seminario   
 **Instructor:** Maxx Seminario    
-**First Taught:** Fall 2025  
+**First Taught:** Spring 2026  
 >**About the Author:**   
->Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln, and is responsible for creating and curating this course - Digital Signal Processing - ECEN 863.  
+>Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln, and is responsible for creating and curating this course - Electronics and Circuits I - ECEN 222.  
 **Author Contact:** mseminario2@huskers.unl.edu  
 
-This repository contains LaTeX code and course materials for ECEN 463: Digital Signal Processing, offered at the University of Nebraska–Lincoln. The course is organized into lectures, assignments, and quizzes.
+This repository contains LaTeX code and course materials for ECEN 222: Electronics and Circuits I, offered at the University of Nebraska–Lincoln. The course is organized into lectures, assignments, labs, and quizzes.
 
 ---
 
@@ -16,26 +16,14 @@ This repository contains LaTeX code and course materials for ECEN 463: Digital S
 - **lectures/**  
   Contains all lecture notes in sequential order:
   1. Introduction
-  2. Discrete Time Signals
-  3. Discrete Time Systems
-  4. Linear Time Invariant Systems
-  5. Linear Constant Coefficient Difference Equations
-  6. Frequency Response
-  7. Discrete-Time Fourier Transform
-  8. Z Transform
-  9. Inverse Z Transform
-  10. Z Transform Properties
-  11. Sampling
-  12. Discrete Processing of Continous Time Signals
-  13. Continuous Time Processing of Discrete Signals
-  14. Downsampling
-  15. Upsampling
-  16. Sigma Delta Modulation 
-  17. IIR Filtering
-  18. FIR Filtering
+
 
 - **assignments/**  
   Homework and project assignments for the course.
+
+- **labs/**  
+  Laboratory assignenmets for gaining hands on experince regarding topics studied in lecture.  
+
 
 - **quiz/**  
   Quiz materials and practice problems.  
@@ -50,9 +38,9 @@ This repository contains LaTeX code and course materials for ECEN 463: Digital S
 
 - **Language:** LaTeX
 - **Intended Audience:**
-  - Undergraduate students in Electrical & Computer Engineering
-  - Graduate students in Electrical & Computer Engineering
-  - Students preparing for PhD qualifying exams
+  - Undergraduate students in Computer Engineering
+  - Undergraduate students in Electrical Engineering
+
 - **Institution:** University of Nebraska–Lincoln
 
 ---
