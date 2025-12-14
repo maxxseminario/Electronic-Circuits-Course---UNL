@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1765682232.52291 "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture01_signals/lecture01_signals.tex" "lecture01_signals.pdf" "lecture01_signals" 1765682246.83933 0
-  "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture01_signals/lecture01_signals.tex" 1765682230 25308 f6f56058e37dc7694b107e635ea08a4f ""
+["pdflatex"] 1765684205.74415 "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture01_signals/lecture01_signals.tex" "lecture01_signals.pdf" "lecture01_signals" 1765684218.9919 0
+  "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture01_signals/lecture01_signals.tex" 1765684203 25308 6c47cf4b5203f47c6c0cb1b6aa4bc327 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1754166916 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy5.tfm" 1754159315 1120 1e8878807317373affa7f7bba4cf2f6a ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/cmextra/cmbsy6.tfm" 1754159315 1124 14ccf5552bc7f77ca02a8a402bea8bfb ""
@@ -326,10 +326,10 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1754174620 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1754174821 3605796 359cbae20affdd80e12c83a2a7337830 ""
   "c:/texlive/2025/texmf.cnf" 1754174592 713 e69b156964470283e0530f5060668171 ""
-  "lecture01_signals.aux" 1765682246 3741 577392b840e33671bd54676fae94b704 "pdflatex"
-  "lecture01_signals.nav" 1765682246 2257 9c4ac3f9e1e763a4aa08c627d6db10fb "pdflatex"
-  "lecture01_signals.out" 1765682246 756 7d873275d7935131e5ed75e8bee26190 "pdflatex"
-  "lecture01_signals.tex" 1765682230 25308 f6f56058e37dc7694b107e635ea08a4f ""
+  "lecture01_signals.aux" 1765684218 3741 577392b840e33671bd54676fae94b704 "pdflatex"
+  "lecture01_signals.nav" 1765684218 2257 9c4ac3f9e1e763a4aa08c627d6db10fb "pdflatex"
+  "lecture01_signals.out" 1765684218 756 7d873275d7935131e5ed75e8bee26190 "pdflatex"
+  "lecture01_signals.tex" 1765684203 25308 6c47cf4b5203f47c6c0cb1b6aa4bc327 ""
   (generated)
   "lecture01_signals.aux"
   "lecture01_signals.log"
