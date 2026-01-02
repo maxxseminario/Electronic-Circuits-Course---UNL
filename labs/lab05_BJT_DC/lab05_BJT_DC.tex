@@ -1,0 +1,790 @@
+
+\DocumentMetadata{
+  pdfversion=2.0,
+  pdfstandard=ua-2,
+  testphase={phase-III,math,table,title}
+}
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{placeins}
+\usepackage{color} 
+\usepackage{fancyvrb} 
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usepackage{titling}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{../figs/}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=newest} 
+
+\setlength{\parindent}{0pt}
+
+\singlespacing
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.5in
+\headsep=0.15in
+
+
+
+% Header and footer
+\pagestyle{fancy}
+
+
+% Ensure the plain style (used by \maketitle and some environments) matches
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \lhead{ECEN 222:    Electronic Circuits}
+  \chead{Lab 5}
+  \rhead{Page \thepage\ of \pageref{LastPage}}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+  \renewcommand\headrulewidth{0.4pt}
+  \renewcommand\footrulewidth{0.4pt}
+}
+
+% Fancy layout (same as above) for normal pages
+\fancyhf{}
+\lhead{ECEN 222: Electronic Circuits}
+\chead{Lab 5}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\lfoot{}
+\cfoot{}
+\rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+% Avoid head height warnings
+\setlength{\headheight}{14pt}
+
+
+
+\title{\textbf{\Huge Large Signal and Resistive Biasing of BJT}\\
+\large Lab 5 — ECEN 222: Electronic Circuits}
+\author{
+    % Maxx Seminario\\
+\large University of Nebraska–Lincoln \\
+\large Department of Electrical and Computer Engineering
+}
+\date{} % specific date
+
+
+\begin{document}
+\thispagestyle{fancy}
+\maketitle
+\rule{\textwidth}{0.5pt}
+
+
+\section{Objectives}
+
+The primary objective of this lab is to investigate the fundamental principles of DC biasing for bipolar junction transistors (BJTs) and analyze large-signal behavior in common biasing configurations. Building upon the I-V characteristics studied in Lab 2, this lab focuses on establishing and maintaining stable DC operating points (Q-points) that are essential for proper amplifier operation.  Upon completion of this lab, students will be able to design and analyze fixed-bias circuits, understand the limitations of fixed-bias configurations and the effects of $\beta$ variations, design and implement voltage-divider bias circuits, analyze the four-resistor bias network and understand its stability characteristics and experimentally determine DC operating points. Through hands-on measurements and analysis, students will design robust bias circuits, preparing them for subsequent labs on small-signal amplifiers and frequency response.  
+
+\section{Pre-Lab Preparation}
+
+Before arriving at the lab session, students are required to thoroughly prepare by reading the relevant material from the course textbook.   Specifically, read Chapter 5 (Bipolar Junction Transistors) in Sedra \& Smith, with particular emphasis on sections covering DC biasing arrangements, the four-resistor bias network, bias stability, and graphical analysis using load lines.  Review the concept of the Q-point (quiescent operating point) and understand why proper biasing is critical for linear amplification. Additionally, review Thévenin equivalent circuit analysis, as this technique is essential for analyzing voltage-divider bias circuits.  Ensure you understand Kirchhoff's voltage and current laws and are comfortable with iterative circuit analysis techniques.  Students must also complete the pre-lab questions provided in Section \ref{sec:prelab} and come prepared with calculated component values for the circuits to be built.   Bring engineering graph paper or be prepared to create load-line plots from your data.   Proper preparation will ensure efficient use of lab time and deeper understanding of the practical challenges of BJT biasing.
+
+\section{Background Theory}
+
+\subsection{The Need for Biasing}
+
+In Lab 4, we explored the fundamental I-V characteristics of BJTs and observed their operation in cutoff, active, and saturation regions. For a BJT to function as a linear amplifier, it must be biased to operate in the active region with a stable DC operating point, also called the quiescent point or Q-point. The Q-point defines the DC collector current ($I_C$), base current ($I_B$), and collector-emitter voltage ($V_{CE}$) when no AC signal is applied. 
+
+Proper biasing serves several critical purposes:  
+
+\begin{itemize}
+    \item \textbf{Ensures active-region operation:  } The bias must keep the base-emitter junction forward-biased and the base-collector junction reverse-biased.  
+    
+    \item \textbf{Provides maximum output voltage swing: } The Q-point should be positioned to allow the AC signal to swing symmetrically without driving the transistor into cutoff or saturation. 
+    
+    \item \textbf{Maintains stability: } The bias circuit should maintain a relatively constant Q-point despite variations in transistor parameters ($\beta$, $V_{BE}$) due to manufacturing tolerances and temperature changes.
+    
+    \item \textbf{Establishes proper small-signal parameters:} The DC operating point determines the small-signal parameters (transconductance $g_m$, input resistance $r_\pi$) that govern AC amplification.
+\end{itemize}
+
+Without proper biasing, the transistor may operate non-linearly, causing signal distortion, or may drift between operating regions due to temperature changes, making the circuit unreliable.  
+
+\subsection{DC Load Line Analysis}
+
+A powerful graphical technique for analyzing BJT bias circuits is the DC load line. The load line represents all possible combinations of $V_{CE}$ and $I_C$ that satisfy Kirchhoff's voltage law around the collector-emitter circuit loop. 
+
+Consider a generic common-emitter circuit with a resistor $R_C$ in series with the collector and supply voltage $V_{CC}$, and a resistor $R_E$ in series with the emitter.   Applying KVL around the collector-emitter loop:
+
+\begin{equation}
+    V_{CC} = I_C R_C + V_{CE} + I_E R_E
+\end{equation}
+
+Since $I_E \approx I_C$ (because $I_E = I_C + I_B$ and $I_B \ll I_C$ for typical $\beta$ values), we can write:
+
+\begin{equation}
+    V_{CC} = I_C (R_C + R_E) + V_{CE}
+\end{equation}
+
+Rearranging to express $I_C$ as a function of $V_{CE}$:
+
+\begin{equation}
+    I_C = \frac{V_{CC} - V_{CE}}{R_C + R_E}
+    \label{eq:loadline}
+\end{equation}
+
+This is a linear equation with two convenient endpoints:  
+
+\begin{itemize}
+    \item When $V_{CE} = 0$ (saturation): $I_C = I_{C,sat} = \frac{V_{CC}}{R_C + R_E}$
+    \item When $I_C = 0$ (cutoff): $V_{CE} = V_{CE,cutoff} = V_{CC}$
+\end{itemize}
+
+The DC load line is plotted on the output characteristic curves ($I_C$ vs.   $V_{CE}$) from Lab 2. The intersection of the load line with a particular $I_B$ curve determines the Q-point for that base current.  The load line slope is $-1/(R_C + R_E)$.  
+
+The Q-point must satisfy both the transistor characteristics (the $I_B$ curves) and the external circuit constraints (the load line). For a given base bias current $I_B$, the Q-point is uniquely determined by the intersection of the corresponding $I_B$ curve with the load line.  
+
+\subsection{Bias Stability and Temperature Effects}
+
+BJT parameters vary significantly with temperature:  
+
+\begin{itemize}
+    \item $V_{BE}$ decreases by approximately 2 mV/°C
+    \item $\beta$ typically increases with temperature
+    \item Reverse saturation current $I_{CO}$ approximately doubles every 10°C
+\end{itemize}
+
+A well-designed bias circuit must maintain a stable Q-point despite these variations. The voltage-divider bias with adequate emitter degeneration ($R_E$) provides the best stability because:  
+
+\begin{enumerate}
+    \item The base voltage $V_B$ is fixed by the stiff divider, independent of transistor parameters
+    \item The emitter resistor provides strong negative feedback
+    \item Changes in $V_{BE}$ have minimal effect since $V_E = V_B - V_{BE}$ and $V_B \gg V_{BE}$ typically
+\end{enumerate}
+
+\section{Experimental Procedures}
+
+\subsection{Part 1: Fixed-Bias Circuit Analysis}
+
+\subsubsection{Fixed-Bias Configuration Theory}
+
+The simplest biasing arrangement is the fixed-bias or base-bias circuit shown in Figure \ref{fig:fixed_bias}. A single resistor $R_B$ connects the base to the positive supply $V_{CC}$, providing base current.  
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % --- Place components (named) ---
+  \node[npn] (Q1) at (3,2) {};
+
+  % --- Define key nodes (nets) ---
+  \coordinate (GND)  at (3,0);
+  \coordinate (VCCT) at (6,4);
+
+  % --- Ground bus and emitter connection ---
+  \draw (3,0) -- (6,0);
+  \draw (Q1.emitter) -- (GND) node[ground]{};
+
+  % --- VCC source ---
+  \draw (VCCT) to[V, l_=$V_{CC}$] (6,0);
+
+  % --- RB:  moved left (same style as earlier) ---
+  \coordinate (RBLEFT) at ($(Q1.base)+(-1.5,0)$);
+  \draw (VCCT) -- (RBLEFT |- VCCT)
+              -- (RBLEFT)
+              to[R, l=$R_B$] (Q1.base);
+
+  % --- RC: from VCC to collector, routed orthogonally ---
+  \draw (VCCT) -- (Q1.collector |- VCCT)
+               to[R, l=$R_C$] (Q1.collector);
+
+  % --- Output node aligned with collector line ---
+  \coordinate (VOUT) at ($(Q1.collector)+(0.8,0)$);
+  \draw (Q1.collector) -- (VOUT) to[short, -o] ++(0,0) node[right]{$V_{out}$};
+
+\end{circuitikz}
+\caption{Fixed-bias (base-bias) configuration. }
+\label{fig:fixed_bias}
+\end{figure}
+
+Analyzing the base circuit by KVL:  
+
+\begin{equation}
+    V_{CC} = I_B R_B + V_{BE}
+\end{equation}
+
+Solving for base current:
+
+\begin{equation}
+    I_B = \frac{V_{CC} - V_{BE}}{R_B}
+    \label{eq: ib_fixed}
+\end{equation}
+
+The collector current is then:
+
+\begin{equation}
+    I_C = \beta I_B = \beta \frac{V_{CC} - V_{BE}}{R_B}
+    \label{eq:ic_fixed}
+\end{equation}
+
+And the collector-emitter voltage from the collector loop KVL:
+
+\begin{equation}
+    V_{CE} = V_{CC} - I_C R_C
+    \label{eq:vce_fixed}
+\end{equation}
+
+\textbf{Limitations of Fixed Bias:}
+
+The fixed-bias configuration has a critical weakness: the Q-point is highly dependent on $\beta$. Since $\beta$ varies significantly between transistors of the same type (typically $\pm 50\%$ or more) and also changes with temperature and collector current, the fixed-bias circuit produces an unstable Q-point.   \\
+
+Consider two transistors with $\beta_1 = 100$ and $\beta_2 = 200$.   From Equation \ref{eq:ic_fixed}, the collector current for the second transistor would be twice that of the first, drastically shifting the Q-point. This makes fixed bias impractical for mass production and for applications where temperature varies.  \\
+
+A stability factor $S$ can be defined to quantify bias stability:
+
+\begin{equation}
+    S = \frac{\partial I_C}{\partial I_{CO}} \bigg|_{I_B = const}
+\end{equation}
+
+where $I_{CO}$ is the collector reverse saturation current, which doubles approximately every 10°C.  For fixed bias, $S$ approaches $\beta + 1$, indicating very poor stability.
+
+\subsubsection{Fixed-Bias Circuit Experiment}
+
+In this section, you will construct and analyze a fixed-bias circuit to understand its operation and limitations, particularly its sensitivity to $\beta$ variations.
+
+\textbf{Design Calculations:}
+
+Design a fixed-bias circuit (Figure \ref{fig:fixed_bias}) with the following specifications:  
+\begin{itemize}
+    \item $V_{CC} = 12$ V
+    \item Desired $I_C = 2$ mA
+    \item Desired $V_{CE} = 6$ V (centered Q-point)
+    \item Assume $\beta = 120$ and $V_{BE} = 0.7$ V
+\end{itemize}
+
+Calculate:  
+
+1. Required $R_C$ from Equation \ref{eq:vce_fixed}:
+\begin{equation}
+    R_C = \frac{V_{CC} - V_{CE}}{I_C}
+\end{equation}
+
+2. Required $I_B$ from $I_C = \beta I_B$: 
+\begin{equation}
+    I_B = \frac{I_C}{\beta}
+\end{equation}
+
+3. Required $R_B$ from Equation \ref{eq:ib_fixed}:  
+\begin{equation}
+    R_B = \frac{V_{CC} - V_{BE}}{I_B}
+\end{equation}
+
+Select standard resistor values closest to your calculated values.  \\ 
+
+\textbf{Construction and Measurement:} 
+
+Construct the circuit on your breadboard using the calculated component values. Measure and record: 
+
+\begin{enumerate}
+    \item DC voltages:  $V_B$, $V_C$, $V_E$ 
+    \item Calculate $V_{BE}$ and $V_{CE}$
+    \item Calculate currents: $I_B$ and $I_C$
+    \item Calculate actual $\beta$
+\end{enumerate}
+
+Compare your measured Q-point with the designed values.   Explain any discrepancies.  \\
+
+\textbf{$\beta$ Sensitivity Test:}
+
+Test the circuit in Figure \ref{fig:fixed_bias} and find: 
+
+\begin{itemize}
+    \item Measure the Q-point ($I_C$, $V_{CE}$)
+    \item Calculate the actual $\beta$
+\end{itemize}
+
+Calculate the change in $I_C$.  This demonstrates the poor stability of fixed bias. \\
+
+In your lab report, summarize the results and discuss the implications for circuit design.   Calculate the sensitivity $\partial I_C / \partial \beta$ and compare with theoretical predictions. \\
+
+\subsection{Part 2: Load-Line Analysis of Fixed-Bias Circuit}
+
+Using the fixed-bias circuit from Part 1, you will now perform a graphical load-line analysis.  \\
+
+\textbf{Theoretical Load Line:}
+
+For the fixed-bias circuit with no emitter resistor, the load line equation from Equation \ref{eq:loadline} simplifies to:
+
+\begin{equation}
+    I_C = \frac{V_{CC} - V_{CE}}{R_C}
+\end{equation}
+
+Calculate the two endpoints:  
+\begin{itemize}
+    \item $I_{C,sat} = V_{CC} / R_C$ (when $V_{CE} = 0$)
+    \item $V_{CE,cutoff} = V_{CC}$ (when $I_C = 0$)
+\end{itemize}
+
+Plot the DC load line using these two points on axes of $I_C$ (vertical, 0 to $I_{C,sat}$) versus $V_{CE}$ (horizontal, 0 to $V_{CC}$). \\
+
+\textbf{Experimental Output Characteristics:}
+
+You will now measure several points on the output characteristics for different base currents, similar to Lab 4 but focused on the specific region near your Q-point. \\
+
+Select three base current values:   $I_B$ = 10 µA, 20 µA, and 30 µA.  For each fixed $I_B$:   \\
+
+1.  Adjust $R_B$ to achieve the desired base current (measure voltage across $R_B$ to verify) \\
+2. Vary $V_{CC}$ from 0 V to 12 V \\
+3. For each $V_{CC}$, measure $V_{CE}$ and $I_C$  \\
+4. Plot the three curves on the same graph as your load line \\
+
+Mark your actual Q-point (from Part 1 measurements) on the graph.   It should lie at the intersection of the load line and the curve corresponding to your measured $I_B$. \\
+
+Verify that the graphical Q-point matches your measured Q-point.   Discuss any discrepancies and potential sources of error. \\
+
+\subsection{Part 3: Emitter-Bias Circuit}
+
+\subsubsection{Emitter-Bias Configuration Theory}
+
+An improvement over fixed bias is the emitter-bias configuration, which adds an emitter resistor $R_E$ as shown in Figure \ref{fig:emitter_bias}. 
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % --- Place components (named) ---
+  \node[npn] (Q1) at (3,2.5) {};
+
+  % --- Define key nodes (nets) ---
+  \coordinate (GND)  at (3,0);
+  \coordinate (VCCT) at (6,5);
+  \coordinate (VOUT) at (4.7,2.5);
+
+  % --- Ground bus ---
+  \draw (3,0) -- (6,0);
+
+  % --- VCC source ---
+  \draw (VCCT) to[V, l_=$V_{CC}$] (6,0);
+
+    % pick where you want the vertical drop for RB (further left than the base)
+    \coordinate (RBLEFT) at ($(Q1.base)+(-1.5,0)$);
+
+    % RB routed:  from VCC to RBLEFT (top), then down to base height, then resistor into base
+    \draw (VCCT) -- (RBLEFT |- VCCT)
+                -- (RBLEFT)
+                to[R, l=$R_B$] (Q1.base);
+
+  % --- RC: from VCC to collector, routed orthogonally ---
+  \draw (VCCT) -- (Q1.collector |- VCCT) % go left at y=5 to x(collector)
+               to[R, l=$R_C$] (Q1.collector);
+
+  % --- RE: from emitter to ground (vertical) ---
+  \draw (Q1.emitter) to[R, l=$R_E$] (Q1.emitter |- GND) node[ground]{};
+
+    \coordinate (VOUT) at ($(Q1.collector)+(0.6,0.3)$);
+    \draw (Q1.collector) -- (Q1.collector -| VOUT) -- (VOUT)
+      to[short, -o] ++(0,0) node[right]{$V_{out}$};
+
+\end{circuitikz}
+\caption{Emitter-bias configuration with emitter degeneration resistor. }
+\label{fig:emitter_bias}
+\end{figure}
+
+
+
+The emitter resistor provides negative feedback that stabilizes the Q-point.   Analyzing the base-emitter loop: 
+
+\begin{equation}
+    V_{CC} = I_B R_B + V_{BE} + I_E R_E
+\end{equation}
+
+Since $I_E = (\beta + 1) I_B$:
+
+\begin{equation}
+    V_{CC} = I_B R_B + V_{BE} + (\beta + 1) I_B R_E
+\end{equation}
+
+\begin{equation}
+    I_B = \frac{V_{CC} - V_{BE}}{R_B + (\beta + 1) R_E}
+    \label{eq:ib_emitter}
+\end{equation}
+
+The collector current is:  
+
+\begin{equation}
+    I_C = \beta I_B = \frac{\beta (V_{CC} - V_{BE})}{R_B + (\beta + 1) R_E}
+    \label{eq: ic_emitter}
+\end{equation}
+
+If $(\beta + 1) R_E \gg R_B$, then:  
+
+\begin{equation}
+    I_C \approx \frac{\beta (V_{CC} - V_{BE})}{(\beta + 1) R_E} \approx \frac{V_{CC} - V_{BE}}{R_E}
+    \label{eq:ic_emitter_approx}
+\end{equation}
+
+This approximation shows that $I_C$ becomes nearly independent of $\beta$, providing much better stability.  The emitter resistor creates a self-regulating mechanism:   if $I_C$ tries to increase, the voltage drop across $R_E$ increases, which reduces $V_{BE}$, which in turn reduces $I_C$, counteracting the original increase. 
+
+\subsubsection{Emitter-Bias Circuit Experiment}
+
+Now construct an emitter-bias circuit (Figure \ref{fig:emitter_bias}) to observe the improved stability provided by emitter degeneration.
+
+\textbf{Design Calculations:}
+
+Design for the same Q-point as Part 1:
+\begin{itemize}
+    \item $V_{CC} = 12$ V
+    \item Desired $I_C = 2$ mA
+    \item Desired $V_{CE} = 6$ V
+    \item Choose $V_E = 2$ V (providing some stability margin)
+    \item Assume $\beta = 120$ and $V_{BE} = 0.7$ V
+\end{itemize}
+
+Calculate: 
+
+\begin{enumerate}
+    \item Emitter resistor $R_E$
+    \item Collector resistor $R_C$
+    \item Base voltage $V_B$
+    \item Base current $I_B$
+    \item Base resistor $R_B$
+
+\end{enumerate}
+
+\textbf{Construction and Measurement:}
+
+Construct the circuit and measure:  
+\begin{itemize}
+    \item $V_B$, $V_C$, $V_E$
+    \item Calculate $V_{BE}$ and $V_{CE}$
+    \item Calculate $I_B$, $I_C$, $I_E$
+    \item Calculate actual $\beta$
+\end{itemize} 
+
+\subsection{Part 4: Voltage-Divider Bias Design and Analysis}
+
+\subsubsection{Voltage-Divider Bias Configuration Theory}
+
+The most widely used and stable biasing configuration is the voltage-divider bias or four-resistor bias network shown in Figure \ref{fig:voltage_divider}.\\
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  \node[npn] (Q1) at (3,2.5) {};
+  
+  \coordinate (GND) at (3,0);
+  \coordinate (VCCT) at (6,5);
+  
+  \draw (-1,0) -- (6,0);
+  
+  \draw (VCCT) to[V, l_=$V_{CC}$] (6,0);
+  
+  % Voltage divider:   R1 and R2
+  \draw (VCCT) -- (-1,5)
+               to[R, l=$R_1$] (-1,2.5)
+               to[R, l=$R_2$] (-1,0);
+  
+  % Connection from divider to base
+  \draw (-1,2.5) -- (Q1.base);
+  
+  % RC
+  \draw (VCCT) -- (Q1.collector |- VCCT)
+               to[R, l=$R_C$] (Q1.collector);
+  
+  % RE
+  \draw (Q1.emitter) to[R, l=$R_E$] (Q1.emitter |- GND)
+                     node[ground]{};
+  
+  \draw (Q1.collector) to[short, -o] ++(1,0) node[right]{$V_{out}$};
+  
+\end{circuitikz}
+\caption{Voltage-divider bias (four-resistor bias network).}
+\label{fig:voltage_divider}
+\end{figure}
+
+This configuration uses a voltage divider ($R_1$ and $R_2$) to establish a fixed base voltage, combined with an emitter resistor $R_E$ to stabilize the emitter current.  
+
+The base voltage is determined by the voltage divider (assuming the base current is small enough not to significantly load the divider):
+
+\begin{equation}
+    V_B = V_{CC} \frac{R_2}{R_1 + R_2}
+    \label{eq:vb_divider}
+\end{equation}
+
+The emitter voltage is: 
+
+\begin{equation}
+    V_E = V_B - V_{BE}
+    \label{eq:ve}
+\end{equation}
+
+The emitter current is:
+
+\begin{equation}
+    I_E = \frac{V_E}{R_E} = \frac{V_B - V_{BE}}{R_E}
+    \label{eq:ie_divider}
+\end{equation}
+
+Since $I_C \approx I_E$:
+
+\begin{equation}
+    I_C \approx \frac{V_B - V_{BE}}{R_E}
+    \label{eq:ic_divider}
+\end{equation}
+
+The collector-emitter voltage is found from the collector loop:
+
+\begin{equation}
+    V_{CE} = V_{CC} - I_C R_C - I_E R_E \approx V_{CC} - I_C (R_C + R_E)
+    \label{eq:vce_divider}
+\end{equation}
+
+\textbf{Thévenin Equivalent Analysis:}
+
+For more accurate analysis, especially when the base current is not negligible, we can replace the base bias network with its Thévenin equivalent:
+
+\begin{equation}
+    V_{TH} = V_{CC} \frac{R_2}{R_1 + R_2}
+\end{equation}
+
+\begin{equation}
+    R_{TH} = \frac{R_1 R_2}{R_1 + R_2} = R_1 \parallel R_2
+\end{equation}
+
+Applying KVL to the base-emitter loop with the Thévenin equivalent:  
+
+\begin{equation}
+    V_{TH} = I_B R_{TH} + V_{BE} + I_E R_E
+\end{equation}
+
+\begin{equation}
+    V_{TH} = I_B R_{TH} + V_{BE} + (\beta + 1) I_B R_E
+\end{equation}
+
+Solving for $I_B$:  
+
+\begin{equation}
+    I_B = \frac{V_{TH} - V_{BE}}{R_{TH} + (\beta + 1) R_E}
+    \label{eq:ib_thevenin}
+\end{equation}
+
+And therefore: 
+
+\begin{equation}
+    I_C = \beta I_B = \frac{\beta (V_{TH} - V_{BE})}{R_{TH} + (\beta + 1) R_E}
+    \label{eq:ic_thevenin}
+\end{equation}
+
+\textbf{Design Guidelines for Voltage-Divider Bias:}
+
+For good stability, the following design guidelines are recommended:
+
+\begin{enumerate}
+    \item \textbf{Stiff voltage divider:  } Choose $R_1$ and $R_2$ such that the current through the divider is much larger than the base current (typically 10 times larger). This ensures that $V_B$ remains relatively constant despite variations in $I_B$.  
+    
+    \item \textbf{Adequate emitter voltage: } Set $V_E \approx V_{CC} / 10$ to $V_{CC} / 5$ to provide good stabilization.  A common choice is $V_E = 0.1 V_{CC}$ to $0.2 V_{CC}$.
+    
+    \item \textbf{Centered Q-point:} For maximum output swing, position the Q-point near the middle of the load line by choosing $V_{CE} \approx V_{CC} / 2$. 
+    
+    \item \textbf{Ensure active-region operation:} Verify that $V_{CE} > V_{CE,sat} \approx 0.3$ V and $V_{CE} > V_E$ (which ensures the collector-base junction is reverse-biased).
+\end{enumerate}
+
+The stability factor for voltage-divider bias can be approximated as:
+
+\begin{equation}
+    S \approx \frac{(\beta + 1)(R_{TH} + R_E)}{R_{TH} + (\beta + 1) R_E}
+\end{equation}
+
+For a stiff divider where $R_{TH} \ll (\beta + 1) R_E$, this approaches $S \approx 1$, indicating excellent stability.
+
+\subsubsection{Voltage-Divider Bias Circuit Experiment}
+
+In this section, you will design, construct, and thoroughly analyze a voltage-divider bias circuit—the industry-standard biasing configuration.  \\
+
+\textbf{Design Calculations:}
+
+Design a voltage-divider bias circuit (Figure \ref{fig:voltage_divider}) with specifications:
+\begin{itemize}
+    \item $V_{CC} = 12$ V
+    \item Desired $I_C = 2$ mA
+    \item Desired $V_{CE} = 6$ V (centered Q-point for maximum swing)
+    \item Choose $V_E = 2$ V (approximately $V_{CC}/6$)
+    \item Assume $\beta = 120$ and $V_{BE} = 0.7$ V
+\end{itemize}
+
+
+Follow this systematic design procedure:
+
+\begin{enumerate}
+    \item Calculate emitter resistor $R_E$
+    \item Calculate collector resistor $R_C$
+    \item Calculate base voltage $V_B$
+    \item Choose divider current (approximately 10 times $I_B$)
+    \item Calculate $R_2$
+    \item Calculate $R_1$
+\end{enumerate}
+
+Verify your design using Thévenin equivalent analysis: 
+
+\begin{equation}
+    V_{TH} = V_{CC} \frac{R_2}{R_1 + R_2}
+\end{equation}
+
+\begin{equation}
+    R_{TH} = \frac{R_1 R_2}{R_1 + R_2}
+\end{equation}
+
+Then calculate $I_B$ from Equation \ref{eq:ib_thevenin} and verify that $I_C = \beta I_B \approx 2$ mA.  \\
+
+
+
+\textbf{Construction and Measurement:}
+
+Construct the circuit using standard resistor values.  Measure: 
+
+\begin{enumerate}
+    \item All node voltages:   $V_B$, $V_C$, $V_E$ (with respect to ground)
+    
+    \item Voltage across each resistor:
+    \begin{itemize}
+        \item $V_{R_1}$ (to calculate current through voltage divider)
+        \item $V_{R_2}$
+        \item $V_{R_C}$ (to calculate $I_C$)
+        \item $V_{R_E}$ (to calculate $I_E$)
+    \end{itemize}
+    
+    \item Calculate all voltages of interest:  
+    \begin{itemize}
+        \item $V_{BE} = V_B - V_E$
+        \item $V_{CE} = V_C - V_E$
+        \item $V_{CB} = V_C - V_B$ (should be negative for active region)
+    \end{itemize}
+    
+    \item Calculate all currents:
+    \begin{itemize}
+        \item $I_C = V_{R_C} / R_C = (V_{CC} - V_C) / R_C$
+        \item $I_E = V_{R_E} / R_E = V_E / R_E$
+        \item $I_B = I_E - I_C$ (from KCL)
+        \item Divider current: $I_1 = (V_{CC} - V_B) / R_1$
+    \end{itemize}
+    
+    \item Calculate $\beta = I_C / I_B$
+    
+    \item Verify that $I_1 \gg I_B$ (stiff divider condition)
+\end{enumerate}
+
+Create a comprehensive table in your report with designed values, measured values, and percentage errors. \\
+
+\textbf{Verify Active-Region Operation:}
+
+Check that all conditions for active mode are satisfied:  
+\begin{itemize}
+    \item $V_{BE} \approx 0.6$ to 0.7 V (forward-biased)
+    \item $V_{CB} < 0$ or equivalently $V_C > V_B$ (reverse-biased collector-base junction)
+    \item $V_{CE} > V_{CE,sat} \approx 0.3$ V
+\end{itemize}
+
+\textbf{Load-Line Analysis:}
+
+Calculate and plot the DC load line for this circuit.   The saturation current is: 
+\begin{equation}
+    I_{C,sat} = \frac{V_{CC}}{R_C + R_E}
+\end{equation}
+
+Plot the load line and mark your measured Q-point.  The Q-point should lie near the center of the load line if your design is correct.\\
+
+\section{Pre-Lab Questions}
+\label{sec:prelab}
+
+Complete these questions before coming to the lab session.   Include your answers and all supporting work in your lab report.
+
+\begin{enumerate}
+    
+    \item For a fixed-bias circuit with $V_{CC} = 12$ V, $R_B = 470$ k$\Omega$, $R_C = 2. 2$ k$\Omega$, $\beta = 150$, and $V_{BE} = 0.7$ V:  
+    \begin{enumerate}
+        \item Calculate $I_B$, $I_C$, and $V_{CE}$
+        \item Verify that the transistor is in the active region
+        \item If $\beta$ changes to 100, recalculate $I_C$ and $V_{CE}$
+        \item Calculate the percentage change in $I_C$ due to the $\beta$ variation
+        \item Calculate the saturation current $I_{C,sat}$ and cutoff voltage $V_{CE,cutoff}$ for the load line
+    \end{enumerate}
+    Show all calculations clearly.
+    
+    \item Design a voltage-divider bias circuit to meet the following specifications:
+    \begin{itemize}
+        \item $V_{CC} = 15$ V
+        \item $I_C = 3$ mA
+        \item $V_{CE} = 7.  5$ V (centered Q-point)
+        \item $V_E = 2.5$ V
+        \item $\beta = 100$ (nominal)
+        \item Stiff divider with $I_{R_1} = 10 I_B$
+    \end{itemize}
+    Calculate all four resistor values ($R_1$, $R_2$, $R_C$, $R_E$). Verify your design by calculating the actual Q-point with your selected standard values. 
+
+    
+    \item For the DC load line:  
+    \begin{enumerate}
+        \item Derive the load-line equation for a common-emitter circuit with both $R_C$ and $R_E$ present
+        \item Explain how the slope of the load line changes when $R_E$ is added
+    \end{enumerate}
+    
+    
+\end{enumerate}
+
+\section{Additional Analysis (For Lab Report)}
+
+In your lab report, include the following additional analysis and discussion:
+
+\begin{enumerate}
+    \item \textbf{Comparison Table:} Create a comprehensive comparison table summarizing the three bias configurations tested (fixed bias, emitter bias, voltage-divider bias). Include columns for: 
+    \begin{itemize}
+        \item Number of components
+        \item Designed Q-point
+        \item Measured Q-point
+        \item Advantages and disadvantages
+        \item Typical applications
+    \end{itemize}
+    
+    \item \textbf{Design Optimization: } Discuss the design trade-offs in voltage-divider bias: 
+    \begin{itemize}
+        \item Stiffer divider (smaller $R_1$, $R_2$) improves stability but increases quiescent power consumption
+        \item Larger $R_E$ improves stability but reduces available voltage for $V_{CE}$ and output swing
+        \item Higher $V_E$ improves stability but limits output swing
+    \end{itemize}
+    Suggest an optimization strategy for a battery-powered application where power consumption is critical versus a line-powered application where stability is paramount.
+    
+    \item \textbf{Connection to Small-Signal Analysis:} The DC operating point established by the bias circuit determines the small-signal parameters. Research and briefly explain how the Q-point affects:  
+    \begin{itemize}
+        \item Transconductance $g_m = I_C / V_T$
+        \item Input resistance $r_\pi = \beta / g_m$
+        \item Small-signal voltage gain
+    \end{itemize}
+    This foreshadows the next lab on small-signal amplifiers. 
+    
+    
+\end{enumerate}
+
+
+\end{document}
