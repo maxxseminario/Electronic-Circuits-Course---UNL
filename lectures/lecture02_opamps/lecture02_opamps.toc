@@ -1,0 +1,6 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Introduction to the Op-Amp}{3}{0}{1}
+\beamer@sectionintoc {2}{Ideal Op-Amp Characteristics}{5}{0}{2}
+\beamer@sectionintoc {3}{Differential and Common-Mode Signals}{9}{0}{3}
+\beamer@sectionintoc {4}{Key Properties}{11}{0}{4}
+\beamer@sectionintoc {5}{Summary and Examples}{14}{0}{5}

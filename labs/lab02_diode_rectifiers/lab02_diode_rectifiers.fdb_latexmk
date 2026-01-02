@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1765667379.78401 "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab02_diode_rectifiers/lab02_diode_rectifiers.tex" "lab02_diode_rectifiers.pdf" "lab02_diode_rectifiers" 1765667389.00298 0
-  "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab02_diode_rectifiers/lab02_diode_rectifiers.tex" 1765667370 25414 63383fcfcdd54593ea07052edd9e708f ""
+["pdflatex"] 1766873089.59953 "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab02_diode_rectifiers/lab02_diode_rectifiers.tex" "lab02_diode_rectifiers.pdf" "lab02_diode_rectifiers" 1766873104.13729 0
+  "c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab02_diode_rectifiers/lab02_diode_rectifiers.tex" 1766873074 24541 ea64470aa2c78b83aef67abc3883232e ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1754165087 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1754165087 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1754166916 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -316,8 +316,8 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1754174620 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1754174821 3605796 359cbae20affdd80e12c83a2a7337830 ""
   "c:/texlive/2025/texmf.cnf" 1754174592 713 e69b156964470283e0530f5060668171 ""
-  "lab02_diode_rectifiers.aux" 1765667388 36487 ff8ca0298055514569a0b0b83cd4fb33 "pdflatex"
-  "lab02_diode_rectifiers.tex" 1765667370 25414 63383fcfcdd54593ea07052edd9e708f ""
+  "lab02_diode_rectifiers.aux" 1766873102 35207 2f856a4ebc93466ba8ea4a14ca604a9a "pdflatex"
+  "lab02_diode_rectifiers.tex" 1766873074 24541 ea64470aa2c78b83aef67abc3883232e ""
   (generated)
   "lab02_diode_rectifiers.aux"
   "lab02_diode_rectifiers.log"

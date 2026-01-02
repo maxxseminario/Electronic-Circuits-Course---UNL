@@ -1,0 +1,796 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+\usefonttheme{professionalfonts}
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  \usecolortheme{beaver}
+  \usefonttheme{default}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.85\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}Maxx Seminario, Electronic Circuits, Fall 2025%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \hspace*{0.5em}\insertframenumber{} / \inserttotalframenumber\hspace*{0.5em}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{pgfplots}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{epstopdf}
+\usepackage{circuitikz}
+\usepackage{caption}
+\captionsetup{compatibility=false}
+\usepackage[absolute,overlay]{textpos}
+\usetikzlibrary{calc}
+\usetikzlibrary{pgfplots.fillbetween, backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{calc}
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest} 
+
+\usepackage{hyperref}
+\definecolor{BeaverRed}{RGB}{179,38,38} 
+\hypersetup{
+    colorlinks=true,
+    linkcolor=BeaverRed,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+\title[Unit 2: Ideal Op-Amp]{The Ideal Operational Amplifier}
+\subtitle{Unit 2: Op-Amp Fundamentals and Characteristics}
+\author{Maxx Seminario}
+\institute{University of Nebraska-Lincoln}
+\date{Spring 2026}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Outline}
+  \tableofcontents
+\end{frame}
+
+\section{Introduction to the Op-Amp}
+
+\begin{frame}{What is an Operational Amplifier?}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{The Op-Amp}: 
+        \begin{itemize}
+            \item High-gain differential amplifier
+            \item Integrated circuit (IC) device
+            \item Versatile building block
+            \item Typcially used in feedback
+        \end{itemize}
+        
+        \vspace{0.4cm}
+        
+        \textbf{Key Applications}:
+        \begin{itemize}
+            \item Signal amplification
+            \item Filtering
+            \item Mathematical operations
+            \item Signal conditioning
+            \item Analog computation
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+        % Op-amp triangle pointing right (tip at x=3)
+        \draw[fill=blue!10, thick] (0,-1.5) -- (0,1.5) -- (3,0) -- cycle;
+
+        % Input terminals on the left
+        \draw[thick] (-0.8,0.75) -- (0,0.75) node[left, xshift=-0.5cm] {$v_+$}; % non-inverting
+        \draw[thick] (-0.8,-0.75) -- (0,-0.75) node[left, xshift=-0.5cm] {$v_-$}; % inverting
+
+        % Plus/minus labels near the left edge of the triangle
+        \node at (0.25,0.75) {\large $+$};
+        \node at (0.25,-0.75) {\large $-$};
+
+        % Output terminal on the right
+        \draw[thick] (3,0) -- (4,0) node[right] {$v_{\text{out}}$};
+
+        % Optional terminal numbers
+        \node[fill=white, circle, draw, inner sep=1pt] at (-0.8,0.75) {\tiny 3}; % non-inverting input
+        \node[fill=white, circle, draw, inner sep=1pt] at (-0.8,-0.75) {\tiny 2}; % inverting input
+        \node[fill=white, circle, draw, inner sep=1pt] at (3.5,0) {\tiny 6}; % output
+
+        % Label
+        \node at (1.2,0) {\textbf{Op-Amp}};
+        \end{tikzpicture}
+  
+        \caption{Op-amp circuit symbol}
+        \end{figure}
+        
+        \vspace{-0.2cm}
+        
+        \begin{block}{Black Box Approach}
+            We treat the op-amp as a \textbf{black box} with well-defined terminal behavior
+        \end{block}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Op-Amp Terminals}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Signal Terminals} (3):
+        \begin{enumerate}
+            \item \textbf{Inverting input} $(-)$:  Terminal 1
+            \item \textbf{Noninverting input} $(+)$: Terminal 2
+            \item \textbf{Output}:  Terminal 3
+        \end{enumerate}
+        
+        \vspace{0.3cm}
+        
+        \textbf{Power Supply Terminals} (2):
+        \begin{itemize}
+            \item Terminal 4: $+V_{CC}$ (positive supply)
+            \item Terminal 5: $-V_{EE}$ (negative supply)
+        \end{itemize}
+        
+        \vspace{0.3cm}
+        
+        \textbf{Other Terminals}:
+        \begin{itemize}
+            \item Frequency compensation
+            \item Offset nulling
+            \item (Application specific)
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=1.0]
+            % Op-amp with power supplies
+            \draw (0,0) node[op amp, scale=1.5] (opamp) {};
+            
+            % Input labels
+            \node at (opamp.-) [left, yshift=6pt] {\small 1};
+            \node at (opamp.+) [left, yshift=6pt] {\small 2};
+            \node at (opamp.out) [right, yshift=6pt] {\small 3};
+            
+            % Power supply connections
+            \draw (opamp.up) -- ++(0,0.5) node[above] {\small 4: $+V_{CC}$};
+            \draw (opamp.down) -- ++(0,-0.5) node[below] {\small 5: $-V_{EE}$};
+            
+            % Input signals
+            \draw (opamp.-) -- ++(-0.8,0) node[left] {$v_1$};
+            \draw (opamp.+) -- ++(-0.8,0) node[left] {$v_2$};
+            
+            % Output signal
+            \draw (opamp.out) -- ++(0.8,0) node[right] {$v_3$};
+        \end{circuitikz}
+        \caption{Op-amp with all terminals shown}
+        \end{figure}
+    
+        
+    \end{columns}
+    
+\end{frame}
+
+
+\section{Ideal Op-Amp Characteristics}
+
+\begin{frame}{The Ideal Op-Amp Small-Signal Model}
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.45\textwidth]{Figures/opamp_smallsignal.png}
+    \caption{Small-signal op-amp model}
+    \label{fig:opamp_small_signal}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Five Characteristics of the Ideal Op-Amp}
+  \begin{itemize}
+    \setlength{\itemsep}{4pt} % spacing between items
+    % \setlength{\leftmargin}{...} % avoid this; use Beamer columns or shorter text
+    \item \textbf{Infinite input impedance} ($Z_{in} \to \infty$) $\rightarrow$ $i_1 = i_2 = 0$
+    \item \textbf{Zero output impedance} ($Z_{out} = 0$) $\rightarrow$ ideal voltage source at output
+    \item \textbf{Infinite open-loop gain} ($A \to \infty$) $\rightarrow$ tiny $(v_2 - v_1)$ produces large $v_3$
+    \item \textbf{Infinite bandwidth} $\rightarrow$ flat gain from DC to $\infty$
+    \item \textbf{Zero common-mode gain} (infinite CMRR) $\rightarrow$ responds only to differential input
+  \end{itemize}
+
+  \begin{block}{Important}
+    These are idealizations; real op-amps approximate them, and designs must account for non-idealities.
+  \end{block}
+\end{frame}
+
+\begin{frame}{Op-Amp Circuit Symbol with Ideal Assumptions}
+  \begin{figure}[htb]
+    \centering
+    \includegraphics[width=0.6\textwidth]{Figures/opamp_ideal.png}
+    \caption{Equivalent Circuit for Ideal Op-Amp}
+    \label{fig:opamp_small_signal}
+  \end{figure}
+\end{frame}
+
+\begin{frame}{Inverting vs.  Noninverting Inputs}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Inverting Input} $(-)$:
+        \begin{itemize}
+            \item Output is \textbf{out of phase}
+            \item Signal inverted (180° phase shift)
+        \end{itemize}
+        
+        % \vspace{0.3cm}
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=5.5cm, height=3cm,
+                xlabel={$t$},
+                ylabel={Voltage},
+                domain=0:2*pi,
+                samples=100,
+                grid=major,
+                xmin=0, xmax=2*pi,
+                ymin=-1.5, ymax=1.5,
+                legend pos=north east,
+                xtick={},
+                ytick={-1,0,1},
+                yticklabels={$-A$, 0, $+A$},
+            ]
+            
+            \addplot[blue, very thick] {sin(deg(x))};
+            % \addlegendentry{$v_1$ (input)}
+            
+            \addplot[red, very thick, dashed] {-sin(deg(x))};
+            % \addlegendentry{$v_3$ (output)}
+            
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Inverting input response}
+        \end{figure}
+        
+    \column{0.48\textwidth}
+        \textbf{Noninverting Input} $(+)$:
+        \begin{itemize}
+            \item Output is \textbf{in phase}
+            \item Signal not inverted (0° phase shift)
+        \end{itemize}
+        
+        % \vspace{0.3cm}
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=5.5cm, height=3cm,
+                xlabel={$t$},
+                ylabel={Voltage},
+                domain=0:2*pi,
+                samples=100,
+                grid=major,
+                xmin=0, xmax=2*pi,
+                ymin=-1.5, ymax=1.5,
+                legend pos=north east,
+                xtick={},
+                ytick={-1,0,1},
+                yticklabels={$-A$, 0, $+A$},
+            ]
+            
+            \addplot[blue, very thick] {sin(deg(x))};
+            % \addlegendentry{$v_2$ (input)}
+            
+            \addplot[red, very thick, dashed] {sin(deg(x))};
+            % \addlegendentry{$v_3$ (output)}
+            
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Noninverting input response}
+        \end{figure}
+        
+    \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \begin{block}{Remember}
+        Output:  $v_3 = A(v_2 - v_1)$ — noninverting term $(+v_2)$, inverting term $(-v_1)$
+    \end{block}
+    
+\end{frame}
+
+
+\section{Differential and Common-Mode Signals}
+
+\begin{frame}{Differential-Input, Single-Ended Output}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Differential Input}:
+        \[
+        v_{Id} = v_2 - v_1
+        \]
+        
+        \begin{itemize}
+            \item The \textbf{difference} between inputs
+            \item What the op-amp amplifies
+        \end{itemize}
+        
+        \textbf{Common-Mode Input}:
+        \[
+        v_{Icm} = \frac{1}{2}(v_1 + v_2)
+        \]
+        
+        \begin{itemize}
+            \item The \textbf{average} of inputs
+            \item Ideally \textbf{rejected} by op-amp
+            \item Noise component (often)
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        % \textbf{Reconstruct Inputs}:
+        % \[
+        % v_1 = v_{Icm} - \frac{v_{Id}}{2}
+        % \]
+        % \[
+        % v_2 = v_{Icm} + \frac{v_{Id}}{2}
+        % \]
+        
+        % \vspace{0.3cm}
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.9]
+            % Two voltage sources
+            \draw (0,2) to[sV, l=$v_{Icm} + \frac{v_{Id}}{2}$] (0,0);
+            \draw (0,0) node[ground] {};
+            \draw (0,2) to[short, -o] (1,2) node[right] {$v_2$};
+            
+            \draw (0,-1) to[sV, l=$v_{Icm} - \frac{v_{Id}}{2}$] (0,-3);
+            \draw (0,-3) node[ground] {};
+            \draw (0,-1) to[short, -o] (1,-1) node[right] {$v_1$};
+            
+            % Labels
+            \node[blue] at (-1.5,2) {Noninverting};
+            \node[blue] at (-1.5,-1) {Inverting};
+        \end{circuitikz}
+        \caption{Signal decomposition}
+        \end{figure}
+        
+    \end{columns}
+    
+    \vspace{0.2cm}
+    
+    \begin{block}{Ideal Op-Amp Behavior}
+        Infinite common-mode rejection $\rightarrow$ Output depends \textbf{only} on $v_{Id} = v_2 - v_1$
+    \end{block}
+    
+\end{frame}
+
+\begin{frame}{Common-Mode Rejection}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Why Common-Mode Rejection?}
+        \begin{itemize}
+            \item Noise often appears equally on both inputs
+            \item Power line interference
+            \item Environmental pickup
+            \item Ground potential differences
+        \end{itemize}
+        
+        \vspace{0.3cm}
+        
+        \textbf{Ideal Op-Amp}:
+        \begin{itemize}
+            \item Common-mode gain = 0
+            \item CMRR = $\infty$ dB
+            \item Perfectly rejects $v_{Icm}$
+        \end{itemize}
+        
+        
+    \column{0.48\textwidth}
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=6.5cm, height=7cm,
+                xlabel={Time},
+                ylabel={Voltage (V)},
+                domain=0:4*pi,
+                samples=100,
+                grid=major,
+                xmin=0, xmax=4*pi,
+                ymin=-0.5, ymax=2.5,
+                legend pos=north east,
+                xtick={},
+                ytick={0,1,2},
+            ]
+            
+            % Noise on both inputs (common-mode)
+            \addplot[blue, thick] {1.2 + 0.3*sin(deg(5*x))};
+            \addlegendentry{$v_1$ (with noise)}
+            
+            \addplot[red, thick] {0.9 + 0.3*sin(deg(5*x))};
+            \addlegendentry{$v_2$ (with noise)}
+            
+            % Differential output (noise cancelled)
+            \addplot[green! 60!black, very thick, dashed] {-0.3};
+            \addlegendentry{$v_{Id} = v_2 - v_1 = -0.3$}
+            
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Common-mode noise rejection example}
+        \end{figure}
+        
+    \end{columns}
+    
+\end{frame}
+
+\section{Key Properties}
+
+\begin{frame}{Open-Loop Gain:  Why Infinite? }
+\begin{columns}[t]
+  \begin{column}{0.48\textwidth}
+    \textbf{Open-Loop Configuration}:
+    \begin{itemize}
+      \item No feedback from output to input
+      \item Gain $A = \infty$ (ideal)
+      \item \textbf{Not practical} 
+    \end{itemize}
+
+    \textbf{Why $A = \infty$?}
+    \begin{itemize}
+      \item With feedback, gain becomes predictable
+      \item Allows precise closed-loop gain
+      \item Makes circuits insensitive to $A$ variations
+    \end{itemize}
+
+    \begin{block}{Practical Note}
+      Real op-amps:  $A \approx 10^3$ to $10^6$ (60 dB to 120 dB)
+    \end{block}
+  \end{column}
+
+  \begin{column}{0.48\textwidth}
+    \vspace{-0.5 cm} % ensures top alignment baseline
+    \begin{figure}
+      \centering
+      \begin{circuitikz}[scale=1.0]
+        % Open-loop op-amp
+        \draw (0,0) node[op amp, yscale=1.5, xscale=1.5] (opamp) {};
+
+        \draw (opamp.+) -- ++(-0.7,0) coordinate (vinstart);
+        \draw (vinstart) to[sV, l=$v_{in}$] ++(0,-1) node[ground] {};
+
+        % Inverting input to ground
+        \draw (opamp.-) -- ++(-0.5,0) node[ground] {};
+
+        % Output
+        \draw (opamp.out) to[short, -o] ++(1,0) node[right] {$v_{out}$};
+
+        % Equation
+        \node at (1,-2) {$v_{out} = A \cdot v_{in}$};
+      \end{circuitikz}
+      \caption{Open-loop configuration (impractical)}
+    \end{figure}
+
+    \textbf{Problem with Open-Loop}:
+    \begin{itemize}
+      \item Unstable and unpredictable
+      \item Sensitive to temperature, supply, etc.
+    \end{itemize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{DC Amplification and Bandwidth}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Direct-Coupled (DC) Amplifier}:
+        \begin{itemize}
+            \item Amplifies down to \textbf{0 Hz} (DC)
+            \item No coupling capacitors needed
+            \item Preserves DC level of signals
+        \end{itemize}
+        
+        \textbf{Advantages}:
+        \begin{itemize}
+            \item Measure slow-varying signals
+            \item Sensor interfaces
+            \item Precision applications
+        \end{itemize}
+        
+        \textbf{Disadvantages}:
+        \begin{itemize}
+            \item DC offsets can be problematic
+            \item Drift with temperature
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Infinite Bandwidth (Ideal)}:
+
+        \vspace{-0.4cm}
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=6.5cm, height=4.5cm,
+                xlabel={Frequency (Hz)},
+                ylabel={Gain $|A|$},
+                xmode=log,
+                ymode=log,
+                domain=0.1:1000000,
+                samples=100,
+                grid=both,
+                xmin=0.1, xmax=1000000,
+                ymin=1e4, ymax=1e7,
+                legend pos=south west,
+            ]
+            
+            % Ideal op-amp (flat response)
+            \addplot[blue, very thick] {1e6};
+            \addlegendentry{Ideal}
+            
+            % Real op-amp (with rolloff) - for comparison
+            \addplot[red, thick, dashed] {1e6 / (1 + x/10)};
+            \addlegendentry{Real}
+            
+            \end{axis}
+        \end{tikzpicture}
+        \caption{Ideal vs. real frequency response}
+        \end{figure}
+        
+        \vspace{-0.4cm}
+        
+        \begin{itemize}
+            \item Ideal: constant gain at all frequencies
+            \item Real:  gain decreases at high frequency
+        \end{itemize}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Input and Output Impedances}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Infinite Input Impedance}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=1.0]
+            % Source with high impedance
+            \draw (0,0) to[sV, l=$v_s$] (0,2);
+            \draw (0,2) to[R, l=$R_s$] (2,2);
+            \draw (0,0) -- (2,0);
+            
+            % Op-amp input (no current)
+            \draw (2,2) to[short, -o] (3,2) node[right] {$v_{in}$};
+            \draw (2,0) to[short, -o] (3,0);
+            \draw[->, red, very thick] (2.5,2.3) -- (2.5,2.8) node[above] {$i = 0$};
+            
+            % Equation
+            \node at (1.5,-0.8) {$v_{in} = v_s$ (no drop!)};
+        \end{circuitikz}
+        \caption{Input:  no loading effect}
+        \end{figure}
+        
+        \vspace{0.2cm}
+        
+        \textbf{Benefit}:
+        \begin{itemize}
+            \item No loading of source
+            \item $v_{in} = v_s$ regardless of $R_s$
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Zero Output Impedance}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=1.0]
+            % Op-amp output (ideal voltage source)
+            \draw (0,0) to[sV, l=$A v_{in}$] (0,2);
+            \draw (0,2) -- (1,2);
+            \draw (0,0) -- (1,0);
+            
+            % Load
+            \draw (1,2) to[R, l=$R_L$, v^>=$v_o$] (1,0);
+            
+            % Equation
+            \node at (0.5,-0.8) {$v_o = A v_{in}$ (any $R_L$!)};
+        \end{circuitikz}
+        \caption{Output: ideal voltage source}
+        \end{figure}
+        
+        \vspace{0.2cm}
+        
+        \textbf{Benefit}:
+        \begin{itemize}
+            \item Output voltage independent of load
+            \item Can drive any $R_L$
+        \end{itemize}
+        
+    \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \begin{block}{Ideal Conditions}
+        $Z_{in} = \infty \Rightarrow i_1 = i_2 = 0$ \quad and \quad $Z_{out} = 0 \Rightarrow v_o$ constant (any load)
+    \end{block}
+    
+\end{frame}
+
+\section{Summary and Examples}
+
+\begin{frame}{Summary:  The Ideal Op-Amp}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Five Golden Rules}:
+        \begin{enumerate}
+            \item $Z_{in} = \infty$ (no input current)
+            \item $Z_{out} = 0$ (ideal voltage source)
+            \item $A = \infty$ (infinite gain)
+            \item Infinite bandwidth (DC to $\infty$)
+            \item Infinite CMRR (rejects common-mode)
+        \end{enumerate}
+        
+        \vspace{0.3cm}
+        
+        \textbf{Key Relationships}:
+        \begin{itemize}
+            \item $v_3 = A(v_2 - v_1)$
+            \item $i_1 = i_2 = 0$
+            \item $v_{Id} = v_2 - v_1$
+            \item $v_{Icm} = \frac{1}{2}(v_1 + v_2)$
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=1.1]
+            % Complete ideal op-amp
+            \draw (0,0) node[op amp, yscale=1.5] (opamp) {};
+            
+            % Labels
+            \node at (opamp.-) [left, xshift=-0.3cm] {$v_1$};
+            \node at (opamp.+) [left, xshift=-0.3cm] {$v_2$};
+            \node at (opamp.out) [right, xshift=0.3cm] {$v_3$};
+            
+            % Current annotations
+            \draw[->, red, thick] (opamp.- |- 0,0.8) -- ++(0,0.5) node[above] {$i_1=0$};
+            \draw[->, red, thick] (opamp.+ |- 0,-0.8) -- ++(0,-0.5) node[below] {$i_2=0$};
+            
+            % Gain annotation
+            \node[align=center, blue] at (0,-2.2) {$v_3 = A(v_2-v_1)$\\$A = \infty$};
+        \end{circuitikz}
+        \caption{Ideal op-amp summary}
+        \end{figure}
+        
+    \end{columns}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Next Lecture}
+        How to use feedback to create \textbf{practical, stable amplifier circuits} with predictable gain! 
+    \end{alertblock}
+    
+\end{frame}
+
+\begin{frame}{Practice Problem 1}
+    
+    \textbf{Given}:  An ideal op-amp with $A = 10^3$ (finite, for this example)
+    
+    \vspace{0.3cm}
+    
+    \textbf{Measurements}:
+    \begin{itemize}
+        \item[(a)] $v_2 = 0$ V and $v_3 = 2$ V
+        \item[(b)] $v_2 = +5$ V and $v_3 = -10$ V
+        \item[(c)] $v_1 = 1.002$ V and $v_2 = 0.998$ V
+    \end{itemize}
+    
+    \vspace{0.3cm}
+    
+    \textbf{Find}: The missing terminal voltage, $v_{Id}$, and $v_{Icm}$ for each case.
+    
+    \vspace{0.5cm}
+    
+    \begin{columns}[t]
+    \column{0.3\textwidth}
+        \textbf{Hints}:
+        \begin{itemize}
+            \item Use $v_3 = A(v_2 - v_1)$
+            \item $v_{Id} = v_2 - v_1$
+            \item $v_{Icm} = \frac{v_1+v_2}{2}$
+        \end{itemize}
+        
+    \column{0.65\textwidth}
+        \textbf{Solutions}:
+        \begin{itemize}
+            \item[(a)] $v_1 = -0.002$ V, $v_{Id} = 2$ mV, $v_{Icm} = -1$ mV
+            \item[(b)] $v_1 = +5.01$ V, $v_{Id} = -10$ mV, $v_{Icm} \approx 5$ V
+            \item[(c)] $v_3 = -4$ V, $v_{Id} = -4$ mV, $v_{Icm} = 1$ V
+        \end{itemize}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Practice Problem 2}
+    
+    \textbf{Given}: An op-amp with the internal model shown below
+    
+    \begin{figure}[htb]
+    \centering
+    \begin{circuitikz}[scale=1.1]
+        % Input stage (transconductance)
+        \draw (0,1) to[short, o-] (1,1) node[above] {$v_2$};
+        \draw (0,-1) to[short, o-] (1,-1) node[below] {$v_1$};
+        
+        % VCCS (transconductance amplifier)
+        \draw (2,0) node[circle, draw, thick, minimum size=1.2cm] (vccs) {$G_m(v_2-v_1)$};
+        \draw (1,1) -- (vccs.120);
+        \draw (1,-1) -- (vccs.240);
+        
+        % Resistor R
+        \draw (vccs.0) to[R, l=$R$, -*] (4.5,0) node[above] {$v_x$};
+        \draw (4.5,0) -- (4.5,-1.5) node[ground] {};
+        
+        % VCVS (voltage amplifier)
+        \draw (6,0) node[circle, draw, thick, minimum size=1cm] (vcvs) {$\mu v_x$};
+        \draw (4.5,0) -- (vcvs.180);
+        
+        % Output
+        \draw (vcvs.0) to[short, -o] (7.5,0) node[right] {$v_3$};
+        
+    \end{circuitikz}
+    \caption{Internal op-amp model:  $G_m = 10$ mA/V, $R = 10$ k$\Omega$, $\mu = 100$}
+    \end{figure}
+    
+    \vspace{0.2cm}
+    
+    \textbf{Find}: Express $v_3$ as a function of $v_1$ and $v_2$, then find the open-loop gain $A$.
+    
+    \vspace{0.3cm}
+    
+    \textbf{Solution}:  
+    \begin{itemize}
+        \item $v_x = R \cdot G_m(v_2 - v_1) = 10\text{k} \times 10\text{m} \times (v_2-v_1) = 100(v_2-v_1)$
+        \item $v_3 = \mu v_x = 100 \times 100(v_2-v_1) = 10{,}000(v_2-v_1)$
+        \item $\boxed{A = 10{,}000 \text{ V/V} = 80 \text{ dB}}$
+    \end{itemize}
+    
+\end{frame}
+
+\end{document}
