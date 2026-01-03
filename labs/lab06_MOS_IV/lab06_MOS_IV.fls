@@ -1,9 +1,9 @@
-PWD c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab05_BJT_DC
+PWD c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab06_MOS_IV
 INPUT c:/texlive/2025/texmf.cnf
 INPUT c:/texlive/2025/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab05_BJT_DC/lab05_BJT_DC.tex
-OUTPUT lab05_BJT_DC.log
+INPUT c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab06_MOS_IV/lab06_MOS_IV.tex
+OUTPUT lab06_MOS_IV.log
 INPUT c:/texlive/2025/texmf-dist/tex/latex/latex-lab/documentmetadata-support.ltx
 INPUT c:/texlive/2025/texmf-dist/tex/latex/latex-lab/documentmetadata-support.ltx
 INPUT c:/texlive/2025/texmf-dist/tex/latex/latex-lab/documentmetadata-support.ltx
@@ -475,10 +475,10 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/titling/titling.sty
 INPUT c:/texlive/2025/texmf-dist/tex/latex/titling/titling.sty
 INPUT c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 INPUT c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
-INPUT ./lab05_BJT_DC.aux
-INPUT ./lab05_BJT_DC.aux
-INPUT lab05_BJT_DC.aux
-OUTPUT lab05_BJT_DC.aux
+INPUT ./lab06_MOS_IV.aux
+INPUT ./lab06_MOS_IV.aux
+INPUT lab06_MOS_IV.aux
+OUTPUT lab06_MOS_IV.aux
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 INPUT c:/texlive/2025/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
@@ -527,13 +527,15 @@ INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm10.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm7.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/amsfonts/symbols/msbm5.tfm
-OUTPUT lab05_BJT_DC.pdf
+OUTPUT lab06_MOS_IV.pdf
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1200.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
-INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
 INPUT c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc
 INPUT c:/texlive/2025/texmf-dist/fonts/tfm/public/pdftex/pdftexspace.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecbx1000.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0700.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/ecrm0500.tfm
+INPUT c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcrm1000.tfm
 INPUT c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc
 INPUT c:/texlive/2025/texmf-dist/tex/latex/tagpdf/latex-list-css.html
 INPUT c:/texlive/2025/texmf-dist/tex/latex/tagpdf/latex-list-css.html
@@ -545,15 +547,17 @@ INPUT c:/texlive/2025/texmf-dist/tex/latex/tagpdf/latex-align-css.html
 INPUT c:/texlive/2025/texmf-dist/tex/latex/tagpdf/latex-align-css.html
 INPUT c:/texlive/2025/texmf-dist/tex/latex/tagpdf/latex-align-css.html
 INPUT c:/texlive/2025/texmf-dist/tex/latex/tagpdf/latex-align-css.html
-INPUT lab05_BJT_DC.aux
+INPUT lab06_MOS_IV.aux
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb
-INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb
+INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/pdftex/pdftexspace.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb
 INPUT c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb

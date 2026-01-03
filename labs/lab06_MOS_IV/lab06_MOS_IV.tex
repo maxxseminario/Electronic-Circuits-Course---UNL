@@ -1,0 +1,576 @@
+\DocumentMetadata{
+  pdfversion=2.0,
+  pdfstandard=ua-2,
+  testphase={phase-III,math,table,title}
+}
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{placeins}
+\usepackage{color} 
+\usepackage{fancyvrb} 
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usepackage{titling}
+
+\DeclareGraphicsExtensions{.pdf,. png,.jpg}
+\graphicspath{{../figs/}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=newest} 
+
+\setlength{\parindent}{0pt}
+
+\singlespacing
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+
+
+% Header and footer
+\pagestyle{fancy}
+
+
+% Ensure the plain style (used by \maketitle and some environments) matches
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \lhead{ECEN 222: Electronic Circuits}
+  \chead{Lab 4}
+  \rhead{Page \thepage\ of \pageref{LastPage}}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+  \renewcommand\headrulewidth{0.4pt}
+  \renewcommand\footrulewidth{0.4pt}
+}
+
+% Fancy layout (same as above) for normal pages
+\fancyhf{}
+\lhead{ECEN 222: Electronic Circuits}
+\chead{Lab 4}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\lfoot{}
+\cfoot{}
+\rfoot{Maxx Seminario, mseminario2@huskers.unl. edu}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+% Avoid head height warnings
+\setlength{\headheight}{14pt}
+
+
+
+\title{\textbf{\Huge I–V and Voltage Transfer Characteristics of MOSFET}\\
+\large Lab 6 — ECEN 222: Electronic Circuits}
+\author{
+    % Maxx Seminario\\
+\large University of Nebraska–Lincoln \\
+\large Department of Electrical and Computer Engineering
+}
+\date{} % specific date
+
+
+\begin{document}
+\thispagestyle{fancy}
+\maketitle
+\rule{\textwidth}{0.5pt}
+
+
+\section{Objectives}
+
+The primary objective of this lab is to investigate the fundamental current-voltage (I-V) characteristics and voltage transfer characteristics of metal-oxide-semiconductor field-effect transistors (MOSFETs). Upon completion of this lab, students will understand the relationship between gate-source voltage, drain current, and drain-source voltage in MOSFET operation, measure and characterize the device transconductance parameter ($k_n$) and threshold voltage ($V_{th}$), map the complete output characteristics showing all regions of MOSFET operation (cutoff, triode, and saturation), characterize the transfer characteristics relating gate voltage to drain current, and analyze the voltage transfer characteristic of a simple common-source configuration.  Through hands-on measurements and analysis, students will develop a thorough understanding of the fundamental I-V relationships that govern MOSFET behavior, which will serve as the foundation for subsequent labs on biasing, amplifiers, and frequency response.
+
+\section{Pre-Lab Preparation}
+
+Before arriving at the lab session, students are required to thoroughly prepare by reading the relevant material from the course textbook.  Specifically, read Chapter 4 (MOS Field-Effect Transistors) in Sedra \& Smith, paying special attention to sections covering MOSFET device structure and physical operation, terminal characteristics in saturation mode, operation in triode and cutoff modes, and the current-voltage characteristics. Focus on understanding the square-law relationship between gate-source voltage and drain current, the concept of threshold voltage, and the distinction between enhancement-mode and depletion-mode devices. Additionally, review Kirchhoff's voltage and current laws, as these will be essential for analyzing the circuits used in this lab.  Students must also complete the pre-lab questions provided in Section \ref{sec:prelab} and come prepared with a plan for organizing and recording measurement data during the lab session.  Proper preparation will ensure efficient use of lab time and deeper understanding of the experimental results.
+
+\section{Background Theory}
+
+\subsection{Metal-Oxide-Semiconductor Field-Effect Transistor (MOSFET)}
+
+A metal-oxide-semiconductor field-effect transistor is a four-terminal semiconductor device consisting of a semiconductor substrate with source (S) and drain (D) terminals connected by a channel, whose conductivity is controlled by a voltage applied to the gate (G) terminal. The fourth terminal, the body (B) or substrate, is often connected to the source in discrete devices.  MOSFETs are voltage-controlled devices where the gate-source voltage controls the drain current, enabling signal amplification and switching applications. In this lab, we will focus on n-channel enhancement-mode MOSFETs (NMOS), though the principles apply equally to p-channel devices (PMOS) with reversed polarities.
+
+Unlike BJTs, MOSFETs have extremely high input impedance (typically $>10^{12}$ $\Omega$) because the gate is isolated from the channel by a thin oxide layer.  Ideally, no DC current flows into the gate terminal:  $i_G = 0$. Therefore, the drain and source currents are equal: 
+
+\begin{equation}
+    i_D = i_S
+    \label{eq:kcl_mos}
+\end{equation}
+
+\subsubsection{Threshold Voltage and Enhancement Mode}
+
+For an n-channel enhancement-mode MOSFET, a minimum gate-source voltage called the threshold voltage $V_{th}$ (or $V_{TN}$ for NMOS, $V_{TP}$ for PMOS) must be applied before a conducting channel forms between source and drain. When $v_{GS} < V_{th}$, the device is in cutoff and $i_D = 0$.  The threshold voltage is typically in the range of 0.5 V to 2 V for enhancement-mode devices, depending on the fabrication process.
+
+For $v_{GS} \geq V_{th}$, a channel forms, and current can flow from drain to source (for NMOS, with $v_{DS} > 0$). The effective voltage that controls channel formation is the overdrive voltage: 
+
+\begin{equation}
+    v_{OV} = v_{GS} - V_{th}
+    \label{eq:overdrive}
+\end{equation}
+
+\subsubsection{Saturation Mode Operation}
+
+In the saturation mode (also called active mode or pinch-off region), the channel is pinched off at the drain end, and the drain current becomes largely independent of $v_{DS}$. This is the primary mode for amplification.  The condition for saturation mode is:
+
+\begin{equation}
+    v_{GS} \geq V_{th} \quad \text{and} \quad v_{DS} \geq v_{OV} = v_{GS} - V_{th}
+\end{equation}
+
+In saturation mode, the drain current is given by the square-law relationship:
+
+\begin{equation}
+    i_D = \frac{1}{2} k_n' \frac{W}{L} (v_{GS} - V_{th})^2 = \frac{1}{2} k_n (v_{GS} - V_{th})^2
+    \label{eq:id_sat}
+\end{equation}
+
+where: 
+\begin{itemize}
+    \item $k_n' = \mu_n C_{ox}$ is the process transconductance parameter (typically 50 to 400 $\mu$A/V$^2$ for discrete devices)
+    \item $\mu_n$ is the electron mobility in the channel
+    \item $C_{ox}$ is the gate oxide capacitance per unit area
+    \item $W$ is the channel width
+    \item $L$ is the channel length
+    \item $k_n = k_n' (W/L)$ is the device transconductance parameter
+\end{itemize}
+
+Equation \ref{eq:id_sat} shows that the drain current in saturation is proportional to the square of the overdrive voltage. This quadratic relationship is fundamental to MOSFET behavior. 
+
+\subsubsection{Channel-Length Modulation}
+
+In the saturation region, the drain current is not perfectly independent of $v_{DS}$, as the simple model of Equation \ref{eq:id_sat} suggests. Due to channel-length modulation, increasing $v_{DS}$ causes the pinch-off point to move slightly toward the source, effectively shortening the channel length and increasing the drain current. This effect can be modeled by: 
+
+\begin{equation}
+    i_D = \frac{1}{2} k_n (v_{GS} - V_{th})^2 (1 + \lambda v_{DS})
+    \label{eq:clm}
+\end{equation}
+
+where $\lambda$ is the channel-length modulation parameter, typically 0.01 to 0.1 V$^{-1}$ for discrete devices.  Channel-length modulation is analogous to the Early effect in BJTs and manifests as a slight upward slope in the output characteristics ($i_D$ vs.  $v_{DS}$ curves) in the saturation region.  If these curves are extended backward, they intersect the voltage axis at approximately $v_{DS} = -1/\lambda = -V_A$, where $V_A$ is called the Early voltage by analogy. 
+
+\subsubsection{Triode Mode Operation}
+
+In the triode mode (also called linear region or ohmic region), the channel is continuous from source to drain, and the device acts as a voltage-controlled resistor. The condition for triode mode is:
+
+\begin{equation}
+    v_{GS} \geq V_{th} \quad \text{and} \quad v_{DS} < v_{GS} - V_{th}
+\end{equation}
+
+In triode mode, the drain current is given by:
+
+\begin{equation}
+    i_D = k_n \left[ (v_{GS} - V_{th}) v_{DS} - \frac{1}{2} v_{DS}^2 \right]
+    \label{eq:id_triode}
+\end{equation}
+
+For small values of $v_{DS}$ (much smaller than $v_{GS} - V_{th}$), the quadratic term can be neglected, and the MOSFET behaves as a linear resistor:
+
+\begin{equation}
+    i_D \approx k_n (v_{GS} - V_{th}) v_{DS}
+\end{equation}
+
+The effective resistance is:
+
+\begin{equation}
+    r_{DS} = \frac{v_{DS}}{i_D} \approx \frac{1}{k_n (v_{GS} - V_{th})}
+    \label{eq:rds}
+\end{equation}
+
+This voltage-controlled resistance property is exploited in analog switches and voltage-controlled attenuators.
+
+\subsubsection{Regions of Operation}
+
+MOSFETs operate in three distinct regions depending on the terminal voltages:
+
+\textbf{1. Cutoff Region:} The gate-source voltage is below the threshold voltage:  $v_{GS} < V_{th}$. No inversion layer (channel) forms, and the drain current is negligible:  $i_D \approx 0$. The MOSFET is effectively off. \\
+
+\textbf{2. Triode Region (Linear/Ohmic):} The gate-source voltage exceeds threshold and the drain-source voltage is small: $v_{GS} \geq V_{th}$ and $v_{DS} < v_{GS} - V_{th}$. The device acts as a voltage-controlled resistor, with current given by Equation \ref{eq:id_triode}. This region is used for switching applications and analog multiplexers. \\
+
+\textbf{3. Saturation Region (Active/Pinch-off):} The gate-source voltage exceeds threshold and the drain-source voltage is large enough to pinch off the channel: $v_{GS} \geq V_{th}$ and $v_{DS} \geq v_{GS} - V_{th}$. The current is approximately independent of $v_{DS}$ (except for channel-length modulation) and is given by Equation \ref{eq:id_sat}. This is the primary operating region for analog amplifiers. \\
+
+Note: The terminology can be confusing. The "saturation" region for MOSFETs (constant current, used for amplification) is analogous to the "active" region for BJTs, while the "triode" region for MOSFETs (low voltage drop, used for switching) is analogous to the "saturation" region for BJTs. \\
+
+\subsection{Transfer Characteristic}
+
+The transfer characteristic describes the relationship between gate-source voltage and drain current for a fixed drain-source voltage (in saturation). From Equation \ref{eq:id_sat}:
+
+\begin{equation}
+    i_D = \frac{1}{2} k_n (v_{GS} - V_{th})^2
+\end{equation}
+
+This parabolic relationship is fundamental to MOSFET operation.  By plotting $i_D$ versus $v_{GS}$ (with $v_{DS}$ held constant in saturation), we obtain the transfer characteristic.  Alternatively, plotting $\sqrt{i_D}$ versus $v_{GS}$ yields a straight line with slope $\sqrt{k_n/2}$ and x-intercept at $V_{th}$.
+
+\subsection{Voltage Transfer Characteristic}
+
+The voltage transfer characteristic (VTC) describes the relationship between an input voltage and an output voltage in a circuit. For a simple common-source configuration where the gate voltage is the input and the drain voltage is the output, the VTC demonstrates all three operating regions. 
+
+Consider a basic common-source circuit with a drain resistor $R_D$ connected between the drain and supply voltage $V_{DD}$. The drain voltage is given by:
+
+\begin{equation}
+    v_D = V_{DD} - i_D R_D
+    \label{eq:vd}
+\end{equation}
+
+As the input voltage (gate voltage $v_G$) increases:
+
+\begin{itemize}
+    \item \textbf{Cutoff region} ($v_{GS} < V_{th}$): The transistor is off, $i_D \approx 0$, so $v_D \approx V_{DD}$. 
+    
+    \item \textbf{Saturation region} ($V_{th} < v_{GS} < $ some threshold): The transistor conducts, and $i_D$ increases with the square of $(v_{GS} - V_{th})$. The drain voltage decreases as described by Equation \ref{eq:vd}. In this region, the VTC has a steep negative slope, exhiviting small signal voltage gain.
+    
+    \item \textbf{Triode region} ($v_{GS}$ exceeds $V_{th}$): The transistor enters triode mode when $v_{DS}$ drops below $v_{GS} - V_{th}$. 
+\end{itemize}
+
+The VTC is nonlinear and describes how the transistor transitions between states. The steep slope in the saturation region is the basis for small signal voltage amplification. 
+
+\section{Experimental Procedures}
+
+\subsection{Part 1: Threshold Voltage and Transconductance Parameter}
+
+In this portion of the experiment, you will measure the threshold voltage ($V_{th}$) and transconductance parameter ($k_n$) of your n-channel MOSFET. These are the two fundamental parameters that characterize the device.  Begin by identifying the gate, drain, source, and body terminals of your MOSFET using the datasheet or package diagram. For a typical three-terminal package, the body is internally connected to the source.  Construct the circuit shown in Figure \ref{fig:vth_circuit} on your breadboard, taking care to orient the MOSFET correctly. 
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % NMOS transistor
+  \node[nmos] (M1) at (3,2) {};
+  
+  % Coordinates
+  \coordinate (GND) at (3,0);
+  \coordinate (VGG) at (0,2);
+  \coordinate (VDD) at (6,4);
+  
+  % Ground
+  \draw (0,0) -- (6,0);
+  \draw (M1.source) -- (GND) node[ground]{};
+  
+  % Gate voltage source
+  \draw (VGG) to[V, l=$V_{GS}$] (0,0);
+  \draw (VGG) -- (M1.gate);
+  
+  % Drain supply and resistor
+  \draw (VDD) to[V, l_=$V_{DD}$] (6,0);
+  \draw (VDD) -- (M1.drain |- VDD)
+        to[R, l=$R_D$] (M1.drain);
+  
+  % Voltage labels
+  \draw (M1.drain) to[open, v^=$V_{DS}$, pos=0.6, xshift=8mm] (M1.source);
+  
+\end{circuitikz}
+\caption{Circuit for measuring threshold voltage and transconductance parameter of an NMOS transistor.}
+\label{fig:vth_circuit}
+\end{figure}
+
+Set the component values as follows: $R_D = 1$ k$\Omega$ and $V_{DD} = 10$ V. The drain resistor limits the drain current to a safe value and allows easy current measurement via voltage drop. \\
+
+Connect DMMs to measure:  (1) $V_{GS}$ directly, (2) the voltage across $R_D$ to determine $I_D$, and (3) $V_{DS}$ directly across the drain-source terminals. \\
+
+Starting with $V_{GS} = 0$ V, gradually increase $V_{GS}$ from 0 to 5 V in increments of 0.1 V initially.  Take finer increments (0.05 V or 0.02 V) in the region where the device begins to turn on (typically 0.5 V to 3 V, depending on your specific transistor). For each value of $V_{GS}$, record: \\
+
+\begin{itemize}
+    \item $V_{GS}$ (gate-source voltage)
+    \item Voltage across $R_D$
+    \item $V_{DS}$ (drain-source voltage)
+\end{itemize}
+
+Calculate the drain current using Ohm's law: 
+
+\begin{equation}
+    I_D = \frac{V_{R_D}}{R_D} = \frac{V_{DD} - V_{DS}}{R_D}
+\end{equation}
+
+For each measurement, verify that the transistor is in the saturation region by checking that $V_{DS} \geq V_{GS} - V_{th}$. Initially, you won't know $V_{th}$, but you can verify after the fact.  If $V_{DS}$ approaches or drops below about 1 V for higher $V_{GS}$ values, the transistor may be entering the triode region, and those points should be excluded from the saturation-mode analysis. \\
+
+In your lab report, create a comprehensive table with columns for $V_{GS}$, $V_{DS}$, $V_{R_D}$, $I_D$, and $\sqrt{I_D}$. \\
+
+\textbf{Method 1: Square-root plot} \\
+
+Plot $\sqrt{I_D}$ (y-axis) versus $V_{GS}$ (x-axis). According to Equation \ref{eq:id_sat}:
+
+\begin{equation}
+    \sqrt{I_D} = \sqrt{\frac{k_n}{2}} (V_{GS} - V_{th})
+\end{equation}
+
+In the saturation region where the device is conducting well, this relationship should be linear.  Perform a linear fit to the straight-line portion of the curve (typically for $I_D > 0.1$ mA or so, where the square-law model is most accurate). From the fitted line: 
+
+\begin{itemize}
+    \item The x-intercept gives $V_{th}$ (where $\sqrt{I_D} = 0$)
+    \item The slope gives $\sqrt{k_n/2}$, from which $k_n$ can be calculated:  $k_n = 2 \times (\text{slope})^2$
+\end{itemize}
+
+\textbf{Method 2: Logarithmic derivative} \\
+
+Alternatively, plot $\log_{10}(I_D)$ versus $V_{GS}$. In the region just above threshold where the device first turns on (subthreshold region), the current increases approximately exponentially.  In the strong inversion region (well above threshold), the slope on the log plot should decrease, reflecting the square-law behavior. \\
+
+
+Report both the threshold voltage $V_{th}$ and the transconductance parameter $k_n$ with appropriate units. Compare your measured values with typical values from the datasheet.  Calculate the percentage error.\\
+
+\subsection{Part 2: Output Characteristics ($I_D$ vs. $V_{DS}$)}
+
+In this section, you will record the output characteristics of the MOSFET by measuring drain current as a function of drain-source voltage for several fixed values of gate-source voltage. These characteristic curves are fundamental to understanding the 2nd order of MOSFET behavior, namely the channel length modulation effect.  Use the same circuit as Part 1 (Figure \ref{fig:vth_circuit}). \\
+
+You will generate a family of curves, each corresponding to a different fixed gate-source voltage. Select four or five different gate-source voltages that span from just above threshold to well into strong conduction. For example, if $V_{th} \approx 1. 5$ V, you might choose:  $V_{GS} = 0$ V (cutoff), 2. 0 V, 2.5 V, 3.0 V, and 3.5 V.  Adjust these values based on your measured $V_{th}$ from Part 1. \\
+
+For each fixed gate-source voltage: 
+
+\begin{enumerate}
+    \item Set $V_{GS}$ to the desired value using the $V_{GS}$ supply. 
+    
+    \item Record the actual $V_{GS}$ value.
+    
+    \item Vary $V_{DD}$ from 0 V to 5 V in increments of 0.5 V.  Take smaller increments (0.1 to 0.2 V) in the region from 0 to 2 V where the transition from triode to saturation mode occurs.
+    
+    \item For each $V_{DD}$ setting, measure $V_{DS}$ and the voltage across $R_D$, then calculate $I_D$. 
+    
+    \item Record all values in a table.
+\end{enumerate}
+
+Pay special attention to the following features: 
+
+\begin{itemize}
+    \item \textbf{Triode region: } At low $V_{DS}$ (typically $V_{DS} < V_{GS} - V_{th}$), the drain current increases approximately linearly with $V_{DS}$. This is where Equation \ref{eq:id_triode} applies.
+    
+    \item \textbf{Saturation region:} For $V_{DS} \geq V_{GS} - V_{th}$, the drain current becomes approximately constant (for a given $V_{GS}$), with only a slight increase due to channel-length modulation. This is where Equation \ref{eq:id_sat} applies.
+    
+    \item \textbf{Boundary: } The transition from triode to saturation occurs approximately when $V_{DS} = V_{GS} - V_{th}$. This boundary can be plotted on your output characteristics. 
+    
+    \item \textbf{Channel-length modulation:} The slight positive slope of the curves in the saturation region, analogous to the Early effect in BJTs. 
+\end{itemize}
+
+In your lab report, plot all curves on a single graph with $V_{DS}$ on the x-axis and $I_D$ on the y-axis.  Clearly label each curve with its corresponding $V_{GS}$ value.  On your plot, identify and label the triode region, saturation region, and the boundary between them. \\
+
+The theoretical boundary between triode and saturation is given by:
+
+\begin{equation}
+    V_{DS} = V_{GS} - V_{th}
+\end{equation}
+
+Using your measured value of $V_{th}$, plot this boundary line on your output characteristics graph (it will be a straight line with slope 1 when plotted parametrically for different $V_{GS}$ values). Verify that your measured data points transition from triode to saturation near this theoretical boundary. \\
+
+From the curves in the saturation region, estimate the channel-length modulation parameter $\lambda$ (or equivalently, the Early voltage $V_A = 1/\lambda$). To do this, select one of the curves with moderate current and choose two points well into the saturation region. Calculate the slope: 
+
+\begin{equation}
+    \frac{\Delta I_D}{\Delta V_{DS}} = \frac{1}{2} k_n (V_{GS} - V_{th})^2 \lambda
+\end{equation}
+
+Solve for $\lambda$:
+
+\begin{equation}
+    \lambda = \frac{2 \Delta I_D}{k_n (V_{GS} - V_{th})^2 \Delta V_{DS}}
+\end{equation}
+
+Use your previously determined values of $k_n$ and $V_{th}$.  Calculate $\lambda$ and report $V_A = 1/\lambda$. Compare with typical values from the datasheet. 
+
+\subsection{Part 3: Transfer Characteristic ($I_D$ vs. $V_{GS}$)}
+
+You will now characterize the transfer characteristic of the MOSFET in saturation mode, which describes the relationship between gate-source voltage and drain current. This is the most important characteristic for small signal amplifier design. \\
+
+Using the circuit in Figure \ref{fig:vth_circuit}, set $V_{DD}$ to a fixed value reccomended by the datasheet to ensure the transistor can remain in the saturation region throughout the measurements. \\
+
+Vary $V_{GS}$ from 0 V to the maximum operating point specified in the datasheet. Use the data you collected in Part 1, but verify that for each data point, $V_{DS} \geq V_{GS} - V_{th}$ (saturation condition). Exclude any points where this condition is violated. \\
+
+For each $V_{GS}$ setting:
+
+\begin{enumerate}
+    \item Measure $V_{DS}$ to verify saturation mode.
+    \item Measure the voltage across $R_D$ and calculate $I_D$.
+\end{enumerate}
+
+Create a table with columns for $V_{GS}$, $V_{DS}$, $I_D$, and $\sqrt{I_D}$. \\
+
+In your lab report, create three plots:\\
+
+\textbf{Plot 1: Standard transfer characteristic. } Plot $I_D$ (y-axis) versus $V_{GS}$ (x-axis). This should show the characteristic parabolic shape:  approximately zero current below $V_{th}$, then increasing with the square of $(V_{GS} - V_{th})$ above threshold. \\
+
+\textbf{Plot 2: Square-root plot.} Plot $\sqrt{I_D}$ (y-axis) versus $V_{GS}$ (x-axis). This should be approximately linear in the saturation region.  Perform a linear fit and determine: \\
+
+\begin{itemize}
+    \item The x-intercept, which gives $V_{th}$
+    \item The slope, which gives $\sqrt{k_n/2}$
+\end{itemize}
+
+Compare these values with those obtained in Part 1. They should be consistent.\\
+
+\textbf{Plot 3: $I_D$ versus $(V_{GS} - V_{th})^2$.} Using your measured value of $V_{th}$, plot $I_D$ versus $(V_{GS} - V_{th})^2$. This should be a straight line passing through the origin with slope $k_n/2$ according to Equation \ref{eq:id_sat}. Perform a linear fit and determine $k_n$ from the slope.  Compare with your previous determinations. \\
+
+Discuss the accuracy and consistency of your three different methods for determining $V_{th}$ and $k_n$. Calculate the percentage variation between methods.  Explain potential sources of discrepancy.\\
+
+\subsection{Part 4: Voltage Transfer Characteristic}
+
+In this section, you will measure the voltage transfer characteristic (VTC) of a basic common-source configuration. The VTC illustrates how the circuit transitions between cutoff, saturation, and triode regions as the input voltage is varied. This is a fundamental characteristic that underlies the operation of both amplifiers and digital logic circuits. \\
+
+Construct the circuit shown in Figure \ref{fig:cs_vtc}. This is a simplified version of the previous circuit where the gate is driven directly by an input voltage source. \\
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % NMOS transistor
+  \node[nmos] (M1) at (3,2) {};
+  
+  % Coordinates
+  \coordinate (GND) at (3,0);
+  \coordinate (VIN) at (0,2);
+  \coordinate (VDD) at (6,4);
+  
+  % Ground
+  \draw (0,0) -- (6,0);
+  \draw (M1.source) -- (GND) node[ground]{};
+  
+  % Gate voltage source
+  \draw (VIN) to[V, l=$V_{in}$] (0,0);
+  \draw (VIN) -- (M1.gate);
+  
+  % Drain supply and resistor
+  \draw (VDD) to[V, l_=$V_{DD}$] (6,0);
+  \draw (VDD) -- (M1.drain |- VDD)
+        to[R, l=$R_D$] (M1.drain);
+  
+  % Output voltage label
+  \draw (M1.drain) to[open, v^=$V_{out}$, pos=0.6, xshift=8mm] (M1.source);
+  
+\end{circuitikz}
+\caption{Common-source configuration for voltage transfer characteristic measurement.  Input is applied to gate; output is measured at drain.}
+\label{fig:cs_vtc}
+\end{figure}
+
+Use $R_D = 1$ k$\Omega$ and $V_{DD} = 5$ V.  Connect $V_{in}$ directly to the gate of the transistor.  Measure $V_{out}$ at the drain with respect to ground.  Note that $V_{out} = V_{DS}$ in this configuration since the source is grounded. \\
+
+Vary $V_{in}$ from 0 V to 5 V in increments appropriate to capture the transitions.  Use fine increments (0.05 to 0.1 V) in the region around $V_{th}$ where the device turns on, and where the transition from saturation to triode occurs.  Use larger increments elsewhere.  For each input voltage, record both: \\
+
+\begin{itemize}
+    \item $V_{in}$ ($V_{GS}$ in this case)
+    \item $V_{out}$ ($V_{DS}$ in this case)
+\end{itemize}
+
+Record $I_D = (V_{DD} - V_{out})/R_D$ for later analysis. \\
+
+Observe how $V_{out}$ changes as $V_{in}$ increases.  You should see three distinct regions: \\
+
+\begin{enumerate}
+    \item \textbf{Cutoff region ($V_{in} < V_{th}$):} The transistor is off, $I_D \approx 0$, and $V_{out} \approx V_{DD} = 5$ V.
+    
+    \item \textbf{Saturation region (approximately $0 < V_{in}-V{th} <  V_{DS}$):} The transistor conducts, and $V_{out}$ decreases as $V_{in}$ increases. The relationship is nonlinear (due to the square-law), but the slope is steep, representing high voltage gain.  This is the amplification region.
+    
+    \item \textbf{Triode region ($V_{in}-V_{th} > V_{DS}$):} The transistor enters triode mode when $V_{out}$ drops below $V_{in} - V_{th}$ (i.e., when $V_{DS} < V_{GS} - V_{th}$). In this region, $V_{out}$ is low and relatively insensitive to further increases in $V_{in}$. 
+\end{enumerate}
+
+In your lab report, plot the voltage transfer characteristic with $V_{in}$ on the x-axis and $V_{out}$ on the y-axis.  Clearly identify and label the three regions of operation on your plot.\\
+
+Calculate the slope (voltage gain magnitude) in the saturation region. Since the relationship is nonlinear, the gain varies.  Calculate the incremental gain at several points: \\
+
+\begin{equation}
+    \left|A_v\right| = \left|\frac{\Delta V_{out}}{\Delta V_{in}}\right|
+\end{equation}
+
+Select two closely spaced points in the saturation region and calculate this slope. Do this for several locations (e.g., at $V_{in} = V_{th} + 0.5$ V, $V_{in} = V_{th} + 1.0$ V, etc.). Note how the gain magnitude varies with bias point.
+
+Identify the transition points:  (1) the input voltage at which the transistor begins to conduct appreciably (cutoff-to-saturation transition, approximately $V_{th}$), and (2) the input voltage at which triode mode begins (saturation-to-triode transition).
+
+The transition from saturation to triode occurs when: 
+
+\begin{equation}
+    V_{out} = V_{in} - V_{th}
+\end{equation}
+
+Verify this relationship by finding the point on your VTC where the output voltage equals the input voltage minus the threshold voltage. 
+
+Discuss the significance of the VTC for both analog and digital applications. For analog amplifiers, operation in the saturation region is desired for linearity and gain; for digital logic circuits (inverters), rapid transition between cutoff ($V_{out}$ high) and triode ($V_{out}$ low) is desired, with well-defined logic levels.
+
+\subsection{Part 5: Verification of Square-Law Relationship}
+
+In this final section, you will verify the square-law relationship between drain current and gate-source voltage given by Equation \ref{eq:id_sat} in saturation mode. Use the data from Part 3 (transfer characteristics). \\
+
+From your measurements in Part 3, you have $V_{GS}$ and $I_D$ values for the saturation region. For each measurement point where the saturation condition $V_{DS} \geq V_{GS} - V_{th}$ is satisfied, calculate the overdrive voltage: \\
+
+\begin{equation}
+    V_{OV} = V_{GS} - V_{th}
+\end{equation}
+
+using your previously determined value of $V_{th}$. \\ 
+
+Create a plot with $V_{OV}^2 = (V_{GS} - V_{th})^2$ on the x-axis and $I_D$ on the y-axis. According to Equation \ref{eq:id_sat}, this plot should yield a straight line passing through the origin, with slope $k_n/2$: \\
+
+\begin{equation}
+    I_D = \frac{k_n}{2} V_{OV}^2
+\end{equation}
+
+Perform a linear fit to your data.  Ideally, force the fit through the origin, though you can also perform an unforced fit to see if there is a significant non-zero intercept, which would indicate deviation from the ideal model. \\
+
+From the slope of your fitted line, determine $k_n$: \\
+
+\begin{equation}
+    k_n = 2 \times \text{slope}
+\end{equation}
+
+Compare this experimental value with the values you determined in Parts 1 and 3. Calculate the percentage variation between the different methods. Discuss the consistency of your results. \\
+
+Examine the quality of the linear fit. Calculate the coefficient of determination ($R^2$ value). A value close to 1 indicates that the square-law model fits the data well. If $R^2$ is significantly less than 0.99, discuss possible reasons for deviation from the ideal square-law behavior.  Consider:  \\
+
+\begin{itemize}
+    \item Finite output resistance (channel-length modulation)
+    \item Velocity saturation effects at high gate voltages
+    \item Body effect (if body is not connected to source)
+    \item Measurement errors and resolution
+    \item Temperature variations during measurement
+\end{itemize}
+
+In your lab report, discuss sources of error that might affect these measurements.  Consider factors such as meter accuracy, contact resistance, temperature variations, and deviations from ideal MOSFET behavior (particularly at low and high current levels). \\
+
+Explain the physical origin of the square-law relationship.  Discuss how the gate voltage controls the channel charge density, which in turn controls the drain current. Relate this to the MOS capacitor model and the gradual channel approximation. \\
+
+\section{Pre-Lab Questions}
+\label{sec:prelab}
+
+Complete these questions before coming to the lab session.  Include your answers and all supporting work in your lab report.
+
+\begin{enumerate}
+    
+    \item For the circuit in Figure \ref{fig:vth_circuit}, assume $V_{GS} = 3. 0$ V, $V_{DD} = 5$ V, $R_D = 1$ k$\Omega$, $k_n = 2$ mA/V$^2$, $V_{th} = 1.5$ V, and $\lambda = 0$. Calculate:
+    \begin{enumerate}
+        \item The overdrive voltage $V_{OV}$
+        \item The drain current $I_D$ assuming saturation mode
+        \item The drain-source voltage $V_{DS}$
+        \item Verify whether the transistor is indeed in the saturation region
+        \item The power dissipated in the transistor
+    \end{enumerate}
+    Show all calculations. 
+    
+    \item Explain in your own words the difference between the cutoff, triode, and saturation regions of MOSFET operation.  For each region, state: 
+    \begin{enumerate}
+        \item The condition on $V_{GS}$ relative to $V_{th}$
+        \item The condition on $V_{DS}$ relative to $(V_{GS} - V_{th})$
+        \item Whether the drain current is approximately zero, proportional to $V_{DS}$, or independent of $V_{DS}$
+        \item The typical application (amplification, switching on, switching off)
+    \end{enumerate}
+    
+\end{enumerate}
+
+
+\end{document}
