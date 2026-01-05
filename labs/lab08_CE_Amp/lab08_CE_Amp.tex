@@ -1,0 +1,864 @@
+\DocumentMetadata{
+  pdfversion=2.0,
+  pdfstandard=ua-2,
+  testphase={phase-III,math,table,title}
+}
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{placeins}
+\usepackage{color} 
+\usepackage{fancyvrb} 
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usepackage{titling}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{../figs/}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=newest} 
+
+\setlength{\parindent}{0pt}
+
+\singlespacing
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+% Header and footer
+\pagestyle{fancy}
+
+% Ensure the plain style (used by \maketitle and some environments) matches
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \lhead{ECEN 222:  Electronic Circuits}
+  \chead{Lab 8}
+  \rhead{Page \thepage\ of \pageref{LastPage}}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+  \renewcommand\headrulewidth{0.4pt}
+  \renewcommand\footrulewidth{0.4pt}
+}
+
+% Fancy layout (same as above) for normal pages
+\fancyhf{}
+\lhead{ECEN 222: Electronic Circuits}
+\chead{Lab 8}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\lfoot{}
+\cfoot{}
+\rfoot{Maxx Seminario, mseminario2@huskers. unl.edu}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+% Avoid head height warnings
+\setlength{\headheight}{14pt}
+
+\title{\textbf{\Huge Common-Emitter Amplifier and Emitter Follower Buffering Application}\\
+\large Lab 8 — ECEN 222: Electronic Circuits}
+\author{
+\large University of Nebraska-Lincoln \\
+\large Department of Electrical and Computer Engineering
+}
+\date{} % specific date
+
+\begin{document}
+\thispagestyle{fancy}
+\maketitle
+\rule{\textwidth}{0.5pt}
+
+\section{Objectives}
+
+The primary objective of this lab is to design, construct, and characterize two fundamental BJT amplifier configurations: the common-emitter (CE) amplifier for voltage gain and the common-collector (CC) amplifier (emitter follower) for buffering applications. Upon completion of this lab, students will understand how to design and bias a common-emitter amplifier for specific DC operating points, measure and characterize voltage gain, input impedance, and output impedance of the CE amplifier, observe the effects of load resistance on amplifier gain and understand output impedance implications, design and construct an emitter follower buffer stage, measure the voltage gain (approximately unity) and impedance transformation properties of the emitter follower, demonstrate the practical application of cascading a CE amplifier with an emitter follower to drive low-impedance loads, and compare experimental measurements with theoretical predictions based on DC bias calculations and AC small-signal models.  Through hands-on design and measurement, students will develop practical skills in BJT amplifier circuits and understand the complementary roles of voltage amplification and impedance buffering in signal processing systems.
+
+\section{Pre-Lab Preparation}
+
+Before arriving at the lab session, students are required to thoroughly prepare by reading the relevant material from the course textbook.  Specifically, read Chapter 5 (Bipolar Junction Transistors) in Sedra \& Smith, focusing on sections covering the common-emitter amplifier configuration including DC bias design, small-signal equivalent circuits and the hybrid-$\pi$ model, derivation of voltage gain and input/output impedances, the common-collector amplifier (emitter follower) configuration, and the application of emitter followers as buffer stages. Pay particular attention to the concept of the transconductance parameter $g_m$, the small-signal input resistance $r_{\pi}$, the small-signal output resistance $r_o$, and how these parameters relate to amplifier performance. Review the effects of emitter degeneration and biasing resistors on gain and impedance.  Additionally, review basic AC circuit analysis, Thévenin equivalent circuits, and voltage divider concepts, as these will be essential for analyzing the amplifier circuits. Students must also complete the pre-lab questions provided in Section \ref{sec:prelab}, which include design calculations for the circuits to be built.  Bring these calculations to lab—they will guide your circuit construction.  Proper preparation will ensure efficient use of lab time and deeper understanding of the experimental results.
+
+\section{Background Theory}
+
+\subsection{Common-Emitter Amplifier}
+
+The common-emitter (CE) amplifier is the most widely used BJT amplifier configuration, analogous to the common-source amplifier for MOSFETs. It provides voltage gain with signal inversion (180° phase shift), moderate input impedance, and moderate output impedance. The basic CE amplifier consists of a BJT with a collector resistor, appropriate biasing circuitry, and coupling capacitors for AC signal injection and extraction. 
+
+\subsubsection{DC Biasing}
+
+Proper DC biasing is essential to establish the quiescent operating point (Q-point) of the transistor in the active region, where it can provide linear amplification. A typical biasing scheme uses a voltage divider at the base and an emitter resistor for stabilization, as shown in Figure \ref{fig:ce_basic}. 
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % NPN transistor
+  \node[npn] (Q1) at (7,3) {};
+  
+  % Coordinates
+  \coordinate (GND) at (7,0);
+  \coordinate (VCC) at (13,6. 5);
+  
+  % Ground bus
+  \draw (0,0) -- (13,0);
+  
+  % VCC supply
+  \draw (VCC) to[V, l_=$V_{CC}$] (13,0);
+  
+  % Input signal source
+  \draw (0,3) to[sV, l=$v_{in}$] (0,0);
+  \draw (0,3) to[R, l=$R_{sig}$] (1. 5,3);
+  
+  % Base coupling capacitor
+  \draw (1.5,3) to[C, l=$C_{C1}$] (4,3);
+  
+  % Voltage divider AFTER coupling cap (connected to base)
+  \draw (VCC) -- (5,6. 5) 
+        to[R, l=$R_1$, *-] (5,3)
+        to[R, l=$R_2$] (5,0);
+  
+  % Connection from divider to base
+  \draw (4,3) -- (5,3);
+  \draw (5,3) -- (Q1.base);
+  
+  % Emitter resistor
+  \draw (Q1.emitter) to[R, l=$R_E$] (7,0);
+
+  % Bypass capacitor in parallel with emitter resistor
+  \draw (Q1.emitter) -- (8. 5,2. 25)
+        to[C, l^=$C_E$] (8.5,0) -- (7,0);
+  
+  % Collector resistor
+  \draw (VCC) -- (Q1.collector |- VCC)
+        to[R, l=$R_C$] (Q1.collector);
+  
+  % Output node
+  \coordinate (VOUT) at (9. 5,4. 5);
+
+  % Wire from collector to output node
+  \draw (Q1.collector) -- (7,4.5) -- (VOUT);
+
+  % Load resistor to ground
+  \draw (VOUT) to[R, l=$R_L$] (9.5,0);
+
+  % Output coupling capacitor in parallel with R_L
+  \draw (VOUT) -- (10.8,4.5)
+        to[C, l=$C_{C2}$] (10.8,0) -- (9.5,0);
+
+  % Output label
+  \draw (VOUT) to[short, -o] (11.4,4.5) node[right] {$v_{out}$};
+  
+  % Voltage labels
+  \node[above] at (4,3) {$V_B$};
+  \node[above right] at (Q1.collector) {$V_C$};
+  \node[left] at (Q1.emitter) {$V_E$};
+  
+\end{circuitikz}
+\caption{Common-emitter amplifier with voltage divider biasing, emitter degeneration, and AC coupling. }
+\label{fig:ce_basic}
+\end{figure}
+
+The DC analysis proceeds as follows.  The base voltage is determined by the voltage divider formed by $R_1$ and $R_2$:  
+
+\begin{equation}
+    V_B = V_{CC} \frac{R_2}{R_1 + R_2}
+    \label{eq:vb}
+\end{equation}
+
+The emitter voltage is one diode drop below the base voltage:
+
+\begin{equation}
+    V_E = V_B - V_{BE}
+    \label{eq:ve}
+\end{equation}
+
+where $V_{BE} \approx 0.7$ V for silicon BJTs in active mode. The emitter current is:
+
+\begin{equation}
+    I_E = \frac{V_E}{R_E}
+    \label{eq:ie}
+\end{equation}
+
+For transistors with reasonable current gain $\beta$, the collector current is approximately equal to the emitter current:
+
+\begin{equation}
+    I_C \approx I_E = \frac{V_E}{R_E}
+    \label{eq:ic_dc}
+\end{equation}
+
+The collector voltage is: 
+
+\begin{equation}
+    V_C = V_{CC} - I_C R_C
+    \label{eq:vc}
+\end{equation}
+
+And the collector-emitter voltage is:
+
+\begin{equation}
+    V_{CE} = V_C - V_E = V_{CC} - I_C (R_C + R_E)
+    \label{eq:vce}
+\end{equation}
+
+For active mode operation (required for linear amplification), we must ensure:  
+
+\begin{equation}
+    V_{CE} \geq V_{CE,sat} \approx 0.2 \text{ V}
+    \label{eq:active_condition}
+\end{equation}
+
+Typically, designing for $V_{CE} = V_{CC}/2$ provides good signal swing capability. 
+
+\subsubsection{Small-Signal Analysis}
+
+For small AC signals superimposed on the DC bias point, we can use small-signal analysis. The small-signal equivalent circuit replaces the BJT with its hybrid-$\pi$ model, and all DC sources are set to zero (short-circuited for voltage sources, open-circuited for current sources). Coupling and bypass capacitors are assumed to be short circuits at the signal frequency.\\
+
+The key small-signal parameters are:  \\
+
+\textbf{Transconductance:  }
+\begin{equation}
+    g_m = \frac{I_C}{V_T}
+    \label{eq:gm}
+\end{equation}
+
+where $V_T \approx 25$ mV is the thermal voltage at room temperature.  The transconductance relates the small-signal collector current to the small-signal base-emitter voltage.  \\
+
+\textbf{Input resistance: }
+\begin{equation}
+    r_{\pi} = \frac{\beta}{g_m} = \frac{\beta V_T}{I_C}
+    \label{eq:rpi}
+\end{equation}
+
+where $\beta$ is the DC current gain of the transistor. \\
+
+\textbf{Output resistance:}
+\begin{equation}
+    r_o = \frac{V_A}{I_C}
+    \label{eq:ro}
+\end{equation}
+
+where $V_A$ is the Early voltage.  For many discrete transistors, $r_o$ is large (tens of k$\Omega$), often allowing it to be neglected in first-order analysis. \\
+
+The small-signal hybrid-$\pi$ model of the BJT consists of an input resistance $r_{\pi}$ between base and emitter, a voltage-controlled current source $g_m v_{be}$ between collector and emitter, and the output resistance $r_o$ in parallel with the current source. \\
+
+For the CE amplifier with emitter resistor $R_E$ bypassed by capacitor $C_E$, the small-signal equivalent circuit shows the collector current is $i_c = g_m v_{be}$.  The output voltage at the collector (before the coupling capacitor) is:
+
+\begin{equation}
+    v_c = -i_c (R_C \parallel r_o) = -g_m v_{be} (R_C \parallel r_o)
+    \label{eq:vc_ss}
+\end{equation}
+
+Since $v_{be} = v_{in}$ (the emitter is AC grounded by $C_E$), the voltage gain from base to collector is:
+
+\begin{equation}
+    A_v = \frac{v_c}{v_{in}} = -g_m (R_C \parallel r_o)
+    \label{eq:av_ce}
+\end{equation}
+
+The negative sign indicates signal inversion.  If $r_o \gg R_C$ (often the case), this simplifies to:
+
+\begin{equation}
+    A_v \approx -g_m R_C
+    \label{eq:av_ce_simple}
+\end{equation}
+
+With a load resistor $R_L$ connected through the output coupling capacitor $C_{C2}$, the effective load becomes $R_C \parallel R_L$, and the voltage gain to the output becomes:
+
+\begin{equation}
+    A_v = -g_m (R_C \parallel R_L \parallel r_o) \approx -g_m (R_C \parallel R_L)
+    \label{eq:av_ce_loaded}
+\end{equation}
+
+This shows that the output impedance of the CE amplifier affects its performance when driving loads. \\
+
+\textbf{Input impedance:} The input impedance at the base includes $r_{\pi}$ and the bias resistors.  The effective input impedance seen by the source is: 
+
+\begin{equation}
+    R_{in} = R_1 \parallel R_2 \parallel r_{\pi}
+    \label{eq:rin_ce}
+\end{equation}
+
+\textbf{Output impedance: } Looking back into the collector with the input set to zero (AC ground), the output impedance is:  
+
+\begin{equation}
+    R_{out} = R_C \parallel r_o \approx R_C
+    \label{eq:rout_ce}
+\end{equation}
+
+This is typically in the range of a few k$\Omega$, which can cause significant loading effects when driving low-impedance loads. 
+
+\subsubsection{Effect of Unbypassed Emitter Resistor}
+
+If the emitter resistor $R_E$ is not bypassed (no capacitor $C_E$), it provides negative feedback that reduces gain but increases linearity and stability. The small-signal analysis shows:
+
+\begin{equation}
+    v_{be} = v_{in} - i_e R_E = v_{in} - (\beta + 1) i_b R_E \approx v_{in} - \beta i_b R_E
+\end{equation}
+
+Since $i_c = \beta i_b$ and $i_c = g_m v_{be}$: 
+
+\begin{equation}
+    v_{be} = v_{in} - \frac{g_m v_{be}}{\beta} \beta R_E = v_{in} - g_m v_{be} R_E
+\end{equation}
+
+Solving for $v_{be}$:
+
+\begin{equation}
+    v_{be} = \frac{v_{in}}{1 + g_m R_E}
+\end{equation}
+
+The collector voltage is:
+
+\begin{equation}
+    v_c = -g_m v_{be} R_C = -g_m \frac{v_{in}}{1 + g_m R_E} R_C
+\end{equation}
+
+Therefore, the voltage gain with an unbypassed emitter resistor is:  
+
+\begin{equation}
+    A_v = \frac{-g_m R_C}{1 + g_m R_E}
+    \label{eq:av_ce_degenerated}
+\end{equation}
+
+This is significantly smaller in magnitude than the bypassed case. The input impedance looking into the base increases to approximately $r_{\pi} + (\beta + 1) R_E$.  This technique is known as emitter degeneration and is commonly used.  \\
+
+\subsection{Emitter Follower (Common-Collector Amplifier)}
+
+The emitter follower, also called the common-collector (CC) amplifier, is a configuration where the input is applied to the base, the output is taken from the emitter, and the collector is connected to $V_{CC}$ (AC ground). It is analogous to the source follower for MOSFETs.  The emitter follower provides near-unity voltage gain, very high input impedance, and very low output impedance, making it ideal for buffering applications. 
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % NPN transistor
+  \node[npn] (Q1) at (7,3) {};
+  
+  % Coordinates
+  \coordinate (GND) at (7,0);
+  \coordinate (VCC) at (13,6.5);
+  \coordinate (VOUT) at (12,2.25);
+
+  % Ground bus
+  \draw (0,0) -- (13,0);
+  
+  % VCC supply
+  \draw (VCC) to[V, l_=$V_{CC}$] (13,0);
+  
+  % Input signal source
+  \draw (0,3) to[sV, l=$v_{in}$] (0,0);
+  \draw (0,3) to[R, l=$R_{sig}$] (1.5,3);
+  
+  % Base coupling capacitor
+  \draw (1.5,3) to[C, l=$C_{C1}$] (4,3);
+  
+  % Voltage divider
+  \draw (VCC) -- (5,6.5) 
+        to[R, l=$R_1$, *-] (5,3)
+        to[R, l=$R_2$] (5,0);
+  
+  % Connection from divider to base
+  \draw (4,3) -- (5,3);
+  \draw (5,3) -- (Q1.base);
+  
+  % Collector to VCC
+  \draw (Q1.collector) -- (Q1.collector |- VCC) -- (VCC);
+  
+  % Emitter resistor
+  \draw (Q1.emitter) to[R, l=$R_E$] (7,0);
+
+  % Output coupling capacitor
+  \draw (Q1.emitter) -- (8.5,2.25)
+        to[C, l^=$C_E$] (8.5,0) -- (7,0);
+  
+  % Load resistor
+  \draw (Q1.emitter) -- (10,2.25) 
+        to[R, l=$R_L$] (10,0);
+
+  % Output capacitor
+  \draw (Q1.emitter) -- (11.5,2.25)
+        to[C, l^=$C_{C2}$] (11.5,0) -- (9,0);
+
+  \draw (VOUT) -- (11.5,2.25);
+
+  % Output label
+  \draw (VOUT) to[short, -o] (12,2.25) node[right] {$v_{out}$};
+  
+  % Voltage labels
+  \node[above] at (4,3) {$V_B$};
+  \node[above right] at (Q1.collector) {$V_C$};
+  \node[left] at (Q1.emitter) {$V_E$};
+  
+\end{circuitikz}
+\caption{Emitter follower (common-collector) amplifier with voltage divider biasing. }
+\label{fig:ef_basic}
+\end{figure}
+
+\subsubsection{DC Biasing}
+
+The DC analysis is similar to the CE amplifier.  The base voltage is established by the voltage divider:  
+
+\begin{equation}
+    V_B = V_{CC} \frac{R_2}{R_1 + R_2}
+\end{equation}
+
+The emitter voltage is: 
+
+\begin{equation}
+    V_E = V_B - V_{BE}
+\end{equation}
+
+The emitter current is:  
+
+\begin{equation}
+    I_E = \frac{V_E}{R_E}
+\end{equation}
+
+And the collector current is:
+
+\begin{equation}
+    I_C \approx I_E
+\end{equation}
+
+The collector-emitter voltage is:
+
+\begin{equation}
+    V_{CE} = V_{CC} - V_E = V_{CC} - I_E R_E
+\end{equation}
+
+For active mode operation, we need $V_{CE} \geq V_{CE,sat} \approx 0.2$ V, which is typically satisfied with normal supply voltages.  
+
+\subsubsection{Small-Signal Analysis}
+
+The small-signal equivalent circuit for the emitter follower shows that the output is taken from the emitter.  The small-signal collector current is $i_c = g_m v_{be}$, and the emitter current is $i_e = (\beta + 1) i_b \approx i_c$ (for large $\beta$). This current flows through $R_E$ (and $R_L$ if connected). \\
+
+The emitter voltage is:
+
+\begin{equation}
+    v_e = i_e (R_E \parallel R_L) \approx g_m v_{be} (R_E \parallel R_L)
+\end{equation}
+
+Since $v_{be} = v_{in} - v_e$ (note the emitter is not at AC ground), we have:
+
+\begin{equation}
+    v_e = g_m (v_{in} - v_e) (R_E \parallel R_L)
+\end{equation}
+
+Solving for $v_e$:
+
+\begin{equation}
+    v_e [1 + g_m (R_E \parallel R_L)] = g_m (R_E \parallel R_L) v_{in}
+\end{equation}
+
+\begin{equation}
+    v_e = \frac{g_m (R_E \parallel R_L)}{1 + g_m (R_E \parallel R_L)} v_{in}
+\end{equation}
+
+The voltage gain is:
+
+\begin{equation}
+    A_v = \frac{v_{out}}{v_{in}} = \frac{v_e}{v_{in}} = \frac{g_m (R_E \parallel R_L)}{1 + g_m (R_E \parallel R_L)}
+    \label{eq:av_ef}
+\end{equation}
+
+This can be rewritten as:
+
+\begin{equation}
+    A_v = \frac{1}{1 + \frac{1}{g_m (R_E \parallel R_L)}}
+    \label{eq:av_ef_alt}
+\end{equation}
+
+If $g_m (R_E \parallel R_L) \gg 1$ (typically the case), then:
+
+\begin{equation}
+    A_v \approx 1
+    \label{eq:av_ef_approx}
+\end{equation}
+
+The gain is positive (no inversion) and close to unity.  Typical values are 0.8 to 0.99. \\
+
+\textbf{Input impedance:} The input impedance looking into the base is enhanced by the emitter resistor: 
+
+\begin{equation}
+    R_{in,base} = r_{\pi} + (\beta + 1)(R_E \parallel R_L)
+\end{equation}
+
+The effective input impedance seen by the source is:
+
+\begin{equation}
+    R_{in} = R_1 \parallel R_2 \parallel [r_{\pi} + (\beta + 1)(R_E \parallel R_L)]
+    \label{eq:rin_ef}
+\end{equation}
+
+This is typically much higher than for the CE amplifier.  \\
+
+\textbf{Output impedance:} Looking back into the emitter with the input set to zero, the analysis shows:
+
+\begin{equation}
+    R_{out} = R_E \parallel \left(\frac{r_{\pi} + R_1 \parallel R_2}{\beta + 1}\right) \approx R_E \parallel \frac{r_{\pi}}{\beta + 1}
+    \label{eq:rout_ef}
+\end{equation}
+
+Since $r_{\pi}/(\beta + 1) = 1/g_m$ is typically small (tens of ohms), and if $R_E$ is moderate (a few k$\Omega$), the output impedance is dominated by $1/g_m$: 
+
+\begin{equation}
+    R_{out} \approx \frac{1}{g_m}
+    \label{eq:rout_ef_approx}
+\end{equation}
+
+This low output impedance is the key advantage of the emitter follower.  It can drive low-impedance loads with minimal loss.
+
+\subsection{Buffering Application:  Cascaded CE Amplifier and Emitter Follower}
+
+When a CE amplifier needs to drive a low-impedance load, its gain is significantly reduced due to the loading effect (recall Equation \ref{eq:av_ce_loaded}). The solution is to cascade the CE stage with an emitter follower buffer.  The CE stage provides high voltage gain into the high input impedance of the emitter follower, and the emitter follower (with near-unity gain) drives the low-impedance load with minimal signal loss. 
+
+The overall voltage gain of the cascade is approximately:
+
+\begin{equation}
+    A_v^{total} = A_v^{CE} \times A_v^{EF} \approx (-g_{m1} R_{C1}) \times 1 = -g_{m1} R_{C1}
+    \label{eq:av_cascade}
+\end{equation}
+
+where $g_{m1}$ is the transconductance of the CE stage and $R_{C1}$ is its collector resistor. The load on the CE stage is now the high input impedance of the emitter follower (negligible loading), and the load resistance appears only at the output of the emitter follower where it causes minimal gain reduction due to the low output impedance. 
+
+This two-stage configuration combines the best of both worlds: high voltage gain and ability to drive low-impedance loads.  
+
+\section{Experimental Procedures}
+
+\subsection{Part 1: DC Biasing and Operating Point of CE Amplifier}
+
+In this first part, you will design, construct, and verify the DC operating point of a common-emitter amplifier.  Begin by selecting your BJT and determining its parameters $\beta$ from datasheet values or previous lab measurements. Choose a target operating point with $I_C \approx 2$ mA and $V_{CE} \approx V_{CC}/2 = 2.5$ V ($V_{CC} = 5$ V).
+
+Using the design equations from the Background Theory section, calculate the required resistor values. A typical design procedure is:
+
+\begin{enumerate}
+    \item Choose $V_{CC} = 5$ V.  
+    
+    \item Choose target $I_C = 1$ mA and $V_{CE} = 2.5$ V.  
+    
+    \item Choose $V_E$ (emitter voltage). A typical choice is $V_E = 1$ to 2 V to provide stability.
+    
+    \item Calculate $R_E$: 
+    \begin{equation}
+        R_E = \frac{V_E}{I_E} \approx \frac{V_E}{I_C}
+    \end{equation}
+    
+    \item Calculate $V_B$:
+    \begin{equation}
+        V_B = V_E + V_{BE} \approx V_E + 0.7 \text{ V}
+    \end{equation}
+    
+    \item Choose voltage divider resistors.  For high input impedance, make $R_1 + R_2$ reasonably large (typically 50-100 k$\Omega$ total). Use: 
+    \begin{equation}
+        \frac{R_2}{R_1 + R_2} = \frac{V_B}{V_{CC}}
+    \end{equation}
+    
+    A common design rule is to make the divider current approximately 10 times the base current to ensure stiff biasing. 
+    
+    \item Calculate $V_C$ from the desired $V_{CE}$:
+    \begin{equation}
+        V_C = V_{CE} + V_E
+    \end{equation}
+    
+    \item Calculate $R_C$:
+    \begin{equation}
+        R_C = \frac{V_{CC} - V_C}{I_C} 
+    \end{equation}
+    
+\end{enumerate}
+
+Complete these calculations in the pre-lab with your specific transistor parameters.  Construct the circuit on your breadboard following Figure \ref{fig:ce_basic}. You may initially omit the coupling capacitors and AC signal source—we're doing DC analysis first. \\
+
+Measure and record the following DC voltages:  
+
+\begin{itemize}
+    \item $V_B$ (base voltage)
+    \item $V_E$ (emitter voltage)
+    \item $V_C$ (collector voltage)
+\end{itemize}
+
+Calculate from these measurements:  
+
+\begin{itemize}
+    \item $V_{BE} = V_B - V_E$
+    \item $V_{CE} = V_C - V_E$
+    \item $I_C \approx I_E = V_E / R_E$ (or equivalently $(V_{CC} - V_C)/R_C$)
+\end{itemize}
+
+Verify that:  
+\begin{enumerate}
+    \item The transistor is in active mode:  $V_{BE} \approx 0.6$ to 0.7 V and $V_{CE} > 0.2$ V
+    \item The measured $I_C$ is close to your design target (within 20\% is acceptable given component tolerances)
+\end{enumerate}
+
+If the operating point is significantly off, identify the discrepancy.  You are expected to adjust resistor values if necessary to achieve the target operating point.  Document any changes.  \\
+
+In your lab report, create a table comparing designed vs. measured values for all DC quantities.  Calculate percentage errors.  Discuss sources of error.  \\
+
+Calculate the small-signal parameters at your measured Q-point: \\
+
+\begin{equation}
+    g_m = \frac{I_C}{V_T} = \frac{I_C}{25 \text{ mV}}
+\end{equation}
+
+\begin{equation}
+    r_{\pi} = \frac{\beta}{g_m}
+\end{equation}
+
+\begin{equation}
+    r_o = \frac{V_A}{I_C}
+\end{equation}
+
+(Use $V_A$ from the datasheet or a typical value of 50-100 V). These parameters will be used to predict AC gain.  \\
+
+\subsection{Part 2: AC Voltage Gain of CE Amplifier}
+
+Now you will measure the AC voltage gain of the common-emitter amplifier. Add the coupling capacitors $C_{C1}$ and $C_E$ to your circuit.  Choose large capacitors (e.g., 10 $\mu$F to 100 $\mu$F) to ensure they act as short circuits at the signal frequencies you'll use (e.g., 1 kHz). Pay attention to polarity—the positive terminal should be toward the higher DC voltage.  \\
+
+Connect a function generator to provide $v_{in}$ through the source resistance $R_{sig}$ (e.g., 1 k$\Omega$). Initially, do not connect a load resistor ($R_L = \infty$ and $C_{C2}$ can be omitted, or equivalently, open circuit at the output).\\
+
+Set the function generator to produce a sine wave at 1 kHz with amplitude approximately 10-20 mV peak (20-40 mV peak-to-peak). This small amplitude ensures linear operation without distortion.  You can gradually increase amplitude while monitoring for distortion on an oscilloscope. \\
+
+\textbf{Important DC check: } Before applying AC signal, verify with a DC multimeter that the DC voltages at base, emitter, and collector have not changed significantly from Part 1. The coupling capacitors should block DC, maintaining your DC bias point. \\
+
+Measure the AC voltages using an oscilloscope:  
+
+\begin{itemize}
+    \item $v_{in}$: Measure at the base (after $C_{C1}$). This is your transistor's input signal.
+    \item $v_{out}$: Measure at the collector (output node).
+\end{itemize}
+    
+Measure the peak-to-peak amplitude of both signals.  Verify that the output is inverted (180° phase shift) relative to the input. \\
+
+Calculate the voltage gain:
+
+\begin{equation}
+    A_v^{measured} = \frac{V_{out,pp}}{V_{in,pp}}
+\end{equation}
+
+The gain should be negative, reflecting the inversion.  Report the magnitude.  \\
+
+Compare with the theoretical prediction from Equation \ref{eq:av_ce_simple}:
+
+\begin{equation}
+    A_v^{theoretical} = -g_m R_C
+\end{equation}
+
+Calculate the percentage error.  Discuss agreement or discrepancy.  Factors affecting agreement include: 
+
+\begin{itemize}
+    \item Accuracy of $g_m$ calculation (depends on measured $I_C$ and thermal voltage)
+    \item Finite output resistance $r_o$ (if $r_o \approx R_C$, the approximation $A_v \approx -g_m R_C$ breaks down)
+    \item Finite $\beta$ effects
+    \item Parasitic capacitances at higher frequencies
+    \item Measurement accuracy
+\end{itemize}
+
+Gradually increase the input signal amplitude and observe the output waveform. At some point, you will see clipping or distortion—this occurs when the transistor enters saturation region (bottom clipping) or cutoff region (top clipping). Note the maximum undistorted output swing. This is limited by the DC bias point and supply voltage. \\
+
+\textbf{Effect of emitter bypass capacitor:} Remove the bypass capacitor $C_E$ and repeat the gain measurement.  You should observe a significant reduction in gain magnitude, consistent with Equation \ref{eq:av_ce_degenerated}. Calculate the theoretical gain with unbypassed $R_E$ and compare with measurement.  Replace $C_E$ for subsequent parts. \\
+
+In your lab report, create a table summarizing:  
+\begin{itemize}
+    \item Measured $g_m$ (from DC measurements)
+    \item Theoretical $A_v$ (bypassed emitter)
+    \item Measured $A_v$ (bypassed emitter)
+    \item Percentage error
+    \item Theoretical $A_v$ (unbypassed emitter)
+    \item Measured $A_v$ (unbypassed emitter)
+    \item Percentage error
+\end{itemize}
+
+Include oscilloscope screenshots showing input and output waveforms, clearly labeled. \\
+
+\subsection{Part 3: Loading Effect and Output Impedance}
+
+In this part, you will investigate the effect of load resistance on the amplifier gain and experimentally determine the output impedance. 
+
+With the circuit from Part 2 (emitter bypassed), connect various load resistors $R_L$ from the output to ground through coupling capacitor $C_{C2}$.  Use the following values:  10 k$\Omega$, 5 k$\Omega$, 2. 2 k$\Omega$, 1 k$\Omega$, and 470 $\Omega$. 
+
+For each load resistor:  
+
+\begin{enumerate}
+    \item Apply the same input signal as Part 2 (1 kHz, small amplitude).
+    
+    \item Measure $v_{in}$ and $v_{out}$. 
+    
+    \item Calculate the voltage gain $A_v = v_{out}/v_{in}$. 
+    
+    \item Record the results.  
+\end{enumerate}
+
+You should observe that as $R_L$ decreases, the gain magnitude decreases. This is the loading effect. \\
+
+The theoretical gain with load is (from Equation \ref{eq:av_ce_loaded}):
+
+\begin{equation}
+    A_v = -g_m (R_C \parallel R_L)
+\end{equation}
+
+For each load value, calculate the theoretical gain and compare with measurement.\\
+
+The output impedance can be determined from the measurement.  The unloaded gain is:
+
+\begin{equation}
+    A_v^{NL} = -g_m R_{out}
+\end{equation}
+
+where $R_{out}$ is the output impedance (approximately $R_C$ if $r_o$ is large). The loaded gain is:
+
+\begin{equation}
+    A_v^{L} = -g_m (R_{out} \parallel R_L)
+\end{equation}
+
+The ratio is:
+
+\begin{equation}
+    \frac{A_v^{L}}{A_v^{NL}} = \frac{R_{out} \parallel R_L}{R_{out}} = \frac{R_L}{R_{out} + R_L}
+\end{equation}
+
+Rearranging:
+
+\begin{equation}
+    R_{out} = R_L \left( \frac{A_v^{NL}}{A_v^{L}} - 1 \right)
+\end{equation}
+
+Use this equation with your measurements for several load values to calculate $R_{out}$. Compare with the expected value (approximately $R_C$). \\
+
+In your lab report, create a table with columns: $R_L$, $A_v^{measured}$, $A_v^{theoretical}$, percentage error.  Plot $|A_v|$ versus $R_L$ on a semi-log scale (log axis for $R_L$). This clearly shows the loading effect. \\
+
+Report the measured output impedance and compare with $R_C$. Discuss the practical implication:  the CE amplifier has moderate output impedance and requires careful consideration of load when maximum gain is needed. \\
+
+\subsection{Part 4:  Emitter Follower DC Bias and AC Characteristics}
+
+Now you will design and construct an emitter follower buffer stage.  The emitter follower will demonstrate near-unity gain and low output impedance, complementing the CE amplifier.\\
+
+Design an emitter follower following Figure \ref{fig:ef_basic}. Choose a similar bias current to your CE amplifier (e.g., $I_C = 2$ mA). Design procedure:
+
+\begin{enumerate}
+    \item Choose $I_C$ (e.g., 2 mA).
+    
+    \item Choose $V_E$ (output DC level). A mid-supply value like $V_E = 5$ V is reasonable for maximum output swing.
+    
+    \item Calculate $R_E$:  
+    \begin{equation}
+        R_E = \frac{V_E}{I_E} \approx \frac{V_E}{I_C}
+    \end{equation}
+    
+    \item Calculate $V_B$:
+    \begin{equation}
+        V_B = V_E + V_{BE} \approx V_E + 0.7 \text{ V}
+    \end{equation}
+    
+    \item Design voltage divider for $V_B$ as in Part 1.
+    
+\end{enumerate}
+
+Complete the design calculations in pre-lab.  Construct the emitter follower circuit on your breadboard.  \\
+
+\textbf{DC measurements:} Measure $V_B$, $V_E$, and $V_C$ (should be $\approx V_{CC}$). Calculate $V_{BE}$, $V_{CE}$, and $I_C$. Verify active mode operation.  Create a table comparing designed vs. measured values. \\
+
+Calculate $g_m$ at the operating point. \\
+
+\textbf{AC measurements:} Add coupling capacitors $C_{C1}$ and $C_E$ (10-100 $\mu$F, with proper polarity). Connect function generator for $v_{in}$ at 1 kHz, 100 mV amplitude (emitter followers can handle larger signals without distortion due to the negative feedback from $R_E$).\\
+
+With no load ($R_L = \infty$, or $C_{C2}$ omitted), measure $v_{in}$ and $v_{out}$ (at the emitter). Calculate voltage gain:  
+
+\begin{equation}
+    A_v = \frac{v_{out}}{v_{in}}
+\end{equation}
+
+The gain should be positive (no inversion) and close to 1 (typically 0.85-0.99).\\
+
+Compare with theoretical prediction from Equation \ref{eq:av_ef} with $R_L = \infty$ (use only $R_E$):
+
+\begin{equation}
+    A_v^{theoretical} = \frac{g_m R_E}{1 + g_m R_E}
+\end{equation}
+
+Connect load resistors through $C_{C2}$:  $R_L = 10$ k$\Omega$, 2.2 k$\Omega$, 1 k$\Omega$, 470 $\Omega$, and 220 $\Omega$. For each, measure the voltage gain.  \\
+
+You should observe that the gain remains close to unity even with fairly low load resistances. This demonstrates the low output impedance and excellent load-driving capability of the emitter follower.  \\
+
+\textbf{Output impedance measurement:} The output impedance can be determined from:  
+
+\begin{equation}
+    R_{out} = R_L \left( \frac{A_v^{NL}}{A_v^{L}} - 1 \right)
+\end{equation}
+
+Use measurements with two different load resistors (e.g., 1 k$\Omega$ and 470 $\Omega$) to calculate $R_{out}$. Compare with the theoretical value:  \\
+
+\begin{equation}
+    R_{out} \approx \frac{1}{g_m} = \frac{V_T}{I_C} = \frac{25 \text{ mV}}{I_C}
+\end{equation}
+
+In your lab report, create a table with $R_L$, measured $A_v$, and theoretical $A_v$ for each load.  Plot $A_v$ versus $R_L$. Report the measured output impedance and compare with theoretical prediction and with the CE amplifier output impedance from Part 3.  The emitter follower should have much lower output impedance (typically 10-50 $\Omega$ vs. several k$\Omega$ for CE).\\
+
+\section{Pre-Lab Questions}
+\label{sec:prelab}
+
+Complete these questions before coming to the lab session.  Include your answers and all supporting work in your lab report.  Use your BJT parameters from previous labs ($\beta$ and $V_A$) or typical values ($\beta = 100$, $V_A = 100$ V).
+
+\begin{enumerate}
+    
+    \item \textbf{Common-emitter amplifier design:} Design a CE amplifier with the following specifications:  $V_{CC} = 5$ V, $I_C = 1$ mA, $V_{CE} = 2.5$ V, $V_E = 0.8$ V.  Assume $\beta = 100$ and $V_{BE} = 0.7$ V.
+    \begin{enumerate}
+        \item Calculate the required $V_B$. 
+        \item Determine $R_E$, $R_C$, and voltage divider resistors $R_1$ and $R_2$ to achieve $V_B$.  Assume total divider current of 0.2 mA.
+        \item Verify that the transistor will be in active mode.  
+        \item Calculate the small-signal parameters $g_m$, $r_{\pi}$, and $r_o$ (assume $V_A = 100$ V).
+        \item Predict the voltage gain $A_v = -g_m R_C$ (assuming $r_o \gg R_C$).
+    \end{enumerate}
+    Show all calculations and clearly indicate your final resistor values.
+    
+    \item \textbf{Loading effect analysis:} For the CE amplifier designed in Question 1:
+    \begin{enumerate}
+        \item Calculate the theoretical voltage gain when driving a load of $R_L = 1$ k$\Omega$. Use $A_v = -g_m (R_C \parallel R_L)$.
+        \item By what percentage does the gain decrease compared to the no-load case?
+        \item What load resistance would reduce the gain to half its no-load value?
+    \end{enumerate}
+    
+    \item \textbf{Emitter follower design:} Design an emitter follower with $V_{CC} = 5$ V, $I_C = 1$ mA, and $V_E = 2.5$ V (output DC level). Use the same transistor parameters as Question 1.
+    \begin{enumerate}
+        \item Determine $R_E$ and voltage divider resistors.  
+        \item Calculate $g_m$ at this operating point.
+        \item Predict the voltage gain with no load using Equation \ref{eq:av_ef}. 
+        \item Calculate the output impedance $R_{out} \approx 1/g_m$.
+        \item Predict the voltage gain when driving $R_L = 470$ $\Omega$.
+    \end{enumerate}
+    
+    \item \textbf{Conceptual understanding:}
+    \begin{enumerate}
+        \item Explain in your own words why the common-emitter amplifier inverts the signal while the emitter follower does not.
+        \item Why does the emitter follower have much lower output impedance than the common-emitter amplifier?  Describe the physical mechanism.
+        \item An emitter follower has voltage gain less than unity.  How can it be useful as an amplifier?  What type of gain does it provide?
+        \item Compare and contrast the emitter follower (BJT) with the source follower (MOSFET). What are the key similarities and differences in terms of operation, performance, and design considerations?
+    \end{enumerate}
+    
+\end{enumerate}
+
+\end{document}

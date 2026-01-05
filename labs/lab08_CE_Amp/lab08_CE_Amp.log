@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  5 JAN 2026 09:59
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  5 JAN 2026 10:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab07_CS_Amp/lab07_CS_Amp.tex"
-(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab07_CS_Amp/lab07_CS_Amp.tex
+**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab08_CE_Amp/lab08_CE_Amp.tex"
+(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/labs/lab08_CE_Amp/lab08_CE_Amp.tex
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
 (c:/texlive/2025/texmf-dist/tex/latex/latex-lab/documentmetadata-support.ltx (c:/texlive/2025/texmf-dist/tex/latex/pdfmanagement-testphase/pdfmanagement-testphase.sty
@@ -906,31 +906,31 @@ Package: titling 2009/09/04 v2.1d maketitle typesetting
 ) (c:/texlive/2025/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tikzlibrarypositioning.code.tex
 File: tikzlibrarypositioning.code.tex 2023-01-15 v3.1.10 (3.1.10)
 )
-Package translations Info: No language package found. I am going to use `english' as default language. on input line 102.
- (./lab07_CS_Amp.aux)
-\openout1 = `lab07_CS_Amp.aux'.
+Package translations Info: No language package found. I am going to use `english' as default language. on input line 95.
+ (./lab08_CE_Amp.aux)
+\openout1 = `lab08_CE_Amp.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 102.
-LaTeX Font Info:    ... okay on input line 102.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 95.
+LaTeX Font Info:    ... okay on input line 95.
 
-Info: mathml file lab07_CS_Amp-mathml does not exist
-Info: mathml file lab07_CS_Amp-luamml-mathml does not exist
+Info: mathml file lab08_CE_Amp-mathml does not exist
+Info: mathml file lab08_CE_Amp-luamml-mathml does not exist
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 *geometry* verbose mode - [ preamble ] result:
@@ -983,7 +983,7 @@ Info: mathml file lab07_CS_Amp-luamml-mathml does not exist
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: hyperref package is loaded.
 Package caption Info: End \AtBeginDocument code.
-Package hyperref Info: Link coloring OFF on input line 102.
+Package hyperref Info: Link coloring OFF on input line 95.
  (c:/texlive/2025/texmf-dist/tex/latex/pdflscape/pdflscape.sty
 Package: pdflscape 2025-06-23 v0.14 Display of landscape pages in PDF
  (c:/texlive/2025/texmf-dist/tex/latex/graphics/lscape.sty
@@ -994,236 +994,240 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 (c:/texlive/2025/texmf-dist/tex/latex/translations/translations-basic-dictionary-english.trsl
 File: translations-basic-dictionary-english.trsl (english translation file `translations-basic-dictionary')
 )
-Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 102.
+Package translations Info: loading dictionary `translations-basic-dictionary' for `english'. on input line 95.
 
 
 LaTeX DocumentMetadata Warning: The language has not been set in
 (DocumentMetadata)              \DocumentMetadata.
 (DocumentMetadata)              Setting it to 'en' as fallback.
 
-LaTeX Font Info:    Trying to load font information for U+msa on input line 104.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 97.
 (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 104.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 97.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
+====>grabbed math=macro:->\pi 
 ====>grabbed math=macro:->g_m
+====>grabbed math=macro:->r_{\pi }
 ====>grabbed math=macro:->r_o
 
 
 [1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Floatstructure:46
+Floatstructure:48
 ====>grabbed math=macro:->\vphantom {+}-
 ====>grabbed math=macro:->+
-====>grabbed math=macro:->V_{DD}
+====>grabbed math=macro:->V_{CC}
 ====>grabbed math=macro:->v_{in}
 ====>grabbed math=macro:->R_{sig}
 ====>grabbed math=macro:->C_{C1}
 ====>grabbed math=macro:->R_1
 ====>grabbed math=macro:->R_2
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->C_S
-====>grabbed math=macro:->R_D
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->C_E
+====>grabbed math=macro:->R_C
 ====>grabbed math=macro:->R_L
-====>grabbed math=macro:->C_{L}
+====>grabbed math=macro:->C_{C2}
 ====>grabbed math=macro:->v_{out}
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_D
-====>grabbed math=macro:->V_S
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->V_C
+====>grabbed math=macro:->V_E
 ====>grabbed math=macro:->R_1
 ====>grabbed math=macro:->R_2
-====>grabbed math=macro:->V_G = V_{DD} \frac {R_2}{R_1 + R_2} \label {eq:vg}
-====>grabbed math=macro:->I_G \approx 0
-====>grabbed math=macro:->I_D = \frac {1}{2} k_n (V_{GS} - V_{th})^2 \label {eq:id_dc}
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->V_S = I_D R_S \label {eq:vs}
-====>grabbed math=macro:->V_{GS} = V_G - V_S = V_G - I_D R_S \label {eq:vgs}
-====>grabbed math=macro:->I_D
-====>grabbed math=macro:->I_D = \frac {1}{2} k_n (V_G - I_D R_S - V_{th})^2
-====>grabbed math=macro:->V_D = V_{DD} - I_D R_D \label {eq:vd}
-====>grabbed math=macro:->V_{DS} = V_D - V_S = V_{DD} - I_D (R_D + R_S) \label {eq:vds}
+====>grabbed math=macro:->V_B = V_{CC} \frac {R_2}{R_1 + R_2} \label {eq:vb}
+====>grabbed math=macro:->V_E = V_B - V_{BE} \label {eq:ve}
+====>grabbed math=macro:->V_{BE} \approx 0.7
+====>grabbed math=macro:->I_E = \frac {V_E}{R_E} \label {eq:ie}
+====>grabbed math=macro:->\beta 
+====>grabbed math=macro:->I_C \approx I_E = \frac {V_E}{R_E} \label {eq:ic_dc}
+====>grabbed math=macro:->V_C = V_{CC} - I_C R_C \label {eq:vc}
+====>grabbed math=macro:->V_{CE} = V_C - V_E = V_{CC} - I_C (R_C + R_E) \label {eq:vce}
+====>grabbed math=macro:->V_{CE} \geq V_{CE,sat} \approx 0.2 \text { V} \label {eq:active_condition}
 
 
 [2]
-====>grabbed math=macro:->V_{DS} \geq V_{GS} - V_{th} = V_{OV} \label {eq:sat_condition}
-====>grabbed math=macro:->V_{OV} = V_{GS} - V_{th}
-====>grabbed math=macro:->V_{DS} = V_{DD}/2
-====>grabbed math=macro:->g_m = \frac {\partial i_D}{\partial v_{GS}}\bigg |_{Q} = k_n (V_{GS} - V_{th}) = \sqrt {2 k_n I_D} \label {eq:gm}
-====>grabbed math=macro:->I_D
-====>grabbed math=macro:->V_{GS}
-====>grabbed math=macro:->r_o = \frac {1}{\lambda I_D} = \frac {V_A}{I_D} \label {eq:ro}
-====>grabbed math=macro:->\lambda 
-====>grabbed math=macro:->V_A = 1/\lambda 
+====>grabbed math=macro:->V_{CE} = V_{CC}/2
+====>grabbed math=macro:->\pi 
+====>grabbed math=macro:->g_m = \frac {I_C}{V_T} \label {eq:gm}
+====>grabbed math=macro:->V_T \approx 25
+====>grabbed math=macro:->r_{\pi } = \frac {\beta }{g_m} = \frac {\beta V_T}{I_C} \label {eq:rpi}
+====>grabbed math=macro:->\beta 
+====>grabbed math=macro:->r_o = \frac {V_A}{I_C} \label {eq:ro}
+====>grabbed math=macro:->V_A
 ====>grabbed math=macro:->r_o
 ====>grabbed math=macro:->\Omega 
-====>grabbed math=macro:->g_m v_{gs}
+====>grabbed math=macro:->\pi 
+====>grabbed math=macro:->r_{\pi }
+====>grabbed math=macro:->g_m v_{be}
 ====>grabbed math=macro:->r_o
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->C_S
-====>grabbed math=macro:->i_d = g_m v_{gs}
-====>grabbed math=macro:->v_d = -i_d (R_D \parallel r_o) = -g_m v_{gs} (R_D \parallel r_o) \label {eq:vd_ss}
-====>grabbed math=macro:->v_{gs} = v_{in}
-====>grabbed math=macro:->C_S
-====>grabbed math=macro:->A_v = \frac {v_d}{v_{in}} = -g_m (R_D \parallel r_o) \label {eq:av_cs}
-====>grabbed math=macro:->r_o \gg R_D
-====>grabbed math=macro:->A_v \approx -g_m R_D \label {eq: av_cs_simple}
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->C_E
+====>grabbed math=macro:->i_c = g_m v_{be}
+====>grabbed math=macro:->v_c = -i_c (R_C \parallel r_o) = -g_m v_{be} (R_C \parallel r_o) \label {eq:vc_ss}
+====>grabbed math=macro:->v_{be} = v_{in}
+====>grabbed math=macro:->C_E
+====>grabbed math=macro:->A_v = \frac {v_c}{v_{in}} = -g_m (R_C \parallel r_o) \label {eq:av_ce}
+====>grabbed math=macro:->r_o \gg R_C
+====>grabbed math=macro:->A_v \approx -g_m R_C \label {eq:av_ce_simple}
 ====>grabbed math=macro:->R_L
 ====>grabbed math=macro:->C_{C2}
-====>grabbed math=macro:->R_D \parallel R_L
-====>grabbed math=macro:->A_v = -g_m (R_D \parallel R_L \parallel r_o) \approx -g_m (R_D \parallel R_L) \label {eq:av_cs_loaded}
-====>grabbed math=macro:->R_{in} = R_1 \parallel R_2 \label {eq:rin_cs}
+====>grabbed math=macro:->R_C \parallel R_L
+====>grabbed math=macro:->A_v = -g_m (R_C \parallel R_L \parallel r_o) \approx -g_m (R_C \parallel R_L) \label {eq:av_ce_loaded}
+====>grabbed math=macro:->r_{\pi }
 
 
 [3]
-====>grabbed math=macro:->R_{out} = R_D \parallel r_o \approx R_D \label {eq:rout_cs}
+====>grabbed math=macro:->R_{in} = R_1 \parallel R_2 \parallel r_{\pi } \label {eq:rin_ce}
+====>grabbed math=macro:->R_{out} = R_C \parallel r_o \approx R_C \label {eq:rout_ce}
 ====>grabbed math=macro:->\Omega 
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->C_S
-====>grabbed math=macro:->v_{gs} = v_{in} - i_d R_S = v_{in} - g_m v_{gs} R_S
-====>grabbed math=macro:->v_{gs}
-====>grabbed math=macro:->v_{gs} = \frac {v_{in}}{1 + g_m R_S}
-====>grabbed math=macro:->v_d = -g_m v_{gs} R_D = -g_m \frac {v_{in}}{1 + g_m R_S} R_D
-====>grabbed math=macro:->A_v = \frac {-g_m R_D}{1 + g_m R_S} \label {eq: av_cs_degenerated}
-====>grabbed math=macro:->1/g_m + R_S
-====>grabbed math=macro:->V_{DD}
-Floatstructure:228
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->C_E
+====>grabbed math=macro:->v_{be} = v_{in} - i_e R_E = v_{in} - (\beta + 1) i_b R_E \approx v_{in} - \beta i_b R_E
+====>grabbed math=macro:->i_c = \beta i_b
+====>grabbed math=macro:->i_c = g_m v_{be}
+====>grabbed math=macro:->v_{be} = v_{in} - \frac {g_m v_{be}}{\beta } \beta R_E = v_{in} - g_m v_{be} R_E
+====>grabbed math=macro:->v_{be}
+====>grabbed math=macro:->v_{be} = \frac {v_{in}}{1 + g_m R_E}
+====>grabbed math=macro:->v_c = -g_m v_{be} R_C = -g_m \frac {v_{in}}{1 + g_m R_E} R_C
+====>grabbed math=macro:->A_v = \frac {-g_m R_C}{1 + g_m R_E} \label {eq:av_ce_degenerated}
+====>grabbed math=macro:->r_{\pi } + (\beta + 1) R_E
+====>grabbed math=macro:->V_{CC}
+Floatstructure:237
 ====>grabbed math=macro:->\vphantom {+}-
 ====>grabbed math=macro:->+
-====>grabbed math=macro:->V_{DD}
+====>grabbed math=macro:->V_{CC}
 ====>grabbed math=macro:->v_{in}
 ====>grabbed math=macro:->R_{sig}
 ====>grabbed math=macro:->C_{C1}
 ====>grabbed math=macro:->R_1
 ====>grabbed math=macro:->R_2
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->C_S
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->C_E
 ====>grabbed math=macro:->R_L
-====>grabbed math=macro:->C_L
+====>grabbed math=macro:->C_{C2}
 ====>grabbed math=macro:->v_{out}
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_D
-====>grabbed math=macro:->V_S
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->V_C
+====>grabbed math=macro:->V_E
 
 LaTeX Warning: `h' float specifier changed to `ht'.
 
-====>grabbed math=macro:->V_G = V_{DD} \frac {R_2}{R_1 + R_2}
-====>grabbed math=macro:->I_D = \frac {1}{2} k_n (V_{GS} - V_{th})^2
-====>grabbed math=macro:->V_S = I_D R_S
+====>grabbed math=macro:->V_B = V_{CC} \frac {R_2}{R_1 + R_2}
+====>grabbed math=macro:->V_E = V_B - V_{BE}
 
 
 [4]
-====>grabbed math=macro:->V_{GS} = V_G - V_S = V_G - I_D R_S
-====>grabbed math=macro:->I_D
-====>grabbed math=macro:->V_{DS} = V_{DD} - V_S = V_{DD} - I_D R_S
-====>grabbed math=macro:->V_{DS} \geq V_{GS} - V_{th}
-====>grabbed math=macro:->V_{DD} - I_D R_S \geq V_G - I_D R_S - V_{th}
-====>grabbed math=macro:->V_{DD} \geq V_G - V_{th}
-====>grabbed math=macro:->i_d = g_m v_{gs}
-====>grabbed math=macro:->R_S
+====>grabbed math=macro:->I_E = \frac {V_E}{R_E}
+====>grabbed math=macro:->I_C \approx I_E
+====>grabbed math=macro:->V_{CE} = V_{CC} - V_E = V_{CC} - I_E R_E
+====>grabbed math=macro:->V_{CE} \geq V_{CE,sat} \approx 0.2
+====>grabbed math=macro:->i_c = g_m v_{be}
+====>grabbed math=macro:->i_e = (\beta + 1) i_b \approx i_c
+====>grabbed math=macro:->\beta 
+====>grabbed math=macro:->R_E
 ====>grabbed math=macro:->R_L
-====>grabbed math=macro:->v_s = i_d (R_S \parallel R_L) = g_m v_{gs} (R_S \parallel R_L)
-====>grabbed math=macro:->v_{gs} = v_{in} - v_s
-====>grabbed math=macro:->v_s = g_m (v_{in} - v_s) (R_S \parallel R_L)
-====>grabbed math=macro:->v_s
-====>grabbed math=macro:->v_s [1 + g_m (R_S \parallel R_L)] = g_m (R_S \parallel R_L) v_{in}
-====>grabbed math=macro:->v_s = \frac {g_m (R_S \parallel R_L)}{1 + g_m (R_S \parallel R_L)} v_{in}
+====>grabbed math=macro:->v_e = i_e (R_E \parallel R_L) \approx g_m v_{be} (R_E \parallel R_L)
+====>grabbed math=macro:->v_{be} = v_{in} - v_e
+====>grabbed math=macro:->v_e = g_m (v_{in} - v_e) (R_E \parallel R_L)
+====>grabbed math=macro:->v_e
+====>grabbed math=macro:->v_e [1 + g_m (R_E \parallel R_L)] = g_m (R_E \parallel R_L) v_{in}
+====>grabbed math=macro:->v_e = \frac {g_m (R_E \parallel R_L)}{1 + g_m (R_E \parallel R_L)} v_{in}
 
 
 [5]
-====>grabbed math=macro:->A_v = \frac {v_{out}}{v_{in}} = \frac {v_s}{v_{in}} = \frac {g_m (R_S \parallel R_L)}{1 + g_m (R_S \parallel R_L)} \label {eq:av_sf}
-====>grabbed math=macro:->A_v = \frac {1}{1 + \frac {1}{g_m (R_S \parallel R_L)}} \label {eq:av_sf_alt}
-====>grabbed math=macro:->g_m (R_S \parallel R_L) \gg 1
-====>grabbed math=macro:->A_v \approx 1 \label {eq:av_sf_approx}
-====>grabbed math=macro:->R_{in} = R_1 \parallel R_2
-====>grabbed math=macro:->v_t
-====>grabbed math=macro:->R_{out} = R_S \parallel \frac {1}{g_m} \label {eq:rout_sf}
-====>grabbed math=macro:->1/g_m
-====>grabbed math=macro:->R_S
+====>grabbed math=macro:->A_v = \frac {v_{out}}{v_{in}} = \frac {v_e}{v_{in}} = \frac {g_m (R_E \parallel R_L)}{1 + g_m (R_E \parallel R_L)} \label {eq:av_ef}
+====>grabbed math=macro:->A_v = \frac {1}{1 + \frac {1}{g_m (R_E \parallel R_L)}} \label {eq:av_ef_alt}
+====>grabbed math=macro:->g_m (R_E \parallel R_L) \gg 1
+====>grabbed math=macro:->A_v \approx 1 \label {eq:av_ef_approx}
+====>grabbed math=macro:->R_{in,base} = r_{\pi } + (\beta + 1)(R_E \parallel R_L)
+====>grabbed math=macro:->R_{in} = R_1 \parallel R_2 \parallel [r_{\pi } + (\beta + 1)(R_E \parallel R_L)] \label {eq:rin_ef}
+====>grabbed math=macro:->R_{out} = R_E \parallel \left (\frac {r_{\pi } + R_1 \parallel R_2}{\beta + 1}\right ) \approx R_E \parallel \frac {r_{\pi }}{\beta + 1} \label {eq:rout_ef}
+====>grabbed math=macro:->r_{\pi }/(\beta + 1) = 1/g_m
+====>grabbed math=macro:->R_E
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->1/g_m
-====>grabbed math=macro:->R_{out} \approx \frac {1}{g_m} \label {eq:rout_sf_approx}
-====>grabbed math=macro:->A_v^{total} = A_v^{CS} \times A_v^{SF} \approx (-g_{m1} R_{D1}) \times 1 = -g_{m1} R_{D1} \label {eq:av_cascade}
+====>grabbed math=macro:->R_{out} \approx \frac {1}{g_m} \label {eq:rout_ef_approx}
+====>grabbed math=macro:->A_v^{total} = A_v^{CE} \times A_v^{EF} \approx (-g_{m1} R_{C1}) \times 1 = -g_{m1} R_{C1} \label {eq:av_cascade}
 ====>grabbed math=macro:->g_{m1}
-====>grabbed math=macro:->R_{D1}
-====>grabbed math=macro:->k_n
-====>grabbed math=macro:->V_{th}
-====>grabbed math=macro:->I_D \approx 2
-====>grabbed math=macro:->V_{DS} \approx V_{DD}/2 = 2.5
-====>grabbed math=macro:->V_{DD} = 5
+====>grabbed math=macro:->R_{C1}
+====>grabbed math=macro:->\beta 
+====>grabbed math=macro:->I_C \approx 2
+====>grabbed math=macro:->V_{CE} \approx V_{CC}/2 = 2.5
+====>grabbed math=macro:->V_{CC} = 5
 
 
 [6]
-====>grabbed math=macro:->V_{DD} = 5
-====>grabbed math=macro:->I_D
-====>grabbed math=macro:->V_{DS}
-====>grabbed math=macro:->V_{GS}
-====>grabbed math=macro:->V_{GS} = V_{th} + \sqrt {\frac {2 I_D}{k_n}}
-====>grabbed math=macro:->V_S
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->R_S = \frac {V_S}{I_D}
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_G = V_{GS} + V_S
+====>grabbed math=macro:->V_{CC} = 5
+====>grabbed math=macro:->I_C = 1
+====>grabbed math=macro:->V_{CE} = 2.5
+====>grabbed math=macro:->V_E
+====>grabbed math=macro:->V_E = 1
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->R_E = \frac {V_E}{I_E} \approx \frac {V_E}{I_C}
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->V_B = V_E + V_{BE} \approx V_E + 0.7 \text { V}
 ====>grabbed math=macro:->R_1 + R_2
 ====>grabbed math=macro:->\Omega 
-====>grabbed math=macro:->\frac {R_2}{R_1 + R_2} = \frac {V_G}{V_{DD}}
-====>grabbed math=macro:->R_D
-====>grabbed math=macro:->R_D = \frac {V_{DD} - V_D}{I_D}
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_S
-====>grabbed math=macro:->V_D
-====>grabbed math=macro:->V_{GS} = V_G - V_S
-====>grabbed math=macro:->V_{DS} = V_D - V_S
-====>grabbed math=macro:->I_D = V_S / R_S
-====>grabbed math=macro:->(V_{DD} - V_D)/R_D
-====>grabbed math=macro:->V_{DS} \geq V_{GS} - V_{th}
-====>grabbed math=macro:->I_D
+====>grabbed math=macro:->\frac {R_2}{R_1 + R_2} = \frac {V_B}{V_{CC}}
+====>grabbed math=macro:->V_C
+====>grabbed math=macro:->V_{CE}
+====>grabbed math=macro:->V_C = V_{CE} + V_E
+====>grabbed math=macro:->R_C
+====>grabbed math=macro:->R_C = \frac {V_{CC} - V_C}{I_C}
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->V_E
+====>grabbed math=macro:->V_C
+====>grabbed math=macro:->V_{BE} = V_B - V_E
+====>grabbed math=macro:->V_{CE} = V_C - V_E
+====>grabbed math=macro:->I_C \approx I_E = V_E / R_E
+====>grabbed math=macro:->(V_{CC} - V_C)/R_C
+====>grabbed math=macro:->V_{BE} \approx 0.6
+====>grabbed math=macro:->V_{CE} > 0.2
+====>grabbed math=macro:->I_C
 
 
 [7]
-====>grabbed math=macro:->g_m = k_n (V_{GS} - V_{th}) = \sqrt {2 k_n I_D}
-====>grabbed math=macro:->r_o = \frac {V_A}{I_D}
+====>grabbed math=macro:->g_m = \frac {I_C}{V_T} = \frac {I_C}{25 \text { mV}}
+====>grabbed math=macro:->r_{\pi } = \frac {\beta }{g_m}
+====>grabbed math=macro:->r_o = \frac {V_A}{I_C}
 ====>grabbed math=macro:->V_A
 ====>grabbed math=macro:->C_{C1}
-====>grabbed math=macro:->C_{S}
+====>grabbed math=macro:->C_E
 ====>grabbed math=macro:->\mu 
 ====>grabbed math=macro:->\mu 
 ====>grabbed math=macro:->v_{in}
 ====>grabbed math=macro:->R_{sig}
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->R_L = \infty 
-====>grabbed math=macro:->C_L = 0
+====>grabbed math=macro:->C_{C2}
 ====>grabbed math=macro:->v_{in}
 ====>grabbed math=macro:->C_{C1}
 ====>grabbed math=macro:->v_{out}
-====>grabbed math=macro:->V_{out}
-====>grabbed math=macro:->A_v^{measured} = \frac {V_{out, pp}}{V_{in, pp}}
-====>grabbed math=macro:->A_v^{theoretical} = -g_m R_D
+====>grabbed math=macro:->A_v^{measured} = \frac {V_{out,pp}}{V_{in,pp}}
 
 
 [8]
+====>grabbed math=macro:->A_v^{theoretical} = -g_m R_C
 ====>grabbed math=macro:->g_m
-====>grabbed math=macro:->k_n
-====>grabbed math=macro:->V_{th}
-====>grabbed math=macro:->I_D
+====>grabbed math=macro:->I_C
 ====>grabbed math=macro:->r_o
-====>grabbed math=macro:->r_o \approx R_D
-====>grabbed math=macro:->A_v \approx -g_m R_D
-====>grabbed math=macro:->C_S
-
-LaTeX Warning: Reference `eq:av_cs_degenerated' on page 9 undefined on input line 680.
-
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->C_S
+====>grabbed math=macro:->r_o \approx R_C
+====>grabbed math=macro:->A_v \approx -g_m R_C
+====>grabbed math=macro:->\beta 
+====>grabbed math=macro:->C_E
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->C_E
 ====>grabbed math=macro:->g_m
 ====>grabbed math=macro:->A_v
 ====>grabbed math=macro:->A_v
 ====>grabbed math=macro:->A_v
 ====>grabbed math=macro:->A_v
 ====>grabbed math=macro:->R_L
+====>grabbed math=macro:->C_{C2}
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->\Omega 
@@ -1233,61 +1237,60 @@ LaTeX Warning: Reference `eq:av_cs_degenerated' on page 9 undefined on input lin
 ====>grabbed math=macro:->v_{out}
 ====>grabbed math=macro:->A_v = v_{out}/v_{in}
 ====>grabbed math=macro:->R_L
-====>grabbed math=macro:->A_v = -g_m (R_D \parallel R_L)
+====>grabbed math=macro:->A_v = -g_m (R_C \parallel R_L)
 
 
 [9]
 ====>grabbed math=macro:->A_v^{NL} = -g_m R_{out}
 ====>grabbed math=macro:->R_{out}
-====>grabbed math=macro:->R_D
+====>grabbed math=macro:->R_C
 ====>grabbed math=macro:->r_o
 ====>grabbed math=macro:->A_v^{L} = -g_m (R_{out} \parallel R_L)
 ====>grabbed math=macro:->\frac {A_v^{L}}{A_v^{NL}} = \frac {R_{out} \parallel R_L}{R_{out}} = \frac {R_L}{R_{out} + R_L}
 ====>grabbed math=macro:->R_{out} = R_L \left ( \frac {A_v^{NL}}{A_v^{L}} - 1 \right )
 ====>grabbed math=macro:->R_{out}
-====>grabbed math=macro:->R_D
+====>grabbed math=macro:->R_C
 ====>grabbed math=macro:->R_L
 ====>grabbed math=macro:->A_v^{measured}
 ====>grabbed math=macro:->A_v^{theoretical}
 ====>grabbed math=macro:->|A_v|
 ====>grabbed math=macro:->R_L
 ====>grabbed math=macro:->R_L
-====>grabbed math=macro:->R_D
-====>grabbed math=macro:->I_D = 2
-====>grabbed math=macro:->I_D
-====>grabbed math=macro:->V_S
-====>grabbed math=macro:->V_S = 2.5
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->R_S = \frac {V_S}{I_D}
-====>grabbed math=macro:->V_{GS}
-====>grabbed math=macro:->V_{GS} = V_{th} + \sqrt {\frac {2 I_D}{k_n}}
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_G = V_{GS} + V_S
+====>grabbed math=macro:->R_C
+====>grabbed math=macro:->I_C = 2
+====>grabbed math=macro:->I_C
+====>grabbed math=macro:->V_E
+====>grabbed math=macro:->V_E = 5
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->R_E = \frac {V_E}{I_E} \approx \frac {V_E}{I_C}
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->V_B = V_E + V_{BE} \approx V_E + 0.7 \text { V}
+====>grabbed math=macro:->V_B
 
 
 [10]
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_G
-====>grabbed math=macro:->V_S
-====>grabbed math=macro:->V_D
-====>grabbed math=macro:->\approx V_{DD}
-====>grabbed math=macro:->V_{GS}
-====>grabbed math=macro:->V_{DS}
-====>grabbed math=macro:->I_D
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->V_E
+====>grabbed math=macro:->V_C
+====>grabbed math=macro:->\approx V_{CC}
+====>grabbed math=macro:->V_{BE}
+====>grabbed math=macro:->V_{CE}
+====>grabbed math=macro:->I_C
 ====>grabbed math=macro:->g_m
 ====>grabbed math=macro:->C_{C1}
-====>grabbed math=macro:->C_{S}
+====>grabbed math=macro:->C_E
 ====>grabbed math=macro:->\mu 
 ====>grabbed math=macro:->v_{in}
-====>grabbed math=macro:->R_S
+====>grabbed math=macro:->R_E
 ====>grabbed math=macro:->R_L = \infty 
+====>grabbed math=macro:->C_{C2}
 ====>grabbed math=macro:->v_{in}
 ====>grabbed math=macro:->v_{out}
 ====>grabbed math=macro:->A_v = \frac {v_{out}}{v_{in}}
 ====>grabbed math=macro:->R_L = \infty 
-====>grabbed math=macro:->C_L = 0
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->A_v^{theoretical} = \frac {g_m R_S}{1 + g_m R_S}
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->A_v^{theoretical} = \frac {g_m R_E}{1 + g_m R_E}
+====>grabbed math=macro:->C_{C2}
 ====>grabbed math=macro:->R_L = 10
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->\Omega 
@@ -1298,7 +1301,7 @@ LaTeX Warning: Reference `eq:av_cs_degenerated' on page 9 undefined on input lin
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->R_{out}
-====>grabbed math=macro:->R_{out} \approx \frac {1}{g_m}
+====>grabbed math=macro:->R_{out} \approx \frac {1}{g_m} = \frac {V_T}{I_C} = \frac {25 \text { mV}}{I_C}
 ====>grabbed math=macro:->R_L
 ====>grabbed math=macro:->A_v
 ====>grabbed math=macro:->A_v
@@ -1306,36 +1309,38 @@ LaTeX Warning: Reference `eq:av_cs_degenerated' on page 9 undefined on input lin
 ====>grabbed math=macro:->R_L
 ====>grabbed math=macro:->\Omega 
 ====>grabbed math=macro:->\Omega 
-====>grabbed math=macro:->k_n
-====>grabbed math=macro:->V_{th}
-====>grabbed math=macro:->V_{DD} = 10
-====>grabbed math=macro:->I_D = 2
-====>grabbed math=macro:->V_{DS} = 5
-====>grabbed math=macro:->V_S = 1.5
-====>grabbed math=macro:->k_n = 2
-====>grabbed math=macro:->^2
-====>grabbed math=macro:->V_{th} = 1.5
+====>grabbed math=macro:->\beta 
+====>grabbed math=macro:->V_A
+====>grabbed math=macro:->\beta = 100
+====>grabbed math=macro:->V_A = 100
+====>grabbed math=macro:->V_{CC} = 5
+====>grabbed math=macro:->I_C = 1
+====>grabbed math=macro:->V_{CE} = 2.5
+====>grabbed math=macro:->V_E = 0.8
+====>grabbed math=macro:->\beta = 100
+====>grabbed math=macro:->V_{BE} = 0.7
+====>grabbed math=macro:->V_B
+====>grabbed math=macro:->R_E
+====>grabbed math=macro:->R_C
+====>grabbed math=macro:->R_1
+====>grabbed math=macro:->R_2
+====>grabbed math=macro:->V_B
 
 
 [11]
-====>grabbed math=macro:->V_{GS}
-====>grabbed math=macro:->R_S
-====>grabbed math=macro:->R_D
-====>grabbed math=macro:->R_1
-====>grabbed math=macro:->R_2
-====>grabbed math=macro:->V_G = V_{GS} + V_S
 ====>grabbed math=macro:->g_m
+====>grabbed math=macro:->r_{\pi }
 ====>grabbed math=macro:->r_o
-====>grabbed math=macro:->V_A = 50
-====>grabbed math=macro:->A_v = -g_m R_D
-====>grabbed math=macro:->r_o \gg R_D
+====>grabbed math=macro:->V_A = 100
+====>grabbed math=macro:->A_v = -g_m R_C
+====>grabbed math=macro:->r_o \gg R_C
 ====>grabbed math=macro:->R_L = 1
 ====>grabbed math=macro:->\Omega 
-====>grabbed math=macro:->A_v = -g_m (R_D \parallel R_L)
-====>grabbed math=macro:->V_{DD} = 10
-====>grabbed math=macro:->I_D = 2
-====>grabbed math=macro:->V_S = 5
-====>grabbed math=macro:->R_S
+====>grabbed math=macro:->A_v = -g_m (R_C \parallel R_L)
+====>grabbed math=macro:->V_{CC} = 5
+====>grabbed math=macro:->I_C = 1
+====>grabbed math=macro:->V_E = 2.5
+====>grabbed math=macro:->R_E
 ====>grabbed math=macro:->g_m
 ====>grabbed math=macro:->R_{out} \approx 1/g_m
 ====>grabbed math=macro:->R_L = 470
@@ -1344,19 +1349,16 @@ LaTeX Warning: Reference `eq:av_cs_degenerated' on page 9 undefined on input lin
 
 [12] 
 enddocument/afterlastpage (AED): lastpage setting LastPage.
-<<latex-list-css.html>><<latex-align-css.html>> (./lab07_CS_Amp.aux)
+<<latex-list-css.html>><<latex-align-css.html>> (./lab08_CE_Amp.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
 L3 programming layer <2025-07-19>
  ***********
 
 
-LaTeX Warning: There were undefined references.
-
-
 Package tagpdf Info: Finalizing the tagging structure:
-(tagpdf)             Writing out ~1027 structure objects
-(tagpdf)             with ~931 'MC' leaf nodes.
+(tagpdf)             Writing out ~1044 structure objects
+(tagpdf)             with ~947 'MC' leaf nodes.
 (tagpdf)             Be patient if there are lots of objects!
 
 Package tagpdf Info: writing ParentTree
@@ -1368,18 +1370,18 @@ Package tagpdf Info: writing StructElems
 Package tagpdf Info: writing Root
  ) 
 Here is how much of TeX's memory you used:
- 73535 strings out of 467815
- 1925765 string characters out of 5436410
- 3077570 words of memory out of 5000000
- 101083 multiletter control sequences out of 15000+600000
- 657044 words of font info for 79 fonts, out of 8000000 for 9000
+ 73731 strings out of 467815
+ 1930852 string characters out of 5436410
+ 3080368 words of memory out of 5000000
+ 101275 multiletter control sequences out of 15000+600000
+ 658578 words of font info for 81 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 86i,12n,100p,1496b,3701s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 86i,12n,100p,1559b,3771s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/pdftex/pdftexspace.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1200.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx1440.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfbx2488.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfrm1200.pfb>
-Output written on lab07_CS_Amp.pdf (12 pages, 382276 bytes).
+Output written on lab08_CE_Amp.pdf (12 pages, 384949 bytes).
 PDF statistics:
- 2219 PDF objects out of 2487 (max. 8388607)
- 1858 compressed objects within 19 object streams
- 152 named destinations out of 1000 (max. 500000)
- 6773 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 2250 PDF objects out of 2487 (max. 8388607)
+ 1881 compressed objects within 19 object streams
+ 153 named destinations out of 1000 (max. 500000)
+ 6897 words of extra memory for PDF output out of 10000 (max. 10000000)
 
