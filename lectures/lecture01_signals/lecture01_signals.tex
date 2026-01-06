@@ -74,7 +74,7 @@
 \title[ECEN 463/863]{Electronic Signals}
 \author{Maxx Seminario}
 \institute{University of Nebraska-Lincoln}
-% \date{August 25, 2025}
+\date{January 2025}
 
 \begin{document}
 \begin{frame}
@@ -436,7 +436,7 @@
     % \vspace{0.3cm}
     
     \begin{block}{Solution}
-        Frequency spectrum representation!
+        Frequency spectrum representation (Recall from Calculus: Fourier Series)
     \end{block}
     
 \end{frame}
@@ -494,10 +494,6 @@
             \draw[<->, thick, red] (axis cs:0,1) -- (axis cs:2*pi,1);
             \node[above] at (axis cs:pi,1) {Period $T$};
             
-            % % Amplitude arrow
-            % \draw[<->, thick, green! 60!black] (axis cs: 0.2,0) -- (axis cs:0.2,1);
-            % \node[right] at (axis cs:0.2,0.5) {\small $V_a$};
-            
             \end{axis}
         \end{tikzpicture}
         \caption{Sinusoidal voltage signal}
@@ -508,7 +504,7 @@
     \vspace{-0.4cm}
     
     \begin{block}{Key Concept}
-        ANY signal can be represented as a sum of sinusoids!
+        ANY signal can be represented as a sum of sinusoids 
     \end{block}
     
 \end{frame}
@@ -813,33 +809,5 @@
     
 \end{frame}
 
-
-% \begin{frame}{Practice Problems}
-    
-%     \textbf{Problem 1}: A signal source has open-circuit voltage \SI{10}{mV} and short-circuit current \SI{10}{\micro A}. Find $R_s$.
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Problem 2}: For a Thevenin source with $v_s = \SI{10}{mV}$ and $R_s = \SI{1}{k\ohm}$, find $v_o$ for: 
-%     \begin{itemize}
-%         \item $R_L = \SI{100}{k\ohm}$
-%         \item $R_L = \SI{10}{k\ohm}$
-%         \item $R_L = \SI{1}{k\ohm}$
-%         \item $R_L = \SI{100}{\ohm}$
-%     \end{itemize}
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Problem 3}: What is the lowest $R_L$ for which $v_o \geq 0.8 v_s$?
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Problem 4}: A sine wave has RMS value \SI{120}{V}. Find its peak value.
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Problem 5}: Sketch the spectrum of $v(t) = 2\sin(\omega_0 t) + \sin(2\omega_0 t) + 0.5\sin(3\omega_0 t)$
-    
-% \end{frame}
 
 \end{document}
