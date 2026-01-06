@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.2)  24 DEC 2025 20:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 14:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture01.1_passives/lecture01_passives.tex"
-(c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture01.1_passives/lecture01_passives.tex
+**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture02_passives/lecture02_passives.tex"
+(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture02_passives/lecture02_passives.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-20>
+L3 programming layer <2025-07-19>
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2025/06/15 v3.74 A class for typesetting presentations
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -1259,8 +1259,8 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 61.
  (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count392
-) (./lecture01_passives.aux)
-\openout1 = `lecture01_passives.aux'.
+) (./lecture02_passives.aux)
+\openout1 = `lecture02_passives.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 67.
 LaTeX Font Info:    ... okay on input line 67.
@@ -1330,9 +1330,9 @@ LaTeX Font Info:    ... okay on input line 67.
 \everyMPtoPDFconversion=\toks63
 )
 Package hyperref Info: Link coloring ON on input line 67.
- (./lecture01_passives.out) (./lecture01_passives.out)
+ (./lecture02_passives.out) (./lecture02_passives.out)
 \@outlinefile=\write5
-\openout5 = `lecture01_passives.out'.
+\openout5 = `lecture02_passives.out'.
 
  (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1351,7 +1351,7 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./lecture01_passives.nav)
+(./lecture02_passives.nav)
 
 [1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
@@ -1406,32 +1406,32 @@ Overfull \vbox (4.8643pt too high) detected at line 511
 
 ]
 \tf@nav=\write6
-\openout6 = `lecture01_passives.nav'.
+\openout6 = `lecture02_passives.nav'.
 
 \tf@toc=\write7
-\openout7 = `lecture01_passives.toc'.
+\openout7 = `lecture02_passives.toc'.
 
 \tf@snm=\write8
-\openout8 = `lecture01_passives.snm'.
+\openout8 = `lecture02_passives.snm'.
 
- (./lecture01_passives.aux)
+ (./lecture02_passives.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-20>
+L3 programming layer <2025-07-19>
  ***********
-Package rerunfilecheck Info: File `lecture01_passives.out' has not changed.
+Package rerunfilecheck Info: File `lecture02_passives.out' has not changed.
 (rerunfilecheck)             Checksum: B4FBFE8D36B669FF81054ACB348F5A5B;472.
  ) 
 Here is how much of TeX's memory you used:
- 57117 strings out of 467801
- 1473638 string characters out of 5436090
- 2204658 words of memory out of 5000000
- 84922 multiletter control sequences out of 15000+600000
+ 57117 strings out of 467815
+ 1473641 string characters out of 5436410
+ 2204360 words of memory out of 5000000
+ 84908 multiletter control sequences out of 15000+600000
  638935 words of font info for 84 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,16n,123p,831b,1238s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,16n,123p,832b,1238s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmib10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb>
-Output written on lecture01_passives.pdf (8 pages, 217670 bytes).
+Output written on lecture02_passives.pdf (8 pages, 217697 bytes).
 PDF statistics:
  210 PDF objects out of 1000 (max. 8388607)
  152 compressed objects within 2 object streams

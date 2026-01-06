@@ -1,12 +1,12 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.8.2)  14 DEC 2025 11:42
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 14:23
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture02_opamps/lecture02_opamps.tex"
-(c:/Users/mseminario2/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture02_opamps/lecture02_opamps.tex
+**"c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture03_opamps/lecture03_opamps.tex"
+(c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture03_opamps/lecture03_opamps.tex
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-20>
+L3 programming layer <2025-07-19>
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamer.cls
 Document Class: beamer 2025/06/15 v3.74 A class for typesetting presentations
 (c:/texlive/2025/texmf-dist/tex/latex/beamer/beamerbasemodes.sty (c:/texlive/2025/texmf-dist/tex/latex/etoolbox/etoolbox.sty
@@ -1263,12 +1263,12 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 60.
  (c:/texlive/2025/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count392
-) (./lecture02_opamps.aux
+) (./lecture03_opamps.aux
 
 LaTeX Warning: Label `fig:opamp_small_signal' multiply defined.
 
 )
-\openout1 = `lecture02_opamps.aux'.
+\openout1 = `lecture03_opamps.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
 LaTeX Font Info:    ... okay on input line 68.
@@ -1338,9 +1338,9 @@ LaTeX Font Info:    ... okay on input line 68.
 \everyMPtoPDFconversion=\toks63
 )
 Package hyperref Info: Link coloring ON on input line 68.
- (./lecture02_opamps.out) (./lecture02_opamps.out)
+ (./lecture03_opamps.out) (./lecture03_opamps.out)
 \@outlinefile=\write5
-\openout5 = `lecture02_opamps.out'.
+\openout5 = `lecture03_opamps.out'.
 
  (c:/texlive/2025/texmf-dist/tex/latex/translator/translator-basic-dictionary-English.dict
 Dictionary: translator-basic-dictionary, Language: English 
@@ -1359,11 +1359,11 @@ Package pgfplots notification 'compat/show suggested version=true': document has
 
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
-(./lecture02_opamps.nav)
+(./lecture03_opamps.nav)
 
 [1{c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map}
 
-] (./lecture02_opamps.toc)
+] (./lecture03_opamps.toc)
 
 [2
 
@@ -1489,36 +1489,36 @@ Overfull \vbox (35.80421pt too high) detected at line 794
 
 ]
 \tf@nav=\write6
-\openout6 = `lecture02_opamps.nav'.
+\openout6 = `lecture03_opamps.nav'.
 
 \tf@toc=\write7
-\openout7 = `lecture02_opamps.toc'.
+\openout7 = `lecture03_opamps.toc'.
 
 \tf@snm=\write8
-\openout8 = `lecture02_opamps.snm'.
+\openout8 = `lecture03_opamps.snm'.
 
- (./lecture02_opamps.aux)
+ (./lecture03_opamps.aux)
  ***********
 LaTeX2e <2025-06-01> patch level 1
-L3 programming layer <2025-07-20>
+L3 programming layer <2025-07-19>
  ***********
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package rerunfilecheck Info: File `lecture02_opamps.out' has not changed.
+Package rerunfilecheck Info: File `lecture03_opamps.out' has not changed.
 (rerunfilecheck)             Checksum: EA534D38E8D4EA83EDCDE3B890D901BA;868.
  ) 
 Here is how much of TeX's memory you used:
- 58497 strings out of 467801
- 1508514 string characters out of 5436090
- 2287592 words of memory out of 5000000
- 86268 multiletter control sequences out of 15000+600000
+ 58497 strings out of 467815
+ 1508523 string characters out of 5436410
+ 2287294 words of memory out of 5000000
+ 86254 multiletter control sequences out of 15000+600000
  643921 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 128i,21n,123p,825b,2507s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 128i,21n,123p,828b,2507s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
-Output written on lecture02_opamps.pdf (16 pages, 336318 bytes).
+Output written on lecture03_opamps.pdf (16 pages, 336318 bytes).
 PDF statistics:
  346 PDF objects out of 1000 (max. 8388607)
  273 compressed objects within 3 object streams
