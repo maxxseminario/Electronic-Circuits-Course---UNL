@@ -1,0 +1,5 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Course Administration}{3}{0}{1}
+\beamer@sectionintoc {2}{What is Electronic Circuits?}{8}{0}{2}
+\beamer@sectionintoc {3}{Course Overview}{11}{0}{3}
+\beamer@sectionintoc {4}{Fundamental Concepts}{21}{0}{4}
