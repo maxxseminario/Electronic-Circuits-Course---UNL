@@ -719,93 +719,6 @@
     
 \end{frame}
 
-% \begin{frame}{Practice Problem 1}
-    
-%     \textbf{Given}:  An ideal op-amp with $A = 10^3$ (finite, for this example)
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Measurements}:
-%     \begin{itemize}
-%         \item[(a)] $v_2 = 0$ V and $v_3 = 2$ V
-%         \item[(b)] $v_2 = +5$ V and $v_3 = -10$ V
-%         \item[(c)] $v_1 = 1.002$ V and $v_2 = 0.998$ V
-%     \end{itemize}
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Find}: The missing terminal voltage, $v_{Id}$, and $v_{Icm}$ for each case.
-    
-%     \vspace{0.5cm}
-    
-%     \begin{columns}[t]
-%     \column{0.3\textwidth}
-%         \textbf{Hints}:
-%         \begin{itemize}
-%             \item Use $v_3 = A(v_2 - v_1)$
-%             \item $v_{Id} = v_2 - v_1$
-%             \item $v_{Icm} = \frac{v_1+v_2}{2}$
-%         \end{itemize}
-        
-%     \column{0.65\textwidth}
-%         \textbf{Solutions}:
-%         \begin{itemize}
-%             \item[(a)] $v_1 = -0.002$ V, $v_{Id} = 2$ mV, $v_{Icm} = -1$ mV
-%             \item[(b)] $v_1 = +5.01$ V, $v_{Id} = -10$ mV, $v_{Icm} \approx 5$ V
-%             \item[(c)] $v_3 = -4$ V, $v_{Id} = -4$ mV, $v_{Icm} = 1$ V
-%         \end{itemize}
-        
-%     \end{columns}
-    
-% \end{frame}
-
-% \begin{frame}{Practice Problem 2}
-    
-%     \textbf{Given}: An op-amp with the internal model shown below
-    
-%     \begin{figure}[htb]
-%     \centering
-%     \begin{circuitikz}[scale=1.1]
-%         % Input stage (transconductance)
-%         \draw (0,1) to[short, o-] (1,1) node[above] {$v_2$};
-%         \draw (0,-1) to[short, o-] (1,-1) node[below] {$v_1$};
-        
-%         % VCCS (transconductance amplifier)
-%         \draw (2,0) node[circle, draw, thick, minimum size=1.2cm] (vccs) {$G_m(v_2-v_1)$};
-%         \draw (1,1) -- (vccs.120);
-%         \draw (1,-1) -- (vccs.240);
-        
-%         % Resistor R
-%         \draw (vccs.0) to[R, l=$R$, -*] (4.5,0) node[above] {$v_x$};
-%         \draw (4.5,0) -- (4.5,-1.5) node[ground] {};
-        
-%         % VCVS (voltage amplifier)
-%         \draw (6,0) node[circle, draw, thick, minimum size=1cm] (vcvs) {$\mu v_x$};
-%         \draw (4.5,0) -- (vcvs.180);
-        
-%         % Output
-%         \draw (vcvs.0) to[short, -o] (7.5,0) node[right] {$v_3$};
-        
-%     \end{circuitikz}
-%     \caption{Internal op-amp model:  $G_m = 10$ mA/V, $R = 10$ k$\Omega$, $\mu = 100$}
-%     \end{figure}
-    
-%     \vspace{0.2cm}
-    
-%     \textbf{Find}: Express $v_3$ as a function of $v_1$ and $v_2$, then find the open-loop gain $A$.
-    
-%     \vspace{0.3cm}
-    
-%     \textbf{Solution}:  
-%     \begin{itemize}
-%         \item $v_x = R \cdot G_m(v_2 - v_1) = 10\text{k} \times 10\text{m} \times (v_2-v_1) = 100(v_2-v_1)$
-%         \item $v_3 = \mu v_x = 100 \times 100(v_2-v_1) = 10{,}000(v_2-v_1)$
-%         \item $\boxed{A = 10{,}000 \text{ V/V} = 80 \text{ dB}}$
-%     \end{itemize}
-    
-% \end{frame}
-
-
 \begin{frame}{Practice Problem 1}
     \textbf{Measurements}:
     \begin{itemize}
@@ -924,8 +837,6 @@
 
 \end{frame}
 \fi
-
-
 
 
 \end{document}

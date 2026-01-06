@@ -1,0 +1,9 @@
+\babel@toc {english}{}\relax 
+\beamer@sectionintoc {1}{Review and Negative Feedback}{3}{0}{1}
+\beamer@sectionintoc {2}{Inverting Amplifier}{5}{0}{2}
+\beamer@sectionintoc {3}{Noninverting Amplifier}{7}{0}{3}
+\beamer@sectionintoc {4}{Summing Amplifier}{9}{0}{4}
+\beamer@sectionintoc {5}{Difference Amplifier}{11}{0}{5}
+\beamer@sectionintoc {6}{Integrator}{13}{0}{6}
+\beamer@sectionintoc {7}{Differentiator}{16}{0}{7}
+\beamer@sectionintoc {8}{Summary and Practice}{19}{0}{8}
