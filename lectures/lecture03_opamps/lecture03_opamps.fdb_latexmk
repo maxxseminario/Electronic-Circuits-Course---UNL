@@ -1,8 +1,8 @@
 # Fdb version 4
-["pdflatex"] 1767731032.0535 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture03_opamps/lecture03_opamps.tex" "lecture03_opamps.pdf" "lecture03_opamps" 1767731041.12536 0
+["pdflatex"] 1767731954.84545 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture03_opamps/lecture03_opamps.tex" "lecture03_opamps.pdf" "lecture03_opamps" 1767731960.74598 0
   "Figures/opamp_ideal.png" 1765732052 73605 4f9e8d2597ccfc0ca143fd981cef1dfe ""
   "Figures/opamp_smallsignal.png" 1765730196 46271 ebb0f61efafa6e88f599cb04463e54cd ""
-  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture03_opamps/lecture03_opamps.tex" 1765734120 24991 2f3a236fa0428634dbc7fddbaa93e97c ""
+  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture03_opamps/lecture03_opamps.tex" 1767731953 28737 90b127c0305358af1aa55e9a67336b85 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1753825671 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1753826901 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcss1000.tfm" 1753826363 1536 293044035fd171bb1d18cf655049b101 ""
@@ -350,11 +350,11 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753831974 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1753832213 3604480 926ba6b19f7f90086b4f7d3958bf353f ""
   "c:/texlive/2025/texmf.cnf" 1753831940 713 e69b156964470283e0530f5060668171 ""
-  "lecture03_opamps.aux" 1767731040 4511 d0386191ce4873d57720c1ce7c2949df "pdflatex"
-  "lecture03_opamps.nav" 1767731040 2578 240efee4f5f7692f3bd38a5a0ab9e363 "pdflatex"
-  "lecture03_opamps.out" 1767731040 868 ea534d38e8d4ea83edcde3b890d901ba "pdflatex"
-  "lecture03_opamps.tex" 1765734120 24991 2f3a236fa0428634dbc7fddbaa93e97c ""
-  "lecture03_opamps.toc" 1767731040 336 e77d01a8a0acf66ed56c68d47722a7ad "pdflatex"
+  "lecture03_opamps.aux" 1767731960 4767 faf1295b3a5676e372c428cea0bbb915 "pdflatex"
+  "lecture03_opamps.nav" 1767731960 2762 c1ef2d9aa845fd6ba1020e9ae3359ae6 "pdflatex"
+  "lecture03_opamps.out" 1767731960 868 ea534d38e8d4ea83edcde3b890d901ba "pdflatex"
+  "lecture03_opamps.tex" 1767731953 28737 90b127c0305358af1aa55e9a67336b85 ""
+  "lecture03_opamps.toc" 1767731960 336 e77d01a8a0acf66ed56c68d47722a7ad "pdflatex"
   (generated)
   "lecture03_opamps.aux"
   "lecture03_opamps.log"

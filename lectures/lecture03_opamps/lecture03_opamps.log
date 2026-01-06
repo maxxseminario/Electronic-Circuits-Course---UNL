@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 14:23
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 14:39
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1270,24 +1270,24 @@ LaTeX Warning: Label `fig:opamp_small_signal' multiply defined.
 )
 \openout1 = `lecture03_opamps.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 68.
-LaTeX Font Info:    ... okay on input line 68.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 80.
+LaTeX Font Info:    ... okay on input line 80.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1337,7 +1337,7 @@ LaTeX Font Info:    ... okay on input line 68.
 \makeMPintoPDFobject=\count398
 \everyMPtoPDFconversion=\toks63
 )
-Package hyperref Info: Link coloring ON on input line 68.
+Package hyperref Info: Link coloring ON on input line 80.
  (./lecture03_opamps.out) (./lecture03_opamps.out)
 \@outlinefile=\write5
 \openout5 = `lecture03_opamps.out'.
@@ -1368,11 +1368,11 @@ Package caption Info: End \AtBeginDocument code.
 [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 141.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 153.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 141.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 153.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1387,7 +1387,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 <Figures/opamp_smallsignal.png, id=106, 333.245pt x 315.1775pt>
 File: Figures/opamp_smallsignal.png Graphic file (type png)
 <use Figures/opamp_smallsignal.png>
-Package pdftex.def Info: Figures/opamp_smallsignal.png  used on input line 212.
+Package pdftex.def Info: Figures/opamp_smallsignal.png  used on input line 224.
 (pdftex.def)             Requested size: 171.80493pt x 162.49376pt.
 
 
@@ -1401,13 +1401,13 @@ Package pdftex.def Info: Figures/opamp_smallsignal.png  used on input line 212.
 <Figures/opamp_ideal.png, id=131, 379.4175pt x 249.93375pt>
 File: Figures/opamp_ideal.png Graphic file (type png)
 <use Figures/opamp_ideal.png>
-Package pdftex.def Info: Figures/opamp_ideal.png  used on input line 237.
+Package pdftex.def Info: Figures/opamp_ideal.png  used on input line 249.
 (pdftex.def)             Requested size: 229.07713pt x 150.90338pt.
 
 pdfTeX warning (ext4): destination with the same identifier (name{fig:opamp_small_signal}) has been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.237 \end{frame}
+l.249 \end{frame}
                  
 
 [7
@@ -1417,7 +1417,7 @@ l.237 \end{frame}
 [8
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \vbox (43.5542pt too high) detected at line 394
+Overfull \vbox (43.5542pt too high) detected at line 406
  []
 
 
@@ -1425,7 +1425,7 @@ Overfull \vbox (43.5542pt too high) detected at line 394
 [9
 
 ]
-Overfull \vbox (38.86943pt too high) detected at line 454
+Overfull \vbox (38.86943pt too high) detected at line 466
  []
 
 
@@ -1433,12 +1433,12 @@ Overfull \vbox (38.86943pt too high) detected at line 454
 [10
 
 ]
-Overfull \hbox (2.94652pt too wide) in paragraph at lines 510--510
+Overfull \hbox (2.94652pt too wide) in paragraph at lines 522--522
  [] 
  []
 
 
-Overfull \vbox (0.72508pt too high) detected at line 510
+Overfull \vbox (0.72508pt too high) detected at line 522
  []
 
 
@@ -1446,10 +1446,10 @@ Overfull \vbox (0.72508pt too high) detected at line 510
 [11
 
 ]
-Package pgfplots info on input line 580: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
-Package pgfplots info on input line 580: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
+Package pgfplots info on input line 592: Using 'lua backend=false' for axis: xmode=log unsupported (yet).
+Package pgfplots info on input line 592: Using 'lua backend=false' for axis: ymode=log unsupported (yet).
 
-Overfull \hbox (5.47949pt too wide) in paragraph at lines 580--580
+Overfull \hbox (5.47949pt too wide) in paragraph at lines 592--592
  [] 
  []
 
@@ -1460,7 +1460,7 @@ Overfull \hbox (5.47949pt too wide) in paragraph at lines 580--580
 ]
 \absvshift=\dimen375
 
-Overfull \vbox (73.76686pt too high) detected at line 651
+Overfull \vbox (73.76686pt too high) detected at line 663
  []
 
 
@@ -1468,7 +1468,7 @@ Overfull \vbox (73.76686pt too high) detected at line 651
 [13
 
 ]
-Overfull \vbox (30.09557pt too high) detected at line 708
+Overfull \vbox (30.09557pt too high) detected at line 720
  []
 
 
@@ -1480,12 +1480,16 @@ Overfull \vbox (30.09557pt too high) detected at line 708
 [15
 
 ]
-Overfull \vbox (35.80421pt too high) detected at line 794
- []
-
-
 
 [16
+
+]
+
+[17
+
+]
+
+[18
 
 ]
 \tf@nav=\write6
@@ -1510,18 +1514,18 @@ Package rerunfilecheck Info: File `lecture03_opamps.out' has not changed.
 (rerunfilecheck)             Checksum: EA534D38E8D4EA83EDCDE3B890D901BA;868.
  ) 
 Here is how much of TeX's memory you used:
- 58497 strings out of 467815
- 1508523 string characters out of 5436410
- 2287294 words of memory out of 5000000
- 86254 multiletter control sequences out of 15000+600000
+ 58508 strings out of 467815
+ 1508643 string characters out of 5436410
+ 2287263 words of memory out of 5000000
+ 86261 multiletter control sequences out of 15000+600000
  643921 words of font info for 102 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,21n,123p,828b,2507s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb>
-Output written on lecture03_opamps.pdf (16 pages, 336318 bytes).
+Output written on lecture03_opamps.pdf (18 pages, 338896 bytes).
 PDF statistics:
- 346 PDF objects out of 1000 (max. 8388607)
- 273 compressed objects within 3 object streams
- 39 named destinations out of 1000 (max. 500000)
+ 369 PDF objects out of 1000 (max. 8388607)
+ 294 compressed objects within 3 object streams
+ 43 named destinations out of 1000 (max. 500000)
  93 words of extra memory for PDF output out of 10000 (max. 10000000)
 
