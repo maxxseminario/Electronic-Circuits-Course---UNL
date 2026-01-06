@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 12:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 12:57
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1262,24 +1262,24 @@ File: l3backend-pdftex.def 2025-06-09 L3 backend support: PDF output (pdfTeX)
 ) (./lecture00_Intro.aux)
 \openout1 = `lecture00_Intro.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 78.
-LaTeX Font Info:    ... okay on input line 78.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 77.
+LaTeX Font Info:    ... okay on input line 77.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -1329,7 +1329,7 @@ LaTeX Font Info:    ... okay on input line 78.
 \makeMPintoPDFobject=\count398
 \everyMPtoPDFconversion=\toks63
 )
-Package hyperref Info: Link coloring ON on input line 78.
+Package hyperref Info: Link coloring ON on input line 77.
  (./lecture00_Intro.out) (./lecture00_Intro.out)
 \@outlinefile=\write5
 \openout5 = `lecture00_Intro.out'.
@@ -1371,7 +1371,7 @@ Package caption Info: End \AtBeginDocument code.
 <figs/sedra_smith_cover.png, id=84, 509.65407pt x 617.30624pt>
 File: figs/sedra_smith_cover.png Graphic file (type png)
 <use figs/sedra_smith_cover.png>
-Package pdftex.def Info: figs/sedra_smith_cover.png  used on input line 166.
+Package pdftex.def Info: figs/sedra_smith_cover.png  used on input line 165.
 (pdftex.def)             Requested size: 103.084pt x 124.85312pt.
 
 
@@ -1393,33 +1393,33 @@ Package pdftex.def Info: figs/sedra_smith_cover.png  used on input line 166.
 <figs/vacuum_tube.jpeg, id=128, 309.155pt x 393.47pt>
 File: figs/vacuum_tube.jpeg Graphic file (type jpg)
 <use figs/vacuum_tube.jpeg>
-Package pdftex.def Info: figs/vacuum_tube.jpeg  used on input line 281.
+Package pdftex.def Info: figs/vacuum_tube.jpeg  used on input line 280.
 (pdftex.def)             Requested size: 56.9055pt x 72.42456pt.
 <figs/first_transistor.png, id=129, 615.0478pt x 440.39531pt>
 File: figs/first_transistor.png Graphic file (type png)
 <use figs/first_transistor.png>
-Package pdftex.def Info: figs/first_transistor.png  used on input line 281.
+Package pdftex.def Info: figs/first_transistor.png  used on input line 280.
 (pdftex.def)             Requested size: 71.13188pt x 50.92998pt.
 <figs/first_ic.png, id=130, 448.67625pt x 437.38406pt>
 File: figs/first_ic.png Graphic file (type png)
 <use figs/first_ic.png>
-Package pdftex.def Info: figs/first_ic.png  used on input line 281.
+Package pdftex.def Info: figs/first_ic.png  used on input line 280.
 (pdftex.def)             Requested size: 56.9055pt x 55.46706pt.
 <figs/modern_cpu.png, id=131, 522.45187pt x 244.66406pt>
 File: figs/modern_cpu.png Graphic file (type png)
 <use figs/modern_cpu.png>
-Package pdftex.def Info: figs/modern_cpu.png  used on input line 281.
+Package pdftex.def Info: figs/modern_cpu.png  used on input line 280.
 (pdftex.def)             Requested size: 85.35826pt x 39.97209pt.
 
 
 [9
 
  <./figs/vacuum_tube.jpeg> <./figs/first_transistor.png> <./figs/first_ic.png> <./figs/modern_cpu.png>]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 322.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 321.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 322.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 321.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
@@ -1459,7 +1459,7 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [18
 
 ]
-Overfull \vbox (9.9941pt too high) detected at line 543
+Overfull \vbox (9.9941pt too high) detected at line 542
  []
 
 
@@ -1483,7 +1483,7 @@ Overfull \vbox (9.9941pt too high) detected at line 543
 [23
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \vbox (3.1998pt too high) detected at line 745
+Overfull \vbox (3.1998pt too high) detected at line 744
  []
 
 
@@ -1495,7 +1495,7 @@ Overfull \vbox (3.1998pt too high) detected at line 745
 [25
 
 ]
-Overfull \vbox (66.54964pt too high) detected at line 847
+Overfull \vbox (66.54964pt too high) detected at line 846
  []
 
 
