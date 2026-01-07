@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1767735315.60605 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture04_opamps_apps/lecture04_opamp_apps.tex" "lecture04_opamp_apps.pdf" "lecture04_opamp_apps" 1767735324.68416 0
-  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture04_opamps_apps/lecture04_opamp_apps.tex" 1767735314 51406 7bb07a8e8049f5fdc287ffb126732889 ""
+["pdflatex"] 1767826192.28648 "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture04_opamps_apps/lecture04_opamp_apps.tex" "lecture04_opamp_apps.pdf" "lecture04_opamp_apps" 1767826200.64126 0
+  "c:/Users/Maxx Seminario/Home/Courses/ECEN/ECEN-222(Inst) (UCEP)/latek/lectures/lecture04_opamps_apps/lecture04_opamp_apps.tex" 1767826191 52105 c49fd86884bc689490ce3a5bf4b96e09 ""
   "c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc" 1753825671 2900 1537cc8184ad1792082cd229ecc269f4 ""
   "c:/texlive/2025/texmf-dist/fonts/map/fontname/texfonts.map" 1753826901 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2025/texmf-dist/fonts/tfm/jknappen/ec/tcss0900.tfm" 1753826363 1536 ba0169ee8bc017972775b933313cbbb0 ""
@@ -352,11 +352,11 @@
   "c:/texlive/2025/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1753831974 5572357 f0501b90ab048e2d9ec23d8a1bf903b2 ""
   "c:/texlive/2025/texmf-var/web2c/pdftex/pdflatex.fmt" 1753832213 3604480 926ba6b19f7f90086b4f7d3958bf353f ""
   "c:/texlive/2025/texmf.cnf" 1753831940 713 e69b156964470283e0530f5060668171 ""
-  "lecture04_opamp_apps.aux" 1767735323 7054 a5b8d35eea670d5e55f72e2e794b1345 "pdflatex"
-  "lecture04_opamp_apps.nav" 1767735323 4513 f5b33df8cdabfa9526d4d5c193ac9e15 "pdflatex"
-  "lecture04_opamp_apps.out" 1767735323 1121 33227d55886e56ac1d62efccf3a43237 "pdflatex"
-  "lecture04_opamp_apps.tex" 1767735314 51406 7bb07a8e8049f5fdc287ffb126732889 ""
-  "lecture04_opamp_apps.toc" 1767735323 472 57247371fcc8efd466f2ae4c76cb2bfd "pdflatex"
+  "lecture04_opamp_apps.aux" 1767826200 7186 54ceb60900a472412bc526c0d4ac4be9 "pdflatex"
+  "lecture04_opamp_apps.nav" 1767826200 4608 a0f6d1fed211ca522b4e8278dd625b59 "pdflatex"
+  "lecture04_opamp_apps.out" 1767826200 1121 33227d55886e56ac1d62efccf3a43237 "pdflatex"
+  "lecture04_opamp_apps.tex" 1767826191 52105 c49fd86884bc689490ce3a5bf4b96e09 ""
+  "lecture04_opamp_apps.toc" 1767826200 473 9d830dc478276898d615a7e0a8cea1df "pdflatex"
   (generated)
   "lecture04_opamp_apps.aux"
   "lecture04_opamp_apps.log"

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  6 JAN 2026 15:35
+This is pdfTeX, Version 3.141592653-2.6-1.40.28 (TeX Live 2025) (preloaded format=pdflatex 2025.7.29)  7 JAN 2026 16:49
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1371,32 +1371,32 @@ Package caption Info: End \AtBeginDocument code.
 [2
 
 ]
-LaTeX Font Info:    Trying to load font information for U+msa on input line 161.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 168.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 161.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 168.
  (c:/texlive/2025/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+wasy on input line 161.
+LaTeX Font Info:    Trying to load font information for U+wasy on input line 168.
  (c:/texlive/2025/texmf-dist/tex/latex/wasysym/uwasy.fd
 File: uwasy.fd 2020/01/19 v2.4 Wasy-2 symbol font definitions
 )
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <7> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 161.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 168.
 
 
 LaTeX Font Warning: Font shape `U/wasy/b/n' in size <5> not available
-(Font)              Font shape `U/wasy/m/n' tried instead on input line 161.
+(Font)              Font shape `U/wasy/m/n' tried instead on input line 168.
 
 
 
 [3
 
 ]
-Overfull \vbox (20.05437pt too high) detected at line 238
+Overfull \vbox (20.05437pt too high) detected at line 245
  []
 
 
@@ -1404,12 +1404,12 @@ Overfull \vbox (20.05437pt too high) detected at line 238
 [4
 
 ]
-Overfull \hbox (10.93338pt too wide) in paragraph at lines 304--304
+Overfull \hbox (10.93338pt too wide) in paragraph at lines 311--311
  [] 
  []
 
 
-Overfull \vbox (29.28442pt too high) detected at line 304
+Overfull \vbox (29.28442pt too high) detected at line 311
  []
 
 
@@ -1421,12 +1421,8 @@ Overfull \vbox (29.28442pt too high) detected at line 304
 [6
 
 {c:/texlive/2025/texmf-dist/fonts/enc/dvips/cm-super/cm-super-ts1.enc}]
-Overfull \hbox (2.90059pt too wide) in paragraph at lines 430--430
+Overfull \hbox (22.52754pt too wide) in paragraph at lines 432--432
  [] 
- []
-
-
-Overfull \vbox (51.45897pt too high) detected at line 430
  []
 
 
@@ -1434,23 +1430,30 @@ Overfull \vbox (51.45897pt too high) detected at line 430
 [7
 
 ]
-Overfull \vbox (79.73488pt too high) detected at line 516
- []
-
-
 
 [8
 
 ]
-Overfull \vbox (40.86343pt too high) detected at line 593
- []
-
-
 
 [9
 
 ]
-Overfull \vbox (43.96384pt too high) detected at line 669
+Overfull \hbox (2.49005pt too wide) detected at line 618
+\OML/cmm/m/it/10 i[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ;  i[] \OT1/cmr/m/n/10 = []\OML/cmm/m/it/10 ;  i[] \OT1/cmr/m/n/10 = []
+ []
+
+
+Overfull \hbox (1.5723pt too wide) detected at line 618
+\OML/cmm/m/it/10 v[] \OT1/cmr/m/n/10 = \OMS/cmsy/m/n/10 ^^@\OML/cmm/m/it/10 R[] []
+ []
+
+
+Overfull \hbox (25.68924pt too wide) detected at line 618
+[]
+ []
+
+
+Overfull \vbox (40.86343pt too high) detected at line 618
  []
 
 
@@ -1458,7 +1461,7 @@ Overfull \vbox (43.96384pt too high) detected at line 669
 [10
 
 ]
-Overfull \vbox (92.90184pt too high) detected at line 741
+Overfull \vbox (43.96384pt too high) detected at line 694
  []
 
 
@@ -1466,7 +1469,7 @@ Overfull \vbox (92.90184pt too high) detected at line 741
 [11
 
 ]
-Overfull \vbox (38.95483pt too high) detected at line 801
+Overfull \vbox (92.90184pt too high) detected at line 766
  []
 
 
@@ -1474,12 +1477,7 @@ Overfull \vbox (38.95483pt too high) detected at line 801
 [12
 
 ]
-Overfull \hbox (17.12695pt too wide) in paragraph at lines 868--868
- [] 
- []
-
-
-Overfull \vbox (17.22739pt too high) detected at line 868
+Overfull \vbox (38.95483pt too high) detected at line 826
  []
 
 
@@ -1487,7 +1485,12 @@ Overfull \vbox (17.22739pt too high) detected at line 868
 [13
 
 ]
-Overfull \vbox (44.1544pt too high) detected at line 926
+Overfull \hbox (17.12695pt too wide) in paragraph at lines 893--893
+ [] 
+ []
+
+
+Overfull \vbox (17.22739pt too high) detected at line 893
  []
 
 
@@ -1495,7 +1498,7 @@ Overfull \vbox (44.1544pt too high) detected at line 926
 [14
 
 ]
-Overfull \vbox (7.86855pt too high) detected at line 1023
+Overfull \vbox (44.1544pt too high) detected at line 951
  []
 
 
@@ -1503,12 +1506,7 @@ Overfull \vbox (7.86855pt too high) detected at line 1023
 [15
 
 ]
-Overfull \hbox (17.12695pt too wide) in paragraph at lines 1093--1093
- [] 
- []
-
-
-Overfull \vbox (44.83531pt too high) detected at line 1093
+Overfull \vbox (7.86855pt too high) detected at line 1048
  []
 
 
@@ -1516,7 +1514,12 @@ Overfull \vbox (44.83531pt too high) detected at line 1093
 [16
 
 ]
-Overfull \vbox (34.28815pt too high) detected at line 1158
+Overfull \hbox (17.12695pt too wide) in paragraph at lines 1118--1118
+ [] 
+ []
+
+
+Overfull \vbox (44.83531pt too high) detected at line 1118
  []
 
 
@@ -1524,7 +1527,7 @@ Overfull \vbox (34.28815pt too high) detected at line 1158
 [17
 
 ]
-Overfull \vbox (25.22298pt too high) detected at line 1254
+Overfull \vbox (34.28815pt too high) detected at line 1183
  []
 
 
@@ -1532,7 +1535,7 @@ Overfull \vbox (25.22298pt too high) detected at line 1254
 [18
 
 ]
-Overfull \vbox (49.32198pt too high) detected at line 1297
+Overfull \vbox (25.22298pt too high) detected at line 1279
  []
 
 
@@ -1540,23 +1543,7 @@ Overfull \vbox (49.32198pt too high) detected at line 1297
 [19
 
 ]
-Overfull \hbox (2.35777pt too wide) detected at line 1317
- []\OT1/cmss/m/n/7 (a) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1317
- []\OT1/cmss/m/n/7 (b) 
- []
-
-
-Overfull \hbox (2.09042pt too wide) detected at line 1317
- []\OT1/cmss/m/n/7 (c) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1317
- []\OT1/cmss/m/n/7 (d) 
+Overfull \vbox (49.32198pt too high) detected at line 1322
  []
 
 
@@ -1564,86 +1551,102 @@ Overfull \hbox (2.62514pt too wide) detected at line 1317
 [20
 
 ]
+Overfull \hbox (2.35777pt too wide) detected at line 1342
+ []\OT1/cmss/m/n/7 (a) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1342
+ []\OT1/cmss/m/n/7 (b) 
+ []
+
+
+Overfull \hbox (2.09042pt too wide) detected at line 1342
+ []\OT1/cmss/m/n/7 (c) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1342
+ []\OT1/cmss/m/n/7 (d) 
+ []
+
+
 
 [21
 
 ]
-Overfull \hbox (2.35777pt too wide) detected at line 1376
- []\OT1/cmss/m/n/7 (a) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1376
- []\OT1/cmss/m/n/7 (b) 
- []
-
-
-Overfull \hbox (2.09042pt too wide) detected at line 1376
- []\OT1/cmss/m/n/7 (c) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1376
- []\OT1/cmss/m/n/7 (d) 
- []
-
-
 
 [22
 
 ]
-
-[23
-
-]
-Overfull \hbox (2.35777pt too wide) detected at line 1437
+Overfull \hbox (2.35777pt too wide) detected at line 1401
  []\OT1/cmss/m/n/7 (a) 
  []
 
 
-Overfull \hbox (2.62514pt too wide) detected at line 1437
+Overfull \hbox (2.62514pt too wide) detected at line 1401
  []\OT1/cmss/m/n/7 (b) 
  []
 
 
-Overfull \hbox (2.09042pt too wide) detected at line 1437
+Overfull \hbox (2.09042pt too wide) detected at line 1401
  []\OT1/cmss/m/n/7 (c) 
  []
 
 
-
-[24
-
-]
-
-[25
-
-]
-Overfull \hbox (2.35777pt too wide) detected at line 1492
- []\OT1/cmss/m/n/7 (a) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1492
- []\OT1/cmss/m/n/7 (b) 
- []
-
-
-Overfull \hbox (2.09042pt too wide) detected at line 1492
- []\OT1/cmss/m/n/7 (c) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1492
+Overfull \hbox (2.62514pt too wide) detected at line 1401
  []\OT1/cmss/m/n/7 (d) 
  []
 
 
 
+[23
+
+]
+
+[24
+
+]
+Overfull \hbox (2.35777pt too wide) detected at line 1462
+ []\OT1/cmss/m/n/7 (a) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1462
+ []\OT1/cmss/m/n/7 (b) 
+ []
+
+
+Overfull \hbox (2.09042pt too wide) detected at line 1462
+ []\OT1/cmss/m/n/7 (c) 
+ []
+
+
+
+[25
+
+]
+
 [26
 
 ]
-Overfull \vbox (15.02626pt too high) detected at line 1526
+Overfull \hbox (2.35777pt too wide) detected at line 1517
+ []\OT1/cmss/m/n/7 (a) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1517
+ []\OT1/cmss/m/n/7 (b) 
+ []
+
+
+Overfull \hbox (2.09042pt too wide) detected at line 1517
+ []\OT1/cmss/m/n/7 (c) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1517
+ []\OT1/cmss/m/n/7 (d) 
  []
 
 
@@ -1651,23 +1654,7 @@ Overfull \vbox (15.02626pt too high) detected at line 1526
 [27
 
 ]
-Overfull \hbox (2.35777pt too wide) detected at line 1552
- []\OT1/cmss/m/n/7 (a) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1552
- []\OT1/cmss/m/n/7 (b) 
- []
-
-
-Overfull \hbox (2.09042pt too wide) detected at line 1552
- []\OT1/cmss/m/n/7 (c) 
- []
-
-
-Overfull \hbox (2.62514pt too wide) detected at line 1552
- []\OT1/cmss/m/n/7 (d) 
+Overfull \vbox (15.02626pt too high) detected at line 1551
  []
 
 
@@ -1675,7 +1662,23 @@ Overfull \hbox (2.62514pt too wide) detected at line 1552
 [28
 
 ]
-Overfull \vbox (44.78145pt too high) detected at line 1589
+Overfull \hbox (2.35777pt too wide) detected at line 1577
+ []\OT1/cmss/m/n/7 (a) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1577
+ []\OT1/cmss/m/n/7 (b) 
+ []
+
+
+Overfull \hbox (2.09042pt too wide) detected at line 1577
+ []\OT1/cmss/m/n/7 (c) 
+ []
+
+
+Overfull \hbox (2.62514pt too wide) detected at line 1577
+ []\OT1/cmss/m/n/7 (d) 
  []
 
 
@@ -1683,12 +1686,7 @@ Overfull \vbox (44.78145pt too high) detected at line 1589
 [29
 
 ]
-Overfull \hbox (22.59113pt too wide) in paragraph at lines 1659--1659
- [] 
- []
-
-
-Overfull \vbox (100.43643pt too high) detected at line 1659
+Overfull \vbox (44.78145pt too high) detected at line 1614
  []
 
 
@@ -1696,7 +1694,12 @@ Overfull \vbox (100.43643pt too high) detected at line 1659
 [30
 
 ]
-Overfull \vbox (40.40775pt too high) detected at line 1700
+Overfull \hbox (22.59113pt too wide) in paragraph at lines 1684--1684
+ [] 
+ []
+
+
+Overfull \vbox (100.43643pt too high) detected at line 1684
  []
 
 
@@ -1704,8 +1707,16 @@ Overfull \vbox (40.40775pt too high) detected at line 1700
 [31
 
 ]
+Overfull \vbox (40.40775pt too high) detected at line 1725
+ []
+
+
 
 [32
+
+]
+
+[33
 
 ]
 \tf@nav=\write6
@@ -1726,18 +1737,18 @@ Package rerunfilecheck Info: File `lecture04_opamp_apps.out' has not changed.
 (rerunfilecheck)             Checksum: 33227D55886E56AC1D62EFCCF3A43237;1121.
  ) 
 Here is how much of TeX's memory you used:
- 59365 strings out of 467815
- 1531094 string characters out of 5436410
- 2278427 words of memory out of 5000000
- 87081 multiletter control sequences out of 15000+600000
+ 59402 strings out of 467815
+ 1531446 string characters out of 5436410
+ 2278542 words of memory out of 5000000
+ 87116 multiletter control sequences out of 15000+600000
  640635 words of font info for 91 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  128i,16n,123p,837b,2357s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cmextra/cmex9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmssbx10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy6.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/amsfonts/symbols/msam10.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss0900.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/cm-super/sfss1000.pfb><c:/texlive/2025/texmf-dist/fonts/type1/public/wasy-type1/wasy10.pfb>
-Output written on lecture04_opamp_apps.pdf (32 pages, 340585 bytes).
+Output written on lecture04_opamp_apps.pdf (33 pages, 342374 bytes).
 PDF statistics:
- 670 PDF objects out of 1000 (max. 8388607)
- 570 compressed objects within 6 object streams
- 73 named destinations out of 1000 (max. 500000)
+ 684 PDF objects out of 1000 (max. 8388607)
+ 583 compressed objects within 6 object streams
+ 75 named destinations out of 1000 (max. 500000)
  107 words of extra memory for PDF output out of 10000 (max. 10000000)
 

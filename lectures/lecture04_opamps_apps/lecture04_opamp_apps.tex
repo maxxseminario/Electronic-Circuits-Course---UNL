@@ -130,24 +130,31 @@
         \]
         
     \column{0.48\textwidth}
+
         \begin{figure}[t]
         \centering
         \begin{circuitikz}[scale=0.7]
             % Op-amp
-            \draw (0,0) node[op amp, yscale=1.5] (opamp) {};
-            
+            \node[op amp, yscale=1.5] (opamp) at (0,0) {};
+
             % Labels
-            \node at (opamp.-) [left, xshift=-0.3cm] {$v_-$};
-            \node at (opamp.+) [left, xshift=-0.3cm] {$v_+$};
-            \node at (opamp.out) [right, xshift=0.3cm] {$v_{out}$};
-            
-            % Current annotations
-            \draw[->, red, thick] (opamp.- |- 0,0.8) -- ++(0,0.5) node[above] {$i_-=0$};
-            \draw[->, red, thick] (opamp.+ |- 0,-0.8) -- ++(0,-0.5) node[below] {$i_+=0$};
-            
+            \node at (opamp.-)  [left, xshift=-0.1cm] {$v_-$};
+            \node at (opamp.+)  [left, xshift=-0.1cm] {$v_+$};
+            \node at (opamp.out)[right, xshift=0.3cm] {$v_{out}$};
+
+            % Current annotations (horizontal, shifted left so they don't overlap labels)
+            \draw[->, red, thick]
+                ($(opamp.-)+(-2.0,0)$) -- ($(opamp.-)+(-1.1,0)$)
+                node[left, black] at ($(opamp.-)+(-2.0,0)$) {$i_-=0$};
+
+            \draw[->, red, thick]
+                ($(opamp.+)+(-2.0,0)$) -- ($(opamp.+)+(-1.1,0)$)
+                node[left, black] at ($(opamp.+)+(-2.0,0)$) {$i_+=0$};
+
         \end{circuitikz}
         \caption{Ideal op-amp terminals}
         \end{figure}
+
         
         \begin{block}{Key Insight}
             \begin{itemize}
@@ -364,40 +371,38 @@
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{Circuit Configuration}:
-        
+
         \begin{figure}[htb]
         \centering
-        \begin{circuitikz}[scale=1.0]
-            % Input to noninverting terminal
-            \draw (0,0) to[short, o-] (1,0);
-            
+        \begin{circuitikz}[scale=1.0, every node/.style={font=\small}]
             % Op-amp
-            \draw (2.5,-0.5) node[op amp, yscale=1.3] (opamp) {};
-            
-            % Input connection
-            \draw (1,0) |- (opamp.+);
-            
-            % Ground reference
-            \draw (1,0) to[short, *-] (1,-1) node[ground] {};
-            
-            % Feedback network
-            \draw (opamp.-) -- ++(0,1.5) coordinate(fb1);
-            \draw (fb1) to[R, l=$R_f$] (fb1 -| opamp.out);
-            \draw (opamp.out) |- (fb1 -| opamp.out);
-            
-            % Bottom resistor to ground
-            \draw (opamp.-) to[R, l_=$R_1$] (opamp.- |- 0,-2) node[ground] {};
-            
+            \node[op amp, scale=1.0] (opamp) at (3,0) {};
+
+            % Define vin 
+            \coordinate (vin) at ($(opamp.+)+(-1,0)$);
+
+            % Vin node 
+            \draw (vin) node[left] {$v_{in}$} to[short, o-] (opamp.+);
+
             % Output
-            \draw (opamp.out) to[short, -o] (5,-0.5) node[right] {$v_{out}$};
-            
-            % Labels
-            \node[left] at (0,0) {$v_{in}$};
-            \node at (opamp.-) [left, xshift=-0.2cm] {$v_-$};
-            
+            \draw (opamp.out) to[short, -o] (5.5,0) node[right] {$v_{out}$};
+
+            % Feedback resistor Rf 
+            \draw (opamp.out) -- ++(0,1.3)
+                to[R, l^=$R_f$] ++(-2.0,0) coordinate (rfL)  
+                -- ++(-1.0,0) coordinate (rfLext)            
+                |- (opamp.-);                              
+
+            \coordinate (invleft) at ($(opamp.-)+(-2.0,0)$);
+            \draw (opamp.-) -- (invleft);
+
+            % R1 from (-) input to ground 
+            \draw (invleft) to[R, l_=$R_1$] ++(0,-2.0) node[ground] {};
+
         \end{circuitikz}
         \caption{Noninverting amplifier circuit}
         \end{figure}
+
         
     \column{0.48\textwidth}
         \textbf{Analysis}:
@@ -407,23 +412,20 @@
         v_- = v_+ = v_{in}
         \]
         
+        
         2. Voltage divider at inverting input:
         \[
         v_- = v_{out} \frac{R_1}{R_1 + R_f}
         \]
         
-        3. Equating the two expressions:
+        3. Solve for gain:
         \[
         v_{in} = v_{out} \frac{R_1}{R_1 + R_f}
         \]
-        
-        4. Solving for gain:
         \[
-        \frac{v_{out}}{v_{in}} = \frac{R_1 + R_f}{R_1}
+        \frac{v_{out}}{v_{in}} = \frac{R_1 + R_f}{R_1} = 1 + \frac{R_f}{R_1}
         \]
-        \[
-        \boxed{A_v = 1 + \frac{R_f}{R_1}}
-        \]
+  
         
     \end{columns}
     
@@ -439,9 +441,9 @@
         \]
         
         \begin{itemize}
-            \item Always positive (no inversion)
+            \item[\mehitem] Always positive (no inversion)
             \item Minimum gain is 1
-            \item Set by resistor ratio
+            \item[\gooditem] Set by resistor ratio
         \end{itemize}
         
         \vspace{0.3cm}
@@ -452,18 +454,8 @@
         \]
         
         \begin{itemize}
-            \item Infinite (ideally)
-            \item Input goes to op-amp $+$ terminal
-            \item No loading of source
-        \end{itemize}
-        
-        \vspace{0.3cm}
-        
-        \textbf{Special Case - Voltage Follower}:
-        \begin{itemize}
-            \item $R_f = 0$ (short circuit)
-            \item $R_1 = \infty$ (open circuit)
-            \item $A_v = 1$ (unity gain buffer)
+            \item[\gooditem] Infinite (ideally)
+            \item[\gooditem] No loading of source
         \end{itemize}
         
     \column{0.48\textwidth}
@@ -484,32 +476,66 @@
             \item $R_1 = 10$ k$\Omega$, $R_f = 100$ k$\Omega$
             \item $A_v = 1 + 10 = 11$
         \end{itemize}
-        
+
         \vspace{0.2cm}
+
+        \textbf{Example 3}:  Gain of 1
+        \begin{itemize}
+            \item $R_1 = \infty$, $R_f = 0$
+            \item $A_v = 1 + 0 = 1$
+        \end{itemize}
+
+
         
-        \textbf{Voltage Follower}:
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Noninverting Amplifier: Voltage Follower (Unity-Gain Buffer)}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Special Case - Voltage Follower}:
+        \begin{itemize}
+            \item $R_f = 0$ (short circuit)
+            \item $R_1 = \infty$ (open circuit)
+            \item $A_v = 1$ (unity gain buffer)
+        \end{itemize}
         
-        \begin{figure}[htb]
-        \centering
-        \begin{circuitikz}[scale=0.8]
-            % Input
-            \draw (0,0) to[short, o-] (1,0);
-            
-            % Op-amp
-            \draw (2,-0.5) node[op amp, yscale=1.2] (opamp) {};
-            \draw (1,0) |- (opamp.+);
-            
-            % Direct feedback
-            \draw (opamp.out) |- ++(0,0.8) -| (opamp.-);
-            
-            % Output
-            \draw (opamp.out) to[short, -o] (4,-0.5) node[right] {$v_{out}$};
-            
-            % Labels
-            \node[left] at (0,0) {$v_{in}$};
-        \end{circuitikz}
-        \caption{Unity gain buffer ($A_v = 1$)}
-        \end{figure}
+        \vspace{0.4cm}
+        
+        \textbf{Key Features}:
+        \begin{itemize}
+            \item[\gooditem] Output tracks the input: $v_{out} \approx v_{in}$
+            \item[\gooditem] High input impedance, allows it to sense the input without loading it
+            \item[\gooditem] Low output impedance allows it to drive heavy loads
+            \item[\gooditem] Used to isolate stages, prevent loading effects
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+    \begin{figure}[htb]
+    \centering
+    \begin{circuitikz}[scale=1.0, every node/.style={font=\small}]
+        % Op-amp
+        \node[op amp, scale=1.0] (opamp) at (3,0) {};
+
+        % vin (same height as + input)
+        \coordinate (vin) at ($(opamp.+)+(-1,0)$);
+
+        % Vin node
+        \draw (vin) node[left] {$v_{in}$} to[short, o-] (opamp.+);
+
+        % Output
+        \draw (opamp.out) to[short, -o] (5.5,0) node[right] {$v_{out}$};
+
+        % Direct feedback wire (Rf = 0)
+        \draw (opamp.out) -- ++(0,1.5) -| (opamp.-);
+
+        % R1 open-circuit
+
+    \end{circuitikz}
+    \caption{Unity Gain Buffer}
+    \end{figure}
         
     \end{columns}
     
@@ -520,48 +546,47 @@
 \begin{frame}{The Summing Amplifier}
     
     \begin{columns}[t]
-    \column{0.48\textwidth}
+    \column{0.6\textwidth}
         \textbf{Circuit Configuration}:
         
         \begin{figure}[htb]
         \centering
-        \begin{circuitikz}[scale=0.9]
-            % Multiple inputs
-            \draw (0,1.5) to[R, l=$R_1$, o-] (2,1.5);
-            \draw (0,0.5) to[R, l=$R_2$, o-] (2,0.5);
-            \draw (0,-0.5) to[R, l=$R_3$, o-] (2,-0.5);
-            
-            % Junction at inverting input
-            \draw (2,1.5) -- (2,0);
-            \draw (2,0.5) -- (2,0);
-            \draw (2,-0.5) -- (2,0);
-            
-            % Op-amp
-            \draw (3,-0.5) node[op amp, yscale=1.3] (opamp) {};
-            \draw (2,0) |- (opamp.-);
-            
-            % Ground to noninverting
-            \draw (opamp.+) -- ++(0,-0.5) node[ground] {};
-            
-            % Feedback resistor
-            \draw (opamp.-) -- ++(0,1.5) coordinate(fb1);
-            \draw (fb1) to[R, l=$R_f$] (fb1 -| opamp.out);
-            \draw (opamp.out) |- (fb1 -| opamp.out);
-            
+        \begin{circuitikz}[scale=0.9, every node/.style={font=\small}]
+            % Op-amp (centered)
+            \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+            \coordinate (sum) at (1.5,0 |- opamp.-);
+
+            % Inputs and resistors
+            \draw ([yshift=1.2cm]-1.5, 0 |- opamp.-) node[left] {$v_1$} to[R, l=$R_1$, o-] ([yshift=1.2cm]sum);
+            \draw (-1.5, 0 |- opamp.-) node[left] {$v_2$} to[R, l=$R_2$, o-] (sum);
+            \draw ([yshift=-1.2cm]-1.5, 0 |- opamp.-) node[left] {$v_3$} to[R, l=$R_3$, o-] ([yshift=-1.2cm]sum);
+
+            % Tie the three inputs into the summing node with a vertical bus + junction dot
+            \draw ([yshift=1.2cm]sum) -- ([yshift=-1.2cm]sum);
+            \fill (sum) circle (1.2pt);
+
+            % Connect summing node to inverting input
+            \draw (sum) -- (opamp.-);
+
+            % Non-inverting input to ground
+            \draw (opamp.+) -- ++(0,-1.2) node[ground] {};
+
             % Output
-            \draw (opamp.out) to[short, -o] (5.5,-0.5) node[right] {$v_{out}$};
-            
-            % Input labels
-            \node[left] at (0,1.5) {$v_1$};
-            \node[left] at (0,0.5) {$v_2$};
-            \node[left] at (0,-0.5) {$v_3$};
-            \node at (2,0) [above] {$v_-=0$};
-            
+            \draw (opamp.out) to[short, -o] (5.7,0) node[right] {$v_{out}$};
+
+            % Feedback resistor 
+            \draw (opamp.out) -- ++(0,1.4)
+                to[R, l^=$R_f$] ++(-2.0,0)
+                -| (opamp.-);
+
         \end{circuitikz}
+
         \caption{Summing amplifier (3 inputs)}
         \end{figure}
+
         
-    \column{0.48\textwidth}
+    \column{0.35\textwidth}
         \textbf{Analysis}:
         
         1. Virtual ground:  $v_- = 0$
