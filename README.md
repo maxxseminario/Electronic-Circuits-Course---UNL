@@ -186,7 +186,7 @@ A separate private repository contains exam materials and secure quiz content. I
 ## For Students
 
 This repository provides complete course materials that you can use to for whatever purposes you may see fit.
----
+
 
 ## Contributing
 
