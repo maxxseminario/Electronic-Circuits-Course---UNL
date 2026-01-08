@@ -8,6 +8,7 @@
   \usefonttheme{default}
   \setbeamertemplate{navigation symbols}{}
   \setbeamertemplate{caption}[numbered]
+  
 } 
 
 \setbeamertemplate{footline}{%
@@ -80,8 +81,8 @@
 % Solution toggle 
 % =========================
 \newif\ifshowsolutions
-\showsolutionstrue   %  compile WITH solutions
-%\showsolutionsfalse %  compile WITHOUT solutions
+% \showsolutionstrue   %  compile WITH solutions
+\showsolutionsfalse %  compile WITHOUT solutions
 
 % =========================
 % Document Information
@@ -702,68 +703,66 @@
 \begin{frame}{The Difference Amplifier}
     
     \begin{columns}[t]
-    \column{0.48\textwidth}
+    \column{0.5\textwidth}
+        \vspace{1cm}
         \textbf{Circuit Configuration}:
         
         \begin{figure}[htb]
         \centering
-        \begin{circuitikz}[scale=0.9]
-            % Input 1 to inverting
-            \draw (0,1) to[R, l=$R_1$, o-] (2,1);
-            
-            % Op-amp
-            \draw (3,0) node[op amp, yscale=1.3] (opamp) {};
-            \draw (2,1) |- (opamp.-);
-            
-            % Feedback resistor
-            \draw (opamp.-) -- ++(0,1.5) coordinate(fb1);
-            \draw (fb1) to[R, l=$R_2$] (fb1 -| opamp.out);
-            \draw (opamp.out) |- (fb1 -| opamp.out);
-            
-            % Input 2 to noninverting through voltage divider
-            \draw (0,-1) to[R, l=$R_3$, o-] (2,-1);
-            \draw (2,-1) |- (opamp.+);
-            \draw (opamp.+) to[R, l_=$R_4$] (opamp.+ |- 0,-2.5) node[ground] {};
-            
+        \begin{circuitikz}[scale=0.8, every node/.style={font=\small}]
+            % Op-amp (centered like the previous figure)
+            \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+            % Coordinates aligned
+            \coordinate (invL) at (1.5,0 |- opamp.-); % left of V-
+            \coordinate (noninvL) at (1.5,0 |- opamp.+); % left of V+
+
+            % --- Inverting input path
+            \draw (-1.5,0 |- opamp.-) node[left] {$v_1$}
+                to[R, l=$R_1$, o-] (invL) -- (opamp.-);
+
+            % Feedback resistor: opamp.out 
+            \draw (opamp.out) -- ++(0,1.4)
+                to[R, l^=$R_2$] ++(-2.0,0)
+                -| (opamp.-);
+
+            % --- Non-inverting input path:
+            \draw (-1.5,0 |- opamp.+) node[left] {$v_2$}
+                to[R, l=$R_3$, o-] (noninvL);
+
+            % Node into V+
+            \draw (noninvL) -- (opamp.+);
+
+            % Divider to ground from the same node
+            \draw (noninvL) to[R, l_=$R_4$] ++(0,-1.4) node[ground] {};
+
             % Output
-            \draw (opamp.out) to[short, -o] (5.5,0) node[right] {$v_{out}$};
-            
-            % Labels
-            \node[left] at (0,1) {$v_1$};
-            \node[left] at (0,-1) {$v_2$};
-            
+            \draw (opamp.out) to[short, -o] (5.7,0) node[right] {$v_{out}$};
         \end{circuitikz}
-        \caption{Difference (differential) amplifier}
+        \caption{Difference amplifier}
         \end{figure}
-        
-    \column{0.48\textwidth}
+
+
+    \column{0.5\textwidth}
         \textbf{Analysis}:
         
-        1.  Voltage at noninverting input:
+        Voltage at noninverting input:
         \[
-        v_+ = v_2 \frac{R_4}{R_3 + R_4}
+        v_+ = v_- = v_2 \frac{R_4}{R_3 + R_4}
         \]
         
-        2. Since $v_- = v_+$:
-        \[
-        v_- = v_2 \frac{R_4}{R_3 + R_4}
-        \]
-        
-        3. Current through $R_1$:
+        \ Current through $R_1$:
         \[
         i_1 = \frac{v_1 - v_-}{R_1}
         \]
-        
-        4. Since $i_- = 0$: 
         \[
         v_{out} = v_- - i_1 R_2
         \]
         
-        After algebra (see textbook):
         \[
         \boxed{v_{out} = \frac{R_2}{R_1}\left(v_2 - v_1\right)}
         \]
-        (if $\frac{R_2}{R_1} = \frac{R_4}{R_3}$)
+        if $\frac{R_2}{R_1} = \frac{R_4}{R_3}$
         
     \end{columns}
     
@@ -801,28 +800,22 @@
         
         \begin{itemize}
             \item Instrumentation
-            \item Sensor signal conditioning
             \item Noise rejection (common-mode)
-            \item Bridge circuit measurements
             \item Biomedical amplifiers (ECG, EEG)
         \end{itemize}
         
-        \vspace{0.3cm}
-        
         \textbf{Advantages}:
         \begin{itemize}
-            \item Rejects common-mode signals
-            \item Amplifies differential signal
-            \item Single op-amp solution
+            \item[\gooditem] Rejects common-mode signals
+            \item[\gooditem] Amplifies differential signal
+            \item[\gooditem] Single op-amp solution
         \end{itemize}
-        
-        \vspace{0.3cm}
         
         \textbf{Limitations}:
         \begin{itemize}
-            \item Requires precision resistor matching
-            \item Finite input impedance at both inputs
-            \item Limited CMRR (compared to instrumentation amp)
+            \item[\baditem] Requires precision resistor matching
+            \item[\baditem] Finite input impedance at both inputs
+            \item[\mehitem] Limited CMRR (compared to instrumentation amp)
         \end{itemize}
         
     \end{columns}
@@ -836,50 +829,49 @@
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{Circuit Configuration}: 
-        
+        \vspace{0.8cm}
         \begin{figure}[htb]
         \centering
-        \begin{circuitikz}[scale=1.0]
-            % Input
-            \draw (0,0) to[R, l=$R$, o-] (2,0);
-            
-            % Op-amp
-            \draw (3,-0.5) node[op amp, yscale=1.3] (opamp) {};
-            \draw (2,0) |- (opamp.-);
-            
-            % Ground to noninverting
-            \draw (opamp.+) -- ++(0,-0.5) node[ground] {};
-            
+        \begin{circuitikz}[scale=0.9, every node/.style={font=\small}]
+            % Op-amp 
+            \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+            % Put the input resistor close to the op-amp
+            \coordinate (invL) at (2.0,0 |- opamp.-);
+
+            % Shorter input lead
+            \draw (0.3,0 |- opamp.-) node[left] {$v_{in}$}
+                to[R, l=$R$, o-] (invL) -- (opamp.-);
+
+            % Non-inverting input to ground
+            \draw (opamp.+) -- ++(0,-1.2) node[ground] {};
+
             % Feedback capacitor
-            \draw (opamp.-) -- ++(0,1.5) coordinate(fb1);
-            \draw (fb1) to[C, l=$C$] (fb1 -| opamp.out);
-            \draw (opamp.out) |- (fb1 -| opamp.out);
-            
-            % Output
-            \draw (opamp.out) to[short, -o] (5.5,-0.5) node[right] {$v_{out}$};
-            
-            % Labels
-            \node[left] at (0,0) {$v_{in}$};
-            \node at (2,0) [above] {$v_-=0$};
-            \node at (fb1) [above] {$i_C$};
-            
+            \coordinate (fbTop) at ($(opamp.out)+(0,1.4)$);
+            \draw (opamp.out) -- (fbTop)
+                to[C, l^=$C$] ++(-2.0,0)
+                -| (opamp.-);
+
+            % Output lead shortened: move vout label left
+            \draw (opamp.out) to[short, -o] (4.7,0) node[right] {$v_{out}$};
+
+            % i_C label
+            \draw[->] ($(fbTop)+(-2.55,0)$) -- ($(fbTop)+(-2.05,0)$)
+                node[midway, above] {$i_C$};
         \end{circuitikz}
         \caption{Inverting integrator}
         \end{figure}
-        
+                
     \column{0.48\textwidth}
         \textbf{Analysis}:
-        
+
+        \vspace{0.2cm}
+
         1. Virtual ground: $v_- = 0$
         
         2. Current through $R$:
         \[
-        i_R = \frac{v_{in} - 0}{R} = \frac{v_{in}}{R}
-        \]
-        
-        3. Since $i_- = 0$, all current flows through $C$: 
-        \[
-        i_C = i_R = \frac{v_{in}}{R}
+        i_R = \frac{v_{in} - 0}{R} = \frac{v_{in}}{R} = i_C
         \]
         
         4. Capacitor voltage-current relation:
@@ -896,7 +888,7 @@
     
 \end{frame}
 
-\begin{frame}{Integrator: Time-Domain Analysis}
+\begin{frame}{Integrator: Analysis}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -906,17 +898,15 @@
         \[
         \frac{v_{in}}{R} = -C \frac{dv_{out}}{dt}
         \]
-        
-        Rearranging:
         \[
         \frac{dv_{out}}{dt} = -\frac{1}{RC} v_{in}
         \]
-        
-        Integrating both sides:
         \[
         \boxed{v_{out}(t) = -\frac{1}{RC} \int_0^t v_{in}(\tau) d\tau + v_{out}(0)}
         \]
         
+        \vspace{0.2cm}
+
         \textbf{Interpretation}:
         \begin{itemize}
             \item Output is (inverted) integral of input
@@ -941,13 +931,6 @@
             \item Gain decreases with frequency
             \item -20 dB/decade slope
             \item Infinite gain at DC (impractical!)
-        \end{itemize}
-        
-        \textbf{Practical Issue}:
-        \begin{itemize}
-            \item DC offset causes saturation
-            \item Need reset mechanism
-            \item Often add resistor in parallel with $C$
         \end{itemize}
         
     \end{columns}
@@ -1058,37 +1041,37 @@
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{Circuit Configuration}:
-        
+
         \begin{figure}[htb]
         \centering
-        \begin{circuitikz}[scale=1.0]
-            % Input through capacitor
-            \draw (0,0) to[C, l=$C$, o-] (2,0);
-            
-            % Op-amp
-            \draw (3,-0.5) node[op amp, yscale=1.3] (opamp) {};
-            \draw (2,0) |- (opamp.-);
-            
-            % Ground to noninverting
-            \draw (opamp.+) -- ++(0,-0.5) node[ground] {};
-            
-            % Feedback resistor
-            \draw (opamp.-) -- ++(0,1.5) coordinate(fb1);
-            \draw (fb1) to[R, l=$R$] (fb1 -| opamp.out);
-            \draw (opamp.out) |- (fb1 -| opamp.out);
-            
-            % Output
-            \draw (opamp.out) to[short, -o] (5.5,-0.5) node[right] {$v_{out}$};
-            
-            % Labels
-            \node[left] at (0,0) {$v_{in}$};
-            \node at (2,0) [above] {$v_-=0$};
-            
+        \begin{circuitikz}[scale=0.9, every node/.style={font=\small}]
+            % Op-amp (centered like the previous figures)
+            \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+            % Put the input capacitor close to the op-amp (level with V-)
+            \coordinate (invL) at (2.0,0 |- opamp.-);
+
+            % Shorter input lead: move vin to the right
+            \draw (0.3,0 |- opamp.-) node[left] {$v_{in}$}
+                to[C, l=$C$, o-] (invL) -- (opamp.-);
+
+            % Non-inverting input to ground
+            \draw (opamp.+) -- ++(0,-1.2) node[ground] {};
+
+            % Feedback resistor: opamp.out -> up -> R -> back to V-
+            \coordinate (fbTop) at ($(opamp.out)+(0,1.4)$);
+            \draw (opamp.out) -- (fbTop)
+                to[R, l^=$R$] ++(-2.0,0)
+                -| (opamp.-);
+
+            % Output lead shortened: move vout label left
+            \draw (opamp.out) to[short, -o] (4.7,0) node[right] {$v_{out}$};
+
         \end{circuitikz}
         \caption{Inverting differentiator}
         \end{figure}
         
-        \textbf{Note}:  Integrator with $R$ and $C$ swapped!
+        \textbf{Note}:  Integrator with $R$ and $C$ swapped
         
     \column{0.48\textwidth}
         \textbf{Analysis}:
@@ -1099,16 +1082,12 @@
         \[
         i_C = C \frac{dv_C}{dt} = C \frac{d(v_{in} - 0)}{dt}
         \]
-        \[
-        i_C = C \frac{dv_{in}}{dt}
-        \]
         
-        3. Since $i_- = 0$, $i_C$ flows through $R$:
         \[
         i_R = i_C = C \frac{dv_{in}}{dt}
         \]
         
-        4. Output voltage:
+        3. Output voltage:
         \[
         v_{out} = 0 - i_R R = -RC \frac{dv_{in}}{dt}
         \]
@@ -1145,7 +1124,6 @@
         \begin{itemize}
             \item Gain increases with frequency
             \item +20 dB/decade slope
-            \item Amplifies high-frequency noise! 
         \end{itemize}
         
     \column{0.48\textwidth}
@@ -1154,33 +1132,28 @@
         \begin{enumerate}
             \item \textbf{Noise amplification}
             \begin{itemize}
-                \item High-frequency noise magnified
-                \item Can saturate output
+                \item[\baditem] High-frequency noise magnified
+                \item[\baditem] Can saturate output
             \end{itemize}
             
             \item \textbf{Stability issues}
             \begin{itemize}
-                \item Phase shift can cause oscillation
+                \item[\baditem] Phase shift can cause oscillation
                 \item Needs compensation
             \end{itemize}
         \end{enumerate}
-        
-        \vspace{0.3cm}
         
         \textbf{Practical Solution}:
         
         Add small resistor $R_s$ in series with $C$:
         \begin{itemize}
             \item Limits high-frequency gain
-            \item Improves stability
             \item $R_s \ll R$ (typically $R_s \approx R/10$)
         \end{itemize}
         
-        \vspace{0.3cm}
-        
-        \begin{alertblock}{Warning}
+        \begin{block}{Practical Note}
             Differentiators are rarely used in practice due to noise sensitivity
-        \end{alertblock}
+        \end{block}
         
     \end{columns}
     
@@ -1310,12 +1283,11 @@
     \end{tabular}
     \caption{Summary of op-amp configurations}
     \end{table}
-    
-    \vspace{0.3cm}
-    
-    \begin{block}{Key Analysis Steps}
+
+    \vspace{-0.5cm}
+
+    \begin{block}{Standard Analysis Steps}
         \begin{enumerate}
-            \item Identify configuration
             \item Apply virtual short:  $v_+ = v_-$ (with negative feedback)
             \item Apply zero input current:  $i_+ = i_- = 0$
             \item Use KCL at input nodes
@@ -1495,7 +1467,7 @@
     v_{out} = -(2 + 0.5 - 1) = \boxed{-1.5 \text{ V}}
     \]
     
-    (c) For equal weights:  $R_1 = R_2 = R_3 = R$ (any equal value, e.g., 10 k$\Omega$)
+    (c) For equal weights:  $R_1 = R_2 = R_3 = R$ 
     
 \end{frame}
 \fi
@@ -1595,9 +1567,6 @@
     \[
     \frac{R_2}{R_1} = \frac{50}{10} = 5, \quad \frac{R_4}{R_3} = \frac{50}{10} = 5
     \]
-    \[
-    \boxed{\frac{R_2}{R_1} = \frac{R_4}{R_3} \checkmark} \text{ (condition satisfied)}
-    \]
     
     (b) Differential gain:
     \[
@@ -1613,20 +1582,19 @@
     \[
     v_{out} = A_d(v_2 - v_1) = 5(2.5 - 2.5) = \boxed{0 \text{ V}}
     \]
-    (Perfect rejection with ideal op-amp and matched resistors)
     
 \end{frame}
 \fi
 
-\begin{frame}{Advanced Application: Instrumentation Amplifier (Preview)}
+\begin{frame}{Advanced Application: Instrumentation Amplifier}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{Limitations of Simple Difference Amp}:
         \begin{itemize}
-            \item Finite input impedance
-            \item Limited CMRR (requires precise matching)
-            \item Gain-impedance tradeoff
+            \item[\baditem] Finite input impedance
+            \item[\baditem] Limited CMRR (requires precise matching)
+            \item[\mehitem] Gain-impedance tradeoff
         \end{itemize}
         
         \vspace{0.3cm}
@@ -1634,56 +1602,28 @@
         \textbf{Instrumentation Amplifier}:
         \begin{itemize}
             \item Three op-amp configuration
-            \item Very high input impedance (both inputs)
-            \item Excellent CMRR (>100 dB)
-            \item Single resistor sets gain
+            \item[\gooditem] Very high input impedance (both inputs)
+            \item[\gooditem] Excellent CMRR (100 dB)
+            \item[\gooditem] Single resistor sets gain
             \item Industry standard for precision measurement
         \end{itemize}
         
     \column{0.48\textwidth}
-        \begin{figure}[htb]
-        \centering
-        \begin{circuitikz}[scale=0.65]
-            % First stage - two op-amps
-            \draw (0,2) node[op amp, yscale=0.8] (opamp1) {};
-            \draw (0,-1) node[op amp, yscale=0.8, xscale=-1] (opamp2) {};
-            
-            % Inputs
-            \draw (opamp1.+) -- ++(-0.5,0) to[short, -o] ++(-0.3,0) node[left] {$v_1$};
-            \draw (opamp2.-) -- ++(-0.5,0) to[short, -o] ++(-0.3,0) node[left] {$v_2$};
-            
-            % Gain resistor between inverting inputs
-            \draw (opamp1.-) to[R, l=$R_G$] (opamp2.+);
-            
-            % Feedback resistors
-            \draw (opamp1.-) -- ++(0,0.8) to[R, l=$R$] ++(1. 5,0) -| (opamp1.out);
-            \draw (opamp2.+) -- ++(0,-0.8) to[R, l_=$R$] ++(1.5,0) -| (opamp2.out);
-            
-            % Second stage - difference amplifier
-            \draw (4,0. 5) node[op amp] (opamp3) {};
-            
-            % Connections to difference amp
-            \draw (opamp1.out) to[R, l=$R$] (opamp3.-);
-            \draw (opamp2.out) to[R, l=$R$] (opamp3.+);
-            \draw (opamp3.+) to[R, l_=$R$] ++(0,-1. 5) node[ground] {};
-            \draw (opamp3.-) -- ++(0,1) to[R, l=$R$] ++(1.5,0) -| (opamp3.out);
-            
-            % Output
-            \draw (opamp3.out) to[short, -o] ++(0.5,0) node[right] {$v_{out}$};
-            
-        \end{circuitikz}
-        \caption{Three op-amp instrumentation amplifier}
+
+       \begin{figure}[htbp]
+            \centering
+            \includegraphics[width=0.9\textwidth]{Figures/inst_amp_schem.png}
+            \caption{Instrumentation amplifier schematic}
+            \label{fig:inst_amp_schem}
         \end{figure}
         
+        \vspace{-0.5cm}
+
         \[
         A_v = \left(1 + \frac{2R}{R_G}\right)
         \]
         
     \end{columns}
-    
-    \begin{block}{Note}
-        We'll study this in more detail when we cover precision amplifiers
-    \end{block}
     
 \end{frame}
 
@@ -1714,8 +1654,6 @@
     \caption{Comparison of basic op-amp configurations}
     \end{table}
     
-    \vspace{0.3cm}
-    
     \begin{block}{Design Guidelines}
         \begin{itemize}
             \item Use \textbf{inverting} when:  phase inversion acceptable, moderate $R_{in}$ OK
@@ -1727,55 +1665,6 @@
     \end{block}
     
 \end{frame}
-
-\begin{frame}{Practical Considerations}
-    
-    \begin{columns}[t]
-    \column{0.48\textwidth}
-        \textbf{Resistor Selection}:
-        \begin{itemize}
-            \item Typical range: 1 k$\Omega$ to 1 M$\Omega$
-            \item Too low: excessive current, power
-            \item Too high: noise pickup, offset errors
-            \item Use 1\% or better for precision
-            \item Match resistors for difference amp
-        \end{itemize}
-        
-        \vspace{0.3cm}
-        
-        \textbf{Capacitor Selection}:
-        \begin{itemize}
-            \item Integrator:  low-leakage (polypropylene, polyester)
-            \item Avoid electrolytic for precision
-            \item Consider temperature coefficients
-            \item ESR affects high-frequency performance
-        \end{itemize}
-        
-    \column{0.48\textwidth}
-        \textbf{Common Mistakes}:
-        \begin{enumerate}
-            \item Forgetting DC path (integrator saturation)
-            \item Exceeding op-amp output current limit
-            \item Ignoring bandwidth limitations
-            \item Poor layout causing oscillations
-            \item Wrong polarity on electrolytic caps
-        \end{enumerate}
-        
-        \vspace{0.3cm}
-        
-        \textbf{Verification Steps}:
-        \begin{itemize}
-            \item Check DC operating point
-            \item Verify gain with known input
-            \item Test frequency response
-            \item Check for distortion/clipping
-            \item Measure with realistic loads
-        \end{itemize}
-        
-    \end{columns}
-    
-\end{frame}
-
 
 
 
