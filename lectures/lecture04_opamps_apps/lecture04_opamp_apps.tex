@@ -620,7 +620,7 @@
 \begin{frame}{Summing Amplifier: Applications}
     
     \begin{columns}[t]
-    \column{0.48\textwidth}
+    \column{0.4\textwidth}
         \textbf{Special Cases}:
         
         \vspace{0.2cm}
@@ -647,46 +647,50 @@
             \item $v_{out} = -(v_1 + 2v_2 + 0.5v_3)$
         \end{itemize}
         
-    \column{0.48\textwidth}
+    \column{0.6\textwidth}
         \textbf{Applications}:
         
         \begin{itemize}
             \item Audio mixing consoles
             \item Digital-to-analog conversion (DAC)
-            \item Analog computation
             \item Signal averaging
-            \item Multi-input control systems
         \end{itemize}
         
-        \vspace{0.3cm}
-        
         \textbf{Example:  3-bit DAC}:
-        
+        \vspace{-0.5cm}
         \begin{figure}[htb]
         \centering
-        \begin{circuitikz}[scale=0.75]
-            % Three inputs with binary weighting
-            \draw (0,1.5) to[R, l=$R$, o-] (2,1.5) node[left, xshift=-1.8cm] {MSB};
-            \draw (0,0.5) to[R, l=$2R$, o-] (2,0.5);
-            \draw (0,-0.5) to[R, l=$4R$, o-] (2,-0.5) node[left, xshift=-1.8cm] {LSB};
-            
-            % Junction
-            \draw (2,1.5) -- (2,0);
-            \draw (2,0.5) -- (2,0);
-            \draw (2,-0.5) -- (2,0);
-            
-            % Op-amp
-            \draw (3,-0.5) node[op amp, scale=0.8] (opamp) {};
-            \draw (2,0) |- (opamp.-);
-            \draw (opamp.+) -- ++(0,-0.3) node[ground] {};
-            
-            % Feedback
-            \draw (opamp.-) -- ++(0,1) to[R, l=$R$] ++(1. 5,0) -| (opamp.out);
-            
+        \begin{circuitikz}[scale=0.9, every node/.style={font=\small}]
+            % Op-amp (centered, like the first slide)
+            \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+            % Summing node coordinate (aligned with opamp - input)
+            \coordinate (sum) at (1.5,0 |- opamp.-);
+
+            % Inputs + resistors (binary-weighted)
+            \draw ([yshift=1.2cm]-1.5, 0 |- opamp.-) node[left] {MSB} to[R, l=$R$, o-] ([yshift=1.2cm]sum);
+            \draw (-1.5, 0 |- opamp.-) node[left] {} to[R, l=$2R$, o-] (sum);
+            \draw ([yshift=-1.2cm]-1.5, 0 |- opamp.-) node[left] {LSB} to[R, l=$4R$, o-] ([yshift=-1.2cm]sum);
+
+            % Vertical bus tying inputs into the summing node + junction dot
+            \draw ([yshift=1.2cm]sum) -- ([yshift=-1.2cm]sum);
+            \fill (sum) circle (1.2pt);
+
+            % Connect summing node to inverting input
+            \draw (sum) -- (opamp.-);
+
+            % Non-inverting input to ground
+            \draw (opamp.+) -- ++(0,-0.2) node[ground] {};
+
             % Output
-            \draw (opamp.out) to[short, -o] (5,-0.5) node[right] {$v_{out}$};
+            \draw (opamp.out) to[short, -o] (5.7,0) node[right] {$v_{out}$};
+
+            % Feedback resistor (Rf = R for the DAC example)
+            \draw (opamp.out) -- ++(0,1.4)
+                to[R, l^=$R$] ++(-2.0,0)
+                -| (opamp.-);
         \end{circuitikz}
-        \caption{Binary-weighted DAC}
+        \caption{Binary-weighted 3-bit DAC}
         \end{figure}
         
     \end{columns}
