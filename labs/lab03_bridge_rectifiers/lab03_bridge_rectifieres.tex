@@ -57,7 +57,7 @@
 % Header and footer
 \fancypagestyle{plain}{
   \fancyhf{}
-  \lhead{ECEN 222:  Electronic Circuits}
+  \lhead{ECEN 222:  Electronic Circuits II-CE}
   \chead{Lab 3}
   \rhead{Page \thepage\ of \pageref{LastPage}}
   \lfoot{}
@@ -68,7 +68,7 @@
 }
 
 \title{\textbf{\Huge Bridge Rectifiers with Shunt Voltage Regulation}\\
-\large Lab 3 — ECEN 222: Electronic Circuits}
+\large Lab 3 — ECEN 222: Electronic Circuits II-CE}
 \author{
 \large University of Nebraska–Lincoln\\
 \large Department of Electrical and Computer Engineering\\
@@ -118,7 +118,7 @@ The advantages of the bridge rectifier include no requirement for a center-tappe
 
 \subsection{Shunt Voltage Regulation with Zener Diodes}
 
-The simple filtered rectifier circuits studied in Lab 2 produce a DC output voltage that varies with both input voltage changes (line variations) and load current changes (load variations). Many electronic circuits require a stable, regulated voltage that remains constant despite these variations. The simplest form of voltage regulation uses a Zener diode in a shunt (parallel) configuration. \\
+The simple filtered rectifier circuits studied in Lab 2 produce a DC output voltage that varies with both input voltage changes (line variations) and load current changes (load variations). Many Electronic Circuits II-CE require a stable, regulated voltage that remains constant despite these variations. The simplest form of voltage regulation uses a Zener diode in a shunt (parallel) configuration. \\
 
 A basic Zener shunt regulator consists of a series resistor $R_S$ (often called the dropping resistor or series resistor) connected between the unregulated DC input voltage $V_{in}$ and the load, with a Zener diode connected in parallel with the load as shown in Figure \ref{fig:shunt_reg_concept}. The Zener diode is reverse-biased and operates in its breakdown region, maintaining an approximately constant voltage $V_Z$ across the load.  \\
 
@@ -240,7 +240,6 @@ or sometimes expressed as the absolute change in output voltage per unit change 
 \end{equation}
 
 Zener shunt regulators generally have poor efficiency, especially under light load conditions, because significant power is dissipated in both the series resistor and the Zener diode.\\
-
 
 \section{Experimental Procedures}
 
