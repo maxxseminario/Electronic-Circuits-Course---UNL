@@ -14,15 +14,21 @@ clean:
 	@powershell -Command "Write-Host 'Cleaned LaTeX auxiliary files' -ForegroundColor Green"
 
 # Clean, update docs, and push to GitHub
-push: clean update_docs
+# Clean, update docs, and push to GitHub
+push:  clean update_docs
 	@powershell -Command "\
 		git add .; \
 		$$message = Read-Host 'Enter commit message'; \
 		if ($$message) { \
 			git commit -m \"$$message\"; \
-			git push origin main; \
-			Write-Host 'Pushed to GitHub!' -ForegroundColor Green \
+			$$force = Read-Host 'Force push? (y/n)'; \
+			if ($$force -eq 'y') { \
+				git push origin main --force; \
+				Write-Host 'Force pushed to GitHub!' -ForegroundColor Yellow \
+			} else { \
+				git push origin main; \
+				Write-Host 'Pushed to GitHub!' -ForegroundColor Green \
+			} \
 		} else { \
 			Write-Host 'Commit cancelled - no message provided' -ForegroundColor Red \
 		}"
-
