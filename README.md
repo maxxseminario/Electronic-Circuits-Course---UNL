@@ -56,8 +56,8 @@ By the end of this course, one will be able to:
 └── docs/              # Compiled PDF documents
 ```
 
-### Quizzes
-Quiz materials may be compiled with `showresults = true` to include solutions. 
+### Quiz and Lecture Solutions
+Quiz and lectures may be compiled with `showresults = true` to include solutions. 
 
 ---
 
@@ -65,8 +65,7 @@ Quiz materials may be compiled with `showresults = true` to include solutions.
 
 ### For Students
 1. Browse compiled PDFs in the `docs/` folder
-2. Review lecture notes sequentially starting with Unit 1
-3. Attempt assignments and check your work with provided solutions
+2. Review lecture notes sequentially starting with lecture 0
 
 ### For Instructors
 1. Fork this repository
@@ -95,7 +94,7 @@ Quiz materials may be compiled with `showresults = true` to include solutions.
 cd lectures
 
 # Compile LaTeX documents
-pdflatex lecture-01-introduction.tex
+pdflatex lecture00_Intro/lecture-00-Intro.tex
 
 # For documents with references
 pdflatex filename.tex
@@ -104,7 +103,7 @@ pdflatex filename.tex
 pdflatex filename.tex
 ```
 
-Compiled PDFs are also available in the `docs/` directory.
+Pre-compiled PDFs are also available in the `docs/` directory.
 
 ---
 
@@ -131,7 +130,7 @@ A separate private repository contains exam materials and secure quiz content. I
 
 ---
 
-## Topics Covered
+<!-- ## Topics Covered
 
 ### Unit 1: Signals and Amplifiers
 - Signal classification:  analog vs. digital
@@ -199,7 +198,7 @@ A separate private repository contains exam materials and secure quiz content. I
 - SPICE simulation of digital circuits
 
 ---
-
+ -->
 
 ## Contributing
 
