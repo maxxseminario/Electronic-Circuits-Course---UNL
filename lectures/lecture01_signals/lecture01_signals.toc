@@ -1,6 +1,0 @@
-\babel@toc {english}{}\relax 
-\beamer@sectionintoc {1}{What are Signals?}{2}{0}{1}
-\beamer@sectionintoc {2}{Signal Source Representations}{4}{0}{2}
-\beamer@sectionintoc {3}{Time-Domain Signal Representation}{7}{0}{3}
-\beamer@sectionintoc {4}{Frequency Spectrum}{8}{0}{4}
-\beamer@sectionintoc {5}{Summary}{13}{0}{5}
