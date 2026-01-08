@@ -21,7 +21,7 @@ Students will learn the physics and operation of diodes, BJTs, and MOSFETs, and 
 
 ## Learning Objectives
 
-By the end of this course, you will be able to:
+By the end of this course, one will be able to:
 
 1. Understand the **physics and operation** of semiconductor devices (diodes, BJTs, MOSFETs)
 2. Analyze the **nonlinear I-V characteristics** of these devices
@@ -31,75 +31,6 @@ By the end of this course, you will be able to:
 6. Understand **transistor switching** and digital logic circuits
 7. Build and test circuits in the laboratory
 8. Use **SPICE simulation** tools for circuit analysis
-
----
-
-## Topics Covered
-
-### Unit 1: Signals and Amplifiers
-- Signal classification:  analog vs. digital
-- Frequency spectra and bandwidth
-- Introduction to amplifiers as circuit building blocks
-- Amplifier models and parameters:  gain, input/output impedance
-
-### Unit 2: Operational Amplifiers
-- Ideal op-amp model
-- Inverting and non-inverting configurations
-- Op-amp applications:  summing, difference, integrator, differentiator
-- Non-ideal characteristics: finite gain, bandwidth, slew rate
-
-### Unit 3: Semiconductors
-- Intrinsic and extrinsic semiconductors
-- n-type and p-type doping
-- Current flow:  drift and diffusion
-- The pn junction and depletion region under bias
-- I-V characteristics of pn junction
-
-### Unit 4: Diodes
-- Ideal diode model and diode equation
-- Circuit models: ideal, constant voltage drop, small-signal
-- Rectifier circuits: half-wave, full-wave, bridge
-- Limiting and clamping circuits
-
-### Unit 5: MOSFETs
-- Device structure and physical operation
-- I-V characteristics: cutoff, triode, saturation
-- DC circuit analysis and biasing
-- MOSFET as amplifier and switch
-- Small-signal model and parameters (g_m, r_o)
-- Single-stage amplifiers: common-source, source follower
-
-### Unit 6: Bipolar Junction Transistors (BJTs)
-- Device structure and physical operation
-- Modes of operation: cutoff, active, saturation
-- I-V characteristics and Ebers-Moll equations
-- DC circuit analysis and biasing techniques
-- Small-signal model and parameters (β, g_m, r_π)
-- Single-stage amplifiers: common-emitter, emitter follower
-
-### Unit 7: Transistor Amplifiers
-- Common-source (CS) and common-emitter (CE) with loads
-- Common-gate (CG) and common-base (CB) amplifiers
-- Source/emitter degeneration for linearity
-- Source/emitter followers as buffers
-- Current mirrors and active loads
-- High-frequency response and Miller effect
-
-### Unit 8: Digital Circuits
-- CMOS inverter: static and dynamic characteristics
-- Voltage transfer characteristics (VTC)
-- Noise margins and logic levels
-- Power dissipation: static and dynamic
-- Propagation delay
-- NAND, NOR, and complex logic gates
-- CMOS transmission gates
-
-### Unit 9: Digital IC Design
-- Logic gate design and optimization
-- Pass-transistor logic
-- Dynamic logic circuits
-- Memory cells: SRAM and DRAM basics
-- SPICE simulation of digital circuits
 
 ---
 
@@ -202,6 +133,76 @@ Instructors are welcome to use and adapt these materials for their own courses. 
 A separate private repository contains exam materials and secure quiz content. Instructors at other universities who wish to access these resources may contact the author to request read permissions.
 
 ---
+
+## Topics Covered
+
+### Unit 1: Signals and Amplifiers
+- Signal classification:  analog vs. digital
+- Frequency spectra and bandwidth
+- Introduction to amplifiers as circuit building blocks
+- Amplifier models and parameters:  gain, input/output impedance
+
+### Unit 2: Operational Amplifiers
+- Ideal op-amp model
+- Inverting and non-inverting configurations
+- Op-amp applications:  summing, difference, integrator, differentiator
+- Non-ideal characteristics: finite gain, bandwidth, slew rate
+
+### Unit 3: Semiconductors
+- Intrinsic and extrinsic semiconductors
+- n-type and p-type doping
+- Current flow:  drift and diffusion
+- The pn junction and depletion region under bias
+- I-V characteristics of pn junction
+
+### Unit 4: Diodes
+- Ideal diode model and diode equation
+- Circuit models: ideal, constant voltage drop, small-signal
+- Rectifier circuits: half-wave, full-wave, bridge
+- Limiting and clamping circuits
+
+### Unit 5: MOSFETs
+- Device structure and physical operation
+- I-V characteristics: cutoff, triode, saturation
+- DC circuit analysis and biasing
+- MOSFET as amplifier and switch
+- Small-signal model and parameters (g_m, r_o)
+- Single-stage amplifiers: common-source, source follower
+
+### Unit 6: Bipolar Junction Transistors (BJTs)
+- Device structure and physical operation
+- Modes of operation: cutoff, active, saturation
+- I-V characteristics and Ebers-Moll equations
+- DC circuit analysis and biasing techniques
+- Small-signal model and parameters (β, g_m, r_π)
+- Single-stage amplifiers: common-emitter, emitter follower
+
+### Unit 7: Transistor Amplifiers
+- Common-source (CS) and common-emitter (CE) with loads
+- Common-gate (CG) and common-base (CB) amplifiers
+- Source/emitter degeneration for linearity
+- Source/emitter followers as buffers
+- Current mirrors and active loads
+- High-frequency response and Miller effect
+
+### Unit 8: Digital Circuits
+- CMOS inverter: static and dynamic characteristics
+- Voltage transfer characteristics (VTC)
+- Noise margins and logic levels
+- Power dissipation: static and dynamic
+- Propagation delay
+- NAND, NOR, and complex logic gates
+- CMOS transmission gates
+
+### Unit 9: Digital IC Design
+- Logic gate design and optimization
+- Pass-transistor logic
+- Dynamic logic circuits
+- Memory cells: SRAM and DRAM basics
+- SPICE simulation of digital circuits
+
+---
+
 
 ## Contributing
 
