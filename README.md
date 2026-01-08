@@ -5,7 +5,7 @@
 **Contact:** mseminario2@huskers.unl.edu
 
 > **About the Instructor:**  
-> Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln. He developed and instructs ECEN 222: Electronics and Circuits II. 
+> Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln. He developed and instructs ECEN 222: Electronics and Circuits II-CE. 
 
 This repository contains open-source course materials for ECEN 222, including LaTeX source code for lectures, assignments, labs, and quizzes. 
 
