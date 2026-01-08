@@ -108,12 +108,11 @@ By the end of this course, you will be able to:
 ### Required
 - Basic circuit analysis, Kirchhoff's laws, Thévenin/Norton equivalents, AC/DC analysis
 - Differential and integral calculus
-- Differential Equations Reccomeneded 
+- Differential Equations (Reccomeneded) 
 
-### Expected Background
+### Expected Background Knowledge
 - DC and AC circuit analysis
-- Kirchhoff's laws
-- Thévenin and Norton equivalent circuits
+- Kirchhoff's laws, Thévenin and Norton equivalent circuits
 - Transient and steady-state circuit analysis
 - Basic understanding of complex numbers and phasors
 
@@ -131,6 +130,27 @@ By the end of this course, you will be able to:
 
 ### Quizzes
 Quiz materials may be compiled with `showresults = true` to include solutions. 
+
+---
+
+## Quick Start
+
+### For Students
+1. Browse compiled PDFs in the `docs/` folder
+2. Review lecture notes sequentially starting with Unit 1
+3. Attempt assignments and check your work with provided solutions
+
+### For Instructors
+1. Fork this repository
+2. Modify materials to fit your course needs
+3. Compile LaTeX sources or use pre-compiled PDFs
+4. Contact the author for access to secure exam materials
+
+### For Contributors
+1. Clone the repository
+2. Make your changes
+3. Test LaTeX compilation
+4. Submit a pull request
 
 ---
 
@@ -183,11 +203,6 @@ A separate private repository contains exam materials and secure quiz content. I
 
 ---
 
-## For Students
-
-This repository provides complete course materials that you can use to for whatever purposes you may see fit.
-
-
 ## Contributing
 
 Contributions are welcome! If you find errors, typos, or have suggestions for improvement: 
@@ -200,15 +215,15 @@ Contributions are welcome! If you find errors, typos, or have suggestions for im
 
 ## License
 
-This work is licensed under MIT License.  See the LICENSE file for details.
+This work is licensed under [Creative Commons Attribution-ShareAlike 4.0 International (CC BY-SA 4.0)](https://creativecommons.org/licenses/by-sa/4.0/).
 
 You are free to:
-- Share - copy and redistribute the material
-- Adapt - remix, transform, and build upon the material
+- **Share** — copy and redistribute the material
+- **Adapt** — remix, transform, and build upon the material
 
 Under the following terms:
-- Attribution - You must give appropriate credit
-- ShareAlike - If you remix, you must distribute under the same license
+- **Attribution** — You must give appropriate credit
+- **ShareAlike** — If you remix, you must distribute under the same license
 
 ---
 
