@@ -1,4 +1,5 @@
-# Makefile compatible on Windows
+# Makefile compatible on Windows Devices
+# Author - Maxx Seminario
 
 .PHONY: all clean update_docs
 
