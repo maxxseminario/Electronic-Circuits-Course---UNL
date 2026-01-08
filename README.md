@@ -1,3 +1,4 @@
+[![License: CC BY-SA 4.0](https://img.shields.io/badge/License-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
 # ECEN 222: Electronics and Circuits II-CE – University of Nebraska–Lincoln
 
 **Instructor & Course Developer:** Maxx Seminario  
@@ -5,7 +6,7 @@
 **Contact:** mseminario2@huskers.unl.edu
 
 > **About the Instructor:**  
-> Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln. He developed and instructs ECEN 222: Electronics and Circuits II-CE. 
+> Maxx Seminario is a PhD student studying integrated circuit design at the University of Nebraska–Lincoln. He developed and instructs ECEN 222: Electronics and Circuits II-CE, among other courses. 
 
 This repository contains open-source course materials for ECEN 222, including LaTeX source code for lectures, assignments, labs, and quizzes. 
 
