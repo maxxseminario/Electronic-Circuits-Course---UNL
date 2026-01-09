@@ -15,7 +15,7 @@ This repository contains open-source course materials for ECEN 222, including La
 
 ## Course Description
 
-ECEN 222 is the second course in the circuits sequence for Computer Engineering students at UNL, building upon the concepts from Circuits I. This course bridges the gap between basic circuit theory and modern electronic systems by focusing on semiconductor devices and their applications in both analog and digital circuits.
+ECEN 222 is the second course in the circuits sequence for Computer Engineering students at UNL, building upon the concepts from Circuits I. This course bridges the gap between basic circuit theory and application by focusing on semiconductor devices and their applications in both analog and digital circuits.
 
 Students will learn the physics and operation of diodes, BJTs, and MOSFETs, and apply this knowledge to design amplifiers, bias circuits, and digital logic gates. The course emphasizes both theoretical understanding and practical skills through hands-on laboratory work and SPICE simulation.
 
