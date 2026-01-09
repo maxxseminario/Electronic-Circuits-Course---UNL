@@ -1,0 +1,1048 @@
+\documentclass[10pt, aspectratio=169, handout]{beamer}
+\usefonttheme{professionalfonts}
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  \usecolortheme{beaver}
+  \usefonttheme{default}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.85\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}Maxx Seminario, Electronic Circuits, Spring 2026%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \hspace*{0.5em}\insertframenumber{} / \inserttotalframenumber\hspace*{0.5em}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{epstopdf}
+\usepackage[american]{circuitikz}
+\usepackage{caption}
+\captionsetup{compatibility=false}
+\usepackage[absolute,overlay]{textpos}
+\usetikzlibrary{calc}
+\usetikzlibrary{pgfplots.fillbetween, backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{calc}
+\usetikzlibrary{decorations.markings}
+\usetikzlibrary{arrows.meta}
+
+\usepgfplotslibrary{groupplots}
+\pgfplotsset{compat=newest} 
+
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+
+% Added by Maxx Seminario 01/06/2026 - for colored icons in itemize labels
+\usepackage{wasysym} % for smiles and frowns
+\newcommand{\neutralface}{%
+  \tikz[baseline=-0.6ex]{
+    \draw (0,0) circle (0.9ex);
+    \fill (-0.35ex,0.25ex) circle (0.12ex);
+    \fill ( 0.35ex,0.25ex) circle (0.12ex);
+    \draw (-0.35ex,-0.25ex) -- (0.35ex,-0.25ex);
+  }%
+}
+
+\newcommand{\baditem}{\textcolor{red!70!black}{\frownie}}
+\newcommand{\gooditem}{\textcolor{green!60!black}{\smiley}}
+\newcommand{\mehitem}{\textcolor{orange!80!black}{\neutralface}}
+
+
+\title[ECEN 222]{Frequency Domain Analysis of Circuits}
+\author{Maxx Seminario}
+\institute{University of Nebraska-Lincoln}
+\date{Spring 2026}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\section{Introduction to Frequency Domain}
+
+\begin{frame}{Why Frequency Domain Analysis?}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Limitations of Time Domain}:
+        \begin{itemize}
+            \item Differential equations for AC circuits
+            \item Complex trig math
+            \item Difficult for sinusoidal steady-state
+        \end{itemize}
+        
+        \textbf{Frequency Domain Advantages}:
+        \begin{itemize}
+            \item Converts differential equations to algebra
+            \item Easy handling of sinusoidal signals
+            \item Simplifies AC circuit analysis
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Applications}:
+        \begin{itemize}
+            \item AC power systems (60 Hz)
+            \item Audio systems (20 Hz - 20 kHz)
+            \item Radio frequency circuits (MHz - GHz)
+            \item Signal processing and filtering
+        \end{itemize}
+        
+        \begin{block}{Domain Transformation Tool}
+            \textbf{Phasor transform} converts time-domain sinusoids to frequency-domain complex numbers
+        \end{block}
+        
+    \end{columns}
+    
+    \begin{alertblock}{Goal for this lecture}
+        Review frequency domain (phasor) analysis for AC circuits
+    \end{alertblock}
+    
+\end{frame}
+
+\begin{frame}{Sinusoidal Signals:  The Foundation}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{General Sinusoidal Signal}: 
+        \[
+        v(t) = V_m \cos(\omega t + \phi)
+        \]
+        
+        where: 
+        \begin{itemize}
+            \item $V_m$ = amplitude (peak value)
+            \item $\omega$ = angular frequency (rad/s)
+            \item $\phi$ = phase angle (radians or degrees)
+        \end{itemize}
+        
+        \vspace{0.5cm}
+        
+        \textbf{Related Parameters}:
+        \begin{itemize}
+            \item Frequency: $f = \omega/(2\pi)$ (Hz)
+            \item Period: $T = 1/f = 2\pi/\omega$ (s)
+            \item RMS value: $V_{rms} = V_m/\sqrt{2}$
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Sinusoidal Waveform}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=0.95\textwidth,
+                height=5cm,
+                xlabel={Time $t$},
+                ylabel={$v(t)$},
+                xmin=0, xmax=6.28,
+                ymin=-1.5, ymax=1.5,
+                grid=major,
+                xtick={0, 1.57, 3.14, 4.71, 6.28},
+                xticklabels={0, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$},
+                thick
+            ]
+            \addplot[blue, ultra thick, domain=0:6.28, samples=200] 
+                {cos(deg(x + 0.5))};
+            
+            % Amplitude markers
+            \draw[dashed, red] (axis cs:0,1) -- (axis cs:6.28,1);
+            \draw[dashed, red] (axis cs:0,-1) -- (axis cs:6.28,-1);
+            \node[red] at (axis cs: 5.5,1.2) {$V_m$};
+            \node[red] at (axis cs:5.5,-1.2) {$-V_m$};
+            \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+        
+    \end{columns}
+    
+\end{frame}
+
+\section{Phasor Representation}
+
+\begin{frame}{Phasor Concept:  From Time to Frequency Domain}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Euler's Identity}:
+        \[
+        e^{j\theta} = \cos\theta + j\sin\theta
+        \]
+        
+        \textbf{Sinusoid as Complex Exponential}:
+        \[
+        v(t) = V_m \cos(\omega t + \phi)
+        \]
+        \[
+        v(t) = \text{Re}\{V_m e^{j(\omega t + \phi)}\}
+        \]
+        \[
+        v(t) = \text{Re}\{V_m e^{j\phi} e^{j\omega t}\}
+        \]
+        
+        \begin{block}{Phasor Definition}
+            \[
+            \mathbf{V} = V_m e^{j\phi} = V_m \angle \phi
+            \]
+        \end{block}
+        
+    \column{0.48\textwidth}
+        \textbf{Phasor Diagram}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}[scale=1.3]
+            % Axes
+            \draw[->] (-0.5,0) -- (3,0) node[right] {Real};
+            \draw[->] (0,-0.5) -- (0,2.5) node[above] {Imaginary};
+            
+            % Phasor
+            \draw[->, ultra thick, blue] (0,0) -- (2.121,1.5) node[midway, above left] {$\mathbf{V}$};
+            
+            % Angle
+            \draw[red, thick] (0.7,0) arc (0:35: 0.7);
+            \node[red] at (0.9,0.25) {$\phi$};
+            
+            % Components
+            \draw[dashed] (2.121,0) -- (2.121,1.5);
+            \draw[dashed] (0,1.5) -- (2.121,1.5);
+            \node[below] at (2.121,0) {$V_m\cos\phi$};
+            \node[left] at (0,1.5) {$V_m\sin\phi$};
+            
+            % Magnitude label
+            \node[blue] at (1.3,1.2) {$V_m$};
+        \end{tikzpicture}
+        \end{figure}
+        
+        \vspace{-0.1cm}
+        
+        \textbf{Rectangular Form}:
+        \[
+        \mathbf{V} = V_m\cos\phi + jV_m\sin\phi
+        \]
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Phasor Transform:  Summary}
+    
+    \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{2.0}
+    \begin{tabular}{|c|c|c|}
+    \hline
+    \textbf{Time Domain} & \textbf{Phasor Domain} & \textbf{Operation} \\
+    \hline
+    \hline
+    $V_m \cos(\omega t + \phi)$ & $\mathbf{V} = V_m \angle \phi$ & Domain transformation \\
+    \hline
+    $\dfrac{d}{dt}$ & $j\omega$ & Differentiation $\rightarrow$ multiplication \\
+    \hline
+    $\displaystyle\int dt$ & $\dfrac{1}{j\omega}$ & Integration $\rightarrow$ division \\
+    \hline
+    Addition & Addition & Same (LTI Systems) \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
+    % \vspace{0.5cm}
+    
+    \begin{block}{Key Advantage}
+        \begin{itemize}
+            \item[\gooditem] \textbf{Differentiation} in time domain $\rightarrow$ \textbf{Multiplication} by $j\omega$ in phasor domain.
+            \item[\mehitem] Phasor analysis only works for \textbf{linear circuits} with \textbf{sinusoidal sources} at the \textbf{same frequency} in \textbf{steady-state}
+        \end{itemize}
+
+
+        
+    \end{block}
+    
+    % \vspace{0.3cm}
+    
+    % \begin{alertblock}{Important}
+    %     Phasor analysis only works for \textbf{linear circuits} with \textbf{sinusoidal sources} at the \textbf{same frequency} in \textbf{steady-state}
+    % \end{alertblock}
+    
+\end{frame}
+
+\section{Impedance}
+
+\begin{frame}{Electrical Impedance}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Definition}:
+        
+        Impedance is the ratio of phasor voltage to phasor current:
+        \[
+        \mathbf{Z} = \frac{\mathbf{V}}{\mathbf{I}}
+        \]
+        
+        \vspace{-0.3cm}
+        
+        \textbf{Polar Form}:
+        \[
+        \mathbf{Z} = |\mathbf{Z}| \angle \theta
+        \]
+        
+        \textbf{Rectangular Form}: 
+        \[
+        \mathbf{Z} = R + jX
+        \]
+        where: 
+        \begin{itemize}
+            \item $R$ = resistance (real part)
+            \item $X$ = reactance (imaginary part)
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Impedance in Complex Plane}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}[scale=1.5]
+            % Triangle
+            \draw[ultra thick] (0,0) -- (2.5,0) -- (2.5,1.5) -- cycle;
+            
+            % Labels
+            \node[below] at (1.25,0) {$R$ (Resistance)};
+            \node[right] at (2.5,0.75) {$X$ (Reactance)};
+            \node[above left] at (1.25,0.75) {$|\mathbf{Z}|$};
+            
+            % Angle
+            \draw[red, thick] (0.6,0) arc (0:31: 0.6);
+            \node[red] at (0.8,0.2) {$\theta$};
+        \end{tikzpicture}
+        \end{figure}
+        
+        \textbf{Relationships}:
+        \[
+        |\mathbf{Z}| = \sqrt{R^2 + X^2}
+        \]
+        \[
+        \theta = \tan^{-1}\left(\frac{X}{R}\right)
+        \]
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Impedance of R, L, and C}
+    
+    \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{2.2}
+    \begin{tabular}{|c|c|c|c|}
+    \hline
+    \textbf{Element} & \textbf{Time Domain} & \textbf{Impedance} & \textbf{Phase} \\
+    \hline
+    \hline
+    Resistor & $v = iR$ & $\mathbf{Z}_R = R$ & $0°$ \\
+    \hline
+    Inductor & $v = L\dfrac{di}{dt}$ & $\mathbf{Z}_L = j\omega L$ & $+90°$ \\
+    \hline
+    Capacitor & $i = C\dfrac{dv}{dt}$ & $\mathbf{Z}_C = \dfrac{1}{j\omega C} = \dfrac{-j}{\omega C}$ & $-90°$ \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
+    \vspace{0.5cm}
+    
+    \begin{columns}[t]
+    \column{0.32\textwidth}
+        \textbf{Resistor}:
+        \begin{itemize}
+            \item Real impedance
+            \item V and I in phase
+            \item Frequency independent
+        \end{itemize}
+        
+    \column{0.32\textwidth}
+        \textbf{Inductor}:
+        \begin{itemize}
+            \item Imaginary impedance
+            \item V leads I by 90°
+            \item $|\mathbf{Z}_L| = \omega L$ increases with $\omega$
+        \end{itemize}
+        
+    \column{0.32\textwidth}
+        \textbf{Capacitor}: 
+        \begin{itemize}
+            \item Imaginary impedance
+            \item I leads V by 90°
+            \item $|\mathbf{Z}_C| = 1/(\omega C)$ decreases with $\omega$
+        \end{itemize}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Frequency Behavior of Impedance}
+    
+    \begin{figure}[htb]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            width=0.65\textwidth,
+            height=4.5cm,
+            xlabel={Frequency $\omega$ (rad/s)},
+            ylabel={Impedance $|\mathbf{Z}|$ ($\Omega$)},
+            xmin=0.1, xmax=100,
+            ymin=0.1, ymax=100,
+            xmode=log,
+            ymode=log,
+            grid=major,
+            legend style={at={(1.05,0.5)}, anchor=west},
+            thick
+        ]
+        % Resistor (constant)
+        \addplot[blue, ultra thick, domain=0.1:100] {10};
+        \addlegendentry{Resistor ($R = 10\,\Omega$)}
+        
+        % Inductor (increasing)
+        \addplot[red, ultra thick, domain=0.1:100] {x};
+        \addlegendentry{Inductor ($L = 1$ H)}
+        
+        % Capacitor (decreasing)
+        \addplot[green! 60! black, ultra thick, domain=0.1:100] {10/x};
+        \addlegendentry{Capacitor ($C = 0.1$ F)}
+        \end{axis}
+    \end{tikzpicture}
+    \end{figure}
+
+    \vspace{-0.6cm}
+    
+    \begin{block}{Frequency Behavior}
+        \begin{itemize}
+            \item \textbf{Resistor}: Constant impedance (frequency independent)
+            \item \textbf{Inductor}: High impedance at high frequencies (blocks AC, passes DC)
+            \item \textbf{Capacitor}: Low impedance at high frequencies (blocks DC, passes AC)
+        \end{itemize}
+    \end{block}
+    
+\end{frame}
+
+\section{Phasor Circuit Analysis}
+
+\begin{frame}{Phasor Analysis:  Circuit Laws}
+    
+    \textbf{All DC circuit analysis techniques apply to phasors }
+    
+    \vspace{0.5cm}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Kirchhoff's Voltage Law (KVL)}:
+        \[
+        \sum \mathbf{V}_k = 0
+        \]
+        
+        \textbf{Kirchhoff's Current Law (KCL)}:
+        \[
+        \sum \mathbf{I}_k = 0
+        \]
+        
+        \textbf{Ohm's Law}:
+        \[
+        \mathbf{V} = \mathbf{I} \mathbf{Z}
+        \]
+        
+    \column{0.48\textwidth}
+        \textbf{Series Impedances}:
+        \[
+        \mathbf{Z}_{eq} = \mathbf{Z}_1 + \mathbf{Z}_2 + \cdots + \mathbf{Z}_n
+        \]
+        
+        \textbf{Parallel Impedances}:
+        \[
+        \mathbf{Z}_{eq}^{-1} = \mathbf{Z}_{1}^{-1} + \mathbf{Z}_{2}^{-1} + \cdots + \mathbf{Z}_{n}^{-1}
+        \]
+        
+        \textbf{Voltage Divider}:
+        \[
+        \mathbf{V}_k = \mathbf{V}_s \mathbf{Z}_k(\mathbf{Z}_1 + \mathbf{Z}_2)^{-1}
+        \]
+        
+    \end{columns}
+    
+    \begin{alertblock}{Key Point}
+        Replace resistances with impedances, and voltages/currents with phasors.  Then use the standard DC techniques
+    \end{alertblock}
+    
+\end{frame}
+
+\begin{frame}{Example: Series RC Circuit}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Circuit}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.8]
+            \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+            \draw (0,3) to[R, l=$R$, i^=$i(t)$] (3,3);
+            \draw (3,3) to[C, l_=$C$, v^=$v_C(t)$] (3,0);
+            \draw (3,0) to[short] (0,0);
+        \end{circuitikz}
+        \end{figure}
+        
+        \textbf{Given}:
+        \begin{itemize}
+            \item $v_s(t) = V_m \cos(\omega t)$
+            \item $R = 100\,\Omega$
+            \item $C = 10\,\mu$F
+            \item $\omega = 1000$ rad/s
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Phasor Analysis}:
+        
+        Source phasor: $\mathbf{V}_s = V_m \angle 0°$
+        
+        Impedances:
+        \[
+        \mathbf{Z}_R = 100\,\Omega
+        \]
+        \[
+        \mathbf{Z}_C = \frac{-j}{\omega C} = \frac{-j}{0.01} = -j100\,\Omega
+        \]
+        
+        Total impedance:
+        \[
+        \mathbf{Z}_{eq} = R - jX_C = 100 - j100
+        \]
+        \[
+        = 141.4 \angle -45° \,\Omega
+        \]
+        
+        \vspace{-0.2cm}
+        
+        Current: 
+        \[
+        \mathbf{I} = \frac{\mathbf{V}_s}{\mathbf{Z}_{eq}} = \frac{V_m \angle 0°}{141.4 \angle -45°} = \frac{V_m}{141.4} \angle 45°
+        \]
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Example: Phasor Diagram}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Voltage Divider}:
+        
+        Capacitor voltage: 
+        \[
+        \mathbf{V}_C = \mathbf{V}_s \frac{\mathbf{Z}_C}{\mathbf{Z}_R + \mathbf{Z}_C}
+        \]
+        \[
+        = \mathbf{V}_s \frac{-j100}{100 - j100}
+        \]
+        \[
+        = \mathbf{V}_s \frac{100 \angle -90°}{141.4 \angle -45°}
+        \]
+        \[
+        = 0.707 V_m \angle -45°
+        \]
+        
+        \vspace{0.3cm}
+        
+        Resistor voltage:
+        \[
+        \mathbf{V}_R = \mathbf{I} R = 0.707 V_m \angle 45°
+        \]
+        
+    \column{0.48\textwidth}
+        \textbf{Phasor Diagram}: 
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Axes
+            \draw[->] (-0.5,0) -- (3,0) node[right] {Real};
+            \draw[->] (0,-2) -- (0,2.5) node[above] {Imag};
+            
+            % Vs
+            \draw[->, ultra thick, black] (0,0) -- (2.5,0) node[midway, below] {$\mathbf{V}_s$};
+            
+            % VR
+            \draw[->, ultra thick, blue] (0,0) -- (1.768,1.768) node[midway, above left] {$\mathbf{V}_R$};
+            
+            % VC
+            \draw[->, ultra thick, red] (0,0) -- (1.768,-1.768) node[midway, below right] {$\mathbf{V}_C$};
+            
+            % I (parallel to VR)
+            \draw[->, ultra thick, green! 60! black, dashed] (0,0) -- (1.2,1.2) node[above] {$\mathbf{I}$};
+            
+            % Annotations
+            \draw[dashed] (1.768,1.768) -- (1.768,0);
+            \draw[dashed] (1.768,-1.768) -- (1.768,0);
+        \end{tikzpicture}
+        \caption{$\mathbf{V}_R + \mathbf{V}_C = \mathbf{V}_s$ (KVL)}
+        \end{figure}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Example: Series RLC Circuit}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Circuit}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.85]
+            \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+            \draw (0,3) to[R, l=$R$] (1.5,3);
+            \draw (1.5,3) to[L, l=$L$] (3,3);
+            \draw (3,3) to[C, l=$C$] (3,0);
+            \draw (3,0) to[short] (0,0);
+        \end{circuitikz}
+        \end{figure}
+        
+        \vspace{-0.3cm}
+        
+        \textbf{Total Impedance}:
+        \[
+        \mathbf{Z} = R + j\omega L + \frac{1}{j\omega C} = R + j\left(\omega L - \frac{1}{\omega C}\right)
+        \]
+        \[
+        = R + j(X_L - X_C)
+        \]
+        
+    \column{0.48\textwidth}
+        \textbf{Three Cases}:
+        
+        \textbf{1.  Inductive} ($X_L > X_C$):
+        \begin{itemize}
+            \item Net reactance is positive
+            \item Voltage leads current
+            \item Behaves like RL circuit
+        \end{itemize}
+        
+        \textbf{2. Capacitive} ($X_L < X_C$):
+        \begin{itemize}
+            \item Net reactance is negative
+            \item Current leads voltage
+            \item Behaves like RC circuit
+        \end{itemize}
+        
+        \textbf{3. Resonant} ($X_L = X_C$):
+        \begin{itemize}
+            \item Net reactance is zero
+            \item $\mathbf{Z} = R$ (purely resistive)
+            \item V and I in phase
+        \end{itemize}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Resonance in RLC Circuits}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Resonance Condition}:
+        
+        At resonance:  $X_L = X_C$
+        \[
+        \omega_0 L = \frac{1}{\omega_0 C}
+        \]
+        
+        \begin{block}{Resonant Frequency}
+            \[
+            \omega_0 = \frac{1}{\sqrt{LC}}
+            \]
+        \end{block}
+        
+        \textbf{At Resonance}:
+        \begin{itemize}
+            \item $\mathbf{Z} = R$ (minimum impedance)
+            \item Maximum current
+            \item Zero phase angle
+            \item Energy oscillates between L and C
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Impedance vs.  Frequency}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=0.95\textwidth,
+                height=5cm,
+                xlabel={$\omega$ (rad/s)},
+                ylabel={$|\mathbf{Z}|$ ($\Omega$)},
+                xmin=0, xmax=10,
+                ymin=0, ymax=15,
+                grid=major,
+                thick
+            ]
+            % Impedance magnitude
+            \addplot[blue, ultra thick, domain=0.1:10, samples=200] 
+                {sqrt(25 + (2*x - 12.5/x)^2)};
+            
+            % Mark resonance
+            \draw[dashed, red] (axis cs: 2.5,0) -- (axis cs:2.5,5);
+            \node[red] at (axis cs:2.5,13) {$\omega_0$};
+            \node[red] at (axis cs:2.5,3) {$Z_{min} = R$};
+            \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+        
+    \end{columns}
+    
+\end{frame}
+
+\section{AC Power Analysis}
+
+\begin{frame}{AC Power:  Instantaneous and Average}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Instantaneous Power}:
+        
+        For $v(t) = V_m \cos(\omega t)$ and $i(t) = I_m \cos(\omega t - \theta)$:
+        \[
+        p(t) = v(t) \cdot i(t)
+        \]
+        \[
+        = V_m I_m \cos(\omega t) \cos(\omega t - \theta)
+        \]
+        
+        Using trig identity: 
+        \[
+        p(t) = \frac{V_m I_m}{2}\cos\theta + \frac{V_m I_m}{2}\cos(2\omega t - \theta)
+        \]
+        
+        \vspace{0.3cm}
+        
+        \textbf{Average Power}:
+        \[
+        P = \frac{1}{T}\int_0^T p(t)\,dt = \frac{V_m I_m}{2}\cos\theta
+        \]
+        
+    \column{0.48\textwidth}
+        \textbf{Using RMS Values}:
+        
+        \[
+        V_{rms} = \frac{V_m}{\sqrt{2}}, \quad I_{rms} = \frac{I_m}{\sqrt{2}}
+        \]
+        
+        \begin{block}{Average (Real) Power}
+            \[
+            P = V_{rms} I_{rms} \cos\theta
+            \]
+        \end{block}
+        
+        \vspace{-0.2cm}
+    
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}
+            \begin{axis}[
+                width=0.9\textwidth,
+                height=3.5cm,
+                xlabel={$\omega t$},
+                ylabel={$p(t)$},
+                xmin=0, xmax=6.28,
+                grid=major,
+                thick,
+                xtick={0, 3.14, 6.28},
+                xticklabels={0, $\pi$, $2\pi$}
+            ]
+            \addplot[blue, ultra thick, domain=0:6.28, samples=200] 
+                {0.5 + 0.5*cos(deg(2*x - 0.5))};
+            \addplot[red, dashed, domain=0:6.28] {0.5};
+            \node[red] at (axis cs: 5,0.95) {Average $P$};
+            \end{axis}
+        \end{tikzpicture}
+        \end{figure}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Reactive and Apparent Power}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Power Components}:
+        
+        \textbf{1. Real (Average) Power}:
+        \[
+        P = V_{rms} I_{rms} \cos\theta \quad \text{(W)}
+        \]
+
+        \vspace{-0.1cm}
+
+        \begin{itemize}
+            \item Power dissipated (resistors)
+        \end{itemize}
+        
+        \textbf{2. Reactive Power}: 
+        \[
+        Q = V_{rms} I_{rms} \sin\theta \quad \text{(VAR)}
+        \]
+
+        \vspace{-0.1cm}
+
+        \begin{itemize}
+            \item Power stored/returned (L/C)
+        \end{itemize}
+        
+        \textbf{3. Apparent Power}: 
+        \[
+        S = V_{rms} I_{rms} \quad \text{(VA)}
+        \]
+        
+    \column{0.48\textwidth}
+        \textbf{Power Triangle}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}[scale=1.0]
+            % Triangle
+            \draw[ultra thick] (0,0) -- (2.5,0) -- (2.5,1.5) -- cycle;
+            
+            % Labels
+            \node[below] at (1.25,0) {$P$ (Real)};
+            \node[right] at (2.5,0.75) {$Q$ (Reactive)};
+            \node[above left] at (1.25,0.75) {$S$ (Apparent)};
+            
+            % Angle
+            \draw[red, thick] (0.6,0) arc (0:31: 0.6);
+            \node[red] at (0.8,0.2) {$\theta$};
+        \end{tikzpicture}
+        \end{figure}
+        
+        \vspace{-0.2cm}
+        
+        \[
+        S = \sqrt{P^2 + Q^2}
+        \]
+        \[
+        P = S \cos\theta, \quad Q = S \sin\theta
+        \]
+        
+        \textbf{Power Factor}:
+        \[
+        \text{pf} = \cos\theta = \frac{P}{S}
+        \]
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Power Factor and Its Importance}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Power Factor Definition}:
+        \[
+        \text{pf} = \cos\theta = \frac{P}{S}
+        \]
+        
+        Range: $0 \leq \text{pf} \leq 1$
+        
+        \vspace{0.3cm}
+        
+        \textbf{Special Cases}:
+        \begin{itemize}
+            \item[\gooditem] \textbf{pf = 1} (unity): purely resistive, $\theta = 0°$
+            \item[\baditem] \textbf{pf = 0}:  purely reactive, $\theta = \pm 90°$
+        \end{itemize}
+        
+        \vspace{0.3cm}
+        
+        \textbf{Leading vs.  Lagging}:
+        \begin{itemize}
+            \item Lagging pf: inductive load (current lags voltage)
+            \item Leading pf: capacitive load (current leads voltage)
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        
+        \begin{block}{Low Power Factor Problems}
+            \begin{itemize}
+                \item[\baditem] Higher current required
+                \item[\baditem] Larger conductor sizes needed
+                \item[\baditem] More I\textsuperscript{2}R losses in transmission
+            \end{itemize}
+        \end{block}
+        
+        \vspace{0.3cm}
+        
+        \textbf{Power Factor Correction}:
+        
+        Add capacitors in parallel with inductive loads to:
+        \begin{itemize}
+            \item[\gooditem] Increase power factor
+            \item[\gooditem] Reduce reactive power
+            \item[\gooditem] Lower current draw
+        \end{itemize}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Power in Circuit Elements}
+    
+    \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{2.2}
+    \begin{tabular}{|c|c|c|c|c|}
+    \hline
+    \textbf{Element} & \textbf{Phase} & \textbf{Real Power $P$} & \textbf{Reactive Power $Q$} & \textbf{pf} \\
+    \hline
+    \hline
+    Resistor & $\theta = 0°$ & $I^2 R$ & 0 & 1 \\
+    \hline
+    Inductor & $\theta = 90°$ & 0 & $I^2 X_L$ (positive) & 0 \\
+    \hline
+    Capacitor & $\theta = -90°$ & 0 & $-I^2 X_C$ (negative) & 0 \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
+    \begin{block}{Key Observations}
+        \begin{itemize}
+            \item Only \textbf{resistors} dissipate real power (convert to heat $\cdot$ or light if you mess up)
+            \item \textbf{Inductors} and \textbf{capacitors} store and return energy (reactive power)
+            \item Reactive power from L and C have opposite signs (can cancel to form resonant networks)
+        \end{itemize}
+    \end{block}
+    
+    \vspace{0.3cm}
+    
+    \begin{alertblock}{Complex Power}
+        Complex power combines real and reactive:  $\mathbf{S} = P + jQ = \mathbf{V}_{rms}\mathbf{I}^*_{rms}$
+    \end{alertblock}
+    
+\end{frame}
+
+\section{Summary}
+
+\begin{frame}{Summary:  Frequency Domain Analysis}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Phasor Analysis}:
+        \begin{itemize}
+            \item Transform:  $V_m\cos(\omega t + \phi) \leftrightarrow V_m\angle\phi$
+            \item[\gooditem] Differential equations $\rightarrow$ algebra
+            \item $d/dt \rightarrow j\omega$, $\int dt \rightarrow 1/(j\omega)$
+        \end{itemize}
+        
+        \textbf{Impedance}:
+        \begin{itemize}
+            \item $\mathbf{Z} = R + jX$
+            \item Resistor: $\mathbf{Z}_R = R$
+            \item Inductor: $\mathbf{Z}_L = j\omega L$
+            \item Capacitor: $\mathbf{Z}_C = 1/(j\omega C)$
+        \end{itemize}
+        
+        \textbf{Circuit Analysis}:
+        \begin{itemize}
+            \item[\gooditem] All DC techniques apply
+            \item KVL, KCL, voltage/current dividers
+            \item Series/parallel combinations
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{AC Power}:
+        \begin{itemize}
+            \item Real power: $P = V_{rms}I_{rms}\cos\theta$ 
+            \item Reactive power: $Q = V_{rms}I_{rms}\sin\theta$ 
+            \item Apparent power: $S = V_{rms}I_{rms}$ 
+        \end{itemize}
+        
+        \textbf{Power Factor}:
+        \begin{itemize}
+            \item $\text{pf} = \cos\theta = P/S$
+            \item Lagging pf: inductive
+            \item Leading pf: capacitive
+            \item[\baditem] Low pf $\rightarrow$ higher losses
+        \end{itemize}
+        
+        \textbf{Resonance}:
+        \begin{itemize}
+            \item Occurs when $X_L = X_C$
+            \item $\omega_0 = 1/\sqrt{LC}$
+            \item[\gooditem] Minimum Z, maximum I
+        \end{itemize}
+        
+    \end{columns}
+    
+\end{frame}
+
+\begin{frame}{Comparison:  Time vs. Frequency Domain}
+    
+    \begin{table}
+    \centering
+    \renewcommand{\arraystretch}{1.8}
+    \small
+    \begin{tabular}{|p{0.25\textwidth}|p{0.32\textwidth}|p{0.32\textwidth}|}
+    \hline
+    \textbf{Aspect} & \textbf{Time Domain} & \textbf{Frequency Domain} \\
+    \hline
+    \hline
+    Signals & $v(t)$, $i(t)$ (real functions) & $\mathbf{V}$, $\mathbf{I}$ (complex phasors) \\
+    \hline
+    Math & Differential equations & Algebraic equations \\
+    \hline
+    Circuit elements & R, L, C (time relations) & $\mathbf{Z}_R$, $\mathbf{Z}_L$, $\mathbf{Z}_C$ (impedances) \\
+    \hline
+    Analysis & Initial conditions, transients & Steady-state, magnitude/phase \\
+    \hline
+    Advantages & Shows time evolution & Simplifies sinusoidal analysis \\
+    \hline
+    Limitations & Complex for AC steady-state & Only sinusoidal steady-state \\
+    \hline
+    \end{tabular}
+    \end{table}
+    
+    \vspace{-0.2cm}
+    
+    \begin{block}{When to Use Each}
+        \textbf{Time Domain}:  Transients, switching, initial conditions, non-sinusoidal signals\\
+        \textbf{Frequency Domain}: AC steady-state, sinusoidal sources, impedance analysis
+    \end{block}
+    
+\end{frame}
+
+\end{document}

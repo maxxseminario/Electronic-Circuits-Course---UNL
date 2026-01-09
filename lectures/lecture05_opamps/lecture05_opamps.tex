@@ -59,6 +59,22 @@
     urlcolor=cyan,
 }
 
+% Added by Maxx Seminario 01/06/2026 - for colored icons in itemize labels
+\usepackage{wasysym} % for smiles and frowns
+\newcommand{\neutralface}{%
+  \tikz[baseline=-0.6ex]{
+    \draw (0,0) circle (0.9ex);
+    \fill (-0.35ex,0.25ex) circle (0.12ex);
+    \fill ( 0.35ex,0.25ex) circle (0.12ex);
+    \draw (-0.35ex,-0.25ex) -- (0.35ex,-0.25ex);
+  }%
+}
+
+\newcommand{\baditem}{\textcolor{red!70!black}{\frownie}}
+\newcommand{\gooditem}{\textcolor{green!60!black}{\smiley}}
+\newcommand{\mehitem}{\textcolor{orange!80!black}{\neutralface}}
+
+
 % =========================
 % Solution toggle 
 % =========================
