@@ -227,22 +227,141 @@
     
 \end{frame}
 
-
 \section{Ideal Op-Amp Characteristics}
 
-\begin{frame}{The Ideal Op-Amp Small-Signal Model}
-  \begin{figure}[htb]
-    \centering
-    \includegraphics[width=0.45\textwidth]{Figures/opamp_smallsignal.png}
-    \caption{Small-signal op-amp model}
-    \label{fig:opamp_small_signal}
-  \end{figure}
-\end{frame}
+% \begin{frame}{The Ideal Op-Amp Small-Signal Model}
+%   \begin{figure}[htb]
+%     \centering
+%     \begin{tikzpicture}[scale=1, >=stealth]
+      
+%       % Op-amp triangle (dashed outline)
+%       \draw[line width=1.5pt, dashed] (2,3) -- (9,0) -- (2,-3) -- cycle;
+      
+%       % Dashed vertical line at inputs
+%       \draw[line width=1.5pt, dashed] (2,3) -- (2,-3);
+      
+%       % Input terminal 1 (top)
+%       \draw[line width=0.8pt] (0,2) -- (2,2);
+%       \node at (0.3,2) {\small $\circ$};
+%       \node[left] at (0,2) {1};
+%       \node at (1.8,2) {\small $\circ$};
+      
+%       % Input terminal 2 (bottom)
+%       \draw[line width=0.8pt] (0,-2) -- (2,-2);
+%       \node at (0.3,-2) {\small $\circ$};
+%       \node[left] at (0,-2) {2};
+%       \node at (1.8,-2) {\small $\circ$};
+      
+%       % Output terminal 3
+%       \draw[line width=0.8pt] (9,0) -- (10,0);
+%       \node at (9.3,0) {\small $\circ$};
+%       \node[right] at (10,0) {3};
+      
+%       % v1 voltage source (terminal 1)
+%       \node at (1.2,2.3) {$+$};
+%       \node at (1.2,1.7) {$v_1$};
+%       \node at (1.2,1.4) {$-$};
+      
+%       % Ground for v1
+%       \draw[line width=0.8pt] (1.2,1.2) -- (1.2,0.9);
+%       \draw[line width=0.8pt] (1.0,0.9) -- (1.4,0.9);
+%       \draw[line width=0.8pt] (1.1,0.75) -- (1.3,0.75);
+%       \draw[line width=0.8pt] (1.15,0.62) -- (1.25,0.62);
+      
+%       % Current source Gm*v1 (diamond)
+%       \draw[line width=0.8pt] (3,1.5) -- (3.3,1.2) -- (3,0.9) -- (2.7,1.2) -- cycle;
+%       \draw[->, line width=0.8pt] (3,1.35) -- (3,1.05);
+%       \node[right] at (3.3,1.2) {$G_m v_1$};
+      
+%       % Ground for Gm*v1
+%       \draw[line width=0.8pt] (3,0.7) -- (3,0.4);
+%       \draw[line width=0.8pt] (2.8,0.4) -- (3. 2,0.4);
+%       \draw[line width=0.8pt] (2.9,0.25) -- (3.1,0.25);
+%       \draw[line width=0.8pt] (2.95,0.12) -- (3.05,0.12);
+      
+%       % v2 voltage source (terminal 2)
+%       \node at (1.2,-1.7) {$+$};
+%       \node at (1.2,-2.3) {$v_2$};
+%       \node at (1.2,-2.6) {$-$};
+      
+%       % Ground for v2
+%       \draw[line width=0.8pt] (1.2,-2.8) -- (1.2,-3.1);
+%       \draw[line width=0.8pt] (1.0,-3.1) -- (1.4,-3.1);
+%       \draw[line width=0.8pt] (1.1,-3.25) -- (1.3,-3.25);
+%       \draw[line width=0.8pt] (1.15,-3.38) -- (1.25,-3.38);
+      
+%       % Current source Gm*v2 (diamond)
+%       \draw[line width=0.8pt] (3,-0.9) -- (3.3,-1.2) -- (3,-1.5) -- (2.7,-1.2) -- cycle;
+%       \draw[->, line width=0.8pt] (3,-1.05) -- (3,-1.35);
+%       \node[right] at (3.3,-1.2) {$G_m v_2$};
+      
+%       % Ground for Gm*v2
+%       \draw[line width=0.8pt] (3,-1.7) -- (3,-2.0);
+%       \draw[line width=0.8pt] (2.8,-2.0) -- (3.2,-2.0);
+%       \draw[line width=0.8pt] (2.9,-2.15) -- (3.1,-2.15);
+%       \draw[line width=0.8pt] (2.95,-2.28) -- (3.05,-2.28);
+      
+%       % Connection to resistor R
+%       \draw[line width=0.8pt] (4. 5,1.5) -- (4.5,0.5);
+%       \draw[line width=0.8pt] (4.5,-1.5) -- (4.5,-0.5);
+%       \draw[line width=0.8pt] (3.3,1.2) -- (4.5,1.2);
+%       \draw[line width=0.8pt] (3.3,-1.2) -- (4.5,-1.2);
+      
+%       % Resistor R (rectangular shape)
+%       \draw[line width=0.8pt] (4.2,0.5) rectangle (4.8,-0.5);
+%       \node at (4.5,0) {$R$};
+      
+%       % vd voltage label and markers
+%       \node at (5.2,0.3) {$+$};
+%       \node[right] at (5.4,0) {$v_d$};
+%       \node at (5.2,-0.3) {$-$};
+%       \node at (5.0,0.5) {\small $\circ$};
+%       \node at (5.0,-0.5) {\small $\circ$};
+      
+%       % Ground for vd
+%       \draw[line width=0.8pt] (4.5,-0.7) -- (4.5,-1.0);
+%       \draw[line width=0.8pt] (4.3,-1.0) -- (4.7,-1.0);
+%       \draw[line width=0.8pt] (4.4,-1.15) -- (4.6,-1.15);
+%       \draw[line width=0.8pt] (4.45,-1.28) -- (4.55,-1.28);
+      
+%       % Dependent voltage source μ*vd (diamond)
+%       \draw[line width=0.8pt] (6.5,0.4) -- (6.8,0.1) -- (6.5,-0.2) -- (6.2,0.1) -- cycle;
+%       \node at (6.5,0.25) {\small $+$};
+%       \node at (6.5,-0.05) {\small $-$};
+%       \node[right] at (6.8,0.1) {$\mu v_d$};
+      
+%       % Connection from vd to μ*vd
+%       \draw[line width=0.8pt] (5.0,0.5) -- (6.5,0.5) -- (6.5,0.4);
+      
+%       % Ground for μ*vd
+%       \draw[line width=0.8pt] (6.5,-0.4) -- (6.5,-0.7);
+%       \draw[line width=0.8pt] (6.3,-0.7) -- (6.7,-0.7);
+%       \draw[line width=0.8pt] (6.4,-0.85) -- (6.6,-0.85);
+%       \draw[line width=0.8pt] (6.45,-0.98) -- (6.55,-0.98);
+      
+%       % Connection to output
+%       \draw[line width=0.8pt] (6.5,0.4) -- (6.5,0.8) -- (9,0.8) -- (9,0);
+      
+%       % Output terminal markings
+%       \node at (9.3,0.3) {$+$};
+%       \node at (9.3,-0.3) {$v_3$};
+%       \node at (9.3,-0.6) {$-$};
+      
+%       % Ground at output
+%       \draw[line width=0.8pt] (9. 5,-0.8) -- (9.5,-1.1);
+%       \draw[line width=0.8pt] (9.3,-1.1) -- (9.7,-1.1);
+%       \draw[line width=0.8pt] (9.4,-1.25) -- (9.6,-1.25);
+%       \draw[line width=0.8pt] (9.45,-1.38) -- (9.55,-1.38);
+      
+%     \end{tikzpicture}
+%     \caption{Small-signal op-amp model}
+%     \label{fig: opamp_small_signal}
+%   \end{figure}
+% \end{frame}
 
 \begin{frame}{Five Characteristics of the Ideal Op-Amp}
   \begin{itemize}
-    \setlength{\itemsep}{4pt} % spacing between items
-    % \setlength{\leftmargin}{...} % avoid this; use Beamer columns or shorter text
+    \setlength{\itemsep}{4pt} 
     \item \textbf{Infinite input impedance} ($Z_{in} \to \infty$) $\rightarrow$ $i_1 = i_2 = 0$
     \item \textbf{Zero output impedance} ($Z_{out} = 0$) $\rightarrow$ ideal voltage source at output
     \item \textbf{Infinite open-loop gain} ($A \to \infty$) $\rightarrow$ tiny $(v_2 - v_1)$ produces large $v_3$
@@ -255,14 +374,95 @@
   \end{block}
 \end{frame}
 
+
 \begin{frame}{Op-Amp Circuit Symbol with Ideal Assumptions}
   \begin{figure}[htb]
     \centering
-    \includegraphics[width=0.6\textwidth]{Figures/opamp_ideal.png}
+    \begin{tikzpicture}[scale=1, >=stealth]
+      % Define colors
+      \definecolor{labelcyan}{RGB}{0, 174, 239}
+      
+      % Op-amp triangle
+      \draw[line width=1.5pt] (4,1.5) -- (7,0) -- (4,-1.5) -- cycle;
+      
+      % Connection lines
+      \draw[line width=0.8pt] (0.  5,1) -- (4,1);
+      \draw[line width=0.8pt] (0.5,-1) -- (4,-1);
+      \draw[line width=0.8pt] (7,0) -- (8.  5,0);
+      
+      % Terminal symbols (- and +)
+      \node at (4.  4,1) {$-$};
+      \node at (4.4,-1) {$+$};
+      
+      % Terminal numbers
+      \node at (3.3,1.3) {1};
+      \node at (3.3,-1.3) {2};
+      \node at (8.2,0.3) {3};
+      
+      % Voltage source v1 (inverting input)
+      \draw[line width=0.8pt] (-1.5,1) circle (0.35);
+      \node at (-1.5,1.05) {$+$};
+      \node[left] at (-2,1) {$v_1$};
+      \draw[line width=0.8pt] (-1.15,1) -- (0.5,1);
+      
+      % Ground for v1
+      \draw[line width=0.8pt] (-1.5,0.65) -- (-1.5,0.2);
+      \draw[line width=0.8pt] (-1.7,0.2) -- (-1.3,0.2);
+      \draw[line width=0.8pt] (-1.6,0.05) -- (-1.4,0.05);
+      \draw[line width=0.8pt] (-1.55,-0.08) -- (-1.45,-0.08);
+      
+      % Voltage source v2 (noninverting input)
+      \draw[line width=0.8pt] (-1.5,-1) circle (0.35);
+      \node at (-1.5,-0.95) {$+$};
+      \node[left] at (-2,-1) {$v_2$};
+      \draw[line width=0.8pt] (-1.15,-1) -- (0.5,-1);
+      
+      % Ground for v2
+      \draw[line width=0.8pt] (-1.5,-1.35) -- (-1.5,-1.8);
+      \draw[line width=0.8pt] (-1.7,-1.8) -- (-1.3,-1.8);
+      \draw[line width=0.8pt] (-1.6,-1.95) -- (-1.4,-1.95);
+      \draw[line width=0.8pt] (-1.55,-2.08) -- (-1.45,-2.08);
+      
+      % Current annotations (i1 = 0, i2 = 0)
+      \draw[->, labelcyan, line width=0.8pt] (0,1.35) -- (2.5,1.35);
+      \node[labelcyan] at (1,1.7) {$i_1 = 0$};
+      
+      \draw[->, labelcyan, line width=0.8pt] (0,-1.35) -- (2.5,-1.35);
+      \node[labelcyan] at (1,-1.8) {$i_2 = 0$};
+      
+      % Dependent voltage source (diamond shape)
+      \draw[line width=0.8pt] (5.5,0) -- (5.85,-0.35) -- (5.5,-0.7) -- (5.15,-0.35) -- cycle;
+      \node at (5.5,-0.15) {\small $+$};
+      \node at (5.5,-0.55) {\small $-$};
+      
+      % Connection from top of diamond to op-amp output
+      \draw[line width=0.8pt] (5.5,0) -- (7,0);
+      
+      % A(v2-v1) label
+      \node[below] at (5,0.6) {$A(v_2 - v_1)$};
+      
+      % Ground at power supply
+      \draw[line width=0.8pt] (5.5,-0.7) -- (5.5,-1.3);
+      \draw[line width=0.8pt] (5.3,-1.3) -- (5.7,-1.3);
+      \draw[line width=0.8pt] (5.4,-1.45) -- (5.6,-1.45);
+      \draw[line width=0.8pt] (5.45,-1.58) -- (5.55,-1.58);
+      
+      % Labels with arrows
+      \draw[->, labelcyan, line width=0.8pt] (2.3,2.2) -- (3.5,1.15);
+      \node[labelcyan, above] at (2.3,2.2) {Inverting input};
+      
+      \draw[->, labelcyan, line width=0.8pt] (2.5,-2.8) -- (3.5,-1.3);
+      \node[labelcyan, below] at (2.5,-2.8) {Noninverting input};
+      
+      \draw[->, labelcyan, line width=0.8pt] (9.5,0.5) -- (8.5,0.1);
+      \node[labelcyan, right] at (9.5,0.5) {Output};
+      
+    \end{tikzpicture}
     \caption{Equivalent Circuit for Ideal Op-Amp}
-    \label{fig:opamp_small_signal}
+    \label{fig: opamp_small_signal}
   \end{figure}
 \end{frame}
+
 
 \begin{frame}{Inverting vs.  Noninverting Inputs}
     
@@ -674,7 +874,7 @@
     
     \begin{columns}[t]
     \column{0.48\textwidth}
-        \textbf{Five Golden Rules}:
+        \textbf{Five Golden Rules}: 
         \begin{enumerate}
             \item $Z_{in} = \infty$ (no input current)
             \item $Z_{out} = 0$ (ideal voltage source)
@@ -705,10 +905,10 @@
             \node at (opamp.+) [left, xshift=-0.3cm] {$v_2$};
             \node at (opamp.out) [right, xshift=0.3cm] {$v_3$};
             
-            % Current annotations
-            \draw[->, red, thick] (opamp.- |- 0,0.8) -- ++(0,0.5) node[above] {$i_1=0$};
-            \draw[->, red, thick] (opamp.+ |- 0,-0.8) -- ++(0,-0.5) node[below] {$i_2=0$};
-            
+            % Current annotations - horizontal arrows
+            \draw[->, red, thick] ([xshift=-1.2cm, yshift=0.3cm]opamp.-) -- ([xshift=-0.1cm, yshift=0.3cm]opamp.-) node[midway, above] {$i_1=0$};
+            \draw[->, red, thick] ([xshift=-1.2cm, yshift=0.3cm]opamp.+) -- ([xshift=-0.1cm, yshift=0.3cm]opamp.+) node[midway, above] {$i_2=0$};
+                
             % Gain annotation
             \node[align=center, blue] at (0,-2.2) {$v_3 = A(v_2-v_1)$\\$A = \infty$};
         \end{circuitikz}
@@ -716,12 +916,6 @@
         \end{figure}
         
     \end{columns}
-    
-    \vspace{0.3cm}
-    
-    \begin{alertblock}{Next Lecture}
-        How to use feedback to create \textbf{practical, stable amplifier circuits} with predictable gain! 
-    \end{alertblock}
     
 \end{frame}
 
@@ -786,7 +980,6 @@
 \end{frame}
 \fi
 
-
 \begin{frame}{Practice Problem 2}
 
     \textbf{Given}: An op-amp with the internal model shown below
@@ -794,25 +987,32 @@
     \begin{figure}[htb]
     \centering
     \begin{circuitikz}[scale=1.1]
-        % Input stage (transconductance)
+        % Input terminals
         \draw (0,1) to[short, o-] (1,1) node[above] {$v_2$};
         \draw (0,-1) to[short, o-] (1,-1) node[below] {$v_1$};
 
-        % VCCS (transconductance amplifier)
-        \draw (2,0) node[circle, draw, thick, minimum size=1.2cm] (vccs) {$G_m(v_2-v_1)$};
-        \draw (1,1) -- (vccs.120);
-        \draw (1,-1) -- (vccs.240);
+        % Junction point before current source
+        \draw (1,1) -- (2,1);
+        \draw (1,-1) -- (2,-1);
+        \draw (2,1) -- (2,0.5);
+        \draw (2,-1) -- (2,-0.5);
 
-        % Resistor R
-        \draw (vccs.0) to[R, l=$R$, -*] (4.5,0) node[above] {$v_x$};
-        \draw (4.5,0) -- (4.5,-1.5) node[ground] {};
+        % Current source Gm(v2-v1) - horizontal
+        \draw (1.5,0) to[american current source, l=$G_m(v_2-v_1)$] (2.5,0);
+
+        % Connection to resistor
+        \draw (2,0) -- (3,0);
+
+        % Resistor R with vx on left side
+        \draw (3,0) to[R, l_=$R$, v^=$v_x$, -*] (5,0);
+        \draw (5,0) -- (5,-1.5) node[ground] {};
 
         % VCVS (voltage amplifier)
-        \draw (6,0) node[circle, draw, thick, minimum size=1cm] (vcvs) {$\mu v_x$};
-        \draw (4.5,0) -- (vcvs.180);
+        \draw (6.5,0) node[circle, draw, thick, minimum size=1cm] (vcvs) {$\mu v_x$};
+        \draw (5,0) -- (vcvs.180);
 
         % Output
-        \draw (vcvs.0) to[short, -o] (7.5,0) node[right] {$v_3$};
+        \draw (vcvs.0) to[short, -o] (8,0) node[right] {$v_3$};
 
     \end{circuitikz}
     \caption{Internal op-amp model: $G_m = 10$ mA/V, $R = 10$ k$\Omega$, $\mu = 100$}
@@ -820,7 +1020,7 @@
 
     \vspace{0.2cm}
 
-    \textbf{Find}: Express $v_3$ as a function of $v_1$ and $v_2$, then find the open-loop gain $A$.
+    \textbf{Find}: Express $v_3$ as a function of $v_1$ and $v_2$, then find the open-loop gain $A$. 
 
 \end{frame}
 
