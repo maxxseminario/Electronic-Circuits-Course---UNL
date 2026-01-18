@@ -245,13 +245,13 @@
         
         \begin{enumerate}
             \item Peak voltage: \\
-            $V_p = \sqrt{2} \times V_{RMS} = 16.97$ V
+            $V_p = \sqrt{2} \times V_{RMS} = 17$ V
             
             \item Calculate DC output: \\
-            $V_{DC} = \frac{16.97 - 0.7}{\pi} = \frac{16.27}{\pi} = 5.18$ V
+            $V_{DC} = \frac{17 - 0.7}{\pi} = \frac{16.27}{\pi} = 5.18$ V
             
             \item PIV requirement: \\
-            PIV $\geq 16.97$ V
+            PIV $\geq 17$ V
         \end{enumerate}
         
         \vspace{0.5em}
@@ -417,7 +417,7 @@
         \textbf{Bridge Configuration}:
         
         \begin{center}
-        \begin{circuitikz}[american, scale=0.8]
+        \begin{circuitikz}[american, scale=0.9]
             % AC source on left
             \draw (-2,0) to[sV, l=$v_{AC}$] (0,0);
             
@@ -435,9 +435,7 @@
             \draw (1.5,1.5) to[short, *-] (4.5,1.5)
                   to[R, l=$R_L$, v=$v_o$] (4.5,-1.5)
                   to[short, -*] (1.5,-1.5);
-            
-            % Ground symbols
-            % \draw (1.5,-1.5) node[ground]{};
+
             \draw (-2,0) node[ground]{};
             \draw (3,0) node[ground]{};
         \end{circuitikz}
@@ -495,14 +493,6 @@
             V_{DC} = \frac{2(V_p - 2V_D)}{\pi}
         \end{equation*}
         
-        \vspace{0.5em}
-        \textbf{Peak Inverse Voltage}:
-        \begin{itemize}
-            \item Each diode: PIV $= V_p$
-            \item Lower than center-tap configuration
-        \end{itemize}
-        
-        \vspace{0.5em}
         \textbf{Comparison to Half-Wave}:
         \begin{itemize}
             \item DC output is 2x higher
@@ -519,33 +509,38 @@
                 width=7.5cm, 
                 height=5cm,
                 xlabel={Time},
-                ylabel={$v_o$},
+                ylabel={$v_o$ (V)},
                 xmin=0, 
                 xmax=2*pi,
                 ymin=0, 
-                ymax=1.2,
+                ymax=18,
                 grid=major,
                 grid style={line width=0.1pt, draw=gray!30},
                 axis lines=middle,
                 xtick={0, pi/2, pi, 3*pi/2, 2*pi},
                 xticklabels={0, $\pi/2$, $\pi$, $3\pi/2$, $2\pi$},
+                ytick={0, 9.91, 17},
+                yticklabels={0, 9.91, 17},
             ]
-            \addplot[red, very thick, smooth, domain=0:2*pi, samples=200] {abs(sin(deg(x)))};
+            \addplot[red, very thick, smooth, domain=0:2*pi, samples=200] {17*abs(sin(deg(x)))};
             
-            \draw[<->, blue, thick] (axis cs:0,0) -- (axis cs:0,0.637);
-            \node[blue, right] at (axis cs:0.2,0.3) {$V_{DC}$};
+            % Draw DC level line
+            \draw[green!60!black, thick, dotted] (axis cs:0,9.91) -- (axis cs:2*pi,9.91);
+            \node[green!60!black, right] at (axis cs:1.7*pi,10.5) {$V_{DC}$};
             \end{axis}
         \end{tikzpicture}
         \end{center}
         
-        \vspace{-0.3cm}
+        \vspace{-0.75cm}
         \textbf{Example}:
         
-        $V_{AC,RMS} = 12$ V, $V_p = 16.97$ V
+        $V_{AC,RMS} = 12$ V, $V_p = 17$ V
         
         \begin{equation*}
-            V_{DC} = \frac{2(16.97 - 1.4)}{\pi} = \frac{31.14}{\pi} = 9.91 \text{ V}
+            V_{DC} = \frac{2(17 - 1.4)}{\pi} = \frac{31.14}{\pi} = 9.91 \text{ V}
         \end{equation*}
+
+        \vspace{-0.1cm}
         
         Compare to half-wave: 5.18 V (nearly 2x improvement!)
         
@@ -558,39 +553,45 @@
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{Filtered Bridge Rectifier}:
+
+        \vspace{-0.4cm}
         
         \begin{center}
         \begin{circuitikz}[american, scale=0.8]
             % AC source
-            \draw (0,2) to[sV, l=$v_{AC}$] (0,0);
+            \draw (-2,0) to[sV, l=$v_{AC}$] (0,0);
             
-            % Bridge
-            \draw (0,2) to[short] (1,3)
-                  to[D, l=$D_1$] (3,3)
-                  to[short] (4,2);
-            \draw (0,0) to[short] (1,-1)
-                  to[D, l_=$D_3$] (3,-1)
-                  to[short] (4,0);
-            \draw (1,3) to[D, l=$D_2$, *-*] (1,-1);
-            \draw (3,3) to[D, l_=$D_4$, *-*] (3,-1);
+            % Bridge diodes in diamond configuration
+            \draw (0,0) to[D, l=$D_1$, *-] (1.5,1.5);
+            \draw (0,0) to[D, l_=$D_2$, invert] (1.5,-1.5);
+            \draw (1.5,1.5) to[D, l=$D_3$, -*, invert] (3,0);
+            \draw (1.5,-1.5) to[D, l_=$D_4$] (3,0);
             
-            % Load and filter
-            \draw (4,2) to[short] (5.5,2);
-            \draw (4,2) to[R, l=$R_L$] (4,0);
-            \draw (5.5,2) to[C, l=$C$] (5.5,0);
-            \draw (4,0) to[short] (5.5,0);
-            \draw (2.75,0.5) node[ground]{};
+            % Load and capacitor in parallel between top and bottom
+            \draw (1.5,1.5) to[short, *-] (4,1.5);
+            \draw (4,1.5) to[R, l_=$R_L$] (4,-1.5);
+            \draw (4,1.5) to[short] (5,1.5)
+                  to[C, l=$C$] (5,-1.5)
+                  to[short] (4,-1.5);
+            \draw (4,-1.5) to[short, -*] (1.5,-1.5);
+
+            \draw (-2,0) node[ground]{};
+            \draw (3,0) node[ground]{};
         \end{circuitikz}
         \end{center}
         
         \vspace{0.5em}
         \textbf{Key Difference}:
         
-        Ripple frequency is \textbf{2$f$} (120 Hz for 60 Hz AC)
+        Ripple frequency is \textbf{2$f$} 
+
+        \vspace{-0.2cm}
         
         \begin{equation*}
             V_r \approx \frac{V_p}{2f R_L C}
         \end{equation*}
+
+        \vspace{-0.1cm}
         
         Ripple is \textbf{half} that of half-wave rectifier with same $C$!
         
@@ -603,24 +604,26 @@
                 width=7.5cm, 
                 height=5cm,
                 xlabel={Time},
-                ylabel={$v_o$},
+                ylabel={$v_o$ (V)},
                 xmin=0, 
                 xmax=2*pi,
-                ymin=0.7, 
-                ymax=1.1,
+                ymin=16.5, 
+                ymax=17.5,
                 grid=major,
                 grid style={line width=0.1pt, draw=gray!30},
                 axis lines=middle,
                 xtick={0, pi/2, pi, 3*pi/2, 2*pi},
                 xticklabels={0, $T/4$, $T/2$, $3T/4$, $T$},
+                ytick={16.5, 16.863, 17},
+                yticklabels={16.5, 16.86, 17},
             ]
             
             % Approximation of filtered output
             \addplot[red, very thick, domain=0:2*pi, samples=400] 
-                {0.95 + 0.05*cos(2*deg(x))};
+                {16.9315 + 0.0685*cos(2*deg(x))};
             
-            \draw[<->, blue, thick] (axis cs:pi/2,0.9) -- (axis cs:pi/2,1.0);
-            \node[blue, right] at (axis cs:pi/2,0.95) {$V_r$};
+            \draw[<->, blue, thick] (axis cs:pi/2,16.863) -- (axis cs:pi/2,17);
+            \node[blue, right] at (axis cs:pi/2,16.93) {$V_r$};
             
             \end{axis}
         \end{tikzpicture}
@@ -630,13 +633,18 @@
         \textbf{Design Example}:
         
         Same parameters as before, but $f$ → $2f$:
+
+        \vspace{-0.5cm}
         
         \begin{align*}
-            V_r &= \frac{17}{2 \times 60 \times 2200 \times 470 \times 10^{-6}} \\
-            &= \frac{17}{124.08} = 0.137 \text{ V}
+            V_r &= \frac{17}{2 \times 60 \times 2200 \times 470 \times 10^{-6}} = 0.137 \text{ V}
         \end{align*}
-        
-        Only \textbf{half} the ripple of half-wave!
+
+        \vspace{-0.2cm}
+
+        \begin{equation*}
+            V_{DC} = 17 - \frac{0.137}{2} = 16.93 \text{ V}
+        \end{equation*}
         
     \end{columns}
     
@@ -645,7 +653,6 @@
 \section{Voltage Regulation}
 
 \begin{frame}{Need for Voltage Regulation}
-    
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{The Problem}:
@@ -653,7 +660,7 @@
         \begin{itemize}
             \item Rectifier output varies with:
             \begin{itemize}
-                \item Input (line) voltage changes
+                \item Input voltage changes
                 \item Load current changes
                 \item Ripple voltage
             \end{itemize}
@@ -661,7 +668,8 @@
             \item Example: Logic circuits need ±5\% tolerance
         \end{itemize}
         
-        \vspace{0.5em}
+        
+    \column{0.48\textwidth}
         \textbf{The Solution}:
         
         Voltage regulator:
@@ -671,32 +679,6 @@
             \item Compensates for load variations
             \item Types: Linear, switching, Zener
         \end{itemize}
-        
-    \column{0.48\textwidth}
-        \textbf{Block Diagram}:
-        
-        \begin{center}
-        \begin{tikzpicture}[
-            block/.style={rectangle, draw, thick, minimum width=2cm, minimum height=1cm}
-        ]
-            \node[block] (trans) at (0,0) {Transformer};
-            \node[block] (rect) at (3,0) {Rectifier};
-            \node[block] (filt) at (6,0) {Filter};
-            \node[block] (reg) at (9,0) {Regulator};
-            
-            \draw[->, thick] (-1.5,0) -- (trans);
-            \draw[->, thick] (trans) -- (rect);
-            \draw[->, thick] (rect) -- (filt);
-            \draw[->, thick] (filt) -- (reg);
-            \draw[->, thick] (reg) -- (10.5,0);
-            
-            \node[above] at (-1.5,0.3) {120 V AC};
-            \node[above] at (1.5,0.3) {12 V AC};
-            \node[above] at (4.5,0.3) {Pulsating DC};
-            \node[above] at (7.5,0.3) {DC + ripple};
-            \node[above] at (10.5,0.3) {Regulated DC};
-        \end{tikzpicture}
-        \end{center}
         
         \vspace{0.5em}
         \textbf{Performance Metrics}:
@@ -715,15 +697,15 @@
     \begin{columns}[t]
     \column{0.48\textwidth}
         \textbf{Basic Shunt Regulator}:
-        
+        \vspace{-0.5cm}
         \begin{center}
-        \begin{circuitikz}[american, scale=1.1]
+        \begin{circuitikz}[american, scale=0.9]
             \draw (0,3) to[V, l=$V_{in}$] (0,0);
             \draw (0,3) to[R, l=$R_S$, i>^=$I_S$] (3,3);
             
             % Zener branch 
             \draw (3,3) to[short] (4.0,3)
-                  to[zD, l_=$D_Z$, v^=$V_Z$, i>_=$I_Z$] (4.0,0);
+                  to[zD, l_=$D_Z$, v^=$V_Z$, i>_=$I_Z$, invert] (4.0,0);
             
             % Load branch 
             \draw (3,3) to[short] (6,3)
@@ -735,7 +717,7 @@
         \end{circuitikz}
         \end{center}
         
-        \vspace{0.5em}
+        \vspace{-0.4cm}
         \textbf{Operation Principle}:
         \begin{itemize}
             \item Zener maintains constant $V_Z$
@@ -745,24 +727,28 @@
         \end{itemize}
         
     \column{0.48\textwidth}
-        \textbf{Key Equations}:
+        \textbf{Equations of Note}:
         
         Series resistor current:
         \begin{equation*}
             I_S = \frac{V_{in} - V_Z}{R_S}
         \end{equation*}
+
+        \vspace{-0.3cm}
         
         Kirchhoff's current law:
         \begin{equation*}
             I_Z = I_S - I_L
         \end{equation*}
+
+        \vspace{-0.3cm}
         
         Zener power dissipation:
         \begin{equation*}
             P_Z = V_Z \cdot I_Z
         \end{equation*}
         
-        \vspace{0.5em}
+        \vspace{-0.3cm}
         \textbf{Design Constraints}:
         \begin{itemize}
             \item $I_Z \geq I_{Z,min}$ (stay in breakdown)
@@ -783,57 +769,48 @@
         
         \begin{itemize}
             \item Output: $V_o = 5.1$ V (use 5.1 V Zener)
-            \item Input: $V_{in} = 12$ V (from filtered rectifier)
+            \item Input: $V_{in} = 12$ V (from rectifier)
             \item Load: $I_L = 0$ to 50 mA
-            \item Zener: $I_{Z,min} = 5$ mA, $P_{Z,max} = 500$ mW
+            \item Zener: $I_{Z,min} = 5$ mA, $P_{Z,max} = 0.5$ W
         \end{itemize}
         
-        \vspace{0.5em}
         \textbf{Design Process}:
         
-        \textbf{Step 1}: Choose $I_S$ at no-load
+        \textbf{Step 1}: Find maximum safe $I_Z$ 
+
+        \vspace{-0.25cm}
         
-        Let $I_S = 2 \times I_{L,max} = 100$ mA
-        
-        This ensures enough current for regulation
-        
-        \vspace{0.5em}
-        \textbf{Step 2}: Calculate $R_S$
-        
-        \begin{equation*}
-            R_S = \frac{V_{in} - V_Z}{I_S} = \frac{12 - 5.1}{0.1} = 69 \text{ }\Omega
-        \end{equation*}
-        
-        Use standard value: $R_S = 68$ $\Omega$
-        
-    \column{0.48\textwidth}
-        \textbf{Step 3}: Verify worst-case conditions
-        
-        At no load ($I_L = 0$):
-        \begin{align*}
-            I_Z &= I_S - I_L = 100 - 0 = 100 \text{ mA} \\
-            P_Z &= 5.1 \times 0.1 = 510 \text{ mW}
-        \end{align*}
-        
-        \textbf{Problem!} Exceeds 500 mW rating
-        
-        \vspace{0.5em}
-        \textbf{Step 4}: Redesign with lower $I_S$
-        
-        Maximum safe $I_Z$:
         \begin{equation*}
             I_{Z,max} = \frac{P_{Z,max}}{V_Z} = \frac{0.5}{5.1} = 98 \text{ mA}
         \end{equation*}
         
-        Choose $I_S = I_{Z,max} = 98$ mA, then:
+        \textbf{Step 2}: Choose $I_S$ for no-load condition:
+        
+        At no load, $I_Z = I_S$, so choose $I_S = 90$ mA (safe margin below 98 mA)
+        
+    \column{0.48\textwidth}
+        \textbf{Step 3}: Calculate $R_S$
+
+        \vspace{-0.25cm}
         
         \begin{equation*}
-            R_S = \frac{12 - 5.1}{0.098} = 70.4 \text{ }\Omega
+            R_S = \frac{V_{in} - V_Z}{I_S} = \frac{12 - 5.1}{0.09} = 76.7 \text{ }\Omega
         \end{equation*}
         
-        Use $R_S = 68$ $\Omega$ (slightly higher current, but OK)
+        \vspace{0.5em}
+        \textbf{Step 4}: Verify operation at both extremes
         
-        At max load: $I_Z = 98 - 50 = 48$ mA 
+        At no load ($I_L = 0$):
+        \begin{align*}
+            I_Z &= I_S = 90 \text{ mA} \\
+            P_Z &= 5.1 \times 0.09 = 459 \text{ mW} 
+        \end{align*}
+        
+        At full load ($I_L = 50$ mA):
+        \begin{align*}
+            I_Z &= 90 - 50 = 40 \text{ mA} \\
+            &> I_{Z,min} = 5 \text{ mA} 
+        \end{align*} 
         
     \end{columns}
     
@@ -850,122 +827,41 @@
         \begin{equation*}
             \text{Load Reg} = \frac{V_{o,no-load} - V_{o,full-load}}{V_{o,full-load}} \times 100\%
         \end{equation*}
-        
+  
         Affected by:
         \begin{itemize}
             \item Zener dynamic resistance $r_z$
             \item Series resistance $R_S$
             \item Load current range
         \end{itemize}
-        
-        \vspace{0.5em}
+
+    \column{0.48\textwidth}
         \textbf{Line Regulation}:
         
         Measures output voltage change with input voltage:
+
+        \vspace{-0.1cm}
         
         \begin{equation*}
             \text{Line Reg} = \frac{\Delta V_o}{\Delta V_{in}} \times 100\%
         \end{equation*}
-        
-        Better regulation requires:
-        \begin{itemize}
-            \item Lower $r_z$ (better Zener)
-            \item Larger $R_S$ (but limits load current)
-        \end{itemize}
-        
-    \column{0.48\textwidth}
+
+        \vspace{-0.1cm}
+
         \textbf{Efficiency}:
         
         \begin{equation*}
             \eta = \frac{P_o}{P_{in}} = \frac{V_o I_L}{V_{in} I_S} \times 100\%
         \end{equation*}
         
-        Example (from previous design):
         
-        At full load ($I_L = 50$ mA):
-        \begin{align*}
-            P_o &= 5.1 \times 0.050 = 0.255 \text{ W} \\
-            P_{in} &= 12 \times 0.098 = 1.176 \text{ W} \\
-            \eta &= \frac{0.255}{1.176} = 21.7\%
-        \end{align*}
-        
-        \vspace{0.5em}
+        \vspace{-0.1cm}
         \textbf{Key Points}:
         \begin{itemize}
             \item[\baditem] Shunt regulators have poor efficiency
             \item[\baditem] Power wasted in $R_S$ and Zener
             \item[\gooditem] Simple and inexpensive
             \item[\gooditem] Good for low-power applications
-            \item[\mehitem] For high power, use linear or switching regulators
-        \end{itemize}
-        
-    \end{columns}
-    
-\end{frame}
-
-\section{Practical Considerations}
-
-\begin{frame}{Component Selection}
-    
-    \begin{columns}[t]
-    \column{0.48\textwidth}
-        \textbf{Diode Selection}:
-        
-        Key ratings:
-        \begin{itemize}
-            \item \textbf{PIV rating}: Must exceed peak voltage with safety margin (2x)
-            \item \textbf{Average current}: Must handle DC load current
-            \item \textbf{Peak current}: Can be 10x average for capacitive loads
-            \item \textbf{Forward voltage}: Lower is better for efficiency
-        \end{itemize}
-        
-        Common types:
-        \begin{itemize}
-            \item 1N4001-1N4007 series (1A, 50V-1000V)
-            \item Fast recovery for high frequency
-            \item Schottky for low voltage drop
-        \end{itemize}
-        
-        \vspace{0.5em}
-        \textbf{Capacitor Selection}:
-        
-        \begin{itemize}
-            \item Voltage rating $>$ peak input voltage
-            \item Electrolytic for large values
-            \item ESR affects ripple and efficiency
-            \item Watch polarity!
-        \end{itemize}
-        
-    \column{0.48\textwidth}
-        \textbf{Safety Considerations}:
-        
-        \begin{itemize}
-            \item Capacitors store charge—discharge before handling
-            \item Use fuses for overcurrent protection
-            \item Heat sinks for high-power diodes
-            \item Proper grounding essential
-        \end{itemize}
-        
-        \vspace{0.5em}
-        \textbf{Common Mistakes}:
-        
-        \begin{itemize}
-            \item[\baditem] Reversed diode polarity
-            \item[\baditem] Reversed capacitor polarity
-            \item[\baditem] Undersized PIV rating
-            \item[\baditem] Insufficient heat sinking
-            \item[\baditem] Forgetting safety margin
-        \end{itemize}
-        
-        \vspace{0.5em}
-        \textbf{Testing Tips}:
-        
-        \begin{itemize}
-            \item[\gooditem] Start with low voltage/current
-            \item[\gooditem] Check for excessive heating
-            \item[\gooditem] Measure ripple with oscilloscope
-            \item[\gooditem] Verify load regulation
-            \item[\gooditem] Test under various loads
         \end{itemize}
         
     \end{columns}
@@ -983,7 +879,6 @@
         Half-Wave:
         \begin{itemize}
             \item $V_{DC} = V_p/\pi \approx 0.318 V_p$
-            \item PIV $= V_p$
             \item Ripple frequency $= f$
             \item Low efficiency
         \end{itemize}
@@ -991,18 +886,16 @@
         Bridge (Full-Wave):
         \begin{itemize}
             \item $V_{DC} = 2V_p/\pi \approx 0.637 V_p$
-            \item PIV $= V_p$ (per diode)
             \item Ripple frequency $= 2f$
             \item Better efficiency
         \end{itemize}
         
-        \vspace{0.5em}
+        \vspace{-0.1cm}
         \textbf{Filtering}:
         \begin{itemize}
             \item Capacitor smooths output
             \item $V_r \approx V_p/(f R_L C)$
             \item Larger $C$ reduces ripple
-            \item Trade-off: size vs. performance
         \end{itemize}
         
     \column{0.48\textwidth}
@@ -1020,25 +913,12 @@
         \begin{itemize}
             \item Load regulation: $\Delta V_o$ with $\Delta I_L$
             \item Line regulation: $\Delta V_o$ with $\Delta V_{in}$
-            \item Efficiency: typically poor (20-50\%)
+            \item Efficiency: typically 20-50\%
         \end{itemize}
         
-        \vspace{0.5em}
-        \textbf{Next Topics}:
-        \begin{itemize}
-            \item Transistor fundamentals
-            \item MOS transistors
-            \item BJT transistors
-            \item Amplifier basics
-        \end{itemize}
         
     \end{columns}
-    
-    \vspace{1em}
-    
-    \begin{block}{Prepare for Lab}
-        Review rectifier equations, understand ripple calculations, and complete pre-lab design problems
-    \end{block}
+
     
 \end{frame}
 
