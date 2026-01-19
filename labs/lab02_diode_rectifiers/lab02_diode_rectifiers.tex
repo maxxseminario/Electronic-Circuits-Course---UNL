@@ -94,14 +94,26 @@ Before arriving at the lab session, students are required to thoroughly prepare 
 
 \subsection{Rectification and DC Power Supplies}
 
-Most Electronic Circuits II-CE require direct current (DC) power to operate, but electrical power distribution systems deliver alternating current (AC). A rectifier is a circuit that converts AC voltage to DC voltage, forming the essential first stage of nearly all electronic power supplies. The rectifier exploits the unidirectional current flow property of diodes to allow current to flow during one half (or both halves) of the AC cycle while blocking it during the other portions.  The resulting pulsating DC voltage can then be filtered to produce a relatively smooth DC output suitable for powering Electronic Circuits II-CE.\\
+Most electronic circuits require direct current (DC) power to operate, but electrical power distribution systems deliver alternating current (AC). A rectifier is a circuit that converts AC voltage to DC voltage, forming the essential first stage of nearly all electronic power supplies. The rectifier exploits the unidirectional current flow property of diodes to allow current to flow during one half (or both halves) of the AC cycle while blocking it during the other portions.  The resulting pulsating DC voltage can then be filtered to produce a relatively smooth DC output suitable for powering electronic circuits.\\
 
 The quality of a rectifier circuit is characterized by several key parameters: the average (DC) output voltage, the ripple voltage (the AC component superimposed on the DC output), the peak inverse voltage (PIV) that the diodes must withstand, and the efficiency of power conversion. Understanding these parameters and the trade-offs between them is essential for practical power supply design.\\
 
 \subsection{Half-Wave Rectifier}
 
 The simplest rectifier circuit is the half-wave rectifier, which consists of a single diode in series with the load as shown in Figure \ref{fig:halfwave_circuit}. When the AC input voltage is positive (during the positive half-cycle), the diode is forward biased and conducts current, allowing the input voltage (minus the diode forward voltage drop) to appear across the load. When the input voltage is negative (during the negative half-cycle), the diode is reverse biased and blocks current flow, resulting in zero voltage across the load.
-\\
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[american]
+        \draw (0,0) to[sV, l=$v_{AC}$] (0,3)
+              to[D, l=$D$] (3,3)
+              to[R, l=$R_L$, v=$v_o$] (3,0)
+              to[short] (0,0);
+        \draw (1.5,0) node[ground]{};
+    \end{circuitikz}
+    \caption{Half-wave rectifier circuit without filter capacitor. }
+    \label{fig:halfwave_circuit}
+\end{figure}
 
 The output of an unfiltered half-wave rectifier consists of a series of positive half-sinusoids separated by intervals of zero voltage. If the input voltage is $v_i(t) = V_p \sin(\omega t)$ where $V_p$ is the peak voltage and $\omega = 2\pi f$ is the angular frequency, the average (DC) value of the output voltage for an ideal diode (zero forward voltage drop) is:
 
@@ -130,7 +142,25 @@ A full-wave rectifier conducts current to the load during both half-cycles of th
 \subsubsection{Bridge Rectifier}
 
 The bridge rectifier, shown in Figure \ref{fig:bridge_circuit}, uses four diodes arranged in a bridge configuration and does not require a center-tapped transformer. During the positive half-cycle of the input voltage, diodes $D_1$ and $D_2$ conduct while $D_3$ and $D_4$ are reverse biased, allowing current to flow through the load in one direction. During the negative half-cycle, diodes $D_3$ and $D_4$ conduct while $D_1$ and $D_2$ are reverse biased, but current still flows through the load in the same direction. The result is that both half-cycles of the input contribute to the output.
-\\
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[american, scale=.75]
+        % \draw[step=1cm, gray!30, very thin] (-2,-2) grid (8,6);
+        \ctikzset{label/align=straight}
+        \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
+        \draw (-1,4) -- (4,4);
+        \ctikzset{label distance=-.2cm}
+        \draw (2,2) to [D, l=$D_1$, *-*] (4,4) to [D, l=$D_2$, *-*] (6,2);
+        \draw (2,2) to [D, l_=$D_3$, *-*] (4,0) to [D, l_=$D_4$, *-*] (6,2);
+        \draw (-1,0) -- (4,0);
+        \ctikzset{label distance=0}
+        \draw (6,2) -- (8,2) to [R, l=$R_L$, v=$v_o$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
+
+    \end{circuitikz}
+    \caption{Full-wave bridge rectifier circuit without filter capacitor.}
+    \label{fig:bridge_circuit}
+\end{figure}
 
 For an ideal bridge rectifier (zero diode drops), the average DC output voltage is:
 
@@ -188,31 +218,18 @@ The choice of filter capacitor involves trade-offs.  A larger capacitor reduces 
 
 \subsection{Part 1: Half-Wave Rectifier Without Filter}
 
-In this portion of the experiment, you will characterize the basic half-wave rectifier circuit.  Begin by constructing the circuit shown in Figure \ref{fig:halfwave_circuit} on your breadboard using a single rectifier diode and the 2.2 k$\Omega$ load resistor.  Ensure that the diode is oriented correctly with the anode connected to the AC source and the cathode toward the load resistor.  Connect the function generator or AC power supply to provide a sinusoidal voltage with an RMS value of approximately 12 V at 60 Hz. \\
+In this portion of the experiment, the basic half-wave rectifier circuit will be characterized.  Begin by constructing the circuit shown in Figure \ref{fig:halfwave_circuit} on the breadboard using a single rectifier diode and the 2.2 k$\Omega$ load resistor.  Ensure that the diode is oriented correctly with the anode connected to the AC source and the cathode toward the load resistor.  Connect the function generator or AC power supply to provide a sinusoidal voltage with an RMS value of approximately 12 V at 60 Hz. \\
 
-\begin{figure}[h]
-    \centering
-    \begin{circuitikz}[american]
-        \draw (0,0) to[sV, l=$v_{AC}$] (0,3)
-              to[D, l=$D$] (3,3)
-              to[R, l=$R_L$, v=$v_o$] (3,0)
-              to[short] (0,0);
-        \draw (1.5,0) node[ground]{};
-    \end{circuitikz}
-    \caption{Half-wave rectifier circuit without filter capacitor. }
-    \label{fig:halfwave_circuit}
-\end{figure}
-
-Connect the oscilloscope to observe both the input AC voltage and the output voltage across the load resistor. Use DC coupling on both channels.  Adjust the oscilloscope time base to display several complete cycles of the waveform clearly. You should observe that the output consists of positive half-sinusoids corresponding to the positive half-cycles of the input, with zero voltage during the negative half-cycles when the diode is reverse biased.
+Connect the oscilloscope to observe both the input AC voltage and the output voltage across the load resistor. Use DC coupling on both channels.  Adjust the oscilloscope time base to display several complete cycles of the waveform clearly. Observe that the output consists of positive half-sinusoids corresponding to the positive half-cycles of the input, with zero voltage during the negative half-cycles when the diode is reverse biased.
 \\
 
-Measure and record the peak input voltage $V_{p,in}$ and the peak output voltage $V_{p,out}$ from the oscilloscope. Note that the output peak voltage should be approximately 0.7 V less than the input peak voltage due to the diode forward voltage drop. Use the oscilloscope's measurement functions or cursors to measure the period of the waveforms and verify the frequency.  Also use the DMM to measure the DC (average) voltage across the load resistor.  This DC voltage should correspond approximately to the theoretical value given by Equation \ref{eq:halfwave_dc_real}.\\
+Measure and record the peak input voltage $V_{p,in}$ and the peak output voltage $V_{p,out}$ from the oscilloscope. Note that the output peak voltage should be approximately 0.7 V less than the input peak voltage due to the diode forward voltage drop. Use the oscilloscope's measurement functions or cursors to measure the period of the waveforms and verify the frequency.  Also use the DMM (Digital Multimeter) to measure the DC (average) voltage across the load resistor.  This DC voltage should correspond approximately to the theoretical value given by Equation \ref{eq:halfwave_dc_real}.\\
 
-In your lab report, include oscilloscope screenshots showing both the input and output voltages. Clearly label the peak voltages, time scales, and indicate the periods when the diode is conducting and when it is off. Calculate the theoretical average DC output voltage using Equation \ref{eq:halfwave_dc_real} and compare it with your measured value.  Explain any discrepancies.  Discuss what you observe about the waveform shape and explain the physical operation of the circuit during each portion of the AC cycle.  Why does the output peak voltage differ from the input peak voltage? \\
+In the lab report, include oscilloscope screenshots showing both the input and output voltages. Clearly label the peak voltages, time scales, and indicate the periods when the diode is conducting and when it is off. Calculate the theoretical average DC output voltage using Equation \ref{eq:halfwave_dc_real} and compare it with the measured value.  Explain any discrepancies.  Discuss observations about the waveform shape and explain the physical operation of the circuit during each portion of the AC cycle.  Why does the output peak voltage differ from the input peak voltage? \\
 
 \subsection{Part 2: Half-Wave Rectifier With Filter Capacitor}
 
-You will now add a filter capacitor to the half-wave rectifier to observe its smoothing effect.  Modify your circuit from Part 1 by connecting a 470 $\mu$F electrolytic capacitor in parallel with the load resistor as shown in Figure \ref{fig:halfwave_filtered}. Pay careful attention to capacitor polarity:  the positive terminal should be connected to the cathode of the diode, and the negative terminal to ground.  Reversed polarity can cause the capacitor to fail.\\
+A filter capacitor will now be added to the half-wave rectifier to observe its smoothing effect.  Modify the circuit from Part 1 by connecting a 470 $\mu$F electrolytic capacitor in parallel with the load resistor as shown in Figure \ref{fig:halfwave_filtered}. Pay careful attention to capacitor polarity:  the positive terminal should be connected to the cathode of the diode, and the negative terminal to ground.  Reversed polarity can cause the capacitor to fail.\\
 
 \begin{figure}[h]
     \centering
@@ -221,7 +238,7 @@ You will now add a filter capacitor to the half-wave rectifier to observe its sm
               to[D, l=$D$] (3,3)
               to[short] (4.5,3);
         \draw (3,3) to[R, l=$R_L$, v=$v_o$] (3,0);
-        \draw (4.5,3) to[C, l=$C$] (4.5,0);
+        \draw (4.5,3) to[cC, l=$C$] (4.5,0);
         \draw (0,0) to[short] (4.5,0);
         \draw (2.25,0) node[ground]{};
     \end{circuitikz}
@@ -229,59 +246,38 @@ You will now add a filter capacitor to the half-wave rectifier to observe its sm
     \label{fig:halfwave_filtered}
 \end{figure}
 
-With the oscilloscope still connected across the load, observe the output voltage waveform. You should now see a characteristic sawtooth or ripple waveform instead of the half-sinusoids observed in Part 1. The voltage charges quickly to near the peak input voltage when the diode conducts, then decays exponentially as the capacitor discharges through the load resistor during the portion of the cycle when the diode is off. The diode conducts only during brief intervals when the input voltage exceeds the capacitor voltage.
+With the oscilloscope still connected across the load, observe the output voltage waveform. A characteristic sawtooth or ripple waveform should be present instead of the half-sinusoids observed in Part 1. The voltage charges quickly to near the peak input voltage when the diode conducts, then decays exponentially as the capacitor discharges through the load resistor during the portion of the cycle when the diode is off. The diode conducts only during brief intervals when the input voltage exceeds the capacitor voltage.
 \\
 
-Measure and record the peak output voltage $V_{peak}$, the minimum output voltage $V_{min}$, and calculate the peak-to-peak ripple voltage $V_r = V_{peak} - V_{min}$. Use the oscilloscope's AC coupling feature or cursor measurements to determine the ripple voltage. Also measure the DC (average) voltage using both the oscilloscope using its mean measurement function. The DC voltage should be significantly higher than in Part 1 and should be approximately $V_{DC} \approx V_{peak} - V_r/2$ as given by Equation \ref{eq:dc_filtered}.
+Measure and record the peak output voltage $V_{peak}$, the minimum output voltage $V_{min}$, and calculate the peak-to-peak ripple voltage $V_r = V_{peak} - V_{min}$. Use the oscilloscope's AC coupling feature or cursor measurements to determine the ripple voltage. Also measure the DC (average) voltage with the oscilloscope by using its \textit{mean measurement} function. The DC voltage should be significantly higher than in Part 1, approximately $V_{DC} \approx V_{peak} - V_r/2$ as given by Equation \ref{eq:dc_filtered}.
 \\
 
 Measure the period of the ripple waveform and verify that it corresponds to the period of the AC input. For a half-wave rectifier, the ripple frequency equals the AC line frequency.
 \\
 
-Replace the 470 $\mu$F capacitor with a 100 $\mu$F capacitor and repeat the measurements. Then replace it with a 1000 $\mu$F capacitor and repeat again. For each capacitor value, record the ripple voltage and DC output voltage.
+Replace the 470 $\mu$F capacitor with a 100 $\mu$F capacitor and repeat the measurements. Also repeat this with a 1000 $\mu$F capacitor. For each capacitor value, record the ripple voltage and DC output voltage.
 \\
 
-In your lab report, present oscilloscope waveforms for all three capacitor values. Plot or create a table showing how ripple voltage and DC output voltage vary with capacitor value. Compare your measured ripple voltages with the theoretical predictions from Equation \ref{eq:ripple}. Explain why larger capacitance produces less ripple. Describe what you observe about the shape of the waveform during the charging and discharging portions of the cycle. Discuss the trade-offs involved in selecting filter capacitor values—what are the advantages and disadvantages of using very large capacitors? \\
+In the lab report, present oscilloscope waveforms for all three capacitor values. Plot or create a table showing how ripple voltage and DC output voltage vary with capacitor value. Compare the measured ripple voltages with the theoretical predictions from Equation \ref{eq:ripple}. Explain why larger capacitance produces less ripple. Describe the shape of the waveform during the charging and discharging portions of the cycle. Discuss the trade-offs involved in selecting filter capacitor values—what are the advantages and disadvantages of using very large capacitors? \\
 
 \subsection{Part 3: Effect of Load Resistance}
 
-Using the half-wave rectifier with the 470 $\mu$F filter capacitor, you will now investigate how the load resistance affects rectifier performance. Starting with the 2.2 k$\Omega$ load resistor from Part 2, measure and record the DC output voltage and ripple voltage.  Then replace the load resistor with the 4.7 k$\Omega$ resistor and repeat the measurements.  Finally, use the 1 k$\Omega$ resistor and repeat the measurements once more.\\
+The half-wave rectifier with the 470 $\mu$F filter capacitor will be used to investigate how the load resistance affects rectifier performance. Starting with the 2.2 k$\Omega$ load resistor from Part 2, measure and record the DC output voltage and ripple voltage.  Then replace the load resistor with the 4.7 k$\Omega$ resistor and repeat the measurements.  Finally, use the 1 k$\Omega$ resistor and repeat the measurements once more.\\
 
 For each load resistance value, calculate the DC load current as $I_{DC} = V_{DC}/R_L$ and the ripple factor $r = V_r/(2\sqrt{3} \cdot V_{DC})$, where the factor $2\sqrt{3}$ converts peak-to-peak ripple to RMS ripple assuming a triangular waveform.\\
 
-In your lab report, present your data showing how DC output voltage, ripple voltage, and ripple factor vary with load resistance.  Explain the trends you observe.  Why does ripple increase with heavier loading (smaller resistance)? Why does DC output voltage decrease slightly with heavier loading?  Discuss the implications for power supply design. What limits the maximum current that can be drawn from a simple rectifier circuit?\\
+In the lab report, present data showing how DC output voltage, ripple voltage, and ripple factor vary with load resistance.  Explain the trends observed.  Why does ripple increase and DC output voltage decrease slightly with heavier loading (smaller resistance)? Discuss the implications for power supply design. What limits the maximum current that can be drawn from a simple rectifier circuit?\\
 
 \subsection{Part 4: Full-Wave Bridge Rectifier Without Filter}
 
-You will now construct and characterize a full-wave bridge rectifier. Build the circuit shown in Figure \ref{fig:bridge_circuit} using four rectifier diodes arranged in a bridge configuration and the 2.2 k$\Omega$ load resistor. Pay careful attention to diode orientation: diodes $D_1$ and $D_2$ should have their cathodes toward the positive load terminal, while diodes $D_3$ and $D_4$ should have their anodes toward the negative load terminal.  Double-check your connections before applying power, as incorrect wiring can damage the diodes.
+Now, a full-wave bridge rectifier will be constructed and characterized. Build the circuit shown in Figure \ref{fig:bridge_circuit} using four rectifier diodes arranged in a bridge configuration and the 2.2 k$\Omega$ load resistor. Pay careful attention to diode orientation: diodes $D_1$ and $D_2$ should have their cathodes toward the positive load terminal, while diodes $D_3$ and $D_4$ should have their anodes toward the negative load terminal.  Double-check the connections before applying power, as incorrect wiring can damage the diodes.
 \\
 
-\begin{figure}[h]
-    \centering
-    \begin{circuitikz}[american]
-        \draw (0,1. 5) to[sV, l=$v_{AC}$] (0,4. 5);
-        % Top half of bridge
-        \draw (0,4. 5) to[short] (1,4.5)
-              to[D, l=$D_1$] (3,4.5)
-              to[short] (4. 5,4.5);
-        \draw (1,4.5) to[D, l=$D_3$, *-*] (1,1.5);
-        % Bottom half of bridge
-        \draw (0,1.5) to[short] (3,1.5)
-              to[D, l=$D_2$] (3,4.5);
-        \draw (3,1.5) to[short] (4.5,1.5);
-        % Load
-        \draw (4.5,4.5) to[R, l=$R_L$, v=$v_o$] (4.5,1.5);
-        \draw (2.25,1.5) node[ground]{};
-    \end{circuitikz}
-    \caption{Full-wave bridge rectifier circuit without filter capacitor.}
-    \label{fig:bridge_circuit}
-\end{figure}
+Connect the oscilloscope to observe the input AC voltage and the output voltage across the load resistor. Observe that the output now consists of full-wave rectified sinusoids. The magnitude of the AC input is present at the output during both positive and negative half-cycles. The output frequency is twice the input frequency (120 Hz for 60 Hz AC input).\\
 
-Connect the oscilloscope to observe the input AC voltage and the output voltage across the load resistor. You should observe that the output now consists of full-wave rectified sinusoids. The magnitude of the AC input is present at the output during both positive and negative half-cycles. The output frequency is twice the input frequency (120 Hz for 60 Hz AC input).\\
+Measure the peak input voltage, peak output voltage, and the DC (average) output voltage.  Note that the peak output voltage should be approximately $1.4$ V less than the peak input voltage due to the two diode forward voltage drops in the conduction path. The DC voltage should be approximately twice that of the half-wave rectifier with the same input voltage, as given by Equation \ref{eq:fullwave_dc_real}.\\
 
-Measure the peak input voltage, peak output voltage, and the DC (average) output voltage.  Note that the peak output voltage should be approximately $1.4$ V less than the peak input voltage due to the two diode drops in the conduction path. The DC voltage should be approximately twice that of the half-wave rectifier with the same input voltage, as given by Equation \ref{eq:fullwave_dc_real}.\\
-
-In your lab report, include oscilloscope waveforms showing the full-wave rectified output. Compare the DC output voltage with the theoretical prediction.  Explain why two diode voltage drops affect the output (identify which diodes are conducting during each half-cycle). Discuss the advantages of full-wave rectification compared to half-wave rectification in terms of DC output voltage and output frequency.
+In the lab report, include oscilloscope waveforms showing the full-wave rectified output. Compare the DC output voltage with the theoretical prediction.  Explain why two diode voltage drops affect the output (identify which diodes are conducting during each half-cycle). Discuss the advantages of full-wave rectification compared to half-wave rectification in terms of DC output voltage and output frequency.
 \\
 
 \subsection{Part 5: Full-Wave Bridge Rectifier With Filter}
@@ -290,35 +286,33 @@ Add a 470 $\mu$F filter capacitor in parallel with the load resistor in the brid
 
 \begin{figure}[h]
     \centering
-    \begin{circuitikz}[american]
-        \draw (0,1.5) to[sV, l=$v_{AC}$] (0,4.5);
-        % Bridge
-        \draw (0,4.5) to[short] (1,4.5)
-              to[D, l=$D_1$] (3,4.5)
-              to[short] (4.5,4.5);
-        \draw (1,4.5) to[D, l=$D_3$, *-*] (1,1.5);
-        \draw (0,1.5) to[short] (3,1.5)
-              to[D, l=$D_2$] (3,4.5);
-        \draw (3,1.5) to[short] (6,1.5);
-        % Load and cap
-        \draw (4.5,4.5) to[R, l=$R_L$, v=$v_o$] (4.5,1.5);
-        \draw (6,4.5) to[C, l=$C$] (6,1.5);
-        \draw (4.5,4.5) to[short] (6,4.5);
-        \draw (2.25,1.5) node[ground]{};
+    \begin{circuitikz}[american, scale=.75]
+        % \draw[step=1cm, gray!30, very thin] (-2,-2) grid (8,6);
+        \ctikzset{label/align=straight}
+        \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
+        \draw (-1,4) -- (4,4);
+        \ctikzset{label distance=-.2cm}
+        \draw (2,2) to [D, l=$D_1$, *-*] (4,4) to [D, l=$D_2$, *-*] (6,2);
+        \draw (2,2) to [D, l_=$D_3$, *-*] (4,0) to [D, l_=$D_4$, *-*] (6,2);
+        \draw (-1,0) -- (4,0);
+        \ctikzset{label distance=0}
+        \draw (6,2) -- (8,2) to [R, l_=$R_L$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
+        \draw (8,2) -- (10,2) to [C, l_=$C$, v^=$v_o$] (10,-1) -- (8,-1);
+
     \end{circuitikz}
     \caption{Full-wave bridge rectifier with filter capacitor.}
     \label{fig:bridge_filtered}
 \end{figure}
 
-Observe the output voltage waveform on the oscilloscope. You should see ripple similar to the half-wave case but with half the period (twice the frequency). Measure the peak voltage, minimum voltage, peak-to-peak ripple voltage, and DC output voltage. Compare the ripple voltage with that obtained from the half-wave rectifier using the same capacitor and load values. The full-wave rectifier should produce significantly less ripple.\\
+Observe the output voltage waveform on the oscilloscope. There should be a ripple similar to the half-wave case but with half the period (twice the frequency). Measure the peak voltage, minimum voltage, peak-to-peak ripple voltage, and DC output voltage. Compare the ripple voltage with that obtained from the half-wave rectifier using the same capacitor and load values. The full-wave rectifier should produce significantly less ripple.\\
 
-In your lab report, present waveforms and measurements for the filtered full-wave rectifier. Compare the performance (DC output voltage, ripple voltage, ripple frequency) with the filtered half-wave rectifier from Part 2 using the same component values. Explain why the full-wave rectifier produces less ripple.  Calculate the ripple using Equation \ref{eq:ripple} (remembering that $f = 120$ Hz for full-wave rectification of 60 Hz AC) and compare with your measured values.  Discuss why full-wave rectification is preferred in practical power supply applications.\\
+In the lab report, present waveforms and measurements for the filtered full-wave rectifier. Compare the performance (DC output voltage, ripple voltage, ripple frequency) with the filtered half-wave rectifier from Part 2 using the same component values. Explain why the full-wave rectifier produces less ripple.  Calculate the ripple using Equation \ref{eq:ripple} (remembering that $f = 120$ Hz for full-wave rectification of 60 Hz AC) and compare with the measured values.  Discuss why full-wave rectification is preferred in practical power supply applications.\\
 
 
 \section{Pre-Lab Questions}
 \label{sec:prelab}
 
-Complete these questions before coming to the lab session.  Include your answers and all supporting work in your lab report.\\
+Complete these questions before coming to the lab session.  Include the answers and all supporting work in the lab report.\\
 
 \begin{enumerate}
     \item An AC voltage source provides 12 V RMS at 60 Hz. Calculate (a) the peak voltage, and (b) the peak-to-peak voltage.  Show all work.

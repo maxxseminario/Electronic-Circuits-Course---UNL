@@ -1,2 +1,5 @@
 exams/
 quiz/
+*.aux
+*.synctex.gz
+*.log
