@@ -1,0 +1,560 @@
+\DocumentMetadata{
+  pdfversion=2.0,
+  pdfstandard=ua-2,
+  testphase={phase-III,math,table,title}
+}
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{placeins}
+\usepackage{color} 
+\usepackage{fancyvrb} 
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usepackage{titling}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{../figs/}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=newest} 
+
+\setlength{\parindent}{0pt}
+
+\singlespacing
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+
+
+% Header and footer
+\pagestyle{fancy}
+
+
+% Ensure the plain style (used by \maketitle and some environments) matches
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \lhead{ECEN 222:  Electronic Circuits}
+  \chead{Lab 4}
+  \rhead{Page \thepage\ of \pageref{LastPage}}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+  \renewcommand\headrulewidth{0.4pt}
+  \renewcommand\footrulewidth{0.4pt}
+}
+
+% Fancy layout (same as above) for normal pages
+\fancyhf{}
+\lhead{ECEN 222: Electronic Circuits}
+\chead{Lab 2}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\lfoot{}
+\cfoot{}
+\rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+% Avoid head height warnings
+\setlength{\headheight}{14pt}
+
+
+
+\title{\textbf{\Huge I–V and Voltage Transfer Characteristics of BJT}\\
+\large Lab 2 — ECEN 222: Electronic Circuits}
+\author{
+    % Maxx Seminario\\
+\large University of Nebraska–Lincoln \\
+\large Department of Electrical and Computer Engineering
+}
+\date{} % specific date
+
+
+\begin{document}
+\thispagestyle{fancy}
+\maketitle
+\rule{\textwidth}{0.5pt}
+
+
+\section{Objectives}
+
+The primary objective of this lab is to investigate the fundamental current-voltage (I-V) characteristics and voltage transfer characteristics of bipolar junction transistors (BJTs). Upon completion of this lab, students will understand the relationship between base current, collector current, and collector-emitter voltage in BJT operation, measure and characterize the DC current gain ($\beta$), map the complete output characteristics showing all regions of BJT operation (cutoff, active, and saturation), characterize the input characteristics of the base-emitter junction, and analyze the voltage transfer characteristic of a simple common-emitter configuration. Through hands-on measurements and analysis, students will develop a thorough understanding of the fundamental I-V relationships that govern BJT behavior, which will serve as the foundation for subsequent labs on biasing, small-signal amplifiers, and frequency response. 
+
+\section{Pre-Lab Preparation}
+
+Before arriving at the lab session, students are required to thoroughly prepare by reading the relevant material from the course textbook.   Specifically, read Chapter 5 (Bipolar Junction Transistors) in Sedra \& Smith, paying special attention to sections covering BJT device structure and physical operation, terminal characteristics in active mode, operation in saturation and cutoff modes, and the current-voltage characteristics.  Focus on understanding the Ebers-Moll equations, the exponential relationship between base-emitter voltage and collector current, and the concept of current gain. Additionally, review Kirchhoff's voltage and current laws, as these will be essential for analyzing the circuits used in this lab.  Students must also complete the pre-lab questions provided in Section \ref{sec:prelab} and come prepared with a plan for organizing and recording measurement data during the lab session.  Proper preparation will ensure efficient use of lab time and deeper understanding of the experimental results.
+
+\section{Background Theory}
+
+\subsection{Bipolar Junction Transistor (BJT)}
+
+A bipolar junction transistor is a three-terminal semiconductor device consisting of two PN junctions formed by sandwiching either p-type material between two n-type regions (NPN transistor) or n-type material between two p-type regions (PNP transistor). The three terminals are called the emitter (E), base (B), and collector (C). BJTs are current-controlled devices where a small base current controls a much larger collector current, enabling signal amplification and switching applications.  In this lab, we will focus on NPN transistors, though the principles apply equally to PNP transistors with reversed polarities.
+
+The fundamental current relationships in an NPN BJT are governed by Kirchhoff's current law at the transistor node:
+
+\begin{equation}
+    i_E = i_C + i_B
+    \label{eq: kcl}
+\end{equation}
+
+where $i_E$ is the emitter current, $i_C$ is the collector current, and $i_B$ is the base current.  All currents are positive when flowing into the device (following the standard convention for NPN transistors where emitter current flows out).
+
+\subsubsection{Active Mode Operation}
+
+In the active mode, the base-emitter junction is forward-biased and the base-collector junction is reverse-biased.  This is the primary mode for amplification.  In active mode, the collector current is related to the base-emitter voltage by an exponential relationship derived from semiconductor physics:
+
+\begin{equation}
+    i_C = I_S e^{v_{BE} / V_T}
+    \label{eq:ic_exponential}
+\end{equation}
+
+where $I_S$ is the saturation current (typically $10^{-15}$ to $10^{-13}$ A for small-signal transistors), $v_{BE}$ is the base-emitter voltage, and $V_T$ is the thermal voltage given by:
+
+\begin{equation}
+    V_T = \frac{kT}{q}
+\end{equation}
+
+where $k = 1.38 \times 10^{-23}$ J/K is Boltzmann's constant, $T$ is the absolute temperature in Kelvin, and $q = 1.60 \times 10^{-19}$ C is the elementary charge. At room temperature (approximately 300 K or 27°C), the thermal voltage is approximately 25.9 mV, commonly approximated as 25 mV.
+
+For silicon BJTs in active mode, the base-emitter voltage is typically around 0.7 V when conducting significant current, similar to a forward-biased PN junction diode. In fact, the base-emitter junction behaves very much like a diode, and the input characteristic ($i_B$ vs. $v_{BE}$) closely resembles a diode I-V curve.
+
+The relationship between collector current and base current in active mode is characterized by the DC current gain: 
+
+\begin{equation}
+    \beta = \frac{i_C}{i_B}
+    \label{eq:beta}
+\end{equation}
+
+or equivalently: 
+\begin{equation}
+    i_C = \beta i_B
+    \label{eq:ic_beta}
+\end{equation}
+
+The parameter $\beta$ (also designated $h_{FE}$ in some references) is typically in the range of 50 to 300 for small-signal transistors, though it varies with temperature, collector current, and between individual devices even of the same type.  From Equations \ref{eq: kcl} and \ref{eq:ic_beta}, the emitter current can be expressed as: 
+
+\begin{equation}
+    i_E = i_C + i_B = \beta i_B + i_B = (\beta + 1) i_B
+    \label{eq: ie}
+\end{equation}
+
+An alternative characterization uses the common-base current gain:
+
+\begin{equation}
+    \alpha = \frac{i_C}{i_E} = \frac{\beta}{\beta + 1}
+    \label{eq:alpha}
+\end{equation}
+
+The parameter $\alpha$ is typically very close to unity (0.98 to 0.995), reflecting the fact that most of the emitter current reaches the collector. 
+
+\subsubsection{Early Effect}
+
+In the active region, the collector current is not perfectly independent of the collector-emitter voltage, as the simple model of Equation \ref{eq:ic_beta} suggests. Due to a phenomenon called the Early effect (or base-width modulation), increasing $v_{CE}$ causes a slight narrowing of the base region, which increases the collector current.  This effect can be modeled by: 
+
+\begin{equation}
+    i_C = I_S e^{v_{BE} / V_T} \left(1 + \frac{v_{CE}}{V_A}\right)
+    \label{eq:early}
+\end{equation}
+
+where $V_A$ is the Early voltage, typically in the range of 50 to 100 V for small-signal transistors. The Early effect manifests as a slight upward slope in the output characteristics ($i_C$ vs. $v_{CE}$ curves) in the active region.  If these curves are extended backward, they intersect the voltage axis at approximately $v_{CE} = -V_A$.
+
+\subsubsection{Regions of Operation}
+
+BJTs operate in four distinct regions depending on the bias conditions of the two junctions:
+
+\textbf{1. Cutoff Region:} Both the base-emitter and base-collector junctions are reverse-biased.  This occurs when $v_{BE} < V_{\gamma}$ (where $V_{\gamma} \approx 0.5$ V is the cut-in voltage). In cutoff, both base and collector currents are negligible ($i_B \approx 0$ and $i_C \approx 0$), and the transistor is effectively off.  For practical circuit analysis, we often model cutoff as $i_C = 0$ when $v_{BE} < 0.5$ V.
+
+\textbf{2. Active Region:} The base-emitter junction is forward-biased ($v_{BE} \approx 0.7$ V for silicon) and the base-collector junction is reverse-biased.  The condition for active mode is: 
+\begin{equation}
+    v_{BE} > V_{\gamma} \quad \text{and} \quad v_{CE} > v_{CE,sat}
+\end{equation}
+
+where $v_{CE,sat}$ is typically around 0.2 to 0.3 V. In active mode, the relationships given by Equations \ref{eq: ic_exponential} and \ref{eq: ic_beta} hold, and the transistor can amplify signals.  This is the primary operating region for analog amplifiers.
+
+\textbf{3. Saturation Region:} Both junctions are forward-biased.  This occurs when sufficient base current is supplied such that the collector current can no longer increase proportionally.  In saturation: 
+\begin{equation}
+    v_{CE} \approx v_{CE,sat} \approx 0.2 \text{ V (for silicon)}
+\end{equation}
+
+The relationship $i_C = \beta i_B$ no longer holds in saturation—instead, $i_C < \beta i_B$. The collector current is limited by the external circuit (specifically, the collector resistor and supply voltage) rather than by the base current.  Saturation is used in digital switching applications to represent the "on" state, where the transistor presents minimal resistance between collector and emitter.
+
+\textbf{4. Breakdown Region:} If the collector-emitter voltage exceeds the breakdown voltage $BV_{CEO}$ (typically 30 to 60 V for small-signal transistors), avalanche breakdown occurs, causing a rapid, potentially destructive increase in collector current. Normal operation must avoid this region.
+
+\subsection{Voltage Transfer Characteristic}
+
+The voltage transfer characteristic (VTC) describes the relationship between an input voltage and an output voltage in a circuit.  For a simple common-emitter configuration where the base voltage is the input and the collector voltage is the output, the VTC demonstrates all three operating regions. 
+
+Consider a basic common-emitter circuit with a collector resistor $R_C$ connected between the collector and supply voltage $V_{CC}$. The collector voltage is given by:
+
+\begin{equation}
+    v_C = V_{CC} - i_C R_C
+    \label{eq: vc}
+\end{equation}
+
+As the input voltage (base voltage $v_B$) increases:
+
+\begin{itemize}
+    \item \textbf{Cutoff region} ($v_B < 0.5$ V): The transistor is off, $i_C \approx 0$, so $v_C \approx V_{CC}$. 
+    
+    \item \textbf{Active region} ($0.6$ V $\lesssim v_B \lesssim$ some threshold): The transistor conducts, and $i_C$ increases exponentially with $v_B$ (since $v_{BE} \approx v_B$ for a grounded emitter). The collector voltage decreases as described by Equation \ref{eq: vc}. In this region, the VTC has a steep negative slope, representing voltage gain.
+    
+    \item \textbf{Saturation region} ($v_B$ exceeds threshold): The transistor saturates, $v_{CE} \approx 0.2$ V, and $v_C \approx v_{CE,sat}$ regardless of further increases in $v_B$. 
+\end{itemize}
+
+The VTC is nonlinear and describes how the transistor transitions between states. The steep slope in the active region is the basis for voltage amplification, which will be explored in detail in subsequent labs.
+
+
+\section{Experimental Procedures}
+
+\subsection{Part 1: DC Current Gain Measurement}
+
+In this portion of the experiment, you will measure the DC current gain ($\beta$) of your NPN transistor and verify the fundamental relationship $i_C = \beta i_B$. Begin by identifying the emitter, base, and collector terminals of your transistor using the datasheet or package diagram. Construct the circuit shown in Figure \ref{fig:beta_circuit} on your breadboard, taking care to orient the transistor correctly. 
+
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % Place the transistor and give it a name
+  \node[npn] (Q1) at (3,2) {};
+
+  % Define connection nodes 
+  \coordinate (GND) at (3,0);
+  \coordinate (VBBT) at (-1,1.5); % VBB top
+  \coordinate (VCCT) at (6,4);    % VCC top
+
+  % Ground bus and emitter connection
+  \draw (-1,0) -- (6,0);
+  \draw (Q1.emitter) -- (GND) node[ground]{};
+
+  % Sources
+  \draw (VBBT) to[V, l=$V_{BB}$] (-1,0);
+  \draw (VCCT) to[V, l_=$V_{CC}$] (6,0);
+
+  % RB:
+  \draw (VBBT) -- (-1,2)                      % up to base height
+               to[R, l=$R_B$] (Q1.base |- -1,2) % horizontal resistor
+               -- (Q1.base);                  % short into base
+
+  % RC: 
+  \draw (VCCT) -- (Q1.collector |- VCCT)      % keep x=6, go down to collector height
+               to[R, l=$R_C$] (Q1.collector)  % vertical resistor into collector
+               ;
+
+
+% Move label along the element and nudge it
+\draw (Q1.collector)
+  to[open, v^=$V_{CE}$, pos=0.6, xshift=6mm, yshift=0mm]
+  (Q1.emitter);
+
+\draw (Q1.base)
+  to[open, v_=$V_{BE}$, pos=0.55, xshift=-6mm, yshift=0mm]
+  (Q1.emitter);
+
+
+
+\end{circuitikz}
+\caption{Circuit for measuring DC current gain ($\beta$) of an NPN BJT.}
+\label{fig:beta_circuit}
+\end{figure}
+
+
+
+
+
+Set the component values as follows: $R_B = 100$ k$\Omega$, $R_C = 1$ k$\Omega$, and $V_{CC} = 10$ V. The large base resistor limits the base current to a safe value, while the collector resistor limits the collector current and allows easy current measurement via voltage drop. 
+
+Connect DMMs to measure:  (1) the voltage across $R_B$ to determine $I_B$, (2) the voltage across $R_C$ to determine $I_C$, and (3) if available, $V_{BE}$ directly across the base-emitter junction. If you only have two meters, you can measure $V_{BE}$ separately or calculate it from $V_{BB}$ and the voltage drop across $R_B$. 
+
+Starting with $V_{BB} = 0$ V, gradually increase $V_{BB}$ from 0 to 5 V in increments of 0.5 V.  For each value of $V_{BB}$, record: 
+\begin{itemize}
+    \item $V_{BB}$ (supply voltage)
+    \item $V_{BE}$ (base-emitter voltage)
+    \item Voltage across $R_B$
+    \item Voltage across $R_C$
+\end{itemize}
+
+Calculate the currents using Ohm's law: 
+\begin{equation}
+    I_B = \frac{V_{R_B}}{R_B} = \frac{V_{BB} - V_{BE}}{R_B}
+\end{equation}
+
+\begin{equation}
+    I_C = \frac{V_{R_C}}{R_C}
+\end{equation}
+
+Also calculate $V_{CE}$:
+\begin{equation}
+    V_{CE} = V_{CC} - V_{R_C} = V_{CC} - I_C R_C
+\end{equation}
+
+For each measurement, verify that the transistor is in the active region by checking that $V_{CE} > V_{BE}$ (or more conservatively, $V_{CE} > 0.3$ V). If $V_{CE}$ drops below 0.3 V, the transistor may be entering saturation.
+
+For each measurement point, calculate the current gain:
+\begin{equation}
+    \beta = \frac{I_C}{I_B}
+\end{equation}
+
+In your lab report, create a comprehensive table with columns for $V_{BB}$, $V_{BE}$, $I_B$, $I_C$, $V_{CE}$, and $\beta$. Plot $I_C$ versus $I_B$ on a graph and determine the best-fit line through the origin. The slope of this line represents the average DC current gain $\beta$.  Discuss whether $\beta$ remains constant across different current levels.  Explain any variation you observe. Calculate the average value of $\beta$ and the standard deviation to quantify the variation. 
+
+\subsection{Part 2: Output Characteristics ($I_C$ vs. $V_{CE}$)}
+
+In this section, you will map the complete output characteristics of the BJT by measuring collector current as a function of collector-emitter voltage for several fixed values of base current. These characteristic curves are fundamental to understanding BJT behavior and are analogous to the drain characteristics of MOSFETs.  Use the same circuit as Part 1 (Figure \ref{fig:beta_circuit}). \\
+
+You will generate a family of curves, each corresponding to a different fixed base current.  Select four different base currents: approximately $I_B = 0$ $\mu$A (transistor off), 10 $\mu$A, 20 $\mu$A, and 30 $\mu$A. To achieve these specific base currents, calculate the required $V_{BB}$ values using: \\
+
+\begin{equation}
+    V_{BB} = V_{BE} + I_B R_B
+\end{equation}
+
+Assume $V_{BE} \approx 0.7$ V for initial calculations, though you should measure the actual value.  \\
+
+For each fixed base current: 
+\begin{enumerate}
+    \item Set $V_{BB}$ to achieve the desired $I_B$ (verify by measuring the voltage across $R_B$).
+    
+    \item Record the actual $I_B$ value.
+    
+    \item Vary $V_{CC}$ from 0 V to 10 V in increments of 0.5 V. Take smaller increments (0.1 to 0.2 V) in the region from 0 to 1 V where the transition from saturation to active mode occurs.
+    
+    \item For each $V_{CC}$ setting, measure the voltage across $R_C$ and calculate $I_C$ and $V_{CE}$.
+    
+    \item Record all values systematically in a table.
+\end{enumerate}
+
+Pay special attention to the following features: 
+
+\begin{itemize}
+    \item \textbf{Saturation region: } At low $V_{CE}$ (typically below 0.3 V), the collector current levels off and becomes relatively independent of $V_{CE}$.  Note the value of $V_{CE,sat}$. 
+    
+    \item \textbf{Active region:} For $V_{CE} > V_{CE,sat}$, the collector current should be approximately constant (for a given $I_B$), with only a slight increase due to the Early effect.
+    
+    \item \textbf{Early effect:} The slight positive slope of the curves in the active region.  This slope is more pronounced at higher current levels.
+\end{itemize}
+
+In your lab report, plot all four output characteristic curves on a single graph with $V_{CE}$ on the x-axis (0 to 10 V) and $I_C$ on the y-axis.  Clearly label each curve with its corresponding $I_B$ value. On your plot, identify and label the saturation region, active region, and the boundary between them. \\
+
+From the curves in the active region, estimate the Early voltage $V_A$. To do this, select one of the curves (for example, the $I_B = 20$ $\mu$A curve) and choose two points well into the active region (for example, at $V_{CE} = 3$ V and $V_{CE} = 8$ V). Calculate the slope: \\
+
+\begin{equation}
+    \frac{\Delta I_C}{\Delta V_{CE}} = \frac{I_C}{V_A + V_{CE}}
+\end{equation}
+
+Rearranging: 
+\begin{equation}
+    V_A \approx I_C \frac{\Delta V_{CE}}{\Delta I_C} - V_{CE}
+\end{equation}
+
+Alternatively, extend the linear portion of the curve backward until it intersects the voltage axis; the intersection point is approximately at $-V_A$. Compare your measured $V_A$ with typical values from the datasheet. \\
+
+\subsection{Part 3: Input Characteristics ($I_B$ vs. $V_{BE}$)}
+
+You will now characterize the input characteristic of the BJT, which describes the relationship between base current and base-emitter voltage. This relationship is similar to a diode I-V characteristic since the base-emitter junction is essentially a PN junction diode. \\
+
+Using the circuit in Figure \ref{fig:beta_circuit}, keep $V_{CC}$ fixed at 10 V to ensure the transistor remains in the active region throughout the measurements. You may wish to reduce $R_B$ to 10 k$\Omega$ for this part to allow higher base currents and easier measurements, though 100 k$\Omega$ is also acceptable. \\ 
+
+Vary $V_{BB}$ from 0 V to 5 V.  Take fine increments in the critical region where $V_{BB}$ is between 0.5 V and 1.0 V, as this is where $V_{BE}$ transitions from below to above the cut-in voltage and base current begins to flow significantly.  Use larger increments outside this region.  \\
+
+For each $V_{BB}$ setting:
+\begin{enumerate}
+    \item Measure $V_{BE}$ directly across the base-emitter junction. 
+    
+    \item Measure the voltage across $R_B$ and calculate $I_B = V_{R_B} / R_B$.
+    
+    \item Verify that $V_{CE}$ remains greater than about 0.3 V to ensure active-mode operation.
+\end{enumerate}
+
+
+Create a table with columns for $V_{BB}$, $V_{BE}$, and $I_B$. \\
+
+In your lab report, create two plots: \\
+
+\textbf{Plot 1: Linear scale. } Plot $I_B$ (y-axis) versus $V_{BE}$ (x-axis) on a linear scale. This should show the characteristic exponential shape:  very little current below about 0.5 V, then rapidly increasing current above 0.6 to 0.7 V. \\
+
+\textbf{Plot 2: Semi-logarithmic scale.} Plot $\log_{10}(I_B)$ or $\ln(I_B)$ (y-axis) versus $V_{BE}$ (x-axis). On this scale, the exponential relationship should appear as a straight line. Fit a straight line to the linear portion of this curve and determine its slope. \\
+
+From the exponential relationship $I_C = I_S e^{v_{BE}/V_T}$ and the fact that $I_B = I_C / \beta$, we have:
+\begin{equation}
+    I_B = \frac{I_S}{\beta} e^{v_{BE}/V_T}
+\end{equation}
+
+Taking the natural logarithm:
+\begin{equation}
+    \ln(I_B) = \ln\left(\frac{I_S}{\beta}\right) + \frac{v_{BE}}{V_T}
+\end{equation}
+
+
+The slope of the $\ln(I_B)$ vs. $v_{BE}$ plot should theoretically be $1/V_T \approx 40$ V$^{-1}$ at room temperature.  Calculate the slope from your data and compare with this theoretical value.  Discuss any discrepancies. \\
+
+Explain how this input characteristic is analogous to the diode characteristic you studied in Lab 1. Discuss the physical origin of the exponential relationship. \\
+
+\subsection{Part 4: Voltage Transfer Characteristic}
+
+In this section, you will measure the voltage transfer characteristic (VTC) of a basic common-emitter configuration. The VTC illustrates how the circuit transitions between cutoff, active, and saturation regions as the input voltage is varied. This is a fundamental characteristic that underlies the operation of both amplifiers and digital logic circuits. \\
+
+Construct the circuit shown in Figure \ref{fig:ce_vtc}. This is a simplified version of the previous circuit where the base is driven directly by an input voltage source rather than through a large resistor. \\
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american]
+  % Place the transistor and give it a name
+  \node[npn] (Q1) at (3,2) {};
+
+  % Define connection nodes 
+  \coordinate (GND) at (3,0);
+  \coordinate (VBBT) at (-1,1.5); % VBB top
+  \coordinate (VCCT) at (6,4);    % VCC top
+
+  % Ground bus and emitter connection
+  \draw (-1,0) -- (6,0);
+  \draw (Q1.emitter) -- (GND) node[ground]{};
+
+  % Sources
+  \draw (VBBT) to[V, l=$V_{in}$] (-1,0);
+  \draw (VCCT) to[V, l_=$V_{CC}$] (6,0);
+
+    % Vin directly to base 
+    \draw (VBBT) -- (VBBT |- Q1.base) -- (Q1.base);
+    % RC: make it vertical and actually connect it to VCC (no diagonals)
+    \draw (VCCT) -- (Q1.collector |- VCCT)      % keep x=6, go down to collector height
+                to[R, l=$R_C$] (Q1.collector)  % vertical resistor into collector
+                ;
+
+% Move label along the element and nudge it
+\draw (Q1.collector)
+  to[open, v^=$V_{out}$, pos=0.6, xshift=6mm, yshift=0mm]
+  (Q1.emitter);
+
+\draw (Q1.base)
+  to[open, v_=$V_{BE}$, pos=0.55, xshift=-6mm, yshift=0mm]
+  (Q1.emitter);
+
+
+
+\end{circuitikz}
+\caption{Common-emitter configuration for voltage transfer characteristic measurement. Input is applied directly to base; output is measured at collector.}
+\label{fig:ce_vtc}
+\end{figure}
+
+
+
+
+Use $R_C = 1$ k$\Omega$ and $V_{CC} = 10$ V. Connect $V_{in}$ directly to the base of the transistor.  Measure $V_{out}$ at the collector with respect to ground.  Note that $V_{out} = V_{CE}$ in this configuration since the emitter is grounded. \\
+
+Vary $V_{in}$ from 0 V to 2. 0 V in small increments. Use fine increments in the range from 0.5 V to 0.9 V where the transition occurs, and larger increments elsewhere.  For each input voltage, record both:
+
+\begin{itemize}
+    \item $V_{in}$ ($V_{BE}$ in this case)
+    \item $V_{out}$ ($V_{CE}$ in this case)
+\end{itemize}
+
+You may also calculate and record $I_C = (V_{CC} - V_{out})/R_C$ for later analysis.\\
+
+Observe how $V_{out}$ changes as $V_{in}$ increases.  You should see three distinct regions:
+
+\begin{enumerate}
+    \item \textbf{Cutoff region ($V_{in} < 0.5$ V):} The transistor is off, $I_C \approx 0$, and $V_{out} \approx V_{CC} = 10$ V.
+    
+    \item \textbf{Active region (approximately $0.6$ V $< V_{in} < 0.75$ V):} The transistor conducts, and $V_{out}$ decreases sharply (nearly linearly on this scale) as $V_{in}$ increases.  This is the high-gain region.
+    
+    \item \textbf{Saturation region ($V_{in} > $ threshold):} The transistor saturates, and $V_{out}$ levels off at $V_{CE,sat} \approx 0.2$ V, remaining nearly constant despite further increases in $V_{in}$. 
+\end{enumerate}
+
+In your lab report, plot the voltage transfer characteristic with $V_{in}$ on the x-axis and $V_{out}$ on the y-axis.  Clearly identify and label the three regions of operation on your plot.\\
+
+Calculate the slope (voltage gain magnitude) in the active region: 
+\begin{equation}
+    \left|A_v\right| = \left|\frac{\Delta V_{out}}{\Delta V_{in}}\right|
+\end{equation}
+
+Select two points in the middle of the active region (where the curve is approximately linear) and calculate this slope. The gain should be 'large', indicating high sensitivity.  Note that the actual gain is negative (output decreases as input increases), which is characteristic of the common-emitter inverting amplifier. \\
+
+Identify the transition points:  (1) the input voltage at which the transistor begins to conduct appreciably (cutoff-to-active transition), and (2) the input voltage at which saturation begins (active-to-saturation transition). \\
+
+Discuss the significance of the VTC for both analog and digital applications. For analog amplifiers, a linear active region is desired; for digital switches, rapid transition between cutoff ($V_{out}$ high) and saturation ($V_{out}$ low) is desired. \\ 
+
+\subsection{Part 5: Verification of Exponential Relationship}
+
+In this final section, you will verify the exponential relationship between collector current and base-emitter voltage given by Equation \ref{eq:ic_exponential}. Use the data from Part 3 (input characteristics). \\
+
+From your measurements in Part 3, you have $V_{BE}$ and $I_B$ values. For each measurement point, calculate the collector current using $I_C = \beta I_B$, where $\beta$ is the average value you determined in Part 1. \\
+
+Create a semi-logarithmic plot with $V_{BE}$ on the x-axis (linear scale) and $\ln(I_C)$ or $\log_{10}(I_C)$ on the y-axis (logarithmic scale). This plot should yield an approximately straight line, confirming the exponential relationship.  \\
+
+Perform a linear fit to the straight-line portion of the curve. The slope of $\ln(I_C)$ versus $V_{BE}$ should be $1/V_T$.  Calculate the slope from your fitted line and determine the implied thermal voltage: \\
+
+\begin{equation}
+    V_T = \frac{1}{\Delta \ln(I_C) / \Delta V_{BE}}
+\end{equation}
+
+Compare this experimental value with the theoretical value of 25 mV at room temperature. Calculate the percentage error. \\
+
+From the y-intercept of your fitted line, you can also estimate the saturation current $I_S$: 
+\begin{equation}
+    I_S = e^{I_C | {V_{BE}=0} \cdot V_T}
+\end{equation}
+
+(if using natural logarithm). Report this value and compare with typical values found in the datasheet. \\
+
+In your lab report, discuss sources of error that might affect these measurements. Consider factors such as meter accuracy, temperature variations, and deviations from ideal transistor behavior. Explain the physical origin of the exponential relationship in terms of the PN junction physics.
+
+\section{Pre-Lab Questions}
+\label{sec:prelab}
+
+Complete these questions before coming to the lab session.  Include your answers and all supporting work in your lab report.
+
+\begin{enumerate}
+    
+    \item For the circuit in Figure \ref{fig:beta_circuit}, assume $V_{BB} = 3$ V, $V_{CC} = 10$ V, $R_B = 100$ k$\Omega$, $R_C = 1$ k$\Omega$, $\beta = 120$, and $V_{BE} = 0.7$ V when the transistor is conducting. Calculate:
+    \begin{enumerate}
+        \item The base current $I_B$
+        \item The collector current $I_C$
+        \item The collector-emitter voltage $V_{CE}$
+        \item Verify whether the transistor is in the active region
+        \item The power dissipated in the transistor
+    \end{enumerate}
+    Show all calculations.
+    
+    \item Explain in your own words the difference between the cutoff, active, and saturation regions of BJT operation.  For each region, state: 
+    \begin{enumerate}
+        \item The bias condition of the base-emitter junction (forward or reverse)
+        \item The bias condition of the base-collector junction (forward or reverse)
+        \item The approximate value of $V_{CE}$
+        \item Whether the relation $I_C = \beta I_B$ holds
+    \end{enumerate}
+    
+    \item What is the Early effect, and how does it manifest in the output characteristics of a BJT? Write the equation that models the Early effect. 
+    
+    \item Research and briefly explain:  Why does $\beta$ vary with collector current? Sketch a typical curve of $\beta$ versus $I_C$ and explain its shape. At what current level is $\beta$ typically maximum for a small-signal transistor?
+\end{enumerate}
+
+
+\end{document}
