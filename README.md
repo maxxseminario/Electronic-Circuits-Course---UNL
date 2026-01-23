@@ -57,7 +57,7 @@ By the end of this course, one will be able to:
 └── docs/              # Compiled PDF documents
 ```
 
-- **lectures/**  
+### lectures/ ###  
   Contains all lecture notes in sequential order:
   0. Introduction
   1. Electronic Signals
@@ -76,7 +76,7 @@ By the end of this course, one will be able to:
   14. MOSFET Physcial Structure
   15. MOSFET DC Analysis and Biasing
 
-- **labs/**   
+###  labs/ ###     
   1. Diodes
   2. Diode Rectifiers
   3. Bridge Rectifiers
