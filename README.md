@@ -59,6 +59,7 @@ By the end of this course, one will be able to:
 
 ### lectures/ ###  
   Contains all lecture notes in sequential order:
+
   0. Introduction
   1. Electronic Signals
   2. Passive Circuit Devices
@@ -77,6 +78,7 @@ By the end of this course, one will be able to:
   15. MOSFET DC Analysis and Biasing
 
 ###  labs/ ###     
+
   1. Diodes
   2. Diode Rectifiers
   3. Bridge Rectifiers
