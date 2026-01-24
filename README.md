@@ -76,6 +76,7 @@ By the end of this course, one will be able to:
   13. PN Junction Under External Bias
   14. MOSFET Physcial Structure
   15. MOSFET DC Analysis and Biasing
+  16. MOSFET AC / Small Signal Analysis 
 
 ###  labs/ ###     
 
