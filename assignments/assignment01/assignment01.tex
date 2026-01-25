@@ -1,0 +1,493 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[american]{circuitikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Assignment 01: Time Domain Response of RLC Circuits}}\\
+    \vspace{0.3cm}
+    {\large Maxx Seminario}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Instructions}
+
+This assignment focuses on analyzing the time domain response of passive RLC circuits subjected to step inputs. You will sketch output voltage waveforms based on circuit topology and initial/final conditions.
+
+\vspace{0.3cm}
+
+\textbf{Important Notes:}
+\begin{itemize}
+    \item You do \textbf{not} need to solve differential equations (you may if you wish).
+    \item The key is to determine:
+    \begin{enumerate}
+        \item The \textbf{initial condition} (at $t = 0$)
+        \item The \textbf{final steady-state} (as $t \to \infty$)
+        \item The \textbf{time constant} $\tau$ (for first-order) or damping characteristics (for second-order)
+    \end{enumerate}
+    \item For first-order circuits, sketch the waveform knowing it transitions exponentially or logarithmically between initial and final values.
+    \item Label key features: initial value, final value, approximate time constant on your sketches.
+\end{itemize}
+
+\subsection*{Useful Differential Equation Solutions}
+
+For those who wish to derive exact expressions, here are the standard solutions:
+
+\vspace{0.3cm}
+
+\textbf{First-Order Circuits:}
+
+The general form is:
+\[
+x(t) = x(\infty) + [x(0) - x(\infty)]e^{-t/\tau}
+\]
+
+where $x(t)$ is the voltage or current of interest, and $\tau$ is the time constant.
+
+\begin{itemize}
+    \item \textbf{RC circuits}: $\tau = RC$
+    \item \textbf{RL circuits}: $\tau = L/R$
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Second-Order RLC Circuits:}
+
+The characteristic equation gives roots based on damping:
+\[
+s^2 + 2\alpha s + \omega_0^2 = 0
+\]
+
+where $\alpha = \frac{R}{2L}$ (for series RLC) and $\omega_0 = \frac{1}{\sqrt{LC}}$.
+
+\begin{itemize}
+    \item \textbf{Overdamped} ($\alpha > \omega_0$): 
+    \[
+    x(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
+    \]
+    where $s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}$ (both real, negative)
+    
+    \item \textbf{Critically Damped} ($\alpha = \omega_0$):
+    \[
+    x(t) = (A_1 + A_2 t)e^{-\alpha t}
+    \]
+    
+    \item \textbf{Underdamped} ($\alpha < \omega_0$):
+    \[
+    x(t) = e^{-\alpha t}(A_1 \cos(\omega_d t) + A_2 \sin(\omega_d t))
+    \]
+    where $\omega_d = \sqrt{\omega_0^2 - \alpha^2}$ is the damped natural frequency
+\end{itemize}
+
+\newpage
+
+\section*{Problems}
+
+\subsection*{Part A: First-Order Circuits}
+
+For each circuit below, assume the circuit has been in steady state for $t < 0$, and the switch changes position at $t = 0$. Sketch $v_{\text{out}}(t)$ for $t > 0$. Clearly label:
+\begin{itemize}
+    \item Initial voltage $v_{\text{out}}(0^+)$
+    \item Final voltage $v_{\text{out}}(\infty)$
+    \item Time constant $\tau$ in terms of circuit elements
+    \item Shape of the waveform
+\end{itemize}
+
+\begin{enumerate}
+
+\item \textbf{Simple RC Step Response}
+
+\noindent The switch has been open for a long time. The capacitor is initially uncharged $v_{\text{out}}(0^-) = 0$ and $V_s = 1V$. At $t = 0$, the switch closes. Sketch $v_{\text{out}}(t)$.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,0) to[V, v^=$V_s$, invert] (0,3);
+    \draw (0,3) -- (0.5,3);
+    \draw (0.5,3) -- (1,3.3);
+    \draw (1,3) -- (2,3);
+    \draw (2,3) to[R, l=$R$] (4,3);
+    \draw (4,3) to[C, l_=$C$, v^=$v_{\text{out}}$] (4,0);
+    \draw (4,0) -- (2,0);
+    \node[ground] at (2,0) {};
+    \draw (2,0) -- (0,0);
+    \node at (0.75,3.6) {$t=0$};
+    \draw[->, thick, red] (1,3.4) -- (1,3.05);
+\end{circuitikz}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=5cm,
+        xlabel={Time},
+        ylabel={$v_{\text{out}}(t)$},
+        xmin=0, xmax=6,
+        ymin=0, ymax=1.2,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\item \textbf{RC Circuit with Initial Condition}
+
+\noindent The capacitor has been charged to $V_0$ and the switch has been open for a long time. At $t = 0$, the switch closes. Sketch $v_{\text{out}}(t)$.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,3) to[C, l^=$C$, v_=$v_{\text{out}}$] (0,0);
+    \draw (0,3) -- (0.5,3);
+    \draw (0.5,3) -- (1,3.3);
+    \draw (1,3) -- (2,3);
+    \draw (2,3) to[R, l=$R$] (4,3);
+    \draw (4,3) -- (4,0);
+    \draw (4,0) -- (2,0);
+    \node[ground] at (2,0) {};
+    \draw (2,0) -- (0,0);
+    \node at (0.75,3.6) {$t=0$};
+    \draw[->, thick, red] (1,3.4) -- (1,3.05);
+\end{circuitikz}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=5cm,
+        xlabel={Time},
+        ylabel={$v_{\text{out}}(t)$},
+        xmin=0, xmax=6,
+        ymin=0, ymax=1.2,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\item \textbf{RL Step Response}
+
+\noindent The switch has been open for a long time. At $t = 0$, the switch closes. Sketch $v_{\text{out}}(t)$ across the resistor.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,0) to[V, v^=$V_s$, invert] (0,3);
+    \draw (0,3) -- (0.5,3);
+    \draw (0.5,3) -- (1,3.3);
+    \draw (1,3) -- (2,3);
+    \draw (2,3) to[L, l=$L$] (4,3);
+    \draw (4,3) to[R, l_=$R$, v^=$v_{\text{out}}$] (4,0);
+    \draw (4,0) -- (2,0);
+    \node[ground] at (2,0) {};
+    \draw (2,0) -- (0,0);
+    \node at (0.75,3.6) {$t=0$};
+    \draw[->, thick, red] (1,3.4) -- (1,3.05);
+\end{circuitikz}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=5cm,
+        xlabel={Time},
+        ylabel={$v_{\text{out}}(t)$},
+        xmin=0, xmax=6,
+        ymin=0, ymax=1.2,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\item \textbf{RC Voltage Divider with Step Input}
+
+\noindent The switch has been open for a long time. At $t = 0$, the switch closes. The capacitor is initially uncharged. Sketch $v_{\text{out}}(t)$. 
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,0) to[V, v^=$V_s$, invert] (0,3);
+    \draw (0,3) -- (0.5,3);
+    \draw (0.5,3) -- (1,3.3);
+    \draw (1,3) -- (2,3);
+    \draw (2,3) to[R, l=$R_1$] (4,3);
+    \draw (4,3) to[C, l=$C$] (6,3);
+    \draw (6,3) to[R, l_=$R_2$, v^=$v_{\text{out}}$] (6,0);
+    \draw (6,0) -- (3,0);
+    \node[ground] at (3,0) {};
+    \draw (3,0) -- (0,0);
+    \node at (0.75,3.6) {$t=0$};
+    \draw[->, thick, red] (1,3.4) -- (1,3.05);
+\end{circuitikz}
+\end{center}
+
+\textit{Hint:} Consider the voltage division at $t = 0^+$ and $t = \infty$. The time constant is $\tau = (R_1 + R_2)C$.
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=5cm,
+        xlabel={Time},
+        ylabel={$v_{\text{out}}(t)$},
+        xmin=0, xmax=6,
+        ymin=0, ymax=1.2,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\newpage
+
+\item \textbf{RL Circuit with Parallel Resistor}
+
+\noindent The switch has been closed for a long time. At $t = 0$, the switch opens. Sketch $v_{\text{out}}(t)$ across the inductor.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,0) to[V, v^=$V_s$, invert] (0,3);
+    \draw (0,3) to[R, l=$R_1$] (2,3);
+    \draw (2,3) -- (2.5,3);
+    \draw (2.5,3) -- (3,3.3);
+    \draw (3,3) -- (4,3);
+    \draw (4,3) to[short] (6,3);
+    \draw (6,3) to[L, l_=$L$, v^=$v_{\text{out}}$] (6,1.5);
+    \draw (6,1.5) to[R, l_=$R_2$] (6,0);
+    \draw (6,0) -- (3,0);
+    \node[ground] at (3,0) {};
+    \draw (3,0) -- (0,0);
+    \node at (2.75,3.6) {$t=0$};
+    \draw[->, thick, red] (3,3.4) -- (3,3.05);
+\end{circuitikz}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=5cm,
+        xlabel={Time},
+        ylabel={$v_{\text{out}}(t)$},
+        xmin=0, xmax=6,
+        ymin=-0.2, ymax=1.2,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\end{enumerate}
+
+\newpage
+
+\subsection*{Part B: Second-Order RLC Circuits}
+
+\noindent For the following problems, you will analyze second-order RLC circuits.
+
+\begin{enumerate}
+\setcounter{enumi}{5}
+
+\item \textbf{Series RLC Response Classification}
+
+\noindent Consider the series RLC circuit below. The switch has been open for a long time, and closes at $t = 0$. 
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,0) to[V, v^=$V_s$, invert] (0,3);
+    \draw (0,3) -- (0.5,3);
+    \draw (0.5,3) -- (1,3.3);
+    \draw (1,3) -- (2,3);
+    \draw (2,3) to[R, l=$R$] (4,3);
+    \draw (4,3) to[L, l=$L$] (6,3);
+    \draw (6,3) to[C, l_=$C$, v^=$v_C$] (6,0);
+    \draw (6,0) -- (3,0);
+    \node[ground] at (3,0) {};
+    \draw (3,0) -- (0,0);
+    \node at (0.75,3.6) {$t=0$};
+    \draw[->, thick, red] (1,3.4) -- (1,3.05);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Sketch the three possible types of responses for $v_C(t)$:
+\begin{itemize}
+    \item Overdamped
+    \item Critically damped
+    \item Underdamped
+\end{itemize}
+
+Clearly label which is which, and indicate key characteristics (oscillation, overshoot, settling behavior).
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=6cm,
+        xlabel={Time},
+        ylabel={$v_C(t)$},
+        xmin=0, xmax=6,
+        ymin=-0.2, ymax=1.5,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+
+\newpage
+
+\textbf{(b)} For each case below, determine whether the response is overdamped, critically damped, or underdamped. Use the parameters:
+\[
+\alpha = \frac{R}{2L}, \quad \omega_0 = \frac{1}{\sqrt{LC}}
+\]
+
+Compare $\alpha$ and $\omega_0$ to determine the damping type.
+
+\begin{enumerate}[label=(\roman*)]
+    \item $R = 100\,\Omega$, $L = 10\,$mH, $C = 10\,\mu$F
+    \item $R = 20\,\Omega$, $L = 10\,$mH, $C = 10\,\mu$F
+    \item $R = 632\,\Omega$, $L = 10\,$mH, $C = 10\,\mu$F
+\end{enumerate}
+
+For each case, calculate $\alpha$, $\omega_0$, and state the response type.
+
+\newpage
+
+\item \textbf{Parallel RLC Circuit Analysis (Extra Credit)}
+
+\noindent Consider the parallel RLC circuit shown. The current source is a step function: $i_s(t) = I_0 \cdot u(t)$ where $u(t)$ is the unit step function.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1.2]
+    \draw (0,0) to[I, l=$i_s(t)$] (0,3);
+    \draw (0,3) -- (2,3);
+    \draw (2,3) to[R, l_=$R$] (2,0);
+    \draw (2,3) -- (4,3);
+    \draw (4,3) to[L, l_=$L$] (4,0);
+    \draw (4,3) -- (6,3);
+    \draw (6,3) to[C, l_=$C$, v^=$v_{\text{out}}$] (6,0);
+    \draw (6,0) -- (3,0);
+    \node[ground] at (3,0) {};
+    \draw (3,0) -- (0,0);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Without specifying values, sketch the general shape of $v_{\text{out}}(t)$ for an underdamped response. Indicate the damped oscillation frequency and the exponential envelope.
+
+\vspace{0.5cm}
+
+\textbf{Sketch your answer here:}
+
+\begin{center}
+\begin{tikzpicture}
+    \begin{axis}[
+        width=0.7\textwidth,
+        height=5cm,
+        xlabel={Time},
+        ylabel={$v_{\text{out}}(t)$},
+        xmin=0, xmax=6,
+        ymin=-0.5, ymax=1.5,
+        grid=major,
+        xtick=\empty,
+        ytick=\empty,
+        axis lines=middle,
+        thick
+    ]
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{(b)} Choose specific values for $R$, $L$, and $C$ that would result in a critically damped response. Show your work to verify that $\alpha = \omega_0$.
+
+For a parallel RLC: $\alpha = \frac{1}{2RC}$ and $\omega_0 = \frac{1}{\sqrt{LC}}$.
+
+\end{enumerate}
+
+\newpage
+
+\section*{Submission Guidelines}
+
+\begin{itemize}
+    \item Show all work and reasoning clearly.
+    \item Sketches should be neat and properly labeled.
+    \item For sketches, indicate time axis (you may use multiples of $\tau$ for first-order).
+    \item Clearly mark initial conditions, final values, and time constants.
+\end{itemize}
+
+
+
+\end{document}
