@@ -19,9 +19,10 @@
 \begin{document}
 
 \begin{center}
-    {\LARGE \textbf{Assignment 01: Time Domain Response of RLC Circuits}}\\
+    {\LARGE \textbf{Assignment 01}}\\
+    {\LARGE \textbf{Time Domain Analysis of RLC Circuits}}\\
     \vspace{0.3cm}
-    {\large Maxx Seminario}\\
+    {\large ECEN 222, Spring 2026}\\
     \vspace{0.2cm}
     {\large University of Nebraska-Lincoln}\\
     \vspace{0.5cm}
@@ -46,7 +47,7 @@ This assignment focuses on analyzing the time domain response of passive RLC cir
     \item Label key features: initial value, final value, approximate time constant on your sketches.
 \end{itemize}
 
-\subsection*{Useful Differential Equation Solutions}
+\subsection*{Differential Equation General Solutions}
 
 For those who wish to derive exact expressions, here are the standard solutions:
 
@@ -82,7 +83,7 @@ where $\alpha = \frac{R}{2L}$ (for series RLC) and $\omega_0 = \frac{1}{\sqrt{LC
     \[
     x(t) = A_1 e^{s_1 t} + A_2 e^{s_2 t}
     \]
-    where $s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}$ (both real, negative)
+    where $s_{1,2} = -\alpha \pm \sqrt{\alpha^2 - \omega_0^2}$ (both real)
     
     \item \textbf{Critically Damped} ($\alpha = \omega_0$):
     \[
@@ -114,7 +115,7 @@ For each circuit below, assume the circuit has been in steady state for $t < 0$,
 
 \item \textbf{Simple RC Step Response}
 
-\noindent The switch has been open for a long time. The capacitor is initially uncharged $v_{\text{out}}(0^-) = 0$ and $V_s = 1V$. At $t = 0$, the switch closes. Sketch $v_{\text{out}}(t)$.
+\noindent The switch has been open for a long time. The capacitor is initially uncharged $v_{\text{out}}(0^-) = 0$. At $t = 0$, the switch closes. Sketch $v_{\text{out}}(t)$.
 
 \begin{center}
 \begin{circuitikz}[american, scale=1.2]
