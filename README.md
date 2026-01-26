@@ -77,6 +77,7 @@ By the end of this course, one will be able to:
   14. MOSFET Physcial Structure
   15. MOSFET DC Analysis and Biasing
   16. MOSFET AC / Small Signal Analysis 
+  17. MOSFET High Frequency Modes
 
 ###  labs/ ###     
 
