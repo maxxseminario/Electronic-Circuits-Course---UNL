@@ -324,90 +324,90 @@ Small input signal produces larger (inverted) output signal
 \end{columns}
 \end{frame}
 
-% Slide 6: Small-Signal Analysis of CS Amplifier
-\begin{frame}{Small-Signal Analysis of CS Amplifier}
-\begin{columns}[T]
-\begin{column}{0.5\textwidth}
-\textbf{Small-Signal Model}
+% % Slide 6: Small-Signal Analysis of CS Amplifier
+% \begin{frame}{Small-Signal Analysis of CS Amplifier}
+% \begin{columns}[T]
+% \begin{column}{0.5\textwidth}
+% \textbf{Small-Signal Model}
 
-\begin{center}
-\begin{circuitikz}[scale=0.8]
-% Input
-\draw (0,2) node[left]{$v_{in}$} to[short, o-] (1,2);
+% \begin{center}
+% \begin{circuitikz}[scale=0.8]
+% % Input
+% \draw (0,2) node[left]{$v_{in}$} to[short, o-] (1,2);
 
-% Gate to source (open circuit for small signal)
-\draw (1,2) to[short] (2,2);
-\draw (2,0) node[ground]{};
+% % Gate to source (open circuit for small signal)
+% \draw (1,2) to[short] (2,2);
+% \draw (2,0) node[ground]{};
 
-% Controlled current source
-\draw (2,0) to[american current source, l=$g_m v_{gs}$] (2,4);
+% % Controlled current source
+% \draw (2,0) to[american current source, l=$g_m v_{gs}$] (2,4);
 
-% Output resistance
-\draw (2,4) to[R, l=$r_o$] (4,4);
+% % Output resistance
+% \draw (2,4) to[R, l=$r_o$] (4,4);
 
-% Load resistance RD
-\draw (4,4) to[R, l=$R_D$] (4,0);
-\draw (4,0) node[ground]{};
+% % Load resistance RD
+% \draw (4,4) to[R, l=$R_D$] (4,0);
+% \draw (4,0) node[ground]{};
 
-% Output
-\draw (4,4) to[short, -o] (5.5,4) node[right]{$v_{out}$};
+% % Output
+% \draw (4,4) to[short, -o] (5.5,4) node[right]{$v_{out}$};
 
-% v_gs label
-\node[font=\small] at (1.5,1.8) {$+$};
-\node[font=\small] at (1.5,1) {$v_{gs}$};
-\node[font=\small] at (1.5,0.3) {$-$};
+% % v_gs label
+% \node[font=\small] at (1.5,1.8) {$+$};
+% \node[font=\small] at (1.5,1) {$v_{gs}$};
+% \node[font=\small] at (1.5,0.3) {$-$};
 
-\end{circuitikz}
-\end{center}
+% \end{circuitikz}
+% \end{center}
 
-\vspace{0.2cm}
-\textbf{Key Parameters:}
-\begin{itemize}
-\item $g_m$: transconductance
-\item $r_o$: MOSFET output resistance
-\item $R_D$: drain load resistor
-\item $v_{gs} = v_{in}$ (for AC analysis)
-\end{itemize}
-\end{column}
+% \vspace{0.2cm}
+% \textbf{Key Parameters:}
+% \begin{itemize}
+% \item $g_m$: transconductance
+% \item $r_o$: MOSFET output resistance
+% \item $R_D$: drain load resistor
+% \item $v_{gs} = v_{in}$ (for AC analysis)
+% \end{itemize}
+% \end{column}
 
-\begin{column}{0.5\textwidth}
-\textbf{Gain Derivation}
+% \begin{column}{0.5\textwidth}
+% \textbf{Gain Derivation}
 
-At the output node (KCL):
-\[
-g_m v_{gs} + \frac{v_{out}}{r_o} + \frac{v_{out}}{R_D} = 0
-\]
+% At the output node (KCL):
+% \[
+% g_m v_{gs} + \frac{v_{out}}{r_o} + \frac{v_{out}}{R_D} = 0
+% \]
 
-Since $v_{gs} = v_{in}$:
-\[
-g_m v_{in} + v_{out}\left(\frac{1}{r_o} + \frac{1}{R_D}\right) = 0
-\]
+% Since $v_{gs} = v_{in}$:
+% \[
+% g_m v_{in} + v_{out}\left(\frac{1}{r_o} + \frac{1}{R_D}\right) = 0
+% \]
 
-Solving for voltage gain:
-\[
-A_v = \frac{v_{out}}{v_{in}} = -g_m(r_o \parallel R_D)
-\]
+% Solving for voltage gain:
+% \[
+% A_v = \frac{v_{out}}{v_{in}} = -g_m(r_o \parallel R_D)
+% \]
 
-\[
-\boxed{A_v = -g_m \frac{r_o R_D}{r_o + R_D}}
-\]
+% \[
+% \boxed{A_v = -g_m \frac{r_o R_D}{r_o + R_D}}
+% \]
 
-\vspace{0.3cm}
-\textbf{If $r_o \gg R_D$:}
-\[
-A_v \approx -g_m R_D
-\]
+% \vspace{0.3cm}
+% \textbf{If $r_o \gg R_D$:}
+% \[
+% A_v \approx -g_m R_D
+% \]
 
-\vspace{0.3cm}
-\textbf{Typical values:}
-\begin{itemize}
-\item $g_m \approx 1-5$ mA/V
-\item $R_D \approx 1-10$ k$\Omega$
-\item $|A_v| \approx 5-20$ (voltage gain)
-\end{itemize}
-\end{column}
-\end{columns}
-\end{frame}
+% \vspace{0.3cm}
+% \textbf{Typical values:}
+% \begin{itemize}
+% \item $g_m \approx 1-5$ mA/V
+% \item $R_D \approx 1-10$ k$\Omega$
+% \item $|A_v| \approx 5-20$ (voltage gain)
+% \end{itemize}
+% \end{column}
+% \end{columns}
+% \end{frame}
 
 % Slide 7: MOSFET Internal Capacitances
 \begin{frame}{MOSFET Internal Capacitances}
