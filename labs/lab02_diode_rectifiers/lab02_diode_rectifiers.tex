@@ -151,8 +151,8 @@ The bridge rectifier, shown in Figure \ref{fig:bridge_circuit}, uses four diodes
         \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
         \draw (-1,4) -- (4,4);
         \ctikzset{label distance=-.2cm}
-        \draw (2,2) to [D, l=$D_1$, *-*] (4,4) to [D, l=$D_2$, *-*] (6,2);
-        \draw (2,2) to [D, l_=$D_3$, *-*] (4,0) to [D, l_=$D_4$, *-*] (6,2);
+        \draw (2,2) to [D, l=$D_4$, *-*] (4,4) to [D, l=$D_1$, *-*] (6,2);
+        \draw (2,2) to [D, l_=$D_2$, *-*] (4,0) to [D, l_=$D_3$, *-*] (6,2);
         \draw (-1,0) -- (4,0);
         \ctikzset{label distance=0}
         \draw (6,2) -- (8,2) to [R, l=$R_L$, v=$v_o$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
@@ -292,12 +292,12 @@ Add a 470 $\mu$F filter capacitor in parallel with the load resistor in the brid
         \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
         \draw (-1,4) -- (4,4);
         \ctikzset{label distance=-.2cm}
-        \draw (2,2) to [D, l=$D_1$, *-*] (4,4) to [D, l=$D_2$, *-*] (6,2);
-        \draw (2,2) to [D, l_=$D_3$, *-*] (4,0) to [D, l_=$D_4$, *-*] (6,2);
+        \draw (2,2) to [D, l=$D_4$, *-*] (4,4) to [D, l=$D_1$, *-*] (6,2);
+        \draw (2,2) to [D, l_=$D_2$, *-*] (4,0) to [D, l_=$D_3$, *-*] (6,2);
         \draw (-1,0) -- (4,0);
         \ctikzset{label distance=0}
         \draw (6,2) -- (8,2) to [R, l_=$R_L$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
-        \draw (8,2) -- (10,2) to [C, l_=$C$, v^=$v_o$] (10,-1) -- (8,-1);
+        \draw (8,2) -- (10,2) to [cC, l_=$C$, v^=$v_o$] (10,-1) -- (8,-1);
 
     \end{circuitikz}
     \caption{Full-wave bridge rectifier with filter capacitor.}
