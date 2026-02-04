@@ -53,9 +53,9 @@
 \usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=newest} 
 
-% \usepackage{ifthen}
-% \newboolean{showresults}
-% \setboolean{showresults}{false}
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{false}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -1043,980 +1043,985 @@
 \end{frame}
 
 
-% \section{Phasor Basics Problems}
+\section{Phasor Basics Problems}
 
-% \begin{frame}{Example 1: Phasor Conversions}
+\begin{frame}{Example 1: Phasor Conversions}
     
-%     \textbf{Problem}:  Convert the following time-domain signals to phasors, then perform the operations.
+    \textbf{Problem}:  Convert the following time-domain signals to phasors, then perform the operations.
     
-%     \vspace{0.3cm}
+    \vspace{0.3cm}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Given}:
-%         \begin{align*}
-%         v_1(t) &= 10\cos(1000t + 30°)\text{ V}\\
-%         v_2(t) &= 5\cos(1000t - 45°)\text{ V}\\
-%         i(t) &= 2\cos(1000t + 60°)\text{ A}
-%         \end{align*}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Given}:
+        \begin{align*}
+        v_1(t) &= 10\cos(1000t + 30°)\text{ V}\\
+        v_2(t) &= 5\cos(1000t - 45°)\text{ V}\\
+        i(t) &= 2\cos(1000t + 60°)\text{ A}
+        \end{align*}
         
-%         \textbf{Find}:
-%         \begin{enumerate}
-%             \item Phasor forms of $v_1$, $v_2$, and $i$
-%             \item $\mathbf{V}_1 + \mathbf{V}_2$
-%             \item $\mathbf{V}_1 - \mathbf{V}_2$
-%             \item $\mathbf{V}_1 / \mathbf{I}$
-%         \end{enumerate}
+        \textbf{Find}:
+        \begin{enumerate}
+            \item Phasor forms of $v_1$, $v_2$, and $i$
+            \item $\mathbf{V}_1 + \mathbf{V}_2$
+            \item $\mathbf{V}_1 - \mathbf{V}_2$
+            \item $\mathbf{V}_1 / \mathbf{I}$
+        \end{enumerate}
         
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
         
         
 
-%         \ifthenelse{\boolean{showresults}}{
+    \end{columns}
+    
+\end{frame}
 
-%             \vspace{-1cm}    
-%             \textbf{Solution}:
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 1: Solution - Part 1}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
             
-%             \textbf{Part 1}:  Phasor forms
-%             \begin{align*}
-%             \mathbf{V}_1 &= 10\angle 30°\text{ V}\\
-%             \mathbf{V}_2 &= 5\angle -45°\text{ V}\\
-%             \mathbf{I} &= 2\angle 60°\text{ A}
-%             \end{align*}
-            
-%             \pause
+        \textbf{Solution}:
+        
+        \textbf{Part 1}:  Phasor forms
+        \begin{align*}
+        \mathbf{V}_1 &= 10\angle 30°\text{ V}\\
+        \mathbf{V}_2 &= 5\angle -45°\text{ V}\\
+        \mathbf{I} &= 2\angle 60°\text{ A}
+        \end{align*}
+        
+    \column{0.48\textwidth}
 
-%             \vspace{-0.2cm}
+        \textbf{Part 2}: $\mathbf{V}_1 + \mathbf{V}_2$
+        
+        Convert to rectangular: 
+        \begin{align*}
+        \mathbf{V}_1 &= 10\cos(30°) + j10\sin(30°)\\
+        &= 8.66 + j5.00\text{ V}\\
+        \mathbf{V}_2 &= 5\cos(-45°) + j5\sin(-45°)\\
+        &= 3.54 - j3.54\text{ V}
+        \end{align*}
+        
+    \end{columns}
+    
+\end{frame}
+}{}
 
-%             \textbf{Part 2}: $\mathbf{V}_1 + \mathbf{V}_2$
-            
-%             Convert to rectangular: 
-%             \begin{align*}
-%             \mathbf{V}_1 &= 10\cos(30°) + j10\sin(30°)\\
-%             &= 8.66 + j5.00\text{ V}\\
-%             \mathbf{V}_2 &= 5\cos(-45°) + j5\sin(-45°)\\
-%             &= 3.54 - j3.54\text{ V}
-%             \end{align*}
-%         }{}
-        
-%     \end{columns}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 1: Solution - Part 2}
     
-% \end{frame}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Part 2 (continued)}:
+        \begin{align*}
+        \mathbf{V}_1 + \mathbf{V}_2 &= (8.66 + j5.00) + (3.54 - j3.54)\\
+        &= 12.20 + j1.46\text{ V}
+        \end{align*}
+        
+        Convert to polar:
+        \begin{align*}
+        |\mathbf{V}| &= \sqrt{12.20^2 + 1.46^2} = 12.29\text{ V}\\
+        \angle\mathbf{V} &= \tan^{-1}\left(\frac{1.46}{12.20}\right) = 6.83°
+        \end{align*}
+        
+        \[
+        \boxed{\mathbf{V}_1 + \mathbf{V}_2 = 12.29\angle 6.83°\text{ V}}
+        \]
+        
+    \column{0.48\textwidth}
+        \textbf{Part 3}: $\mathbf{V}_1 - \mathbf{V}_2$
+        \begin{align*}
+        \mathbf{V}_1 - \mathbf{V}_2 &= (8.66 + j5.00) - (3.54 - j3.54)\\
+        &= 5.12 + j8.54\text{ V}\\
+        &= 9.96\angle 59.05°\text{ V}
+        \end{align*}
+        
+        \[
+        \boxed{\mathbf{V}_1 - \mathbf{V}_2 = 9.96\angle 59.05°\text{ V}}
+        \]
+        
+        \textbf{Part 4}: $\mathbf{V}_1 / \mathbf{I}$ (This is impedance!)
+        \begin{align*}
+        \frac{\mathbf{V}_1}{\mathbf{I}} &= \frac{10\angle 30°}{2\angle 60°} = \frac{10}{2}\angle(30° - 60°)\\
+        &= 5\angle -30°\,\Omega
+        \end{align*}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 1: Solution (continued)}
+        \vspace{-0.6cm}
+        
+        \[
+        \boxed{\mathbf{Z} = 5\angle -30°\,\Omega = 4.33 - j2.50\,\Omega}
+        \]
+        
+    \end{columns}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Part 2 (continued)}:
-%         \begin{align*}
-%         \mathbf{V}_1 + \mathbf{V}_2 &= (8.66 + j5.00) + (3.54 - j3.54)\\
-%         &= 12.20 + j1.46\text{ V}
-%         \end{align*}
-        
-%         Convert to polar:
-%         \begin{align*}
-%         |\mathbf{V}| &= \sqrt{12.20^2 + 1.46^2} = 12.29\text{ V}\\
-%         \angle\mathbf{V} &= \tan^{-1}\left(\frac{1.46}{12.20}\right) = 6.83°
-%         \end{align*}
-        
-%         \[
-%         \boxed{\mathbf{V}_1 + \mathbf{V}_2 = 12.29\angle 6.83°\text{ V}}
-%         \]
-        
-%     \column{0.48\textwidth}
-%         \textbf{Part 3}: $\mathbf{V}_1 - \mathbf{V}_2$
-%         \begin{align*}
-%         \mathbf{V}_1 - \mathbf{V}_2 &= (8.66 + j5.00) - (3.54 - j3.54)\\
-%         &= 5.12 + j8.54\text{ V}\\
-%         &= 9.96\angle 59.05°\text{ V}
-%         \end{align*}
-        
-%         \[
-%         \boxed{\mathbf{V}_1 - \mathbf{V}_2 = 9.96\angle 59.05°\text{ V}}
-%         \]
-        
-%         \textbf{Part 4}: $\mathbf{V}_1 / \mathbf{I}$ (This is impedance!)
-%         \begin{align*}
-%         \frac{\mathbf{V}_1}{\mathbf{I}} &= \frac{10\angle 30°}{2\angle 60°} = \frac{10}{2}\angle(30° - 60°)\\
-%         &= 5\angle -30°\,\Omega
-%         \end{align*}
+\end{frame}
+}{}
 
-%         \vspace{-0.6cm}
-        
-%         \[
-%         \boxed{\mathbf{Z} = 5\angle -30°\,\Omega = 4.33 - j2.50\,\Omega}
-%         \]
-        
-%     \end{columns}
-    
-% \end{frame}
-% }{}
+\section{Impedance Calculation Problems}
 
-% \section{Impedance Calculation Problems}
+\begin{frame}{Example 2: Impedance at Different Frequencies}
+    
+    \textbf{Problem}:  A series circuit contains $R = 50\,\Omega$, $L = 20$ mH, and $C = 10\,\mu$F. Find the total impedance at the following frequencies.  
+    
+    \vspace{0.5cm}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Circuit}:
+        
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.8]
+            \draw (0,0) to[short, o-] (0.5,0);
+            \draw (0.5,0) to[R, l=$50\,\Omega$] (2,0);
+            \draw (2,0) to[L, l=$20$ mH] (3. 5,0);
+            \draw (3.5,0) to[C, l=$10\,\mu$F] (5,0);
+            \draw (5,0) to[short, -o] (5.5,0);
+        \end{circuitikz}
+        \end{figure}
+        
+        \textbf{Given}:
+        \begin{itemize}
+            \item $R = 50\,\Omega$
+            \item $L = 20$ mH
+            \item $C = 10\,\mu$F
+        \end{itemize}
+        
+    \column{0.48\textwidth}
+        \textbf{Find the total impedance at}:
+        \begin{itemize}
+            \item (a) $f = 100$ Hz
+            \item (b) $f = 500$ Hz
+            \item (c) $f = 1000$ Hz
+        \end{itemize}
+        
+        \vspace{1cm}
+        
+        \textbf{For each frequency, determine}:
+        \begin{enumerate}
+            \item Magnitude $|\mathbf{Z}|$
+            \item Phase angle $\theta$
+            \item Whether the circuit is inductive or capacitive
+        \end{enumerate}
+        
+    \end{columns}
+    
+\end{frame}
 
-% \begin{frame}{Example 2: Impedance at Different Frequencies}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 2: Solution - Setup and Part (a)}
     
-%     \textbf{Problem}:  A series circuit contains $R = 50\,\Omega$, $L = 20$ mH, and $C = 10\,\mu$F. Find the total impedance at the following frequencies.  
+    \textbf{General Formula for Series RLC}:
+    \[
+    \mathbf{Z} = R + j\omega L + \frac{1}{j\omega C} = R + j\left(\omega L - \frac{1}{\omega C}\right)
+    \]
     
-%     \vspace{0.5cm}
-    
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Circuit}:
-        
-%         \begin{figure}[htb]
-%         \centering
-%         \begin{circuitikz}[scale=0.8]
-%             \draw (0,0) to[short, o-] (0.5,0);
-%             \draw (0.5,0) to[R, l=$50\,\Omega$] (2,0);
-%             \draw (2,0) to[L, l=$20$ mH] (3. 5,0);
-%             \draw (3.5,0) to[C, l=$10\,\mu$F] (5,0);
-%             \draw (5,0) to[short, -o] (5.5,0);
-%         \end{circuitikz}
-%         \end{figure}
-        
-%         \textbf{Given}:
-%         \begin{itemize}
-%             \item $R = 50\,\Omega$
-%             \item $L = 20$ mH
-%             \item $C = 10\,\mu$F
-%         \end{itemize}
-        
-%     \column{0.48\textwidth}
-%         \textbf{Find the total impedance at}:
-%         \begin{itemize}
-%             \item (a) $f = 100$ Hz
-%             \item (b) $f = 500$ Hz
-%             \item (c) $f = 1000$ Hz
-%         \end{itemize}
-        
-%         \vspace{1cm}
-        
-%         \textbf{For each frequency, determine}:
-%         \begin{enumerate}
-%             \item Magnitude $|\mathbf{Z}|$
-%             \item Phase angle $\theta$
-%             \item Whether the circuit is inductive or capacitive
-%         \end{enumerate}
-        
-%     \end{columns}
-    
-% \end{frame}
+    where $X_L = \omega L$ (inductive reactance) and $X_C = \dfrac{1}{\omega C}$ (capacitive reactance)
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 2: Solution - Setup and Part (a)}
+    \textbf{Part (a): $f = 100$ Hz}
     
-%     \textbf{General Formula for Series RLC}:
-%     \[
-%     \mathbf{Z} = R + j\omega L + \frac{1}{j\omega C} = R + j\left(\omega L - \frac{1}{\omega C}\right)
-%     \]
-    
-%     where $X_L = \omega L$ (inductive reactance) and $X_C = \dfrac{1}{\omega C}$ (capacitive reactance)
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        % Calculate $\omega$:
+        \[
+        \omega = 2\pi f = 2\pi(100) = 628.3\text{ rad/s}
+        \]
+        
+        % Calculate reactances:
+        \begin{align*}
+        X_L &= \omega L = 628.3 \times 0.02 = 12.57\,\Omega
+        \end{align*}
+        \begin{align*}
+        X_C &= \frac{1}{\omega C} = \frac{1}{628.3 \times 10^{-5}} = 159.2\,\Omega
+        \end{align*}
+        
+    \column{0.48\textwidth}
+        % Net reactance:
+        \begin{align*}
+        X &= X_L - X_C = -146.6\,\Omega
+        \end{align*}
 
-%     \textbf{Part (a): $f = 100$ Hz}
-    
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         % Calculate $\omega$:
-%         \[
-%         \omega = 2\pi f = 2\pi(100) = 628.3\text{ rad/s}
-%         \]
-        
-%         % Calculate reactances:
-%         \begin{align*}
-%         X_L &= \omega L = 628.3 \times 0.02 = 12.57\,\Omega
-%         \end{align*}
-%         \begin{align*}
-%         X_C &= \frac{1}{\omega C} = \frac{1}{628.3 \times 10^{-5}} = 159.2\,\Omega
-%         \end{align*}
-        
-%     \column{0.48\textwidth}
-%         % Net reactance:
-%         \begin{align*}
-%         X &= X_L - X_C = -146.6\,\Omega
-%         \end{align*}
+        \vspace{-0.5cm}
 
-%         \vspace{-0.5cm}
+        \[
+        \mathbf{Z} = 50 - j146.6\,\Omega
+        \]
 
-%         \[
-%         \mathbf{Z} = 50 - j146.6\,\Omega
-%         \]
+        \vspace{-0.5cm}
+        
+        \[
+        \boxed{\mathbf{Z} = 154.9\angle -71.2°\,\Omega}
+        \]
+        
+        \textit{Capacitive behavior (negative reactance, current leads)}
+        
+    \end{columns}
+    
+\end{frame}
+}{}
 
-%         \vspace{-0.5cm}
-        
-%         \[
-%         \boxed{\mathbf{Z} = 154.9\angle -71.2°\,\Omega}
-%         \]
-        
-%         \textit{Capacitive behavior (negative reactance, current leads)}
-        
-%     \end{columns}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 2: Solution - Parts (b) and (c)}
     
-% \end{frame}
-% }{}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Part (b): $f = 500$ Hz}
+        
+        $\omega = 2\pi(500) = 3141.6$ rad/s
+        
+        \begin{align*}
+        X_L &= 3141.6 \times 0.02 = 62.83\,\Omega\\
+        X_C &= \frac{1}{3141.6 \times 10^{-5}} = 31.83\,\Omega\\
+        X &= 62.83 - 31.83 = 31.0\,\Omega
+        \end{align*}
+        
+        \[
+        \mathbf{Z} = 50 + j31.0\,\Omega
+        \]
+        
+        \[
+        \boxed{\mathbf{Z} = 59.0\angle 31.8°\,\Omega}
+        \]
+        
+        \textit{Inductive behavior (positive reactance, current lags)}
+        
+    \column{0.48\textwidth}
+        \textbf{Part (c): $f = 1000$ Hz}
+        
+        $\omega = 2\pi(1000) = 6283.2$ rad/s
+        
+        \begin{align*}
+        X_L &= 6283.2 \times 0.02 = 125.7\,\Omega\\
+        X_C &= \frac{1}{6283.2 \times 10^{-5}} = 15.92\,\Omega\\
+        X &= 125.7 - 15.92 = 109.8\,\Omega
+        \end{align*}
+        
+        \[
+        \mathbf{Z} = 50 + j109.8\,\Omega
+        \]
+        
+        \[
+        \boxed{\mathbf{Z} = 120.7\angle 65.5°\,\Omega}
+        \]
+        
+        \textit{Inductive behavior (positive reactance, current lags)}
+        
+    \end{columns}
+    
+    \vspace{0.5cm}
+    
+    \begin{block}{Key Observation}
+        As frequency increases:  $X_L \uparrow$ and $X_C \downarrow$. The circuit transitions from \textbf{capacitive} (100 Hz) to \textbf{inductive} (500 Hz, 1000 Hz). There's a resonant frequency in between where $X_L = X_C$! 
+    \end{block}
+    
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 2: Solution - Parts (b) and (c)}
-    
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Part (b): $f = 500$ Hz}
-        
-%         $\omega = 2\pi(500) = 3141.6$ rad/s
-        
-%         \begin{align*}
-%         X_L &= 3141.6 \times 0.02 = 62.83\,\Omega\\
-%         X_C &= \frac{1}{3141.6 \times 10^{-5}} = 31.83\,\Omega\\
-%         X &= 62.83 - 31.83 = 31.0\,\Omega
-%         \end{align*}
-        
-%         \[
-%         \mathbf{Z} = 50 + j31.0\,\Omega
-%         \]
-        
-%         \[
-%         \boxed{\mathbf{Z} = 59.0\angle 31.8°\,\Omega}
-%         \]
-        
-%         \textit{Inductive behavior (positive reactance, current lags)}
-        
-%     \column{0.48\textwidth}
-%         \textbf{Part (c): $f = 1000$ Hz}
-        
-%         $\omega = 2\pi(1000) = 6283.2$ rad/s
-        
-%         \begin{align*}
-%         X_L &= 6283.2 \times 0.02 = 125.7\,\Omega\\
-%         X_C &= \frac{1}{6283.2 \times 10^{-5}} = 15.92\,\Omega\\
-%         X &= 125.7 - 15.92 = 109.8\,\Omega
-%         \end{align*}
-        
-%         \[
-%         \mathbf{Z} = 50 + j109.8\,\Omega
-%         \]
-        
-%         \[
-%         \boxed{\mathbf{Z} = 120.7\angle 65.5°\,\Omega}
-%         \]
-        
-%         \textit{Inductive behavior (positive reactance, current lags)}
-        
-%     \end{columns}
-    
-%     \vspace{0.5cm}
-    
-%     \begin{block}{Key Observation}
-%         As frequency increases:  $X_L \uparrow$ and $X_C \downarrow$. The circuit transitions from \textbf{capacitive} (100 Hz) to \textbf{inductive} (500 Hz, 1000 Hz). There's a resonant frequency in between where $X_L = X_C$! 
-%     \end{block}
-    
-% \end{frame}
-% }{}
+\section{Circuit Analysis }
 
-% \section{Circuit Analysis }
-
-% \begin{frame}{Example 3: Series RL Circuit}
+\begin{frame}{Example 3: Series RL Circuit}
     
-%     \textbf{Problem}:  For the circuit shown, find the current, voltage across each element, and draw the phasor diagram. 
+    \textbf{Problem}:  For the circuit shown, find the current, voltage across each element, and draw the phasor diagram. 
     
-%     \vspace{0.5cm}
+    \vspace{0.5cm}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Circuit}:
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Circuit}:
         
-%         \begin{figure}[htb]
-%         \centering
-%         \begin{circuitikz}[scale=0.9]
-%             \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
-%             \draw (0,3) to[R, l=$30\,\Omega$, v_=$v_R$] (2.5,3);
-%             \draw (2.5,3) to[L, l=$50$ mH, v_=$v_L$, i^=$i(t)$] (5,3);
-%             \draw (5,3) to[short] (5,0);
-%             \draw (5,0) to[short] (0,0);
-%         \end{circuitikz}
-%         \end{figure}
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.9]
+            \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+            \draw (0,3) to[R, l=$30\,\Omega$, v_=$v_R$] (2.5,3);
+            \draw (2.5,3) to[L, l=$50$ mH, v_=$v_L$, i^=$i(t)$] (5,3);
+            \draw (5,3) to[short] (5,0);
+            \draw (5,0) to[short] (0,0);
+        \end{circuitikz}
+        \end{figure}
        
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
 
-%     \vspace{-1cm}
+    \vspace{-1cm}
 
-%         \textbf{Given}:
-%         \begin{itemize}
-%             \item $v_s(t) = 100\cos(2000t)$ V
-%             \item $R = 30\,\Omega$
-%             \item $L = 50$ mH $= 0.05$ H
-%             \item $\omega = 2000$ rad/s
-%         \end{itemize}
+        \textbf{Given}:
+        \begin{itemize}
+            \item $v_s(t) = 100\cos(2000t)$ V
+            \item $R = 30\,\Omega$
+            \item $L = 50$ mH $= 0.05$ H
+            \item $\omega = 2000$ rad/s
+        \end{itemize}
 
 
-%         \textbf{Find}:
-%         \begin{enumerate}
-%             \item Total impedance $\mathbf{Z}_{tot}$
-%             \item Current $i(t)$ (phasor and time domain)
-%             \item Voltage across resistor $v_R(t)$
-%             \item Voltage across inductor $v_L(t)$
-%             \item Draw the phasor diagram
-%             \item Verify KVL
-%         \end{enumerate}
+        \textbf{Find}:
+        \begin{enumerate}
+            \item Total impedance $\mathbf{Z}_{tot}$
+            \item Current $i(t)$ (phasor and time domain)
+            \item Voltage across resistor $v_R(t)$
+            \item Voltage across inductor $v_L(t)$
+            \item Draw the phasor diagram
+            \item Verify KVL
+        \end{enumerate}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
+\end{frame}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 3: Solution - Impedance and Current}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 3: Solution - Impedance and Current}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Step 1: Convert to phasor domain}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Step 1: Convert to phasor domain}
         
-%         Source phasor: 
-%         \[
-%         \mathbf{V}_s = 100\angle 0°\text{ V}
-%         \]
+        Source phasor: 
+        \[
+        \mathbf{V}_s = 100\angle 0°\text{ V}
+        \]
         
-%         \vspace{0.3cm}
+        \vspace{0.3cm}
         
-%         \textbf{Step 2: Calculate impedances}
+        \textbf{Step 2: Calculate impedances}
         
-%         Resistor impedance:
-%         \[
-%         \mathbf{Z}_R = R = 30\,\Omega
-%         \]
+        Resistor impedance:
+        \[
+        \mathbf{Z}_R = R = 30\,\Omega
+        \]
         
-%         Inductor impedance:
-%         \begin{align*}
-%         \mathbf{Z}_L &= j\omega L\\
-%         &= j(2000)(0.05)\\
-%         &= j100\,\Omega
-%         \end{align*}
+        Inductor impedance:
+        \begin{align*}
+        \mathbf{Z}_L &= j\omega L\\
+        &= j(2000)(0.05)\\
+        &= j100\,\Omega
+        \end{align*}
         
-%     \column{0.48\textwidth}
-%         \textbf{Step 3: Total impedance}
+    \column{0.48\textwidth}
+        \textbf{Step 3: Total impedance}
         
-%         Rectangular form:
-%         \[
-%         \mathbf{Z}_{tot} = \mathbf{Z}_R + \mathbf{Z}_L = 30 + j100\,\Omega
-%         \]
+        Rectangular form:
+        \[
+        \mathbf{Z}_{tot} = \mathbf{Z}_R + \mathbf{Z}_L = 30 + j100\,\Omega
+        \]
         
-%         Polar form: 
-%         \begin{align*}
-%         |\mathbf{Z}_{tot}| &= \sqrt{30^2 + 100^2} = 104.4\,\Omega
-%         \end{align*}
-%         \begin{align*}
-%         \theta_Z &= \tan^{-1}\left(\frac{100}{30}\right) = 73.3°
-%         \end{align*}
+        Polar form: 
+        \begin{align*}
+        |\mathbf{Z}_{tot}| &= \sqrt{30^2 + 100^2} = 104.4\,\Omega
+        \end{align*}
+        \begin{align*}
+        \theta_Z &= \tan^{-1}\left(\frac{100}{30}\right) = 73.3°
+        \end{align*}
         
-%         \[
-%         \boxed{\mathbf{Z}_{tot} = 104.4\angle 73.3°\,\Omega}
-%         \]
+        \[
+        \boxed{\mathbf{Z}_{tot} = 104.4\angle 73.3°\,\Omega}
+        \]
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 3: Solution - Current (continued)}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 3: Solution - Current (continued)}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Step 4: Calculate current}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Step 4: Calculate current}
         
-%         Using Ohm's law:
-%         \begin{align*}
-%         \mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}}\\
-%         &= \frac{100\angle 0°}{104.4\angle 73.3°}\\
-%         &= \frac{100}{104.4}\angle(0° - 73.3°)\\
-%         &= 0.958\angle -73.3°\text{ A}
-%         \end{align*}
+        Using Ohm's law:
+        \begin{align*}
+        \mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}}\\
+        &= \frac{100\angle 0°}{104.4\angle 73.3°}\\
+        &= \frac{100}{104.4}\angle(0° - 73.3°)\\
+        &= 0.958\angle -73.3°\text{ A}
+        \end{align*}
         
-%         \[
-%         \boxed{\mathbf{I} = 0.958\angle -73.3°\text{ A}}
-%         \]
+        \[
+        \boxed{\mathbf{I} = 0.958\angle -73.3°\text{ A}}
+        \]
         
-%     \column{0.48\textwidth}
-%         \textbf{Step 5: Convert to time domain}
+    \column{0.48\textwidth}
+        \textbf{Step 5: Convert to time domain}
         
-%         \[
-%         \boxed{i(t) = 0.958\cos(2000t - 73.3°)\text{ A}}
-%         \]
+        \[
+        \boxed{i(t) = 0.958\cos(2000t - 73.3°)\text{ A}}
+        \]
         
-%         \vspace{0.5cm}
+        \vspace{0.5cm}
         
-%         \begin{block}{Interpretation}
-%             Current \textbf{lags} the voltage by $73.3°$, which is expected for an inductive circuit (RL circuit).
-%         \end{block}
+        \begin{block}{Interpretation}
+            Current \textbf{lags} the voltage by $73.3°$, which is expected for an inductive circuit (RL circuit).
+        \end{block}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 3: Solution - Element Voltages}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 3: Solution - Element Voltages}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Step 6: Voltage across resistor}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Step 6: Voltage across resistor}
         
-%         Using Ohm's law:
-%         \begin{align*}
-%         \mathbf{V}_R &= \mathbf{I} \cdot \mathbf{Z}_R\\
-%         &= (0.958\angle -73.3°)(30\angle 0°)\\
-%         &= 0.958 \times 30 \angle(-73.3° + 0°)\\
-%         &= 28.7\angle -73.3°\text{ V}
-%         \end{align*}
+        Using Ohm's law:
+        \begin{align*}
+        \mathbf{V}_R &= \mathbf{I} \cdot \mathbf{Z}_R\\
+        &= (0.958\angle -73.3°)(30\angle 0°)\\
+        &= 0.958 \times 30 \angle(-73.3° + 0°)\\
+        &= 28.7\angle -73.3°\text{ V}
+        \end{align*}
         
-%         \[
-%         \boxed{\mathbf{V}_R = 28.7\angle -73.3°\text{ V}}
-%         \]
+        \[
+        \boxed{\mathbf{V}_R = 28.7\angle -73.3°\text{ V}}
+        \]
         
-%         Time domain:
-%         \[
-%         v_R(t) = 28.7\cos(2000t - 73.3°)\text{ V}
-%         \]
+        Time domain:
+        \[
+        v_R(t) = 28.7\cos(2000t - 73.3°)\text{ V}
+        \]
         
-%         \textit{Note: $\mathbf{V}_R$ is in phase with $\mathbf{I}$ (both at $-73.3°$)}
+        \textit{Note: $\mathbf{V}_R$ is in phase with $\mathbf{I}$ (both at $-73.3°$)}
         
-%     \column{0.48\textwidth}
-%         \textbf{Step 7: Voltage across inductor}
+    \column{0.48\textwidth}
+        \textbf{Step 7: Voltage across inductor}
         
-%         Using Ohm's law:
-%         \begin{align*}
-%         \mathbf{V}_L &= \mathbf{I} \cdot \mathbf{Z}_L\\
-%         &= (0.958\angle -73.3°)(100\angle 90°)\\
-%         &= 0.958 \times 100 \angle(-73.3° + 90°)\\
-%         &= 95.8\angle 16.7°\text{ V}
-%         \end{align*}
+        Using Ohm's law:
+        \begin{align*}
+        \mathbf{V}_L &= \mathbf{I} \cdot \mathbf{Z}_L\\
+        &= (0.958\angle -73.3°)(100\angle 90°)\\
+        &= 0.958 \times 100 \angle(-73.3° + 90°)\\
+        &= 95.8\angle 16.7°\text{ V}
+        \end{align*}
         
-%         \[
-%         \boxed{\mathbf{V}_L = 95.8\angle 16.7°\text{ V}}
-%         \]
+        \[
+        \boxed{\mathbf{V}_L = 95.8\angle 16.7°\text{ V}}
+        \]
         
-%         Time domain:
-%         \[
-%         v_L(t) = 95.8\cos(2000t + 16.7°)\text{ V}
-%         \]
+        Time domain:
+        \[
+        v_L(t) = 95.8\cos(2000t + 16.7°)\text{ V}
+        \]
         
-%         \textit{Note:  $\mathbf{V}_L$ leads $\mathbf{I}$ by $90°$ (as expected for an inductor)}
+        \textit{Note:  $\mathbf{V}_L$ leads $\mathbf{I}$ by $90°$ (as expected for an inductor)}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 3: Solution - Phasor Diagram and Verification}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 3: Solution - Phasor Diagram and Verification}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Step 8: Verify KVL}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Step 8: Verify KVL}
         
-%         Check:  $\mathbf{V}_R + \mathbf{V}_L = \mathbf{V}_s$
+        Check:  $\mathbf{V}_R + \mathbf{V}_L = \mathbf{V}_s$
         
-%         Convert to rectangular: 
-%         \begin{align*}
-%         \mathbf{V}_R &= 28.7\angle -73.3°\\
-%         &= 28.7\cos(-73.3°) + j28.7\sin(-73.3°)\\
-%         &= 8.26 - j27.49\text{ V}
-%         \end{align*}
+        Convert to rectangular: 
+        \begin{align*}
+        \mathbf{V}_R &= 28.7\angle -73.3°\\
+        &= 28.7\cos(-73.3°) + j28.7\sin(-73.3°)\\
+        &= 8.26 - j27.49\text{ V}
+        \end{align*}
 
-%         \vspace{-0.8cm}
+        \vspace{-0.8cm}
         
-%         \begin{align*}
-%         \mathbf{V}_L &= 95.8\angle 16.7°\\
-%         &= 95.8\cos(16.7°) + j95.8\sin(16.7°)\\
-%         &= 91.74 + j27.49\text{ V}
-%         \end{align*}
+        \begin{align*}
+        \mathbf{V}_L &= 95.8\angle 16.7°\\
+        &= 95.8\cos(16.7°) + j95.8\sin(16.7°)\\
+        &= 91.74 + j27.49\text{ V}
+        \end{align*}
 
-%         \vspace{-0.8cm}
+        \vspace{-0.8cm}
         
-%         \begin{align*}
-%         \mathbf{V}_R + \mathbf{V}_L &= (8.26 - j27.49) + (91.74 + j27.49)\\
-%         &= 100 + j0 = 100\angle 0°\text{ V} \;
-%         \end{align*}
+        \begin{align*}
+        \mathbf{V}_R + \mathbf{V}_L &= (8.26 - j27.49) + (91.74 + j27.49)\\
+        &= 100 + j0 = 100\angle 0°\text{ V} \;
+        \end{align*}
         
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
         
-%         \vspace{-0.75cm}
+        \vspace{-0.75cm}
         
-%         \begin{figure}[htb]
-%         \centering
-%         \begin{tikzpicture}[scale=0.7]
-%             % Axes
-%             \draw[->] (-1,0) -- (4,0) node[right] {Re};
-%             \draw[->] (0,-2.5) -- (0,2.5) node[above] {Im};
+        \begin{figure}[htb]
+        \centering
+        \begin{tikzpicture}[scale=0.7]
+            % Axes
+            \draw[->] (-1,0) -- (4,0) node[right] {Re};
+            \draw[->] (0,-2.5) -- (0,2.5) node[above] {Im};
             
-%             % Vs (reference)
-%             \draw[->, ultra thick, black] (0,0) -- (3,0) node[midway, below] {$\mathbf{V}_s$};
+            % Vs (reference)
+            \draw[->, ultra thick, black] (0,0) -- (3,0) node[midway, below] {$\mathbf{V}_s$};
             
-%             % I (lags by 73.3°)
-%             \draw[->, ultra thick, green! 60!black] (0,0) -- (0.3,-0.95) node[right] {$\mathbf{I}$};
+            % I (lags by 73.3°)
+            \draw[->, ultra thick, green! 60!black] (0,0) -- (0.3,-0.95) node[right] {$\mathbf{I}$};
             
-%             % VR (parallel to I)
-%             \draw[->, ultra thick, blue] (0,0) -- (0.86,-2.74) node[below right] {$\mathbf{V}_R$};
+            % VR (parallel to I)
+            \draw[->, ultra thick, blue] (0,0) -- (0.86,-2.74) node[below right] {$\mathbf{V}_R$};
             
-%             % VL (leads I by 90°, so 16.7° total)
-%             \draw[->, ultra thick, red] (0,0) -- (2.88,0.82) node[above right] {$\mathbf{V}_L$};
+            % VL (leads I by 90°, so 16.7° total)
+            \draw[->, ultra thick, red] (0,0) -- (2.88,0.82) node[above right] {$\mathbf{V}_L$};
             
-%             % Vector addition:  VR + VL = Vs
-%             \draw[dashed, purple] (0.86,-2.74) -- (3,0);
-%             \draw[dashed, purple] (2.88,0.82) -- (3,0);
+            % Vector addition:  VR + VL = Vs
+            \draw[dashed, purple] (0.86,-2.74) -- (3,0);
+            \draw[dashed, purple] (2.88,0.82) -- (3,0);
             
-%             % Angle markers
-%             \draw[green!60!black, thick] (0.5,0) arc (0:-73.3:0.5);
-%             \node[green!60!black] at (0.6,-0.4) {\small $-73.3°$};
-%         \end{tikzpicture}
-%         \end{figure}
+            % Angle markers
+            \draw[green!60!black, thick] (0.5,0) arc (0:-73.3:0.5);
+            \node[green!60!black] at (0.6,-0.4) {\small $-73.3°$};
+        \end{tikzpicture}
+        \end{figure}
         
-%         \vspace{-0.6cm}
+        \vspace{-0.6cm}
         
-%         \begin{block}{Key Observations}
-%             \begin{itemize}
-%                 \item $\mathbf{V}_R \parallel \mathbf{I}$ (resistor)
-%                 \item $\mathbf{V}_L \perp \mathbf{I}$, leads by $90°$ (inductor)
-%                 \item $\mathbf{V}_R + \mathbf{V}_L = \mathbf{V}_s$ (KVL)
-%             \end{itemize}
-%         \end{block}
+        \begin{block}{Key Observations}
+            \begin{itemize}
+                \item $\mathbf{V}_R \parallel \mathbf{I}$ (resistor)
+                \item $\mathbf{V}_L \perp \mathbf{I}$, leads by $90°$ (inductor)
+                \item $\mathbf{V}_R + \mathbf{V}_L = \mathbf{V}_s$ (KVL)
+            \end{itemize}
+        \end{block}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
 
-% \begin{frame}{Example 4: RC Voltage Divider}
+\begin{frame}{Example 4: RC Voltage Divider}
     
-%     \textbf{Problem}:  Analyze the following RC voltage divider circuit. 
+    \textbf{Problem}:  Analyze the following RC voltage divider circuit. 
     
-%     \vspace{0.3cm}
+    \vspace{0.3cm}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Circuit}: 
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Circuit}: 
         
-%         \begin{figure}[htb]
-%         \centering
-%         \begin{circuitikz}[scale=0.9]
-%             \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3.5);
-%             \draw (0,3.5) to[R, l=$1$ k$\Omega$, i^=$i(t)$] (0,5.5);
-%             \draw (0,5.5) to[short] (3,5.5);
-%             \draw (3,5.5) to[C, l_=$100$ nF, v^=$v_o(t)$] (3,3.5);
-%             \draw (3,3.5) to[short] (3,0);
-%             \draw (3,0) to[short] (0,0);
-%             \draw (3,3.5) to[short, -o] (4,3.5);
-%             \draw (3,5.5) to[short, -o] (4,5.5);
-%         \end{circuitikz}
-%         \end{figure}
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.9]
+            \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3.5);
+            \draw (0,3.5) to[R, l=$1$ k$\Omega$, i^=$i(t)$] (0,5.5);
+            \draw (0,5.5) to[short] (3,5.5);
+            \draw (3,5.5) to[C, l_=$100$ nF, v^=$v_o(t)$] (3,3.5);
+            \draw (3,3.5) to[short] (3,0);
+            \draw (3,0) to[short] (0,0);
+            \draw (3,3.5) to[short, -o] (4,3.5);
+            \draw (3,5.5) to[short, -o] (4,5.5);
+        \end{circuitikz}
+        \end{figure}
         
 
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
 
-%     \vspace{-0.7cm}
+    \vspace{-0.7cm}
 
-%         \textbf{Given}:
-%         \begin{itemize}
-%             \item $v_s(t) = 10\cos(10000t)$ V
-%             \item $R = 1$ k$\Omega$
-%             \item $C = 100$ nF
-%         \end{itemize}
+        \textbf{Given}:
+        \begin{itemize}
+            \item $v_s(t) = 10\cos(10000t)$ V
+            \item $R = 1$ k$\Omega$
+            \item $C = 100$ nF
+        \end{itemize}
         
-%         \textbf{Find}:
-%         \begin{enumerate}
-%             \item The impedance of each element
-%             \item The output voltage $\mathbf{V}_o$ 
-%             \item The output voltage $v_o(t)$ 
-%             \item The magnitude ratio $|\mathbf{V}_o|/|\mathbf{V}_s|$
-%             \item The phase shift between input and output
-%             \item The current $i(t)$
-%         \end{enumerate}
+        \textbf{Find}:
+        \begin{enumerate}
+            \item The impedance of each element
+            \item The output voltage $\mathbf{V}_o$ 
+            \item The output voltage $v_o(t)$ 
+            \item The magnitude ratio $|\mathbf{V}_o|/|\mathbf{V}_s|$
+            \item The phase shift between input and output
+            \item The current $i(t)$
+        \end{enumerate}
         
       
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
+\end{frame}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 4: Solution}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 4: Solution - Part 1}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Solution}:
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Solution}:
         
-%         Source phasor: $\mathbf{V}_s = 10\angle 0°$ V
+        Source phasor: $\mathbf{V}_s = 10\angle 0°$ V
         
-%         $\omega = 10000$ rad/s
+        $\omega = 10000$ rad/s
 
-%         \vspace{1cm}
+        \vspace{1cm}
         
-%         \textbf{1. Impedances}:
-%         \begin{align*}
-%         \mathbf{Z}_R &= 1000\,\Omega\\
-%         \mathbf{Z}_C &= \frac{1}{j\omega C} = \frac{1}{j(10^4)(10^{-7})} = -j1000\,\Omega
-%         \end{align*}
+        \textbf{1. Impedances}:
+        \begin{align*}
+        \mathbf{Z}_R &= 1000\,\Omega\\
+        \mathbf{Z}_C &= \frac{1}{j\omega C} = \frac{1}{j(10^4)(10^{-7})} = -j1000\,\Omega
+        \end{align*}
         
-%         \vspace{1cm}
+        \vspace{1cm}
         
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
 
-%         \textbf{2. Output Voltage (voltage divider)}
+        \textbf{2. Output Voltage (voltage divider)}
 
     
-%         \begin{align*}
-%         \mathbf{V}_o &= \mathbf{V}_s \frac{\mathbf{Z}_C}{\mathbf{Z}_R + \mathbf{Z}_C}\\
-%         &= 10\angle 0° \cdot \frac{-j1000}{1000 - j1000}
-%         \end{align*}
+        \begin{align*}
+        \mathbf{V}_o &= \mathbf{V}_s \frac{\mathbf{Z}_C}{\mathbf{Z}_R + \mathbf{Z}_C}\\
+        &= 10\angle 0° \cdot \frac{-j1000}{1000 - j1000}
+        \end{align*}
 
 
-%         \begin{align*}
-%         &= 10 \cdot \frac{1000\angle -90°}{1414.2\angle -45°}\\
-%         &= 10 \cdot 0.707\angle -45°\\
-%         &= \boxed{7.07\angle -45°\text{ V}}
-%         \end{align*}
+        \begin{align*}
+        &= 10 \cdot \frac{1000\angle -90°}{1414.2\angle -45°}\\
+        &= 10 \cdot 0.707\angle -45°\\
+        &= \boxed{7.07\angle -45°\text{ V}}
+        \end{align*}
         
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 4: Solution (continued)}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 4: Solution - Part 2}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
 
-%         \textbf{3. Time domain}:
-%         \[
-%         \boxed{v_o(t) = 7.07\cos(10000t - 45°)\text{ V}}
-%         \]
+        \textbf{3. Time domain}:
+        \[
+        \boxed{v_o(t) = 7.07\cos(10000t - 45°)\text{ V}}
+        \]
         
-%         \textbf{4. Magnitude ratio}:
-%         \[
-%         \boxed{\frac{|\mathbf{V}_o|}{|\mathbf{V}_s|} = \frac{7.07}{10} = 0.707}
-%         \]
+        \textbf{4. Magnitude ratio}:
+        \[
+        \boxed{\frac{|\mathbf{V}_o|}{|\mathbf{V}_s|} = \frac{7.07}{10} = 0.707}
+        \]
 
-%         \textbf{5. Phase shift}:  $\boxed{-45°}$ (output lags input)
+        \textbf{5. Phase shift}:  $\boxed{-45°}$ (output lags input)
 
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
         
-%         \textbf{6. Current}:
-%         \begin{align*}
-%         \mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_R + \mathbf{Z}_C} = \frac{10\angle 0°}{1414.2\angle -45°}\\
-%         &= 7.07\angle 45°\text{ mA}
-%         \end{align*}
-%         \[
-%         \boxed{i(t) = 7.07\cos(10000t + 45°)\text{ mA}}
-%         \]
+        \textbf{6. Current}:
+        \begin{align*}
+        \mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_R + \mathbf{Z}_C} = \frac{10\angle 0°}{1414.2\angle -45°}\\
+        &= 7.07\angle 45°\text{ mA}
+        \end{align*}
+        \[
+        \boxed{i(t) = 7.07\cos(10000t + 45°)\text{ mA}}
+        \]
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \section{AC Power Problems}
+\section{AC Power Problems}
 
-% \begin{frame}{Example 5: AC Power Calculation}
+\begin{frame}{Example 5: AC Power Calculation}
     
-%     \textbf{Problem}:  Calculate the real, reactive, and apparent power for a load with the following voltage and current.   
+    \textbf{Problem}:  Calculate the real, reactive, and apparent power for a load with the following voltage and current.   
     
-%     \vspace{0.5cm}
+    \vspace{0.5cm}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Given}:
-%         \begin{align*}
-%         v(t) &= 120\sqrt{2}\cos(377t)\text{ V}\\
-%         i(t) &= 10\sqrt{2}\cos(377t - 36.87°)\text{ A}
-%         \end{align*}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Given}:
+        \begin{align*}
+        v(t) &= 120\sqrt{2}\cos(377t)\text{ V}\\
+        i(t) &= 10\sqrt{2}\cos(377t - 36.87°)\text{ A}
+        \end{align*}
         
-%         \vspace{0.5cm}
+        \vspace{0.5cm}
         
-%         \textit{Note:   The coefficients include $\sqrt{2}$ to indicate peak values}
+        \textit{Note:   The coefficients include $\sqrt{2}$ to indicate peak values}
         
-%     \column{0.48\textwidth}
-%         \textbf{Find}:
-%         \begin{enumerate}
-%             \item RMS voltage and current
-%             \item Real power $P$
-%             \item Reactive power $Q$
-%             \item Apparent power $S$
-%             \item Power factor (and type)
-%             \item Load impedance $\mathbf{Z}$
-%         \end{enumerate}
+    \column{0.48\textwidth}
+        \textbf{Find}:
+        \begin{enumerate}
+            \item RMS voltage and current
+            \item Real power $P$
+            \item Reactive power $Q$
+            \item Apparent power $S$
+            \item Power factor (and type)
+            \item Load impedance $\mathbf{Z}$
+        \end{enumerate}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
+\end{frame}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 5: Solution - RMS Values and Powers}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 5: Solution - Part 1}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Step 1: RMS values}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Step 1: RMS values}
         
-%         Convert from peak to RMS:
-%         \begin{align*}
-%         V_{rms} &= \frac{V_m}{\sqrt{2}} = \frac{120\sqrt{2}}{\sqrt{2}} = \boxed{120\text{ V}}
-%         \end{align*}
+        Convert from peak to RMS:
+        \begin{align*}
+        V_{rms} &= \frac{V_m}{\sqrt{2}} = \frac{120\sqrt{2}}{\sqrt{2}} = \boxed{120\text{ V}}
+        \end{align*}
 
-%         \vspace{-0.6cm}
+        \vspace{-0.6cm}
         
-%         \begin{align*}
-%         I_{rms} &= \frac{I_m}{\sqrt{2}} = \frac{10\sqrt{2}}{\sqrt{2}} = \boxed{10\text{ A}}
-%         \end{align*}
+        \begin{align*}
+        I_{rms} &= \frac{I_m}{\sqrt{2}} = \frac{10\sqrt{2}}{\sqrt{2}} = \boxed{10\text{ A}}
+        \end{align*}
         
-%         \vspace{-0.3cm}
+        \vspace{-0.3cm}
         
-%         \textbf{Step 2: Determine phase angle}
+        \textbf{Step 2: Determine phase angle}
         
-%         From the time-domain expressions:
-%         \begin{itemize}
-%             \item Voltage phase: $\phi_v = 0°$
-%             \item Current phase: $\phi_i = -36.87°$
-%         \end{itemize}
+        From the time-domain expressions:
+        \begin{itemize}
+            \item Voltage phase: $\phi_v = 0°$
+            \item Current phase: $\phi_i = -36.87°$
+        \end{itemize}
         
-%         Phase difference: 
-%         \[
-%         \theta = \phi_v - \phi_i = 0° - (-36.87°) = 36.87°
-%         \]
+        Phase difference: 
+        \[
+        \theta = \phi_v - \phi_i = 0° - (-36.87°) = 36.87°
+        \]
 
-%         \vspace{-0.3cm}
+        \vspace{-0.3cm}
         
-%         \textit{Current lags voltage $\Rightarrow$ inductive load}
+        \textit{Current lags voltage $\Rightarrow$ inductive load}
         
-%     \column{0.48\textwidth}
-%         \textbf{Step 3: Real power}
-%         \begin{align*}
-%         P &= V_{rms} I_{rms} \cos\theta\\
-%         &= (120)(10)\cos(36.87°) = \boxed{960\text{ W}}
-%         \end{align*}
+    \column{0.48\textwidth}
+        \textbf{Step 3: Real power}
+        \begin{align*}
+        P &= V_{rms} I_{rms} \cos\theta\\
+        &= (120)(10)\cos(36.87°) = \boxed{960\text{ W}}
+        \end{align*}
         
-%         \textbf{Step 4: Reactive power}
-%         \begin{align*}
-%         Q &= V_{rms} I_{rms} \sin\theta\\
-%         &= (120)(10)\sin(36.87°) = \boxed{720\text{ VAR}}
-%         \end{align*}
+        \textbf{Step 4: Reactive power}
+        \begin{align*}
+        Q &= V_{rms} I_{rms} \sin\theta\\
+        &= (120)(10)\sin(36.87°) = \boxed{720\text{ VAR}}
+        \end{align*}
         
-%         % \textit{Positive $Q$ confirms inductive load}
+        % \textit{Positive $Q$ confirms inductive load}
         
-%         \textbf{Step 5: Apparent power}
-%         \begin{align*}
-%         S &= V_{rms} I_{rms}  = \boxed{1200\text{ VA}}
-%         \end{align*}
+        \textbf{Step 5: Apparent power}
+        \begin{align*}
+        S &= V_{rms} I_{rms}  = \boxed{1200\text{ VA}}
+        \end{align*}
         
-%         \textbf{Verify}:  $S = \sqrt{P^2 + Q^2} = \sqrt{960^2 + 720^2} = 1200$ 
+        \textbf{Verify}:  $S = \sqrt{P^2 + Q^2} = \sqrt{960^2 + 720^2} = 1200$ 
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 5: Solution - Power Factor and Impedance}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 5: Solution - Part 2}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Step 6: Power factor}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Step 6: Power factor}
         
-%         Method 1 - From angle:
-%         \begin{align*}
-%         \text{pf} &= \cos\theta = \cos(36.87°)\\
-%         &= \boxed{0.8\text{ lagging}}
-%         \end{align*}
+        Method 1 - From angle:
+        \begin{align*}
+        \text{pf} &= \cos\theta = \cos(36.87°)\\
+        &= \boxed{0.8\text{ lagging}}
+        \end{align*}
         
-%         Method 2 - From powers:
-%         \begin{align*}
-%         \text{pf} &= \frac{P}{S} = \frac{960}{1200}\\
-%         &= 0.8\text{ lagging}
-%         \end{align*}
+        Method 2 - From powers:
+        \begin{align*}
+        \text{pf} &= \frac{P}{S} = \frac{960}{1200}\\
+        &= 0.8\text{ lagging}
+        \end{align*}
         
-%         \textit{``Lagging'' because current lags voltage (inductive)}
+        \textit{``Lagging'' because current lags voltage (inductive)}
         
-%     \column{0.48\textwidth}
-%         \textbf{Step 7: Load impedance}
+    \column{0.48\textwidth}
+        \textbf{Step 7: Load impedance}
         
-%         Convert to phasor form:
+        Convert to phasor form:
 
-%         \vspace{-0.6cm}
+        \vspace{-0.6cm}
         
-%         \begin{align*}
-%         \mathbf{V} &= 120\angle 0°\text{ V}\\
-%         \mathbf{I} &= 10\angle -36.87°\text{ A}
-%         \end{align*}
+        \begin{align*}
+        \mathbf{V} &= 120\angle 0°\text{ V}\\
+        \mathbf{I} &= 10\angle -36.87°\text{ A}
+        \end{align*}
         
-%         Calculate impedance:
-%         \begin{align*}
-%         \mathbf{Z} &= \frac{\mathbf{V}}{\mathbf{I}} = \frac{120\angle 0°}{10\angle -36.87°}\\
-%         &= 12\angle 36.87°\,\Omega
-%         \end{align*}
+        Calculate impedance:
+        \begin{align*}
+        \mathbf{Z} &= \frac{\mathbf{V}}{\mathbf{I}} = \frac{120\angle 0°}{10\angle -36.87°}\\
+        &= 12\angle 36.87°\,\Omega
+        \end{align*}
         
-%         \vspace{-1cm}
+        \vspace{-1cm}
 
-%         \begin{align*}
-%         \mathbf{Z} &= 12(\cos 36.87° + j\sin 36.87°)\\
-%         &= \boxed{9.6 + j7.2\,\Omega}
-%         \end{align*}
+        \begin{align*}
+        \mathbf{Z} &= 12(\cos 36.87° + j\sin 36.87°)\\
+        &= \boxed{9.6 + j7.2\,\Omega}
+        \end{align*}
         
-%         \textit{This represents $R = 9.6\,\Omega$ in series with $X_L = 7.2\,\Omega$}
+        \textit{This represents $R = 9.6\,\Omega$ in series with $X_L = 7.2\,\Omega$}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \begin{frame}{Example 6: Parallel RLC Circuit}
+\begin{frame}{Example 6: Parallel RLC Circuit}
     
-%     \textbf{Problem}: Analyze the parallel RLC circuit shown below.
+    \textbf{Problem}: Analyze the parallel RLC circuit shown below.
     
-%     \vspace{0.3cm}
+    \vspace{0.3cm}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Circuit}:
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Circuit}:
         
-%         \begin{figure}[htb]
-%         \centering
-%         \begin{circuitikz}[scale=0.85]
-%             \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$, i=$i_s$] (0,4);
-%             \draw (0,4) to[short] (1,4);
-%             \draw (1,4) to[R, l=$200\,\Omega$, i^=$i_R$, *-*] (1,0);
-%             \draw (2.5,4) to[L, l=$0.5$ H, i^=$i_L$, *-*] (2.5,0);
-%             \draw (4,4) to[C, l=$5\,\mu$F, i^=$i_C$, *-*] (4,0);
-%             \draw (1,4) to[short] (2.5,4);
-%             \draw (2.5,4) to[short] (4,4);
-%             \draw (1,0) to[short] (2.5,0);
-%             \draw (2.5,0) to[short] (4,0);
-%             \draw (4,0) to[short] (5,0);
-%             \draw (0,0) to[short] (1,0);
-%         \end{circuitikz}
-%         \end{figure}
+        \begin{figure}[htb]
+        \centering
+        \begin{circuitikz}[scale=0.85]
+            \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$, i=$i_s$] (0,4);
+            \draw (0,4) to[short] (1,4);
+            \draw (1,4) to[R, l=$200\,\Omega$, i^=$i_R$, *-*] (1,0);
+            \draw (2.5,4) to[L, l=$0.5$ H, i^=$i_L$, *-*] (2.5,0);
+            \draw (4,4) to[C, l=$5\,\mu$F, i^=$i_C$, *-*] (4,0);
+            \draw (1,4) to[short] (2.5,4);
+            \draw (2.5,4) to[short] (4,4);
+            \draw (1,0) to[short] (2.5,0);
+            \draw (2.5,0) to[short] (4,0);
+            \draw (4,0) to[short] (5,0);
+            \draw (0,0) to[short] (1,0);
+        \end{circuitikz}
+        \end{figure}
         
 
         
-%     \column{0.48\textwidth}
+    \column{0.48\textwidth}
 
-%         \textbf{Given}:
-%         \begin{itemize}
-%             \item $v_s(t) = 50\cos(1000t)$ V
-%         \end{itemize}
+        \textbf{Given}:
+        \begin{itemize}
+            \item $v_s(t) = 50\cos(1000t)$ V
+        \end{itemize}
 
 
-%         \textbf{Find}:
-%         \begin{enumerate}
-%             \item Impedance of each branch
-%             \item Total impedance
-%             \item Source current $i_s(t)$
-%             \item Current through each branch
-%             \item Total real power
-%             \item Total reactive power
-%             \item Is the circuit inductive or capacitive?
-%         \end{enumerate}
+        \textbf{Find}:
+        \begin{enumerate}
+            \item Impedance of each branch
+            \item Total impedance
+            \item Source current $i_s(t)$
+            \item Current through each branch
+            \item Total real power
+            \item Total reactive power
+            \item Is the circuit inductive or capacitive?
+        \end{enumerate}
         
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
+\end{frame}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 6: Solution}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 6: Solution - Part 1}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
-%         \textbf{Solution}:
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+        \textbf{Solution}:
         
-%         $\mathbf{V}_s = 50\angle 0°$ V, $\omega = 1000$ rad/s
+        $\mathbf{V}_s = 50\angle 0°$ V, $\omega = 1000$ rad/s
         
-%         \textbf{1. Branch impedances}:
-%         \begin{align*}
-%         \mathbf{Z}_R &= 200\,\Omega\\
-%         \mathbf{Z}_L &= j\omega L = j(1000)(0.5) = j500\,\Omega\\
-%         \mathbf{Z}_C &= \frac{1}{j\omega C} = \frac{1}{j(1000)(5 \times 10^{-6})}\\
-%         &= -j200\,\Omega
-%         \end{align*}
+        \textbf{1. Branch impedances}:
+        \begin{align*}
+        \mathbf{Z}_R &= 200\,\Omega\\
+        \mathbf{Z}_L &= j\omega L = j(1000)(0.5) = j500\,\Omega\\
+        \mathbf{Z}_C &= \frac{1}{j\omega C} = \frac{1}{j(1000)(5 \times 10^{-6})}\\
+        &= -j200\,\Omega
+        \end{align*}
         
-%         \textbf{2. Total impedance}:
-%         \begin{align*}
-%         \frac{1}{\mathbf{Z}_{tot}} &= \frac{1}{200} + \frac{1}{j500} + \frac{1}{-j200}\\
-%         &=  0.005 + j0.003
-%         \end{align*}
+        \textbf{2. Total impedance}:
+        \begin{align*}
+        \frac{1}{\mathbf{Z}_{tot}} &= \frac{1}{200} + \frac{1}{j500} + \frac{1}{-j200}\\
+        &=  0.005 + j0.003
+        \end{align*}
         
-%     \column{0.48\textwidth}
-%         \begin{align*}
-%         \mathbf{Z}_{tot} &= \frac{1}{0.005 + j0.003} = \frac{1}{0.00583\angle 30.96°}\\
-%         &= \boxed{171.5\angle -30.96°\,\Omega}\\
-%         &= 147.1 - j88.0\,\Omega
-%         \end{align*}
+    \column{0.48\textwidth}
+        \begin{align*}
+        \mathbf{Z}_{tot} &= \frac{1}{0.005 + j0.003} = \frac{1}{0.00583\angle 30.96°}\\
+        &= \boxed{171.5\angle -30.96°\,\Omega}\\
+        &= 147.1 - j88.0\,\Omega
+        \end{align*}
         
-%         \textbf{3. Source current}:
-%         \begin{align*}
-%         \mathbf{I}_s &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{50\angle 0°}{171.5\angle -30.96°}\\
-%         &= 0.292\angle 30.96°\text{ A}
-%         \end{align*}
-%         \[
-%         \boxed{i_s(t) = 0.292\cos(1000t + 30.96°)\text{ A}}
-%         \]
+        \textbf{3. Source current}:
+        \begin{align*}
+        \mathbf{I}_s &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{50\angle 0°}{171.5\angle -30.96°}\\
+        &= 0.292\angle 30.96°\text{ A}
+        \end{align*}
+        \[
+        \boxed{i_s(t) = 0.292\cos(1000t + 30.96°)\text{ A}}
+        \]
         
 
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
-% \ifthenelse{\boolean{showresults}}{
-% \begin{frame}{Example 6: Solution (continued)}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 6: Solution - Part 2}
     
-%     \begin{columns}[t]
-%     \column{0.48\textwidth}
+    \begin{columns}[t]
+    \column{0.48\textwidth}
 
-%         \textbf{4. Branch currents}:
-%         \begin{align*}
-%         \mathbf{I}_R &= \frac{\mathbf{V}_s}{\mathbf{Z}_R} = \frac{50}{200} = 0.25\angle 0°\text{ A}\\
-%         \mathbf{I}_L &= \frac{50\angle 0°}{500\angle 90°} = 0.1\angle -90°\text{ A}\\
-%         \mathbf{I}_C &= \frac{50\angle 0°}{200\angle -90°} = 0.25\angle 90°\text{ A}
-%         \end{align*}
+        \textbf{4. Branch currents}:
+        \begin{align*}
+        \mathbf{I}_R &= \frac{\mathbf{V}_s}{\mathbf{Z}_R} = \frac{50}{200} = 0.25\angle 0°\text{ A}\\
+        \mathbf{I}_L &= \frac{50\angle 0°}{500\angle 90°} = 0.1\angle -90°\text{ A}\\
+        \mathbf{I}_C &= \frac{50\angle 0°}{200\angle -90°} = 0.25\angle 90°\text{ A}
+        \end{align*}
         
-%         \textbf{5. Total real power}:
+        \textbf{5. Total real power}:
         
-%         Only resistor dissipates real power:
-%         \begin{align*}
-%         P &= I_R^2 R = \boxed{12.5\text{ W}}
-%         \end{align*}
+        Only resistor dissipates real power:
+        \begin{align*}
+        P &= I_R^2 R = \boxed{12.5\text{ W}}
+        \end{align*}
 
-%         \vspace{-0.2cm}
+        \vspace{-0.2cm}
         
-%         or using $P = V_{rms} I_{s,rms} \cos\theta$:
-%         \begin{align*}
-%         P &= 50 \times 0.292 \times \cos(30.96°)= 12.5\text{ W} \;
-%         \end{align*}
+        or using $P = V_{rms} I_{s,rms} \cos\theta$:
+        \begin{align*}
+        P &= 50 \times 0.292 \times \cos(30.96°)= 12.5\text{ W} \;
+        \end{align*}
         
-%     \column{0.48\textwidth}
-%         \textbf{6. Total reactive power}: 
-%         \begin{align*}
-%         Q_L &= I_L^2 X_L = (0.1)^2 \times 500 = 5\text{ VAR}\\
-%         Q_C &= -I_C^2 X_C = -(0.25)^2 \times 200 = -12.5\text{ VAR}\\
-%         Q_{tot} &= Q_L + Q_C = \boxed{-7.5\text{ VAR}}
-%         \end{align*}
+    \column{0.48\textwidth}
+        \textbf{6. Total reactive power}: 
+        \begin{align*}
+        Q_L &= I_L^2 X_L = (0.1)^2 \times 500 = 5\text{ VAR}\\
+        Q_C &= -I_C^2 X_C = -(0.25)^2 \times 200 = -12.5\text{ VAR}\\
+        Q_{tot} &= Q_L + Q_C = \boxed{-7.5\text{ VAR}}
+        \end{align*}
         
-%         or: 
-%         \begin{align*}
-%         Q &= V_{rms} I_{s,rms} \sin\theta\\
-%         &= 50 \times 0.292 \times \sin(30.96°) = -7.5\text{ VAR} \;
-%         \end{align*}
+        or: 
+        \begin{align*}
+        Q &= V_{rms} I_{s,rms} \sin\theta\\
+        &= 50 \times 0.292 \times \sin(30.96°) = -7.5\text{ VAR} \;
+        \end{align*}
         
-%         \textbf{7. Circuit behavior}:
+        \textbf{7. Circuit behavior}:
         
-%         $Q_{tot} < 0$ and current leads voltage ($\theta > 0$)
+        $Q_{tot} < 0$ and current leads voltage ($\theta > 0$)
         
-%         \textit{Capacitor reactive power dominates}
+        \textit{Capacitor reactive power dominates}
         
-%     \end{columns}
+    \end{columns}
     
-% \end{frame}
-% }{}
+\end{frame}
+}{}
 
 \end{document}
