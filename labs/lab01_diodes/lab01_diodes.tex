@@ -33,7 +33,7 @@
 \usepackage{circuitikz}
 \usepackage{siunitx}
 \usepackage{titling}
-\usepackage{framed} %hi
+%\usepackage{framed}
 
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
 \graphicspath{{../figs/}}
@@ -172,14 +172,12 @@ When using Zener diodes, it is critical to ensure that the power dissipation doe
 
 \section{Experimental Procedures}
 
-\emph{For each part, please follow the instructions to preform the experiment. Provide the requested data and answer the given questions in the report.}
+\emph{For each part, please follow the instructions to preform the experiment. For the report, provide the requested data and answer any questions.}
 
 \subsection{Part 1: Forward-Bias I-V Characteristics of Silicon Diodes}
-
-%Objective
 \emph{Observe the forward-bias current-voltage characteristics of a silicon diode}\\
 
-%Procedure
+
 Begin by constructing the circuit shown in Figure \ref{fig:forward_circuit} on the breadboard using the small-signal silicon diode and the 1 k$\Omega$ resistor. Ensure that the diode is oriented correctly with the anode connected toward the positive supply terminal and the cathode toward ground. Set up the lab instuments to measure the diode voltage $V_D$ and current $I_D$. To measure the voltage, connect the leads of the DMM (Digital Multimeter) across the diode terminals to measure the diode voltage directly.  To measure the current, there are two options:  connect a second DMM in series with the circuit (being careful to observe the current measurement limits of the meter) or measure the voltage across the resistor and calculate the current using Ohm's law ($I_D = V_R / R$). The second method is often preferred as it avoids potential issues with the meter burden voltage. \\
 
 \begin{figure}[h]
@@ -198,25 +196,20 @@ Begin by constructing the circuit shown in Figure \ref{fig:forward_circuit} on t
 \end{figure}
 
 Start with the power supply set to 0 V, and gradually increase it to 5V in small incraments ($0.25 V$).  For each supply voltage, record the voltage across the diode $V_D$ and the current through the diode $I_D$. Use smaller incraments when the diode voltage is below $0
-.8 V$. Very little current flows until the diode voltage reaches approximately 0.5 to 0.6 V, after which the current increases exponentially. \\
-
-\begin{leftbar}
-Exercise caution not to exceed a current of approximately 20 mA for silicon diodes, as excessive current can cause damage.  If the diode is heating up noticeably, reduce the current immediately.\\
-\end{leftbar}
+.8 V$. Very little current flows until the diode voltage reaches approximately 0.5 to 0.6 V, after which the current increases exponentially. Exercise caution not to exceed a current of approximately 20 mA for silicon diodes, as excessive current can cause damage.  If the diode is heating up noticeably, reduce the current immediately.\\
 
 Once measurements are completed for the small-signal diode, repeat the entire procedure using the silicon rectifier diode.  Similar behavior should be observed, but there may be slight differences in the forward voltage drop characteristics between the two diode types. \\
 
 
 \textbf{Report}
-%data
+
 \begin {enumerate}
     \item Plot the I-V characteristic (Voltage v. Current) for both diodes with clearly labeled axes.
+    \item Describe the shape of the curve and how it relates to the Shockley diode equation.
+    \item Explain why very little current flows below a certain voltage threshold, but a large current flows once it is reached.
 \end {enumerate}
-%discussion
-Describe the shape of the curve and how it relates to the Shockley diode equation. Explain why very little current flows below a certain voltage threshold, but a large current flows once it is reached.
 
 \subsection{Part 2: Small-Signal Resistance Analysis}
-
 \emph{Using the data collected in Part 1, determine the small-signal resistance of the diode at different operating points}\\
 
 Select two distinct operating points in the forward-bias region where the diode is conducting appreciable current.  Suggested operating points are around $V_{D1} \approx 0.65$ V and $V_{D2} \approx 0.75$ V, though the exact values will depend on the measured data. \\
@@ -227,26 +220,22 @@ For each operating point, calculate the small-signal resistance by examining the
     r_d \approx \frac{\Delta V_D}{\Delta I_D}
 \end{equation}
 
-where $\Delta V_D$ and $\Delta I_D$ represent small changes in voltage and current around the operating point.
-
-\begin{leftbar}
-To obtain accurate results, take a value on either side of the operating point, and calculate the slope between these two values. A smaller interval used (while still maintaining measurement accuracy) will produce a better approximation of the true small signal resistance. \\
-\end{leftbar}
+where $\Delta V_D$ and $\Delta I_D$ represent small changes in voltage and current around the operating point. To obtain accurate results, take a value on either side of the operating point, and calculate the slope between these two values. A smaller interval used (while still maintaining measurement accuracy) will produce a better approximation of the true small signal resistance. \\
 
 After calculating the experimental small signal resistance values, compare them with the theoretical predictions from Equation \ref{eq:dynamic_r}. Use an appropriate ideality factor, $n$, and use the measured DC current at each operating point. Calculate the percentage error between measured and theoretical values.\\
 
 \textbf{Report}
-%data
 \begin {enumerate}
-    \item Experimental measurements and $r_d$ calculation
-    \item Theoretical $r_d$ calculation and comparison to experimental values
+    \item Provide the experimental measurements and $r_d$ calculation.
+    \item Provide the theoretical $r_d$ calculation and comparison to experimental values.
+    \item Dicuss observations about small signal resistance relationship to operating current. Explain physically why the a small signal resistance decreases as the forward current increases.
+    \item Discuss possible sources of error in the measurements, and how the accuracy of the small signal resistance calculations are affected. \\
 \end {enumerate}
 
-Discuss observations about small signal resistance relationship to operating current.  Explain physically why the a small signal resistance decreases as the forward current increases. Discuss possible sources of error in the measurements, and how the accuracy of the small signal resistance calculations are affected. \\
-
 \subsection{Part 3: Reverse-Bias Characteristics of Silicon Diodes}
+\emph{Behavior of a silicon diode under reverse-bias conditions}\\
 
-In this section, the behavior of a silicon diode under reverse-bias conditions is investigated. Carefully remove the diode from the circuit and reverse its orientation so that the cathode is now connected toward the positive supply terminal and the anode toward ground as shown in Figure \ref{fig:reverse_circuit}.  This reverse-biases the diode.  To limit the current in case of accidental breakdown, change the resistor value to 470 $\Omega$. \\
+Carefully remove the diode from the circuit and reverse its orientation so that the cathode is now connected toward the positive supply terminal and the anode toward ground as shown in Figure \ref{fig:reverse_circuit}.  This reverse-biases the diode.  To limit the current in case of accidental breakdown, change the resistor value to 470 $\Omega$. \\
 
 \begin{figure}[h]
     \centering
@@ -266,11 +255,18 @@ Starting from 0 V, gradually increase the supply voltage, which now applies an i
 
 The reverse current should be extremely small, likely in the range of nanoamperes or microamperes, and may be difficult to measure accurately with standard multimeters. The current should remain relatively constant the reverse voltage is increased, consistent with the saturation current $I_S$ predicted by the Shockley equation.  If the current suddenly repidly increases, the breakdown voltage is likely being exceeded; decrease the voltage immediately. \\
 
-In your lab report, present your reverse-bias measurements and describe what you observed.  Explain why the reverse current is so much smaller than the forward current at equivalent voltage magnitudes. Discuss the physical mechanism responsible for this reverse current (minority carrier diffusion). If you were unable to measure the reverse current accurately due to instrument limitations, explain this limitation and estimate an upper bound on the reverse current based on your measurements. \\
+\textbf{Report}
+\begin {enumerate}
+    \item Provide reverse-bias measurements and describe any observations.
+    \item Explain why the reverse current is so much smaller than the forward current at equivalent voltage magnitudes. Discuss the physical mechanism responsible for this reverse current (minority carrier diffusion).
+    \item If reverse current could not be measured accurately due to instrument limitations, explain this limitation and estimate an upper bound on the reverse current based on the measurements. \\
+\end {enumerate}
+
 
 \subsection{Part 4: Zener Diode Breakdown Characteristics}
+\emph{Voltage regulation properties of a Zener diode operating in the breakdown region}\\
 
-Next to investigate is the voltage regulation properties of a Zener diode operating in the breakdown region. Construct the circuit shown in Figure \ref{fig:zener_circuit} using a Zener diode and a 100 $\Omega$ resistor. Pay careful attention to the polarity:  for the Zener to operate in breakdown, its cathode (the marked end) must be connected toward the positive terminal of the supply through the resistor, and its anode must be connected to ground. This is the reverse of normal diode operation. \\
+Construct the circuit shown in Figure \ref{fig:zener_circuit} using a Zener diode and a 100 $\Omega$ resistor. Pay careful attention to the polarity:  for the Zener to operate in breakdown, its cathode (the marked end) must be connected toward the positive terminal of the supply through the resistor, and its anode must be connected to ground. This is the reverse of normal diode operation. \\
 
 \begin{figure}[h]
     \centering
@@ -291,11 +287,18 @@ When the supply voltage is below the Zener voltage, very little current flows an
 
 Continue increasing the supply voltage up to approximately 10 to 12 V, taking measurements at each step. Constantly monitor the power dissipation in the Zener diode, calculated as $P_Z = V_Z \times I_Z$.  Do not exceed the power rating of the Zener diode. If it becomes noticeably warm to the touch, the power limit is likely being reached and current should not be increased any further. \\
 
-In your lab report, plot the I-V characteristic of the Zener diode showing both the low-current region (before breakdown) and the breakdown region.  Clearly identify the Zener breakdown voltage on your plot. Describe what you observe about the voltage regulation behavior—how much does the Zener voltage change as the current varies over a wide range? Explain the physical mechanism responsible for Zener breakdown. Discuss why this constant-voltage property is useful in practical circuits. \\
+\textbf{Report}
+\begin {enumerate}
+    \item Plot the I-V characteristic of the Zener diode showing both the low-current region (before breakdown) and the breakdown region. Clearly identify the Zener breakdown voltage.
+    \item Describe observations about the voltage regulation behavior. How much does the Zener voltage change as the current varies over a wide range?
+    \item Explain the physical mechanism responsible for Zener breakdown. Discuss why this constant-voltage property is useful in practical circuits. \\
+\end {enumerate}
+
 
 \subsection{Part 5: Zener Diode Small Signal Resistance}
+\emph{Using data from Part 4, the small signal resistance of the Zener diode in breakdown region is found}\\
 
-The small signal resistance of the Zener diode in breakdown region will be found using data from Part 4. Select two measurement points where the Zener is clearly in breakdown (i.e., where the supply voltage significantly exceeds the Zener voltage). Choose points with substantially different currents—for example, one point where $V_S \approx 7$ V and another where $V_S \approx 10$ V—to get a meaningful calculation. \\
+Referncing the plot from part 4, select two measurement points where the Zener is clearly in breakdown (i.e., where the supply voltage significantly exceeds the Zener voltage). Choose points with substantially different currents in order to get a meaningful calculation. For example, one point where $V_S \approx 7$ V and another where $V_S \approx 10$ V.\\
 
 Calculate the Zener small signal resistance using: 
 \begin{equation}
@@ -304,7 +307,12 @@ Calculate the Zener small signal resistance using:
 
 where $\Delta V_Z$ is the change in Zener voltage and $\Delta I_Z$ is the change in Zener current between the two selected points. A small value of $r_z$ (typically less than 50 $\Omega$) indicates good voltage regulation, as it means the voltage changes very little with current.  A larger $r_z$ indicates poorer regulation. \\
 
-In your lab report, calculate the Zener small signal resistance and discuss what this value tells you about the quality of voltage regulation provided by your Zener diode. If available, compare your measured $r_z$ with the datasheet specification for your particular Zener diode. Explain how the small signal resistance affects the performance of a Zener diode in a voltage regulator circuit—why is a smaller small signal resistance desirable? \\
+\textbf{Report}
+\begin {enumerate}
+    \item Calculate the Zener small signal resistance and discuss what this value indicates about the quality of voltage regulation provided by the Zener diode.
+    \item If available, compare the measured $r_z$ with the datasheet specification for the particular Zener diode used.
+    \item Explain how the small signal resistance affects the performance of a Zener diode in a voltage regulator circuit. Why is a smaller small signal resistance desirable? \\
+\end {enumerate}
 
 \section{Pre-Lab Questions}
 \label{sec:prelab}
@@ -316,13 +324,13 @@ Complete these questions before coming to the lab session.  Include answers and 
     
     \item For the circuit in Figure \ref{fig:forward_circuit}, assume $V_S = 5$ V, $R = 1$ k$\Omega$, and the diode forward voltage is 0.7 V when conducting.  Calculate (a) the voltage across the resistor, (b) the current through the diode, and (c) the power dissipated by the diode. Show all calculations.
     
-    \item A diode is conducting a forward current of 10 mA at room temperature. Calculate its theoretical small-signal resistance assuming $n = 1$. Show your work.
+    \item A diode is conducting a forward current of 10 mA at room temperature. Calculate its theoretical small-signal resistance assuming $n = 1$. Show all work.
     
     \item For the Zener circuit in Figure \ref{fig:zener_circuit}, assume $V_S = 10$ V, $R = 100$ $\Omega$, and $V_Z = 5. 1$ V (and assume this voltage remains constant in breakdown). Calculate (a) the current through the Zener diode, (b) the power dissipated by the Zener diode, and (c) determine whether this exceeds a 1 W power rating. Show all work.
     
     \item Explain in your own words the difference between static (DC) resistance and dynamic (small-signal) resistance of a diode. Write the mathematical expression for calculating each type of resistance.
     
-    \item Research and briefly explain how temperature affects the forward voltage drop of a silicon diode. What is the typical temperature coefficient (in mV/°C)? How might this affect your measurements if the diode heats up during testing?
+    \item Research and briefly explain how temperature affects the forward voltage drop of a silicon diode. What is the typical temperature coefficient (in mV/°C)? How might this affect the measurements if the diode heats up during testing?
 \end{enumerate}
 
 
