@@ -23,6 +23,7 @@
   \vskip0pt%
 }
 
+
 \usepackage[english]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage{tikz}
@@ -51,6 +52,10 @@
 
 \usepgfplotslibrary{groupplots}
 \pgfplotsset{compat=newest} 
+
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{false}
 
 \usepackage{hyperref}
 \hypersetup{
@@ -283,12 +288,6 @@
 
         
     \end{block}
-    
-    % \vspace{0.3cm}
-    
-    % \begin{alertblock}{Important}
-    %     Phasor analysis only works for \textbf{linear circuits} with \textbf{sinusoidal sources} at the \textbf{same frequency} in \textbf{steady-state}
-    % \end{alertblock}
     
 \end{frame}
 
@@ -1071,8 +1070,18 @@
         
     \column{0.48\textwidth}
         
-        \vspace{-1cm}    
+        
 
+    \end{columns}
+    
+\end{frame}
+
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 1: Solution - Part 1}
+    
+    \begin{columns}[t]
+    \column{0.48\textwidth}
+            
         \textbf{Solution}:
         
         \textbf{Part 1}:  Phasor forms
@@ -1082,9 +1091,7 @@
         \mathbf{I} &= 2\angle 60°\text{ A}
         \end{align*}
         
-        \pause
-
-        \vspace{-0.2cm}
+    \column{0.48\textwidth}
 
         \textbf{Part 2}: $\mathbf{V}_1 + \mathbf{V}_2$
         
@@ -1099,8 +1106,10 @@
     \end{columns}
     
 \end{frame}
+}{}
 
-\begin{frame}{Example 1: Solution (continued)}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 1: Solution - Part 2}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1147,6 +1156,7 @@
     \end{columns}
     
 \end{frame}
+}{}
 
 \section{Impedance Calculation Problems}
 
@@ -1199,6 +1209,7 @@
     
 \end{frame}
 
+\ifthenelse{\boolean{showresults}}{
 \begin{frame}{Example 2: Solution - Setup and Part (a)}
     
     \textbf{General Formula for Series RLC}:
@@ -1248,7 +1259,9 @@
     \end{columns}
     
 \end{frame}
+}{}
 
+\ifthenelse{\boolean{showresults}}{
 \begin{frame}{Example 2: Solution - Parts (b) and (c)}
     
     \begin{columns}[t]
@@ -1303,6 +1316,7 @@
     \end{block}
     
 \end{frame}
+}{}
 
 \section{Circuit Analysis }
 
@@ -1354,6 +1368,7 @@
     
 \end{frame}
 
+\ifthenelse{\boolean{showresults}}{
 \begin{frame}{Example 3: Solution - Impedance and Current}
     
     \begin{columns}[t]
@@ -1404,7 +1419,9 @@
     \end{columns}
     
 \end{frame}
+}{}
 
+\ifthenelse{\boolean{showresults}}{
 \begin{frame}{Example 3: Solution - Current (continued)}
     
     \begin{columns}[t]
@@ -1439,7 +1456,9 @@
     \end{columns}
     
 \end{frame}
+}{}
 
+\ifthenelse{\boolean{showresults}}{
 \begin{frame}{Example 3: Solution - Element Voltages}
     
     \begin{columns}[t]
@@ -1490,7 +1509,9 @@
     \end{columns}
     
 \end{frame}
+}{}
 
+\ifthenelse{\boolean{showresults}}{
 \begin{frame}{Example 3: Solution - Phasor Diagram and Verification}
     
     \begin{columns}[t]
@@ -1567,6 +1588,7 @@
     \end{columns}
     
 \end{frame}
+}{}
 
 
 \begin{frame}{Example 4: RC Voltage Divider}
@@ -1621,7 +1643,8 @@
     
 \end{frame}
 
-\begin{frame}{Example 4: Solution}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 4: Solution - Part 1}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1662,8 +1685,10 @@
     \end{columns}
     
 \end{frame}
+}{}
 
-\begin{frame}{Example 4: Solution (continued)}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 4: Solution - Part 2}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1694,6 +1719,7 @@
     \end{columns}
     
 \end{frame}
+}{}
 
 \section{AC Power Problems}
 
@@ -1730,7 +1756,8 @@
     
 \end{frame}
 
-\begin{frame}{Example 5: Solution - RMS Values and Powers}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 5: Solution - Part 1}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1791,8 +1818,10 @@
     \end{columns}
     
 \end{frame}
+}{}
 
-\begin{frame}{Example 5: Solution - Power Factor and Impedance}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 5: Solution - Part 2}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1842,6 +1871,7 @@
     \end{columns}
     
 \end{frame}
+}{}
 
 \begin{frame}{Example 6: Parallel RLC Circuit}
     
@@ -1896,7 +1926,8 @@
     
 \end{frame}
 
-\begin{frame}{Example 6: Solution}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 6: Solution - Part 1}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1939,8 +1970,10 @@
     \end{columns}
     
 \end{frame}
+}{}
 
-\begin{frame}{Example 6: Solution (continued)}
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Example 6: Solution - Part 2}
     
     \begin{columns}[t]
     \column{0.48\textwidth}
@@ -1989,7 +2022,6 @@
     \end{columns}
     
 \end{frame}
-
-\end{document}
+}{}
 
 \end{document}

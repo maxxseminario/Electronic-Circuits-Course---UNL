@@ -1,0 +1,61 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{ifthen}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Electronic Circuits: Quiz 1}}
+\date{\vspace{-0.5cm}\small\textbf{January 30, 2026}} 
+
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+
+\vspace{0.5cm}
+
+\begin{enumerate}
+    \item \textbf{(10 points)} Consider the frequency response
+    \[
+    H(e^{j\omega}) = 1 + e^{-j\omega}
+    \]
+     Find the \textbf{real part} of $H(e^{j\omega})$ as a function of $\omega$. \textbf{Note:} don't leave any $j$'s, $i$'s, $\sqrt{-1}$'s, etc. \\
+    
+    
+    % \vspace{8cm}
+
+    \ifthenelse{\boolean{showresults}}{
+        \textbf{Solution:}
+        
+        We can expand the complex exponential using Euler's formula:
+        \[
+        H(e^{j\omega}) = 1 + e^{-j\omega} = 1 + \cos(-\omega) + j\sin(-\omega)
+        \]
+        
+        Using the even/odd properties of cosine and sine:
+        \[
+        H(e^{j\omega}) = 1 + \cos(\omega) - j\sin(\omega)
+        \]
+        
+        Therefore, the real part of $H(e^{j\omega})$ is:
+        \[
+        \boxed{\text{Re}\{H(e^{j\omega})\} = 1 + \cos(\omega)}
+        \]
+        
+    }{}
+    \end{enumerate}
+
+\end{document}

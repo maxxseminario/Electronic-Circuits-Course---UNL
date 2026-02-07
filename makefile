@@ -1,35 +1,44 @@
-# Makefile compatible on Windows Devices
+# Makefile compatible on Ubuntu Linux (and generally POSIX shells)
 # Author - Maxx Seminario
+#
+# Assumptions:
+# - Run from repo root.
+# - Uses the bash script version of update_docs (e.g., assets/sw/update_docs.sh).
+# - Uses standard Unix tools: find, rm, git.
 
-.PHONY: all clean update_docs
+SHELL := /bin/bash
+
+.PHONY: all clean update_docs push
 
 all: update_docs clean
 
-# Copy all PDFs to docs/ using PowerShell script
-update_docs:  
-	@powershell -ExecutionPolicy Bypass -File assets/sw/update_docs.ps1
+# Copy all PDFs to docs/ using bash script
+update_docs:
+	@bash assets/sw/update_docs.sh
 
-# Clean LaTeX auxiliary files recursively
-clean: 
-	@powershell -Command "Get-ChildItem -Path lectures,labs -Include *.aux,*.log,*.out,*.toc,*.nav,*.snm,*.fls,*.fdb_latexmk,*.synctex.gz -Recurse -ErrorAction SilentlyContinue | Remove-Item -Force -ErrorAction SilentlyContinue"
-	@powershell -Command "Write-Host 'Cleaned LaTeX auxiliary files' -ForegroundColor Green"
+# Clean LaTeX auxiliary files recursively (lectures/ and labs/)
+clean:
+	@find lectures labs assignments -type f \( \
+		-name '*.aux' -o -name '*.log' -o -name '*.out' -o -name '*.toc' -o \
+		-name '*.nav' -o -name '*.snm' -o -name '*.fls' -o -name '*.fdb_latexmk' -o \
+		-name '*.synctex.gz' \
+	\) -print -delete 2>/dev/null || true
+	@echo "Cleaned LaTeX auxiliary files"
 
 # Clean, update docs, and push to GitHub
-# Clean, update docs, and push to GitHub
-push:  clean update_docs
-	@powershell -Command "\
+push: clean update_docs
+	@read -r -p "Enter commit message: " message; \
+	if [[ -n "$$message" ]]; then \
 		git add .; \
-		$$message = Read-Host 'Enter commit message'; \
-		if ($$message) { \
-			git commit -m \"$$message\"; \
-			$$force = Read-Host 'Force push? (y/n)'; \
-			if ($$force -eq 'y') { \
-				git push origin main --force; \
-				Write-Host 'Force pushed to GitHub!' -ForegroundColor Yellow \
-			} else { \
-				git push origin main; \
-				Write-Host 'Pushed to GitHub!' -ForegroundColor Green \
-			} \
-		} else { \
-			Write-Host 'Commit cancelled - no message provided' -ForegroundColor Red \
-		}"
+		git commit -m "$$message" || true; \
+		read -r -p "Force push? (y/n): " force; \
+		if [[ "$$force" == "y" ]]; then \
+			git push origin main --force; \
+			echo "Force pushed to GitHub!"; \
+		else \
+			git push origin main; \
+			echo "Pushed to GitHub!"; \
+		fi; \
+	else \
+		echo "Commit cancelled - no message provided"; \
+	fi

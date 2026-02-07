@@ -19,7 +19,6 @@ ECEN 222 is the second course in the circuits sequence for Computer Engineering 
 
 Students will learn the physics and operation of diodes, BJTs, and MOSFETs, and apply this knowledge to design amplifiers, bias circuits, and digital logic gates. The course emphasizes both theoretical understanding and practical skills through hands-on laboratory work and SPICE simulation.
 
----
 
 ## Learning Objectives
 
@@ -57,6 +56,39 @@ By the end of this course, one will be able to:
 ├── quiz/              # Quiz materials and practice problems
 └── docs/              # Compiled PDF documents
 ```
+
+### lectures/ ###  
+  Contains all lecture notes in sequential order:
+
+  0. Introduction
+  1. Electronic Signals
+  2. Passive Circuit Devices
+  3. Time Domain Circuit Analysis 
+  4. Complex Numbers
+  5. Frequency Domain Circuit Analysis 
+  6. Diodes
+  7. Diode Applications
+  8. Operational Amplifiers
+  9. Operational Amplifier Applications
+  10. Operational Amplifier Specifications
+  11. Crystal Structure 
+  12. PN Junctions
+  13. PN Junction Under External Bias
+  14. MOSFET Physcial Structure
+  15. MOSFET DC Analysis and Biasing
+  16. MOSFET AC / Small Signal Analysis 
+
+###  labs/ ###     
+
+  1. Diodes
+  2. Diode Rectifiers
+  3. Bridge Rectifiers
+  4. MOSFET IV and VTC
+  4. BJT IV and VTC
+  5. BJT Large Signal and Resistive Biasing
+  7. Common Source Amp and Source Follower Buffering Application
+  8. Common Emitter Amp and Emitter Follower Buffering Application
+  9. Ring Oscillator Design for Digital Systems
 
 ### Quiz and Lecture Solutions
 Quiz and lectures may be compiled with `showresults = true` to include solutions. 
