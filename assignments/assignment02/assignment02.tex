@@ -1,0 +1,371 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usepackage[american]{circuitikz}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} 
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Assignment 02}}\\
+    {\LARGE \textbf{Frequency Domain Analysis of Circuits}}\\
+    \vspace{0.3cm}
+    {\large ECEN 222, Spring 2026}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Instructions}
+
+This assignment focuses on analyzing AC circuits in the frequency domain using phasor techniques. You will convert time-domain signals to phasors, calculate impedances, analyze circuits, and convert results back to the time domain.
+
+\vspace{0.3cm}
+
+\subsection*{Key Formulas}
+
+\textbf{Phasor Conversion:}
+\[
+v(t) = V_m\cos(\omega t + \phi) \quad \Leftrightarrow \quad \mathbf{V} = V_m\angle\phi
+\]
+
+\textbf{Impedances:}
+\begin{itemize}
+    \item Resistor: $\mathbf{Z}_R = R$
+    \item Inductor: $\mathbf{Z}_L = j\omega L = \omega L\angle 90^\circ$
+    \item Capacitor: $\mathbf{Z}_C = \frac{1}{j\omega C} = \frac{-j}{\omega C} = \frac{1}{\omega C}\angle -90^\circ$
+\end{itemize}
+
+\textbf{Complex Number Operations:}
+\begin{itemize}
+    \item Rectangular to Polar: $a + jb = \sqrt{a^2 + b^2}\angle\tan^{-1}(b/a)$
+    \item Polar to Rectangular: $r\angle\theta = r\cos\theta + jr\sin\theta$
+\end{itemize}
+
+\textbf{AC Power:}
+\begin{itemize}
+    \item Real Power: $P = V_{rms}I_{rms}\cos\theta$ (W)
+    \item Reactive Power: $Q = V_{rms}I_{rms}\sin\theta$ (VAR)
+    \item Apparent Power: $S = V_{rms}I_{rms}$ (VA)
+    \item Complex Power: $\mathbf{S} = P + jQ = \mathbf{V}_{rms}\mathbf{I}_{rms}^*$
+\end{itemize}
+
+\newpage
+
+\section*{Problems}
+
+\begin{enumerate}
+
+\item \textbf{[12.5 points]}
+
+\noindent Given the following time-domain signals:
+\begin{align*}
+v_1(t) &= 15\cos(5000t + 60^\circ)\text{ V}\\
+v_2(t) &= 8\cos(5000t - 30^\circ)\text{ V}\\
+i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
+\end{align*}
+
+\textbf{(a)} Convert each signal to phasor form.
+
+\vspace{2cm}
+
+\textbf{(b)} Calculate $\mathbf{V}_1 + \mathbf{V}_2$ in both rectangular and polar forms.
+
+\vspace{3cm}
+
+\textbf{(c)} Calculate $\mathbf{V}_1 - \mathbf{V}_2$ in both rectangular and polar forms.
+
+\vspace{3cm}
+
+\textbf{(d)} Calculate the impedance $\mathbf{Z} = \mathbf{V}_1/\mathbf{I}$ and express it in both rectangular and polar forms. What type of element(s) does this impedance represent?
+
+\vspace{3cm}
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent Consider a circuit with a resistor $R = 50\,\Omega$ in series with a parallel combination of $L = 20$ mH and $C = 2\,\mu$F.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1]
+    \draw (0,0) to[R, l=$R$] (2,0);
+    \draw (2,0) to[short] (2.5,0);
+    \draw (2.5,0) to[L, l=$L$, *-*] (2.5,-2);
+    \draw (4,0) to[C, l=$C$, *-*] (4,-2);
+    \draw (2.5,0) to[short] (4,0) to[short] (5,0);
+    \draw (2.5,-2) to[short] (4,-2) to[short] (5,-2);
+    \draw (0,0) to[short, o-] (0,0);
+    \draw (5,0) to[short, -o] (5,0);
+    \draw (0,-2) to[short, o-] (2.5,-2);
+    \draw (5,-2) to[short, -o] (5,-2);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Calculate the impedance of the parallel LC combination at $f = 1000$ Hz. Express in both rectangular and polar forms.
+
+\vspace{4cm}
+
+\textbf{(b)} Calculate the total impedance $\mathbf{Z}_{tot}$ at $f = 1000$ Hz. Express your answer in both rectangular and polar forms.
+
+\vspace{4cm}
+
+\textbf{(c)} At what frequency does the parallel LC combination have infinite impedance? What is the total impedance at this frequency?
+
+\vspace{4cm}
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent For the circuit shown below, the voltage source is $v_s(t) = 24\cos(3000t)$ V, $R_1 = 30\,\Omega$, $R_2 = 60\,\Omega$, $L_1 = 20$ mH, and $L_2 = 40$ mH.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1]
+    \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+    \draw (0,3) to[R, l=$R_1$, i^=$i(t)$] (2,3);
+    \draw (2,3) to[short] (2.5,3);
+    \draw (2.5,3) to[R, l=$R_2$, *-*] (2.5,0);
+    \draw (4.5,3) to[L, l=$L_1$, *-*] (4.5,0);
+    \draw (2.5,3) to[short] (4.5,3);
+    \draw (4.5,3) to[short] (5.5,3);
+    \draw (5.5,3) to[short] (5.5,0);
+    \draw (5.5,0) to[short] (4.5,0);
+    \draw (4.5,0) to[short] (2.5,0);
+    \draw (2.5,0) to[L, l=$L_2$] (0,0);
+\end{circuitikz}
+\end{center}
+
+\vspace{0.3cm}
+
+\textbf{(a)} Calculate the impedances of $L_1$ and $L_2$ at $\omega = 3000$ rad/s.
+
+\vspace{2cm}
+
+\textbf{(b)} Calculate the impedance of the parallel combination of $R_2$ and $L_1$.
+
+\vspace{3cm}
+
+\textbf{(c)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms. (Hint: The circuit topology is $R_1$ in series with $(R_2 \parallel L_1)$, all in series with $L_2$.)
+
+\vspace{3cm}
+
+\textbf{(d)} Find the current $i(t)$ in both phasor and time-domain forms.
+
+\vspace{3cm}
+
+\textbf{(e)} Find the voltage across the parallel branch and determine the current through $R_2$ and $L_1$ individually.
+
+\vspace{4cm}
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent For the circuit shown below, the voltage source is $v_s(t) = 50\cos(4000t)$ V, $R = 100\,\Omega$, $C_1 = 5\,\mu$F, and $C_2 = 10\,\mu$F.
+
+\begin{center}
+\begin{circuitikz}[american, scale=1]
+    \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+    \draw (0,3) to[R, l=$R$, i^=$i(t)$] (2,3);
+    \draw (2,3) to[C, l=$C_1$] (4,3);
+    \draw (4,3) to[short] (4.5,3);
+    \draw (4.5,3) to[C, l_=$C_2$, v^=$v_o$, *-*] (4.5,0);
+    \draw (4.5,0) to[short] (0,0);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Calculate the impedance of $C_1$ and $C_2$ individually at $\omega = 4000$ rad/s.
+
+\vspace{2cm}
+
+\textbf{(b)} Calculate the total impedance of the three series components. 
+
+\vspace{3cm}
+
+\textbf{(c)} Find the current $i(t)$ in both phasor and time-domain forms.
+
+\vspace{3cm}
+
+\textbf{(d)} Find $v_o(t)$.
+
+
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent Consider the circuit shown below with $v_s(t) = 20\cos(8000t)$ V, $R_1 = 1$ k$\Omega$, $R_2 = 3$ k$\Omega$, $C_1 = 100$ nF, and $C_2 = 50$ nF.
+
+\begin{center}
+\begin{circuitikz}[american, scale=0.9]
+    \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+    \draw (0,3) to[R, l=$R_1$, i^=$i(t)$] (2,3);
+    \draw (2,3) to[short] (2.5,3);
+    \draw (2.5,3) to[C, l=$C_1$, *-*] (2.5,0);
+    \draw (5,3) to[C, l=$C_2$, *-*] (5,0);
+    \draw (2.5,3) to[short] (5,3) to[short] (6,3);
+    \draw (8,3) to[R, l_=$R_2$, v^=$v_o(t)$, *-*] (8,0);
+    \draw (6,0) to[short] (5,0);
+    \draw (5,0) to[short] (2.5,0);
+    \draw (2.5,0) to[short] (0,0);
+    \draw (6,3) to[short, -o] (8,3);
+    \draw (6,0) to[short, -o] (8,0);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Calculate the impedances of $C_1$, $C_2$, and $R_2$ at $\omega = 8000$ rad/s, then find the equivalent impedance of the parallel combination.
+
+\vspace{3cm}
+
+\textbf{(b)} Calculate the total circuit impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
+
+\vspace{3cm}
+
+\textbf{(c)} Find the input current $i(t)$ in both phasor and time-domain forms.
+
+\vspace{3cm}
+
+\textbf{(d)} Find the output voltage $v_o(t)$.
+
+\vspace{3cm}
+
+\textbf{(e)} Calculate the magnitude ratio $|\mathbf{V}_o|/|\mathbf{V}_s|$ and the phase shift. 
+
+\vspace{3cm}
+
+\textbf{(f)} Find the current through each capacitor ($C_1$ and $C_2$) individually.
+
+\vspace{3cm}
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent A load is connected to an AC source. The voltage across and current through the load are measured as:
+\begin{align*}
+v(t) &= 120\sqrt{2}\cos(377t)\text{ V}\\
+i(t) &= 6\sqrt{2}\cos(377t - 53.13^\circ)\text{ A}
+\end{align*}
+
+\textbf{(a)} Convert the voltage and current to phasor form, then calculate the RMS phasors $\mathbf{V}_{rms}$ and $\mathbf{I}_{rms}$. (Hint: The $\sqrt{2}$ factor is included to indicate peak values.)
+
+\vspace{3cm}
+
+\textbf{(b)} Find the real power $P$, reactive power $Q$, and apparent power $\mathbf{S}$. Include proper units.
+
+\vspace{3cm}
+
+\textbf{(c)} Calculate the power factor and state whether the load is inductive or capacitive. Explain your reasoning.
+
+\vspace{3cm}
+
+\textbf{(d)} Find the impedance of the load using $\mathbf{Z} = \mathbf{V}_{rms}/\mathbf{I}_{rms}$ in both rectangular and polar forms. What circuit elements could this load represent?
+
+\vspace{3cm}
+
+\textbf{(e)} If you wanted to improve the power factor to unity (1.0), what value of capacitor would you need to place in parallel with this load? (Note: $\omega = 377$ rad/s corresponds to $f = 60$ Hz)
+
+\vspace{3cm}
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent Consider the circuit with $v_s(t) = 100\cos(5000t)$ V, $R_1 = 20\,\Omega$, $R_2 = 80\,\Omega$, $L = 8$ mH, $C_1 = 10\,\mu$F, and $C_2 = 40\,\mu$F.
+
+\begin{center}
+\begin{circuitikz}[american, scale=0.9]
+    \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+    \draw (0,3) to[R, l=$R_1$, i^=$i_{in}$] (2,3);
+    \draw (2,3) to[L, l=$L$] (4,3);
+    \draw (4,3) to[short] (4.5,3);
+    \draw (4.5,3) to[R, l=$R_2$, *-*] (4.5,0);
+    \draw (6,3) to[C, l=$C_1$, *-*] (6,0);
+    \draw (4.5,3) to[short] (6,3) to[short] (7,3);
+    \draw (7,3) to[C, l=$C_2$] (9,3);
+    \draw (9,3) to[short] (9,0);
+    \draw (9,0) to[short] (6,0);
+    \draw (6,0) to[short] (4.5,0) to[short] (0,0);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Calculate all component impedances at $\omega = 5000$ rad/s.
+
+\vspace{3cm}
+
+\textbf{(b)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
+
+\vspace{3cm}
+
+\textbf{(c)} Find the input current $i_{in}(t)$ in both phasor and time-domain forms.
+
+\vspace{3cm}
+
+\textbf{(d)} Calculate the voltage across the parallel branch ($R_2 \parallel C_1$).
+
+\vspace{3cm}
+
+\textbf{(e)} Find the current through $R_2$ and through $C_1$ individually.
+
+
+\newpage
+
+\item \textbf{[12.5 points]}
+
+\noindent Analyze the circuit shown below with $v_s(t) = 60\cos(4000t)$ V, $R_1 = 50\,\Omega$, $R_2 = 100\,\Omega$, $L_1 = 25$ mH, $L_2 = 50$ mH, and $C = 5\,\mu$F.
+
+\begin{center}
+\begin{circuitikz}[american, scale=0.9]
+    \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$, i=$i_s$] (0,4);
+    \draw (0,4) to[short] (1,4);
+    \draw (1,4) to[L, l=$L_1$, i^=$i_1$, *-*] (1,0);
+    \draw (2.5,4) to[L, l=$L_2$, i^=$i_2$, *-*] (2.5,0);
+    \draw (1,4) to[short] (2.5,4) to[short] (3.5,4);
+    \draw (3.5,4) to[R, l=$R_1$] (5.5,4);
+    \draw (5.5,4) to[C, l=$C$] (7.5,4);
+    \draw (7.5,4) to[R, l=$R_2$] (9.5,4);
+    \draw (9.5,4) to[short] (9.5,0);
+    \draw (1,0) to[short] (2.5,0) to[short] (9.5,0);
+    \draw (0,0) to[short] (1,0);
+\end{circuitikz}
+\end{center}
+
+\textbf{(a)} Calculate the impedance of each inductor and the capacitor at $\omega = 4000$ rad/s.
+
+\vspace{3cm}
+
+\textbf{(b)} Calculate the equivalent impedance of the parallel inductor combination ($L_1 \parallel L_2$).
+
+\vspace{3cm}
+
+\textbf{(c)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
+
+\vspace{3cm}
+
+\textbf{(d)} Find the total source current $i_s(t)$ in both phasor and time-domain forms.
+
+\vspace{3cm}
+
+\textbf{(e)} Find the voltage across the parallel inductor combination, then determine the individual currents $i_1(t)$ and $i_2(t)$ through each inductor.
+
+\vspace{3cm}
+
+\textbf{(f)} Calculate the total real power, reactive power, and complex power delivered by the source. Express complex power in rectangular form. (Hint:You already know the source voltage and current.)
+
+\end{enumerate}
+
+
+\end{document}
