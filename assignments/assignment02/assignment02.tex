@@ -141,15 +141,12 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
     \draw (4.5,3) to[L, l=$L_1$, *-*] (4.5,0);
     \draw (2.5,3) to[short] (4.5,3);
     \draw (4.5,3) to[short] (5.5,3);
-    \draw (5.5,3) to[L, l=$L_2$] (7.5,3);
-    \draw (7.5,3) to[short] (7.5,0);
-    \draw (7.5,0) to[short] (4.5,0);
+    \draw (5.5,3) to[short] (5.5,0);
+    \draw (5.5,0) to[short] (4.5,0);
     \draw (4.5,0) to[short] (2.5,0);
-    \draw (2.5,0) to[short] (0,0);
+    \draw (2.5,0) to[L, l=$L_2$] (0,0);
 \end{circuitikz}
 \end{center}
-
-\noindent The circuit consists of $R_1$ in series with a parallel combination of $R_2$ and $L_1$, all in series with $L_2$.
 
 \vspace{0.3cm}
 
@@ -161,7 +158,7 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \vspace{3cm}
 
-\textbf{(c)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
+\textbf{(c)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms. (Hint: The circuit topology is $R_1$ in series with $(R_2 \parallel L_1)$, all in series with $L_2$.)
 
 \vspace{3cm}
 
