@@ -135,14 +135,11 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 \begin{center}
 \begin{circuitikz}[american, scale=1]
     \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
-    \draw (0,3) to[R, l=$R_1$, i^=$i(t)$] (2,3);
+    \draw (0,3) to[R, l=$R_1$, i^=$i(t)$] (2.5,3);
     \draw (2,3) to[short] (2.5,3);
     \draw (2.5,3) to[R, l=$R_2$, *-*] (2.5,0);
     \draw (4.5,3) to[L, l=$L_1$, *-*] (4.5,0);
     \draw (2.5,3) to[short] (4.5,3);
-    \draw (4.5,3) to[short] (5.5,3);
-    \draw (5.5,3) to[short] (5.5,0);
-    \draw (5.5,0) to[short] (4.5,0);
     \draw (4.5,0) to[short] (2.5,0);
     \draw (2.5,0) to[L, l=$L_2$] (0,0);
 \end{circuitikz}
@@ -191,7 +188,7 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \vspace{2cm}
 
-\textbf{(b)} Calculate the total impedance of the three series components. 
+\textbf{(b)} Calculate the total impedance $Z_{tot}$ of the three series components. 
 
 \vspace{3cm}
 
@@ -254,7 +251,7 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \item \textbf{[12.5 points]}
 
-\noindent A load is connected to an AC source. The voltage across and current through the load are measured as:
+\noindent A load is connected to an AC source. The voltage across the load and the current through the load are measured as:
 \begin{align*}
 v(t) &= 120\sqrt{2}\cos(377t)\text{ V}\\
 i(t) &= 6\sqrt{2}\cos(377t - 53.13^\circ)\text{ A}
