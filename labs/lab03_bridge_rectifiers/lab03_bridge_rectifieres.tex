@@ -92,7 +92,7 @@ Before arriving at the lab session, students are required to thoroughly prepare 
 
 \subsection{Bridge Rectifier}
 
-The bridge rectifier, which you studied in Lab 2, uses four diodes arranged in a bridge configuration to achieve full-wave rectification without requiring a center-tapped transformer. During the positive half-cycle of the AC input, diodes $D_1$ and $D_2$ conduct, directing current through the load in one direction. During the negative half-cycle, diodes $D_3$ and $D_4$ conduct, maintaining current flow through the load in the same direction. The key characteristic of the bridge rectifier is that two diodes are always in the conduction path, resulting in a voltage drop of approximately $2V_D \approx 1.4$ V for silicon diodes. \\
+The bridge rectifier, covered in Lab 2, uses four diodes arranged in a bridge configuration to achieve full-wave rectification without requiring a center-tapped transformer. During the positive half-cycle of the AC input, diodes $D_1$ and $D_2$ conduct, directing current through the load in one direction. During the negative half-cycle, diodes $D_3$ and $D_4$ conduct, maintaining current flow through the load in the same direction. The key characteristic of the bridge rectifier is that two diodes are always in the conduction path, resulting in a voltage drop of approximately $2V_D \approx 1.4$ V for silicon diodes. \\
 
 For an ideal bridge rectifier with peak input voltage $V_p$, the average DC output voltage is: 
 
@@ -114,13 +114,31 @@ Each diode must withstand a peak inverse voltage (PIV) equal to the peak input v
     \text{PIV}_{\text{bridge}} = V_p
 \end{equation}
 
-The advantages of the bridge rectifier include no requirement for a center-tapped transformer (reducing transformer cost and size) and full utilization of the transformer secondary winding (current flows through the entire winding during both half-cycles). The disadvantages include higher voltage drop due to two diodes in series (reducing efficiency, especially at low voltages) and requiring four diodes instead of two. 
+The advantages of the bridge rectifier include having no requirement for a center-tapped transformer (reducing transformer cost and size) and a full utilization of the transformer secondary winding (current flows through the entire winding during both half-cycles). The disadvantages include a higher voltage drop due to two diodes in series (reducing efficiency, especially at low voltages) and the requirement of four diodes instead of two. 
+
+\begin{figure}[h]
+    \centering
+    \begin{circuitikz}[american, scale=.75]
+        \ctikzset{label/align=straight}
+        \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
+        \draw (-1,4) -- (4,4);
+        \ctikzset{label distance=-.2cm}
+        \draw (2,2) to [D, l=$D_4$, *-*] (4,4) to [D, l=$D_1$, *-*] (6,2);
+        \draw (2,2) to [D, l_=$D_2$, *-*] (4,0) to [D, l_=$D_3$, *-*] (6,2);
+        \draw (-1,0) -- (4,0);
+        \ctikzset{label distance=0}
+        \draw (6,2) -- (8,2) to [R, l=$R_L$, v=$v_o$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
+
+    \end{circuitikz}
+    \caption{Full-wave bridge rectifier circuit without filter capacitor.}
+    \label{fig:bridge_circuit}
+\end{figure}
 
 \subsection{Shunt Voltage Regulation with Zener Diodes}
 
-The simple filtered rectifier circuits studied in Lab 2 produce a DC output voltage that varies with both input voltage changes (line variations) and load current changes (load variations). Many Electronic Circuits II-CE require a stable, regulated voltage that remains constant despite these variations. The simplest form of voltage regulation uses a Zener diode in a shunt (parallel) configuration. \\
+Simple filtered rectifier circuits, studied in Lab 2, produce a DC output voltage that varies with both input voltage changes (line variations) and load current changes (load variations). However, many electronic circuits require a stable, regulated voltage that remains constant over time. The simplest form of voltage regulation uses a Zener diode in a shunt (parallel) configuration. \\
 
-A basic Zener shunt regulator consists of a series resistor $R_S$ (often called the dropping resistor or series resistor) connected between the unregulated DC input voltage $V_{in}$ and the load, with a Zener diode connected in parallel with the load as shown in Figure \ref{fig:shunt_reg_concept}. The Zener diode is reverse-biased and operates in its breakdown region, maintaining an approximately constant voltage $V_Z$ across the load.  \\
+A basic Zener shunt regulator consists of a series resistor $R_S$ (often called the dropping resistor or series resistor) connected between the unregulated DC input voltage $V_{in}$ and the load. A zener diode is connected in parallel with the load, as shown in Figure \ref{fig:shunt_reg_concept}. The zener diode is reverse-biased and operates in its breakdown region, maintaining an approximately constant voltage $V_Z$ across the load.  \\
 
 
 \begin{figure}[h]
@@ -151,7 +169,7 @@ A basic Zener shunt regulator consists of a series resistor $R_S$ (often called 
 
 
 
-The operation principle is straightforward.  The series resistor $R_S$ drops the difference between the input voltage and the desired output voltage. The Zener diode maintains a constant voltage $V_Z$ across the load by absorbing variations in current.  When the load current decreases, the Zener current increases to maintain constant current through $R_S$ (and thus constant voltage drop across $R_S$). When the load current increases, the Zener current decreases.  Similarly, when the input voltage increases, the Zener current increases to absorb the extra current while maintaining constant output voltage. \\
+The operation principle is straightforward.  The series resistor $R_S$ drops the difference between the input voltage and the desired output voltage. The Zener diode maintains a constant voltage $V_Z$ across the load by absorbing variations in current.  When the load current decreases, the Zener current increases to maintain a constant current through $R_S$ (and thus a constant voltage drop across $R_S$). When the load current increases, the Zener current decreases.  Similarly, when the input voltage increases, the Zener current increases to absorb the extra current, while maintaining constant output voltage. \\
 
 By Kirchhoff's current law: 
 
@@ -245,37 +263,32 @@ Zener shunt regulators generally have poor efficiency, especially under light lo
 
 \subsection{Part 1: Bridge Rectifier with Filter}
 
-Begin by constructing a full-wave bridge rectifier with filter capacitor as shown in Figure \ref{fig:bridge_filtered_lab3}. This circuit should be familiar from Lab 2. Use four rectifier diodes in the bridge configuration, the 1000 $\mu$F filter capacitor, and initially use a 2.2 k$\Omega$ load resistor. Connect your AC source to provide approximately 12 V RMS at 60 Hz.  Verify the polarity of the electrolytic capacitor before applying power.\\
+Begin by constructing a full-wave bridge rectifier with filter capacitor as shown in Figure \ref{fig:bridge_filtered}. This circuit should be familiar from Lab 2. Use four rectifier diodes in the bridge configuration, the 1000 $\mu$F filter capacitor, and initially use a 2.2 k$\Omega$ load resistor. Connect your AC source to provide approximately 12 V RMS at 60 Hz.  Verify the polarity of the electrolytic capacitor before applying power.\\
 
 \begin{figure}[h]
     \centering
-    \begin{circuitikz}[american, scale=1.3]
-        % AC source on left
-        \draw (-2,0) to[sV, l=$v_{AC}$] (0,0);
-        
-        % Bridge diodes in diamond configuration
-        \draw (0,0) to[D, l=$D_1$, *-] (1.5,1.5);
-        \draw (0,0) to[D, l_=$D_2$, invert] (1.5,-1.5);
-        \draw (1.5,1.5) to[D, l=$D_3$, -*, invert] (3,0);
-        \draw (1.5,-1.5) to[D, l_=$D_4$] (3,0);
-        
-        \draw (1.5,1.5) to[short, *-] (5,1.5);
-        \draw (1.5,1.5) to[short] (4,1.5)
-              to[R, l^=$R_L$, v_=$V_o$] (4,-1.5)
-              to[short] (1.5,-1.5);
-        \draw (5,1.5) to[C, l=$C$] (5,-1.5)
-              to[short, -*] (1.5,-1.5);
+    \begin{circuitikz}[american, scale=.75]
+        % \draw[step=1cm, gray!30, very thin] (-2,-2) grid (8,6);
+        \ctikzset{label/align=straight}
+        \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
+        \draw (-1,4) -- (4,4);
+        \ctikzset{label distance=-.2cm}
+        \draw (2,2) to [D, l=$D_4$, *-*] (4,4) to [D, l=$D_1$, *-*] (6,2);
+        \draw (2,2) to [D, l_=$D_2$, *-*] (4,0) to [D, l_=$D_3$, *-*] (6,2);
+        \draw (-1,0) -- (4,0);
+        \ctikzset{label distance=0}
+        \draw (6,2) -- (8,2) to [R, l^=$R_L$, v_=$v_o$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
+        \draw (8,2) -- (10,2) to [cC, l^=$C$] (10,-1) -- (8,-1);
 
-        \draw (-2,0) node[ground]{};
-        \draw (3,0) node[ground]{};
     \end{circuitikz}
-    \caption{Bridge rectifier with filter capacitor for Part 1.}
-    \label{fig:bridge_filtered_lab3}
+    \caption{Full-wave bridge rectifier with filter capacitor.}
+    \label{fig:bridge_filtered}
 \end{figure}
 
-Connect the oscilloscope to observe the output voltage waveform across the load resistor. Measure and record the DC output voltage $V_o$ using the DMM, the peak output voltage, the minimum output voltage, and calculate the peak-to-peak ripple voltage $V_r$.  Measure the ripple frequency and verify it is 120 Hz (twice the AC line frequency). Also measure the AC input voltage (RMS and peak values).\\
+Using the oscilloscope, observe the output voltage $V_o$ across $R_L$; record the peak and minimum output voltage. Use the DMM to measure the DC output voltage. Calculate the peak-to-peak ripple voltage $V_r$. Verify that the ripple frequency of the output is 120Hz (twice the AC input frequency). Also measure the AC input voltage (RMS and peak values).\\
 
-Replace the load resistor with the 1 k$\Omega$ resistor and repeat the measurements. Then use the 4.7 k$\Omega$ resistor and repeat once more. For each load value, calculate the load current as $I_L = V_o / R_L$ and observe how the DC output voltage and ripple voltage change with load current. \\
+
+Replace the load resistor with a 1 k$\Omega$ resistor and repeat the measurements. Then use the 4.7 k$\Omega$ resistor and repeat once more. For each load value, calculate the load current as $I_L = V_o / R_L$ and observe how the DC output voltage and ripple voltage change with load current. \\
 
 In your lab report, present oscilloscope waveforms for at least one load condition, showing the ripple voltage clearly. Create a table or plot showing how DC output voltage and ripple voltage vary with load resistance.  Explain why the output voltage decreases and ripple increases with heavier loading (smaller resistance). This unregulated bridge rectifier will serve as the baseline for comparison with the regulated version you will build later.\\
 
