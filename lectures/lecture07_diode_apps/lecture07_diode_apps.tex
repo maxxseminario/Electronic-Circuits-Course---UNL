@@ -417,35 +417,27 @@
         \textbf{Bridge Configuration}:
         
         \begin{center}
-        \begin{circuitikz}[american, scale=0.9]
-            % AC source on left
-            \draw (-2,0) to[sV, l=$v_{AC}$] (0,0);
-            
-            % Bridge diodes in diamond configuration
-            % Left to top (D1)
-            \draw (0,0) to[D, l=$D_1$, *-] (1.5,1.5);
-            % Left to bottom (D2)
-            \draw (0,0) to[D, l_=$D_2$, invert] (1.5,-1.5);
-            % Top to right (D3)
-            \draw (1.5,1.5) to[D, l=$D_3$, -*, invert] (3,0);
-            % Bottom to right (D4)  
-            \draw (1.5,-1.5) to[D, l_=$D_4$] (3,0);
-            
-            % Load between top and bottom
-            \draw (1.5,1.5) to[short, *-] (4.5,1.5)
-                  to[R, l=$R_L$, v=$v_o$] (4.5,-1.5)
-                  to[short, -*] (1.5,-1.5);
+        \begin{circuitikz}[american, scale=.55]
+            % \draw[step=1cm, gray!30, very thin] (-2,-2) grid (8,6);
+            \ctikzset{label/align=straight}
+            \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
+            \draw (-1,4) -- (4,4);
+            \ctikzset{label distance=-.2cm}
+            \draw (2,2) to [D, l=$D_4$, *-*] (4,4) to [D, l=$D_1$, *-*] (6,2);
+            \draw (2,2) to [D, l_=$D_2$, *-*] (4,0) to [D, l_=$D_3$, *-*] (6,2);
+            \draw (-1,0) -- (4,0);
+            \ctikzset{label distance=0}
+            \draw (6,2) -- (8,2) to [R, l^=$R_L$, v_=$v_o$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
+            % \draw (8,2) -- (10,2) to [cC, l^=$C$] (10,-1) -- (8,-1);
 
-            \draw (-2,0) node[ground]{};
-            \draw (3,0) node[ground]{};
         \end{circuitikz}
         \end{center}
         
         \vspace{-0.8cm}
         \textbf{Operation}:
         \begin{itemize}
-            \item Positive half-cycle: $D_1$, $D_4$ conduct
-            \item Negative half-cycle: $D_2$, $D_3$ conduct
+            \item Positive half-cycle: $D_1$, $D_2$ conduct
+            \item Negative half-cycle: $D_3$, $D_4$ conduct
             \item Both half-cycles produce output
             \item Two diodes always in series
         \end{itemize}
@@ -542,7 +534,7 @@
 
         \vspace{-0.1cm}
         
-        Compare to half-wave: 5.18 V (nearly 2x improvement!)
+        Compare to half-wave: 5.18 V (nearly 2x improvement)
         
     \end{columns}
     
@@ -550,34 +542,27 @@
 
 \begin{frame}{Bridge Rectifier with Filter}
     
-    \begin{columns}[t]
-    \column{0.48\textwidth}
+    \begin{columns}[T]
+    \column{0.6\textwidth}
         \textbf{Filtered Bridge Rectifier}:
 
         \vspace{-0.4cm}
         
         \begin{center}
-        \begin{circuitikz}[american, scale=0.8]
-            % AC source
-            \draw (-2,0) to[sV, l=$v_{AC}$] (0,0);
-            
-            % Bridge diodes in diamond configuration
-            \draw (0,0) to[D, l=$D_1$, *-] (1.5,1.5);
-            \draw (0,0) to[D, l_=$D_2$, invert] (1.5,-1.5);
-            \draw (1.5,1.5) to[D, l=$D_3$, -*, invert] (3,0);
-            \draw (1.5,-1.5) to[D, l_=$D_4$] (3,0);
-            
-            % Load and capacitor in parallel between top and bottom
-            \draw (1.5,1.5) to[short, *-] (4,1.5);
-            \draw (4,1.5) to[R, l_=$R_L$] (4,-1.5);
-            \draw (4,1.5) to[short] (5,1.5)
-                  to[C, l=$C$] (5,-1.5)
-                  to[short] (4,-1.5);
-            \draw (4,-1.5) to[short, -*] (1.5,-1.5);
+        \begin{circuitikz}[american, scale=.55]
+                % \draw[step=1cm, gray!30, very thin] (-2,-2) grid (8,6);
+                \ctikzset{label/align=straight}
+                \draw (-1,0) to[sV, l=$v_{AC}$] (-1,4);
+                \draw (-1,4) -- (4,4);
+                \ctikzset{label distance=-.2cm}
+                \draw (2,2) to [D, l=$D_4$, *-*] (4,4) to [D, l=$D_1$, *-*] (6,2);
+                \draw (2,2) to [D, l_=$D_2$, *-*] (4,0) to [D, l_=$D_3$, *-*] (6,2);
+                \draw (-1,0) -- (4,0);
+                \ctikzset{label distance=0}
+                \draw (6,2) -- (8,2) to [R, l^=$R_L$, v_=$v_o$] (8,-1) to node[ground]{} (1, -1) -- (1,2) -- (2,2);
+                \draw (8,2) -- (10,2) to [cC, l^=$C$] (10,-1) -- (8,-1);
 
-            \draw (-2,0) node[ground]{};
-            \draw (3,0) node[ground]{};
-        \end{circuitikz}
+            \end{circuitikz}
         \end{center}
         
         \vspace{0.5em}
@@ -595,14 +580,14 @@
         
         Ripple is \textbf{half} that of half-wave rectifier with same $C$!
         
-    \column{0.48\textwidth}
-        \textbf{Output Waveform}:
+    \column{0.4\textwidth}
+        % \textbf{Output Waveform}:
         
         \begin{center}
         \begin{tikzpicture}[scale=0.8]
             \begin{axis}[
                 width=7.5cm, 
-                height=5cm,
+                height=4cm,
                 xlabel={Time},
                 ylabel={$v_o$ (V)},
                 xmin=0, 
@@ -632,12 +617,12 @@
         \vspace{-0.3cm}
         \textbf{Design Example}:
         
-        Same parameters as before, but $f$ → $2f$:
+        Same as before, but $f$ → $2f$:
 
         \vspace{-0.5cm}
         
         \begin{align*}
-            V_r &= \frac{17}{2 \times 60 \times 2200 \times 470 \times 10^{-6}} = 0.137 \text{ V}
+            V_r &= \frac{17}{2 \times 60 \times 2200 \times 470 \mu} = 0.137 \text{ V}
         \end{align*}
 
         \vspace{-0.2cm}
