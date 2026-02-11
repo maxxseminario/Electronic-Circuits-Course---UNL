@@ -248,7 +248,7 @@
             % Actual diode
             \draw (0,2) to[V, l_=$V_S$] (0,0)
                 to[short] (2.5,0)
-                to[D, l=$D$] (2.5,2)
+                to[D, l=$D$, invert] (2.5,2)
                 to[R, l=$R$] (0,2);
             \node at (1.25,-0.5) {Actual diode};
             
