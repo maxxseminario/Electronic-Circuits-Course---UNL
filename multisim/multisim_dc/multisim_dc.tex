@@ -1,0 +1,253 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Multisim Basics Tutorial}}\\
+    {\LARGE \textbf{Building and Simulating Passive Circuits}}\\
+    \vspace{0.3cm}
+    {\large ECEN 222, Spring 2026}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    {\large Maxx Seminario}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Introduction}
+
+This tutorial will guide you through the basics of using Multisim to build, simulate, and analyze simple circuits with passive components (resistors, capacitors, inductors and sources). By the end of this tutorial, you will be able to:
+
+\begin{itemize}
+    \item Place components on the workspace
+    \item Wire components together
+    \item Configure component values
+    \item Add voltage and current probes
+    \item Run DC simulations
+    \item Measure voltages and currents in your circuit
+\end{itemize}
+
+\section{Tutorial 1: Simple Voltage Divider}
+
+We'll start with the most basic circuit: a voltage divider consisting of a DC voltage source and two resistors in series.
+
+\subsection{Step 1: Create a New Project}
+
+\begin{enumerate}
+    \item Open Multisim
+    \item Click \textbf{File} $\rightarrow$ \textbf{New} $\rightarrow$ \textbf{Blank}
+    \item Save your project: \textbf{File} $\rightarrow$ \textbf{Save As...} Name it \texttt{voltage\_divider}
+\end{enumerate}
+
+\subsection{Step 2: Place the Voltage Source}
+
+\begin{enumerate}
+    \item On the right side of the screen, locate the \textbf{Component Toolbar}
+    \item Click on \textbf{Place Source} (it looks like a battery symbol) or press \texttt{Ctrl+W}
+    \item In the dialog box:
+    \begin{itemize}
+        \item Family: \textbf{POWER\_SOURCES}
+        \item Component: \textbf{DC\_POWER}
+    \end{itemize}
+    \item Click \textbf{OK}
+    \item Move your mouse to the workspace and click to place the voltage source
+    \item Press \texttt{ESC} to stop placing components
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/dc_power.png}
+\end{center}
+
+
+\subsection{Step 3: Configure the Voltage Source}
+
+\begin{enumerate}
+    \item Double-click on the voltage source you just placed
+    \item In the properties window, set the \textbf{Voltage (V)} to \texttt{12V}
+    \item Click \textbf{OK}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Figures/vdc_12v.png}
+\end{center}
+
+\subsection{Step 4: Place Ground}
+
+Every circuit needs a ground reference!
+
+\begin{enumerate}
+    \item Click \textbf{Place Ground} button on the toolbar (or press \texttt{Ctrl+G})
+    \item Click below the negative terminal of the voltage source to place the ground
+    \item Press \texttt{ESC}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/gnd_placed.png}
+\end{center}
+
+\subsection{Step 5: Place Resistors}
+
+\begin{enumerate}
+    \item Click \textbf{Place Component} (or press \texttt{Ctrl+W})
+    \item In the dialog box:
+    \begin{itemize}
+        \item Group: \textbf{Basic}
+        \item Family: \textbf{RESISTOR}
+        \item Component: Select any resistor (e.g., \texttt{1k\textohm})
+    \end{itemize}
+    \item Click \textbf{OK}
+    \item Place the first resistor to the right of the voltage source
+    \item Without pressing ESC, place a second resistor below the first one
+    \item Press \texttt{ESC} when done
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/res_selection.png}
+\end{center}
+
+\subsection{Step 6: Configure Resistor Values}
+
+We'll create a voltage divider where $V_{out} = 4V$ when $V_{in} = 12V$.
+
+\begin{enumerate}
+    \item Double-click on the top resistor (R1)
+    \item Set the \textbf{Resistance} to \texttt{2k\textohm} (or \texttt{2000})
+    \item Click \textbf{OK}
+    \item Double-click on the bottom resistor (R2)
+    \item Set the \textbf{Resistance} to \texttt{1k\textohm} (or \texttt{1000})
+    \item Click \textbf{OK}
+\end{enumerate}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Circuit Theory Reminder]
+For a voltage divider: $V_{out} = V_{in} \times \frac{R_2}{R_1 + R_2} = 12V \times \frac{1k}{2k+1k} = 4V$
+\end{tcolorbox}
+
+\subsection{Step 7: Wire the Components}
+
+Now we'll connect everything together.
+
+\begin{enumerate}
+    \item Click on the \textbf{positive terminal} of the voltage source (a small circle/dot)
+    \item Move the cursor to the \textbf{left terminal} of R1 and click
+    \item A wire will be created automatically. Wires automatically route in straight lines. You can click multiple times to create corners if needed.
+    \item Connect the \textbf{right terminal} of R1 to the \textbf{left terminal} of R2
+    \item Connect the \textbf{right terminal} of R2 to the ground
+    \item Connect the ground to the \textbf{negative terminal} of the voltage source
+\end{enumerate}
+
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/circuit_wired.png}
+\end{center}
+
+Your circuit should now look like a complete voltage divider with a 12V source, R1 (2k$\Omega$), and R2 (1k$\Omega$) in series.
+
+\subsection{Step 8: Add a Multimeter to Measure Voltage}
+
+Let's measure the voltage across R2 (this is $V_{out}$).
+
+\begin{enumerate}
+    \item Click \textbf{Place Indicator} on the toolbar (or go to \textbf{Simulate} $\rightarrow$ \textbf{Instruments})
+    \item Select \textbf{MULTIMETER}
+    \item Click \textbf{OK}
+    \item Place the multimeter on your workspace
+    \item Press \texttt{ESC}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/multimeter_placement.png}
+\end{center}
+
+\subsection{Step 9: Connect the Multimeter}
+
+Double clicking the multimeter reveals options of A (ammeter), V (voltmeter), and $\Omega$ (ohmmeter).
+
+\begin{enumerate}
+    \item Select the \textbf{V mode} of the multimeter to the node between R1 and R2 (where we want to measure $V_{out}$)
+    \item Wire the \textbf{COM (-) terminal} to ground
+    \item Double-click the multimeter
+    \item Ensure it's set to measure \textbf{Voltage (V)} in DC mode (flat line)
+    \item Click \textbf{OK}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/multimeter_conn.png}
+\end{center}
+
+\subsection{Step 10: Run the Simulation}
+
+\begin{enumerate}
+    \item Click the \textbf{Run} button (green triangle) at the top of the screen or press \texttt{F5}
+    \item The multimeter should display approximately \texttt{4.000 V}
+    \item Click the \textbf{Stop} button (red square) to stop the simulation
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/dc_sim_result.png}
+\end{center}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Success!]
+If you see 4V, congratulations! Your voltage divider is working correctly.
+\end{tcolorbox}
+
+\subsection{Step 11: Measure Current}
+
+Now let's measure the current flowing through the circuit.
+
+\begin{enumerate}
+    \item Stop the simulation if it's running
+    \item Place a second multimeter on your workspace
+    \item To measure current, we need to insert the ammeter \textbf{in series} with the circuit
+    \item Delete the wire between the voltage source and R1 (click on it and press \texttt{Delete})
+    \item Wire the \textbf{positive terminal} of the voltage source to the \textbf{A terminal} of the multimeter
+    \item Wire the \textbf{COM terminal} of the multimeter to R1
+    \item Double-click the multimeter and set it to measure \textbf{Current (A)} in DC mode
+    \item Click \textbf{OK}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/multimeter_conn_current.png}
+\end{center}
+
+\subsection{Step 12: Verify the Current Measurement}
+
+\begin{enumerate}
+    \item Run the simulation (press \texttt{F5})
+    \item The ammeter should read approximately \texttt{4.000 mA}
+    \item This makes sense: $I = \frac{V}{R_{total}} = \frac{12V}{2k\Omega + 1k\Omega} = \frac{12V}{3k\Omega} = 4mA$
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/dc_sim_current.png}
+\end{center}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Success!]
+If you see 4mA, you've successfully measured the current in your circuit!
+\end{tcolorbox}
+
+\section{Conclusion}
+
+You now have the basic skills for DC circuit simulation in Multisim:
+\begin{itemize}
+    \item Build circuits with passive components
+    \item Configure component values
+    \item Measure DC voltages and currents using multimeters
+    \item Run DC simulations and verify results
+\end{itemize}
+
+These skills will be essential for completing your assignments and lab work. Always verify your Multisim results with hand calculations to ensure you understand the underlying circuit theory.
+
+
+\end{document}
