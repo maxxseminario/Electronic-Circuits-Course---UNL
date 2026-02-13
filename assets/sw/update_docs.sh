@@ -55,9 +55,10 @@ copy_pdfs_from_dir() {
   fi
 }
 
-copy_pdfs_from_dir "lectures" "lecture" 
-copy_pdfs_from_dir "labs" "lab"
-copy_pdfs_from_dir "assignments" "multisim"
+copy_pdfs_from_dir "lectures" "lectures"
+copy_pdfs_from_dir "labs" "labs"
+copy_pdfs_from_dir "assignments" "assignments"
+copy_pdfs_from_dir "multisim" "multisim"
 
 # Remove orphaned PDFs from docs/
 echo
