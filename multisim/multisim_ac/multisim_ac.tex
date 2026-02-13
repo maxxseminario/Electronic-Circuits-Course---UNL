@@ -1,0 +1,236 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage[american]{circuitikz}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Multisim Transient Analysis Tutorial}}\\
+    {\LARGE \textbf{Time-Domain Analysis of Passive Circuits}}\\
+    \vspace{0.3cm}
+    {\large ECEN 222, Spring 2026}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    {\large Maxx Seminario}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Introduction}
+
+This tutorial introduces AC (alternating current) analysis in Multisim, focusing on analyzing passive circuits in the time domain. You'll learn to run a transient simulation in Multisim.
+
+\vspace{0.3cm}
+
+\textbf{Prerequisites:}
+\begin{itemize}
+    \item Completion of Multisim DC Basics tutorial
+    \item Understanding of phasor notation and complex numbers
+    \item Familiarity with impedance concepts: $Z_R = R$, $Z_L = j\omega L$, $Z_C = 1/(j\omega C)$
+\end{itemize}
+
+\vspace{0.3cm}
+
+\textbf{Learning Objectives:}
+\begin{itemize}
+    \item Build AC circuits with sinusoidal sources
+    \item Use the AC function generator to create AC signals
+    \item Measure AC voltages and currents with the oscilloscope
+\end{itemize}
+
+\section{Tutorial 1: Simple RC Circuit - Transient Analysis}
+
+We'll start with a series RC circuit driven by an AC voltage source to observe the transient response.
+
+\subsection{Step 1: Create a New Project}
+
+\begin{enumerate}
+    \item Open Multisim
+    \item Click \textbf{File} $\rightarrow$ \textbf{New} $\rightarrow$ \textbf{Blank}
+    \item Save your project: \textbf{File} $\rightarrow$ \textbf{Save As...} Name it \texttt{AC\_RC\_circuit}
+\end{enumerate}
+
+\subsection{Step 2: Build the Circuit}
+
+\textbf{Components needed:}
+\begin{itemize}
+    \item One AC voltage source (10V RMS at 1kHz)
+    \item One resistor (1k$\Omega$)
+    \item One capacitor (100nF = 0.1$\mu$F)
+    \item Ground
+\end{itemize}
+
+\subsubsection{Place the AC Voltage Source}
+
+\begin{enumerate}
+    \item Click \textbf{Place Source} or press \texttt{Ctrl+W}
+    \item Family: \textbf{POWER\_SOURCES}
+    \item Component: \textbf{AC\_POWER}
+    \item Click \textbf{OK} and place it on the workspace
+    \item Double-click the AC source
+    \item Set:
+    \begin{itemize}
+        \item \textbf{Voltage (RMS)}: \texttt{10} (10V RMS)
+        \item \textbf{Frequency (F)}: \texttt{1000} or \texttt{1k} (1 kHz)
+        \item \textbf{Phase}: \texttt{0} degrees
+    \end{itemize}
+    \item Click \textbf{OK}
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.6\textwidth]{Figures/ac_pwr_dialog.png}
+\end{center}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=AC Source Parameters]
+\begin{itemize}
+    \item \textbf{RMS voltage}: The root-mean-square voltage. For a sinusoid, $V_{RMS} = V_{peak}/\sqrt{2} = 0.707 V_{peak}$
+    \item \textbf{Frequency}: In Hz (cycles per second). Angular frequency $\omega = 2\pi f$
+    \item \textbf{Phase}: Initial phase shift in degrees
+\end{itemize}
+For a 10V RMS source at 1kHz: $v(t) = 10\sqrt{2}\cos(2\pi \cdot 1000 \cdot t)$ V (peak = 14.14V)
+\end{tcolorbox}
+
+\subsubsection{Place Resistor and Capacitor}
+
+\begin{enumerate}
+    \item Place a resistor (1k$\Omega$) to the right of the AC source
+    \item Place a capacitor below the resistor
+    \item Double-click the capacitor and set it to \texttt{100nF} or \texttt{100e-9}
+    \item Place ground below the capacitor
+\end{enumerate}
+
+\subsection{Step 3: Wire the Circuit}
+
+Create a series RC circuit:
+\begin{enumerate}
+    \item Connect the positive terminal of the AC source to the resistor
+    \item Connect the resistor to the top terminal of the capacitor
+    \item Connect the bottom terminal of the capacitor to ground
+    \item Connect ground back to the negative terminal of the AC source
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/rc_crkt_schem.png}
+\end{center}
+
+\subsection{Step 4: Add Oscilloscope for AC Measurement}
+
+\begin{enumerate}
+    \item Go to \textbf{Simulate} $\rightarrow$ \textbf{Instruments} $\rightarrow$ \textbf{Oscilloscope}
+    \item Select the \textbf{4-Channel Oscilloscope}
+    \item Place it on your workspace
+    \item Connect \textbf{Channel A} (positive) to the positive terminal of the AC source (input voltage)
+    \item Connect \textbf{Channel A ground} to circuit ground
+    \item Connect \textbf{Channel B} (positive) to the node between R and C (capacitor voltage)
+    \item Connect \textbf{Channel B ground} to circuit ground
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{Figures/oscope_conn.png}
+\end{center}
+
+\subsection{Step 5: Configure the Oscilloscope}
+
+\begin{enumerate}
+    \item Double-click the oscilloscope
+    \item Set \textbf{Time base}: 500$\mu$s/div or 0.5ms/div (to see about 2 cycles at 1kHz)
+    \item Set \textbf{Channel A scale}: 5V/div
+    \item Set \textbf{Channel B scale}: 5V/div
+    \item Set \textbf{Trigger}:
+    \begin{itemize}
+        \item Source: Channel A (input signal)
+        \item Edge: Rising
+        \item Level: 0V
+    \end{itemize}
+    \item Enable both Channel A and Channel B
+\end{enumerate}
+
+\subsection{Step 6: Run the Simulation}
+
+\begin{enumerate}
+    \item Click \textbf{Run} (F5)
+    \item Observe both waveforms on the oscilloscope
+    \item Channel A (input): Shows peak voltage of $10\sqrt{2} \approx 14.14$V (remember: oscilloscope shows peak, source is set to 10V RMS)
+    \item Channel B (capacitor): Smaller amplitude sinusoid, phase-shifted
+    \item Notice the capacitor voltage \textbf{lags} the input voltage
+\end{enumerate}
+
+\begin{center}
+\includegraphics[width=0.8\textwidth]{Figures/sim_oscope.png}
+\end{center}
+
+\subsection{Step 7: Measure Magnitude and Phase}
+
+Use the oscilloscope cursors to measure:
+
+\begin{enumerate}
+    \item \textbf{Magnitude of $V_C$}: Measure the peak-to-peak voltage of Channel B and divide by 2
+    \item \textbf{Phase shift}: Measure the time delay between zero-crossings of the two signals
+    \begin{itemize}
+        \item Place cursor T1 at a rising zero-crossing of Channel A (input)
+        \item Place cursor T2 at the next rising zero-crossing of Channel B (capacitor)
+        \item Time difference: $\Delta t$
+        \item Phase shift: $\phi = \frac{\Delta t}{T} \times 360°$ where $T = 1/f = 1$ ms
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Step 8: Verify with Theory}
+
+\textbf{Calculate the theoretical values:}
+
+At $f = 1$ kHz, $\omega = 2\pi f = 2\pi(1000) = 6283$ rad/s
+
+\textbf{Capacitive reactance:}
+\[
+X_C = \frac{1}{\omega C} = \frac{1}{6283 \times 100 \times 10^{-9}} = \frac{1}{6.283 \times 10^{-4}} \approx 1592\,\Omega
+\]
+
+\textbf{Total impedance:}
+\[
+\mathbf{Z}_{tot} = R + \frac{1}{j\omega C} = 1000 - j1592 = 1880\angle -57.9°\,\Omega
+\]
+
+\textbf{Capacitor voltage (using voltage divider):}
+\[
+\mathbf{V}_C = \mathbf{V}_s \times \frac{\mathbf{Z}_C}{\mathbf{Z}_{tot}} = 10\angle 0° \times \frac{1592\angle -90°}{1880\angle -57.9°} = 8.47\angle -32.1°\text{ V (RMS)}
+\]
+
+Your oscilloscope should show:
+\begin{itemize}
+    \item $|V_C| \approx 8.47\sqrt{2} \approx 12.0$ V peak (oscilloscope shows peak values)
+    \item Or equivalently, 8.47V RMS if you convert the oscilloscope reading
+    \item Phase lag $\approx -32°$ (capacitor voltage lags input)
+\end{itemize}
+
+\begin{tcolorbox}[colback=green!5!white,colframe=green!75!black,title=Success]
+If your measurements match theory, you've successfully performed transient circuit analysis in Multisim!
+\end{tcolorbox}
+
+\section{Conclusion}
+
+You now have the skills to perform AC transient analysis in Multisim:
+
+\begin{itemize}
+    \item Configure AC voltage sources with RMS amplitude, frequency, and phase
+    \item Build series RC, RL, and RLC circuits
+    \item Use oscilloscope to measure AC voltages and observe waveforms
+    \item Measure magnitude and phase relationships between signals
+    \item Verify theoretical impedance calculations with measurements
+\end{itemize}
+
+These skills are essential for understanding frequency-domain circuit behavior.
+
+
+
+\end{document}
