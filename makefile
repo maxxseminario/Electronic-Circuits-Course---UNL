@@ -18,7 +18,7 @@ update_docs:
 
 # Clean LaTeX auxiliary files recursively (lectures/ and labs/)
 clean:
-	@find lectures labs assignments -type f \( \
+	@find lectures labs assignments multisim -type f \( \
 		-name '*.aux' -o -name '*.log' -o -name '*.out' -o -name '*.toc' -o \
 		-name '*.nav' -o -name '*.snm' -o -name '*.fls' -o -name '*.fdb_latexmk' -o \
 		-name '*.synctex.gz' \
