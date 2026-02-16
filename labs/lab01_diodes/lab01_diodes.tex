@@ -195,16 +195,15 @@ Begin by constructing the circuit shown in Figure \ref{fig:forward_circuit} on t
     \label{fig:forward_circuit}
 \end{figure}
 
-Start with the power supply set to 0 V, and gradually increase it to 5V in small incraments ($0.25 V$).  For each supply voltage, record the voltage across the diode $V_D$ and the current through the diode $I_D$. Use smaller incraments when the diode voltage is below $0
-.8 V$. Very little current flows until the diode voltage reaches approximately 0.5 to 0.6 V, after which the current increases exponentially. Exercise caution not to exceed a current of approximately 20 mA for silicon diodes, as excessive current can cause damage.  If the diode is heating up noticeably, reduce the current immediately.\\
+Start with the power supply set to 0 V, and gradually increase it to 1V in small incraments of around 0.1 V.  For each incrament, record the voltage across the diode, $V_D$, and the current through the diode, $I_D$. Keep increasing the supply voltage up to 6V, using larger incraments of around .5 to 1 V. Very little current will flow until the diode voltage reaches approximately 0.5 to 0.6 V, after this point the current increases exponentially. Exercise caution not to exceed the current rating of the diode, as it will permanently damage the device.  If the diode is heating up noticeably, reduce the current immediately.\\
 
-Once measurements are completed for the small-signal diode, repeat the entire procedure using the silicon rectifier diode.  Similar behavior should be observed, but there may be slight differences in the forward voltage drop characteristics between the two diode types. \\
+% Once measurements are completed for the small-signal diode, repeat the entire procedure using the silicon rectifier diode.  Similar behavior should be observed, but there may be slight differences in the forward voltage drop characteristics between the two diode types. \\
 
 
 \textbf{Report}
 
 \begin {enumerate}
-    \item Plot the I-V characteristic (Voltage v. Current) for both diodes with clearly labeled axes.
+    \item Plot the I-V characteristic (Voltage v. Current) of the diode with clearly labeled axes.
     \item Describe the shape of the curve and how it relates to the Shockley diode equation.
     \item Explain why very little current flows below a certain voltage threshold, but a large current flows once it is reached.
 \end {enumerate}
@@ -222,7 +221,7 @@ For each operating point, calculate the small-signal resistance by examining the
 
 where $\Delta V_D$ and $\Delta I_D$ represent small changes in voltage and current around the operating point. To obtain accurate results, take a value on either side of the operating point, and calculate the slope between these two values. A smaller interval used (while still maintaining measurement accuracy) will produce a better approximation of the true small signal resistance. \\
 
-After calculating the experimental small signal resistance values, compare them with the theoretical predictions from Equation \ref{eq:dynamic_r}. Use an appropriate ideality factor, $n$, and use the measured DC current at each operating point. Calculate the percentage error between measured and theoretical values.\\
+After calculating the experimental small signal resistance values, compare them with the theoretical predictions from Equation \ref{eq:dynamic_r}. Use an appropriate ideality factor, $n=1$, and use the measured DC current at each operating point. Calculate the percentage error between measured and theoretical values.\\
 
 \textbf{Report}
 \begin {enumerate}
@@ -251,9 +250,9 @@ Carefully remove the diode from the circuit and reverse its orientation so that 
     \label{fig:reverse_circuit}
 \end{figure}
 
-Starting from 0 V, gradually increase the supply voltage, which now applies an increasing reverse voltage across the diode.  Take measurements of the reverse voltage $V_D$ (which will be negative) and the reverse current $I_D$ at increments of approximately 1 V, up to the maximum rated reverse voltage of the diode. Consult the diode datasheet or ask the lab instructor for the maximum reverse voltage rating.  Do not exceed this voltage, as doing so may cause unintended breakdown and permanent damage to regular junction diodes. \\
+Starting from 0 V, gradually increase the supply voltage, which now applies an increasing reverse voltage across the diode.  Take measurements of the reverse voltage $V_D$ and the reverse current $I_D$ at increments of 1V, up to 10V.
 
-The reverse current should be extremely small, likely in the range of nanoamperes or microamperes, and may be difficult to measure accurately with standard multimeters. The current should remain relatively constant the reverse voltage is increased, consistent with the saturation current $I_S$ predicted by the Shockley equation.  If the current suddenly repidly increases, the breakdown voltage is likely being exceeded; decrease the voltage immediately. \\
+The reverse current should be extremely small, likely in the range of nanoamperes or microamperes, and may be difficult to measure accurately with standard multimeters. The current should remain relatively constant the reverse voltage is increased, consistent with the saturation current $I_S$ predicted by the Shockley equation.\\
 
 \textbf{Report}
 \begin {enumerate}
@@ -283,9 +282,9 @@ Construct the circuit shown in Figure \ref{fig:zener_circuit} using a Zener diod
 
 Connect one DMM to measure the voltage across the Zener diode $V_Z$ and arrange to measure the current through the Zener $I_Z$ (either with a second meter in series or by measuring the voltage across the resistor and calculating current). Beginning at 0 V, gradually increase the supply voltage $V_S$ in increments of approximately 0.5 to 1 V. Record both $V_Z$ and $I_Z$ at each supply voltage setting. Pay special attention to the behavior as the supply voltage approaches the nominal Zener voltage. \\
 
-When the supply voltage is below the Zener voltage, very little current flows and the voltage across the Zener approximately equals the supply voltage minus the resistor drop. Once the supply voltage exceeds the Zener voltage, the diode enters breakdown.  In breakdown, the voltage across the Zener should remain relatively constant (near its rated $V_Z$ value) even as the current increases significantly. This is the voltage regulation behavior that makes Zener diodes useful.  \\
+When the applied reverse voltage is below the Zener voltage, very little current flows and the voltage across the Zener approximately equals the supply voltage minus the resistor drop. Once the supply voltage exceeds the Zener voltage, the diode enters breakdown.  In breakdown, the voltage across the Zener should remain relatively constant (near its rated $V_Z$ value) even as the current increases significantly. This is the voltage regulation behavior that makes Zener diodes useful. The exact value of the Zener voltage depends on the particular diode being used.\\
 
-Continue increasing the supply voltage up to approximately 10 to 12 V, taking measurements at each step. Constantly monitor the power dissipation in the Zener diode, calculated as $P_Z = V_Z \times I_Z$.  Do not exceed the power rating of the Zener diode. If it becomes noticeably warm to the touch, the power limit is likely being reached and current should not be increased any further. \\
+Continue increasing the supply voltage up to 10 V, taking measurements at each step. Constantly monitor the power dissipation in the Zener diode, calculated as $P_Z = V_Z \times I_Z$.  Do not exceed the power rating of the Zener diode. If it becomes noticeably warm to the touch, the power limit is likely being reached and current should not be increased any further. \\
 
 \textbf{Report}
 \begin {enumerate}
