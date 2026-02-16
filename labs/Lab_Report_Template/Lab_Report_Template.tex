@@ -1,0 +1,83 @@
+\documentclass[12pt]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{amsmath, amssymb}
+\usepackage{siunitx}
+\usepackage{float}
+\usepackage{booktabs}
+\usepackage{fancyhdr}
+\usepackage{setspace}
+\usepackage{lastpage}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{} % clear defaults
+
+% Header
+\fancyhead[L]{\small ECEN 222: Electronic Circuits II-CE}
+\fancyhead[C]{\small Lab 1}
+\fancyhead[R]{\small Page \thepage\ of \pageref{LastPage}}
+
+% Footer
+\fancyfoot[R]{Student Name}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{titlepage}
+    \centering
+    \vspace*{2in}
+
+    {\Huge \textbf{Lab \#: Lab Title}\par}
+    \vspace{1.5in}
+
+    {\Large ECEN 222\par}
+    \vspace{0.5in}
+
+    {\Large Student Name\par}
+    \vspace{0.5in}
+
+    {\Large \today\par}
+
+    \vfill
+\end{titlepage}
+
+\newpage
+This is a basic template for writing lab reports. (feel free to copy this document and delete my comments, but don't forget to update the footer to your name) I would recommend using Overleaf \LaTeX
+\href{https://www.overleaf.com/learn/latex/Learn_LaTeX_in_30_minutes}{(Learn LaTeX in 30 minutes),}
+but you can use Word or another program, as long as it meets the formatting requirements. 
+See the \textit{Lab Report Expectations} document for specifics on formatting. I don't expect you to type up a 5000 word essay for the report (In fact, please don't, I don't want to read that!), just keep it concise and clear.
+
+\begin{itemize}
+    \item Please have a cover page with the lab title, class number, your name, and today's date.
+    \item Use headers for each section of the report.
+    \item Treat this as a technical report, therefore do not use any personal pronouns (I, my, them, our, he, she etc.). 
+    \item Each figure and table needs to have a caption beneath it.
+    \item In general, do not submit any hand-written work or graphs, please format these digitally. (Latex makes writing math easy, and Excel or Desmos are good for graphs/plots.) 
+\end{itemize}
+
+\section{Introduction}
+(10\% of grade)\\
+Concisely describe the topic and experiments to be conducted in the lab. Full paragraphs and complete sentences are expected. This doesn't need to be long, but it should be complete (typically 2-4 paragraphs). Do not just use AI to write this, it should be in your own words.
+
+\section{Pre-Lab Results}
+(10\% of grade)\\
+Provide your answers to the pre-lab questions here. Please tabulate each answer in numbered list (1. 2. 3...). Show enough work so that a reader could follow your reasoning. Hand written responses are not acceptable.
+
+\section{Lab Results and Discussion}
+(60\% of grade)\\
+This is the bulk of the lab report. Please break each part into it's own subsetion of the report. For each part, provide the requested data and answer the questions listed under the \textbf{Report} label. Please keep the answers in order. Answer the discussion questions in paragraph form.
+
+\section{Conclusion}
+(10\% of grade)\\
+Provide at least a paragraph summarizing what was observed in this lab. Touch on the final results and conclusions that can be drawn from your findings.
+
+\newpage
+\section{Appendix}
+Include any references here.
+If you used any images that have a copy-write, provide citations for them here.
+
+\end{document}
