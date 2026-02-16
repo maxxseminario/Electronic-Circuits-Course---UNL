@@ -3,3 +3,4 @@ quizzes/
 *.aux
 *.synctex.gz
 *.log
+*.out
