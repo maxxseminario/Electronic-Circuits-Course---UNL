@@ -1,0 +1,143 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Assignment 03}}\\
+    {\LARGE \textbf{Multisim Circuit Simulation}}\\
+    \vspace{0.3cm}
+    {\large ECEN 222, Spring 2026}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Overview}
+
+This assignment will introduce you to circuit simulation using Multisim. You will complete two tutorials that teach you the fundamentals of building and simulating circuits in the software. This is a hands-on assignment designed to help you become comfortable with Multisim, which you'll use throughout the course for labs and future assignments.
+
+\vspace{0.3cm}
+
+\section*{Submission Requirements}
+
+Submit a \textbf{single PDF document} containing all requested screenshots and reported values. Your PDF should include:
+
+\begin{itemize}
+    \item Clear, legible screenshots with proper labels where appropriate
+    \item All requested numerical values with appropriate units
+    \item Organized sections corresponding to Parts 1 and 2 below
+\end{itemize}
+
+\vspace{0.3cm}
+
+\section*{Software Requirements}
+
+\begin{itemize}
+    \item \textbf{Multisim:} Available through the NI Academic Site License. Download from \url{https://www.ni.com/} or use computers in the lab.
+\end{itemize}
+
+\newpage
+
+\section*{Part 1: DC Analysis [50 points]}
+
+Complete the \textbf{``Multisim Basics Tutorial: Building and Simulating Passive Circuits''} document. This tutorial covers DC circuit analysis with voltage dividers and current measurements.
+
+\subsection*{DC Voltage Divider}
+
+After completing Tutorial 1, provide the following in your submission:
+
+\begin{enumerate}[label=\textbf{1.\arabic*}]
+    \item \textbf{Screenshot [15 points]:} Include a screenshot of your complete circuit showing:
+    \begin{itemize}
+        \item The DC voltage source (12V)
+        \item Both resistors (R1 and R2 with values visible)
+        \item Ground symbol
+        \item Voltage probes placed at appropriate nodes
+    \end{itemize}
+    
+    \item \textbf{Screenshot [15 points]:} Include a screenshot showing the voltage probe readings clearly visible.
+\end{enumerate}
+
+\subsection*{DC Current Measurements}
+
+After completing Tutorial 2, provide:
+
+\begin{enumerate}[label=\textbf{2.\arabic*}]
+    \item \textbf{Screenshot [10 points]:} Include a screenshot of your circuit with current probes (ammeter) placed in the circuit.
+    
+    \item \textbf{Measured Values [10 points]:} Include a screenshot showing the ammeter readings clearly visible. Report the current flowing through the circuit.
+    \begin{itemize}
+        \item Total current from the source.
+        \item Does this value match your hand calculation using Ohm's law? 
+        \item Show your hand calculation.
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Note on Screencaptures]
+When taking screenshots, make sure component values are clearly visible. You can zoom in or adjust the view in Multisim to make your circuit easier to read. Use the Windows Snipping Tool or similar to capture clean screenshots.
+\end{tcolorbox}
+
+\newpage
+
+\section*{Part 2: Transient Analysis [50 points]}
+
+Complete the \textbf{``Multisim Transient Analysis Tutorial: Time-Domain Analysis of Passive Circuits''} document. This tutorial covers AC circuits and oscilloscope measurements.
+
+\subsection*{Tutorial 1: RC Circuit with Oscilloscope}
+
+After completing the transient analysis tutorial, provide the following:
+
+\begin{enumerate}[label=\textbf{3.\arabic*}]
+    \item \textbf{Circuit Screenshot [10 points]:} Include a screenshot of your complete RC circuit showing:
+    \begin{itemize}
+        \item AC voltage source (function generator)
+        \item Resistor and capacitor with values visible
+        \item Oscilloscope connected with probes
+        \item Ground connections
+    \end{itemize}
+    
+    \item \textbf{Oscilloscope Screenshot [15 points]:} Include a screenshot of the oscilloscope display showing:
+    \begin{itemize}
+        \item Both input voltage (Channel A) and output voltage (Channel B) waveforms
+        \item Time scale and voltage scale settings clearly visible
+        \item At least 2-3 complete periods of the sine wave
+        \item Make sure the oscilloscope window is large enough to read
+    \end{itemize}
+    
+    \item \textbf{Waveform Measurements [15 points]:} From your oscilloscope display, report:
+    \begin{itemize}
+        \item Input voltage amplitude (peak voltage).
+        \item Output voltage amplitude (peak voltage).
+        \item Period of the waveform.
+        \item Frequency (calculated from period).
+        \item Phase shift between input and output.
+    \end{itemize}
+    
+    \item \textbf{Verification with Hand Calculations [10 points]:} 
+    \begin{itemize}
+        \item Using the component values (R, C) and frequency from your circuit, calculate the expected output voltage magnitude using impedance analysis. Show your work.
+        \item Compare your calculated output voltage to the measured value from the oscilloscope. What is the percent error?
+        \item Does the measured frequency match the source frequency you set? 
+    \end{itemize}
+\end{enumerate}
+
+
+
+\end{document}
