@@ -8,7 +8,22 @@
 \usepackage{enumitem}
 \usepackage{fancyhdr}
 \usepackage{pgfplots}
-\pgfplotsset{compat=1.18} 
+\usepackage{xcolor}
+\pgfplotsset{compat=1.18}
+
+% Boolean to show/hide results
+\newif\ifshowresults
+\showresultstrue  % Set to \showresultsfalse to hide solutions
+
+% Environment for solutions
+\usepackage{comment}
+\ifshowresults
+    \newenvironment{solution}
+    {\color{blue}\textbf{Solution:}\\}
+    {}
+\else
+    \excludecomment{solution}
+\fi 
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -79,17 +94,80 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \textbf{(a)} Convert each signal to phasor form.
 
+\begin{solution}
+For a sinusoidal signal $v(t) = V_m\cos(\omega t + \phi)$, the phasor is $\mathbf{V} = V_m\angle\phi$.
+
+\begin{align*}
+v_1(t) &= 15\cos(5000t + 60^\circ)\text{ V} \quad \Rightarrow \quad \mathbf{V}_1 = 15\angle 60^\circ\text{ V}\\
+v_2(t) &= 8\cos(5000t - 30^\circ)\text{ V} \quad \Rightarrow \quad \mathbf{V}_2 = 8\angle -30^\circ\text{ V}\\
+i(t) &= 3\cos(5000t + 15^\circ)\text{ A} \quad \Rightarrow \quad \mathbf{I} = 3\angle 15^\circ\text{ A}
+\end{align*}
+\end{solution}
+
 \vspace{2cm}
 
 \textbf{(b)} Calculate $\mathbf{V}_1 + \mathbf{V}_2$ in both rectangular and polar forms.
+
+\begin{solution}
+First, convert each phasor to rectangular form:
+\begin{align*}
+\mathbf{V}_1 &= 15\angle 60^\circ = 15\cos(60^\circ) + j15\sin(60^\circ) = 7.5 + j12.99\text{ V}\\
+\mathbf{V}_2 &= 8\angle -30^\circ = 8\cos(-30^\circ) + j8\sin(-30^\circ) = 6.93 - j4.0\text{ V}
+\end{align*}
+
+Now add:
+\begin{align*}
+\mathbf{V}_1 + \mathbf{V}_2 &= (7.5 + j12.99) + (6.93 - j4.0)\\
+&= 14.43 + j8.99\text{ V}
+\end{align*}
+
+Convert to polar form:
+\begin{align*}
+|\mathbf{V}_1 + \mathbf{V}_2| &= \sqrt{14.43^2 + 8.99^2} = \sqrt{208.22 + 80.82} = 17.00\text{ V}\\
+\angle(\mathbf{V}_1 + \mathbf{V}_2) &= \tan^{-1}\left(\frac{8.99}{14.43}\right) = 31.9^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{V}_1 + \mathbf{V}_2 = 14.43 + j8.99\text{ V} = 17.00\angle 31.9^\circ\text{ V}$
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Calculate $\mathbf{V}_1 - \mathbf{V}_2$ in both rectangular and polar forms.
 
+\begin{solution}
+Using the rectangular forms from part (b):
+\begin{align*}
+\mathbf{V}_1 - \mathbf{V}_2 &= (7.5 + j12.99) - (6.93 - j4.0)\\
+&= 0.57 + j16.99\text{ V}
+\end{align*}
+
+Convert to polar form:
+\begin{align*}
+|\mathbf{V}_1 - \mathbf{V}_2| &= \sqrt{0.57^2 + 16.99^2} = \sqrt{0.32 + 288.66} = 17.00\text{ V}\\
+\angle(\mathbf{V}_1 - \mathbf{V}_2) &= \tan^{-1}\left(\frac{16.99}{0.57}\right) = 88.1^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{V}_1 - \mathbf{V}_2 = 0.57 + j16.99\text{ V} = 17.00\angle 88.1^\circ\text{ V}$
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Calculate the impedance $\mathbf{Z} = \mathbf{V}_1/\mathbf{I}$ and express it in both rectangular and polar forms. What type of element(s) does this impedance represent?
+
+\begin{solution}
+\begin{align*}
+\mathbf{Z} &= \frac{\mathbf{V}_1}{\mathbf{I}} = \frac{15\angle 60^\circ}{3\angle 15^\circ} = \frac{15}{3}\angle(60^\circ - 15^\circ) = 5\angle 45^\circ\,\Omega
+\end{align*}
+
+Convert to rectangular form:
+\begin{align*}
+\mathbf{Z} &= 5\cos(45^\circ) + j5\sin(45^\circ) = 3.54 + j3.54\,\Omega
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z} = 3.54 + j3.54\,\Omega = 5\angle 45^\circ\,\Omega$
+
+This impedance has both a positive real part (resistive) and a positive imaginary part (inductive). It represents a resistor in series with an inductor. Since $\omega = 5000$ rad/s and $X_L = 3.54\,\Omega$, we have $L = X_L/\omega = 3.54/5000 = 0.708$ mH.
+\end{solution}
 
 \vspace{3cm}
 
@@ -116,13 +194,69 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \textbf{(a)} Calculate the impedance of the parallel LC combination at $f = 1000$ Hz. Express in both rectangular and polar forms.
 
+\begin{solution}
+First, calculate the angular frequency: $\omega = 2\pi f = 2\pi(1000) = 6283.2$ rad/s
+
+Calculate individual impedances:
+\begin{align*}
+\mathbf{Z}_L &= j\omega L = j(6283.2)(0.02) = j125.66\,\Omega\\
+\mathbf{Z}_C &= \frac{1}{j\omega C} = \frac{1}{j(6283.2)(2\times10^{-6})} = \frac{-j}{0.01257} = -j79.58\,\Omega
+\end{align*}
+
+For parallel combination:
+\begin{align*}
+\mathbf{Z}_{LC} &= \frac{\mathbf{Z}_L \mathbf{Z}_C}{\mathbf{Z}_L + \mathbf{Z}_C} = \frac{(j125.66)(-j79.58)}{j125.66 - j79.58}\\
+&= \frac{9999.7}{j46.08} = \frac{9999.7}{46.08\angle 90^\circ} = 217.0\angle -90^\circ\,\Omega\\
+&= -j217.0\,\Omega
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{LC} = -j217.0\,\Omega = 217.0\angle -90^\circ\,\Omega$ (capacitive)
+\end{solution}
+
 \vspace{4cm}
 
 \textbf{(b)} Calculate the total impedance $\mathbf{Z}_{tot}$ at $f = 1000$ Hz. Express your answer in both rectangular and polar forms.
 
+\begin{solution}
+The total impedance is:
+\begin{align*}
+\mathbf{Z}_{tot} &= R + \mathbf{Z}_{LC} = 50 - j217.0\,\Omega
+\end{align*}
+
+Convert to polar form:
+\begin{align*}
+|\mathbf{Z}_{tot}| &= \sqrt{50^2 + 217.0^2} = \sqrt{2500 + 47089} = 222.7\,\Omega\\
+\angle\mathbf{Z}_{tot} &= \tan^{-1}\left(\frac{-217.0}{50}\right) = -77.0^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{tot} = 50 - j217.0\,\Omega = 222.7\angle -77.0^\circ\,\Omega$
+\end{solution}
+
 \vspace{4cm}
 
 \textbf{(c)} At what frequency does the parallel LC combination have infinite impedance? What is the total impedance at this frequency?
+
+\begin{solution}
+Parallel LC has infinite impedance at resonance when $\mathbf{Z}_L = -\mathbf{Z}_C$:
+\begin{align*}
+j\omega L &= -\left(\frac{-j}{\omega C}\right)\\
+\omega L &= \frac{1}{\omega C}\\
+\omega^2 &= \frac{1}{LC}\\
+\omega_0 &= \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{(0.02)(2\times10^{-6})}} = \frac{1}{\sqrt{4\times10^{-8}}} = \frac{1}{2\times10^{-4}} = 5000\text{ rad/s}
+\end{align*}
+
+Corresponding frequency:
+\begin{align*}
+f_0 &= \frac{\omega_0}{2\pi} = \frac{5000}{2\pi} = 795.8\text{ Hz}
+\end{align*}
+
+At this frequency, the parallel LC combination has infinite impedance (acts as an open circuit), so:
+\begin{align*}
+\mathbf{Z}_{tot}(f_0) &= R + \infty \approx \infty\,\Omega
+\end{align*}
+
+\textbf{Answer:} $f_0 = 795.8$ Hz, $\mathbf{Z}_{tot} = 50\,\Omega$ (purely resistive)
+\end{solution}
 
 \vspace{4cm}
 
@@ -149,21 +283,87 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \textbf{(a)} Calculate the impedances of $L_1$ and $L_2$ at $\omega = 3000$ rad/s.
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{L_1} &= j\omega L_1 = j(3000)(0.02) = j60\,\Omega\\
+\mathbf{Z}_{L_2} &= j\omega L_2 = j(3000)(0.04) = j120\,\Omega
+\end{align*}
+\end{solution}
+
 \vspace{2cm}
 
 \textbf{(b)} Calculate the impedance of the parallel combination of $R_2$ and $L_1$.
+
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{par} &= \frac{R_2 \cdot \mathbf{Z}_{L_1}}{R_2 + \mathbf{Z}_{L_1}} = \frac{(60)(j60)}{60 + j60} = \frac{j3600}{60 + j60}\\
+&= \frac{j3600}{84.85\angle 45^\circ} = \frac{3600\angle 90^\circ}{84.85\angle 45^\circ} = 42.43\angle 45^\circ\,\Omega\\
+&= 42.43\cos(45^\circ) + j42.43\sin(45^\circ) = 30.0 + j30.0\,\Omega
+\end{align*}
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms. (Hint: The circuit topology is $R_1$ in series with $(R_2 \parallel L_1)$, all in series with $L_2$.)
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{tot} &= R_1 + \mathbf{Z}_{par} + \mathbf{Z}_{L_2}\\
+&= 30 + (30.0 + j30.0) + j120\\
+&= 60.0 + j150.0\,\Omega
+\end{align*}
+
+Convert to polar form:
+\begin{align*}
+|\mathbf{Z}_{tot}| &= \sqrt{60.0^2 + 150.0^2} = \sqrt{3600 + 22500} = 161.6\,\Omega\\
+\angle\mathbf{Z}_{tot} &= \tan^{-1}\left(\frac{150.0}{60.0}\right) = 68.2^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{tot} = 60.0 + j150.0\,\Omega = 161.6\angle 68.2^\circ\,\Omega$
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Find the current $i(t)$ in both phasor and time-domain forms.
 
+\begin{solution}
+First convert the source to phasor form: $\mathbf{V}_s = 24\angle 0^\circ$ V
+
+\begin{align*}
+\mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{24\angle 0^\circ}{161.6\angle 68.2^\circ} = 0.149\angle -68.2^\circ\text{ A}
+\end{align*}
+
+Convert to time domain:
+\begin{align*}
+i(t) &= 0.149\cos(3000t - 68.2^\circ)\text{ A} = 149\cos(3000t - 68.2^\circ)\text{ mA}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{I} = 0.149\angle -68.2^\circ$ A, $i(t) = 0.149\cos(3000t - 68.2^\circ)$ A
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(e)} Find the voltage across the parallel branch and determine the current through $R_2$ and $L_1$ individually.
+
+\begin{solution}
+Voltage across parallel branch:
+\begin{align*}
+\mathbf{V}_{par} &= \mathbf{I} \cdot \mathbf{Z}_{par} = (0.149\angle -68.2^\circ)(42.43\angle 45^\circ)\\
+&= 6.32\angle -23.2^\circ\text{ V}
+\end{align*}
+
+Current through $R_2$:
+\begin{align*}
+\mathbf{I}_{R_2} &= \frac{\mathbf{V}_{par}}{R_2} = \frac{6.32\angle -23.2^\circ}{60} = 0.105\angle -23.2^\circ\text{ A}\\
+i_{R_2}(t) &= 0.105\cos(3000t - 23.2^\circ)\text{ A}
+\end{align*}
+
+Current through $L_1$:
+\begin{align*}
+\mathbf{I}_{L_1} &= \frac{\mathbf{V}_{par}}{\mathbf{Z}_{L_1}} = \frac{6.32\angle -23.2^\circ}{60\angle 90^\circ} = 0.105\angle -113.2^\circ\text{ A}\\
+i_{L_1}(t) &= 0.105\cos(3000t - 113.2^\circ)\text{ A}
+\end{align*}
+\end{solution}
 
 \vspace{4cm}
 
@@ -186,17 +386,71 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \textbf{(a)} Calculate the impedance of $C_1$ and $C_2$ individually at $\omega = 4000$ rad/s.
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{C_1} &= \frac{1}{j\omega C_1} = \frac{1}{j(4000)(5\times10^{-6})} = \frac{-j}{0.02} = -j50\,\Omega\\
+\mathbf{Z}_{C_2} &= \frac{1}{j\omega C_2} = \frac{1}{j(4000)(10\times10^{-6})} = \frac{-j}{0.04} = -j25\,\Omega
+\end{align*}
+\end{solution}
+
 \vspace{2cm}
 
 \textbf{(b)} Calculate the total impedance $Z_{tot}$ of the three series components. 
+
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{tot} &= R + \mathbf{Z}_{C_1} + \mathbf{Z}_{C_2}\\
+&= 100 - j50 - j25\\
+&= 100 - j75\,\Omega
+\end{align*}
+
+Convert to polar form:
+\begin{align*}
+|\mathbf{Z}_{tot}| &= \sqrt{100^2 + 75^2} = \sqrt{10000 + 5625} = 125\,\Omega\\
+\angle\mathbf{Z}_{tot} &= \tan^{-1}\left(\frac{-75}{100}\right) = -36.9^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{tot} = 100 - j75\,\Omega = 125\angle -36.9^\circ\,\Omega$
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Find the current $i(t)$ in both phasor and time-domain forms.
 
+\begin{solution}
+Source phasor: $\mathbf{V}_s = 50\angle 0^\circ$ V
+
+\begin{align*}
+\mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{50\angle 0^\circ}{125\angle -36.9^\circ} = 0.4\angle 36.9^\circ\text{ A}
+\end{align*}
+
+Time domain:
+\begin{align*}
+i(t) &= 0.4\cos(4000t + 36.9^\circ)\text{ A}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{I} = 0.4\angle 36.9^\circ$ A, $i(t) = 0.4\cos(4000t + 36.9^\circ)$ A
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Find $v_o(t)$.
+
+\begin{solution}
+The output voltage is across $C_2$:
+\begin{align*}
+\mathbf{V}_o &= \mathbf{I} \cdot \mathbf{Z}_{C_2} = (0.4\angle 36.9^\circ)(-j25)\\
+&= (0.4\angle 36.9^\circ)(25\angle -90^\circ)\\
+&= 10\angle -53.1^\circ\text{ V}
+\end{align*}
+
+Time domain:
+\begin{align*}
+v_o(t) &= 10\cos(4000t - 53.1^\circ)\text{ V}
+\end{align*}
+
+\textbf{Answer:} $v_o(t) = 10\cos(4000t - 53.1^\circ)$ V
+\end{solution}
 
 
 
@@ -225,25 +479,117 @@ i(t) &= 3\cos(5000t + 15^\circ)\text{ A}
 
 \textbf{(a)} Calculate the impedances of $C_1$, $C_2$, and $R_2$ at $\omega = 8000$ rad/s, then find the equivalent impedance of the parallel combination.
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{C_1} &= \frac{1}{j\omega C_1} = \frac{1}{j(8000)(100\times10^{-9})} = \frac{-j}{8\times10^{-4}} = -j1250\,\Omega\\
+\mathbf{Z}_{C_2} &= \frac{1}{j\omega C_2} = \frac{1}{j(8000)(50\times10^{-9})} = \frac{-j}{4\times10^{-4}} = -j2500\,\Omega\\
+\mathbf{Z}_{R_2} &= R_2 = 3000\,\Omega
+\end{align*}
+
+For parallel combination:
+\begin{align*}
+\frac{1}{\mathbf{Z}_{par}} &= \frac{1}{\mathbf{Z}_{C_1}} + \frac{1}{\mathbf{Z}_{C_2}} + \frac{1}{R_2}\\
+&= \frac{1}{-j1250} + \frac{1}{-j2500} + \frac{1}{3000}\\
+&= j8\times10^{-4} + j4\times10^{-4} + 3.33\times10^{-4}\\
+&= 3.33\times10^{-4} + j12\times10^{-4}\\
+\mathbf{Z}_{par} &= \frac{1}{3.33\times10^{-4} + j12\times10^{-4}} = \frac{1}{12.45\times10^{-4}\angle 74.5^\circ}\\
+&= 803.2\angle -74.5^\circ\,\Omega = 214.7 - j773.8\,\Omega
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{par} = 214.7 - j773.8\,\Omega = 803.2\angle -74.5^\circ\,\Omega$
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(b)} Calculate the total circuit impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
+
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{tot} &= R_1 + \mathbf{Z}_{par} = 1000 + (214.7 - j773.8)\\
+&= 1214.7 - j773.8\,\Omega
+\end{align*}
+
+Polar form:
+\begin{align*}
+|\mathbf{Z}_{tot}| &= \sqrt{1214.7^2 + 773.8^2} = \sqrt{1475496 + 598766} = 1441\,\Omega\\
+\angle\mathbf{Z}_{tot} &= \tan^{-1}\left(\frac{-773.8}{1214.7}\right) = -32.5^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{tot} = 1214.7 - j773.8\,\Omega = 1441\angle -32.5^\circ\,\Omega$
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Find the input current $i(t)$ in both phasor and time-domain forms.
 
+\begin{solution}
+Source phasor: $\mathbf{V}_s = 20\angle 0^\circ$ V
+
+\begin{align*}
+\mathbf{I} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{20\angle 0^\circ}{1441\angle -32.5^\circ} = 0.01388\angle 32.5^\circ\text{ A}
+\end{align*}
+
+Time domain:
+\begin{align*}
+i(t) &= 0.01388\cos(8000t + 32.5^\circ)\text{ A} = 13.88\cos(8000t + 32.5^\circ)\text{ mA}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{I} = 13.88\angle 32.5^\circ$ mA, $i(t) = 13.88\cos(8000t + 32.5^\circ)$ mA
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Find the output voltage $v_o(t)$.
+
+\begin{solution}
+Output voltage across parallel combination:
+\begin{align*}
+\mathbf{V}_o &= \mathbf{I} \cdot \mathbf{Z}_{par} = (0.01388\angle 32.5^\circ)(803.2\angle -74.5^\circ)\\
+&= 11.15\angle -42.0^\circ\text{ V}
+\end{align*}
+
+Time domain:
+\begin{align*}
+v_o(t) &= 11.15\cos(8000t - 42.0^\circ)\text{ V}
+\end{align*}
+
+\textbf{Answer:} $v_o(t) = 11.15\cos(8000t - 42.0^\circ)$ V
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(e)} Calculate the magnitude ratio $|\mathbf{V}_o|/|\mathbf{V}_s|$ and the phase shift. 
 
+\begin{solution}
+\begin{align*}
+\text{Magnitude ratio: } \frac{|\mathbf{V}_o|}{|\mathbf{V}_s|} &= \frac{11.15}{20} = 0.5575\\
+\text{Phase shift: } \Delta\phi &= -42.0^\circ - 0^\circ = -42.0^\circ
+\end{align*}
+
+This circuit acts as a voltage divider with gain of 0.56 and introduces a phase lag of $42.0^\circ$.
+
+\textbf{Answer:} Magnitude ratio = 0.5575, Phase shift = $-42.0^\circ$
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(f)} Find the current through each capacitor ($C_1$ and $C_2$) individually.
+
+\begin{solution}
+Current through $C_1$:
+\begin{align*}
+\mathbf{I}_{C_1} &= \frac{\mathbf{V}_o}{\mathbf{Z}_{C_1}} = \frac{11.15\angle -42.0^\circ}{-j1250} = \frac{11.15\angle -42.0^\circ}{1250\angle -90^\circ}\\
+&= 0.00892\angle 48.0^\circ\text{ A} = 8.92\angle 48.0^\circ\text{ mA}\\
+i_{C_1}(t) &= 8.92\cos(8000t + 48.0^\circ)\text{ mA}
+\end{align*}
+
+Current through $C_2$:
+\begin{align*}
+\mathbf{I}_{C_2} &= \frac{\mathbf{V}_o}{\mathbf{Z}_{C_2}} = \frac{11.15\angle -42.0^\circ}{-j2500} = \frac{11.15\angle -42.0^\circ}{2500\angle -90^\circ}\\
+&= 0.00446\angle 48.0^\circ\text{ A} = 4.46\angle 48.0^\circ\text{ mA}\\
+i_{C_2}(t) &= 4.46\cos(8000t + 48.0^\circ)\text{ mA}
+\end{align*}
+\end{solution}
 
 \vspace{3cm}
 
@@ -259,21 +605,107 @@ i(t) &= 6\sqrt{2}\cos(377t - 53.13^\circ)\text{ A}
 
 \textbf{(a)} Convert the voltage and current to phasor form, then calculate the RMS phasors $\mathbf{V}_{rms}$ and $\mathbf{I}_{rms}$. (Hint: The $\sqrt{2}$ factor is included to indicate peak values.)
 
+\begin{solution}
+The signals are already in peak form. Convert to phasors:
+\begin{align*}
+v(t) &= 120\sqrt{2}\cos(377t)\text{ V} \quad \Rightarrow \quad \mathbf{V} = 120\sqrt{2}\angle 0^\circ\text{ V}\\
+i(t) &= 6\sqrt{2}\cos(377t - 53.13^\circ)\text{ A} \quad \Rightarrow \quad \mathbf{I} = 6\sqrt{2}\angle -53.13^\circ\text{ A}
+\end{align*}
+
+RMS values:
+\begin{align*}
+\mathbf{V}_{rms} &= \frac{\mathbf{V}}{\sqrt{2}} = \frac{120\sqrt{2}}{\sqrt{2}}\angle 0^\circ = 120\angle 0^\circ\text{ V}\\
+\mathbf{I}_{rms} &= \frac{\mathbf{I}}{\sqrt{2}} = \frac{6\sqrt{2}}{\sqrt{2}}\angle -53.13^\circ = 6\angle -53.13^\circ\text{ A}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{V}_{rms} = 120\angle 0^\circ$ V, $\mathbf{I}_{rms} = 6\angle -53.13^\circ$ A
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(b)} Find the real power $P$, reactive power $Q$, and apparent power $\mathbf{S}$. Include proper units.
+
+\begin{solution}
+The phase angle between voltage and current is $\theta = 0^\circ - (-53.13^\circ) = 53.13^\circ$.
+
+\begin{align*}
+S &= V_{rms}I_{rms} = (120)(6) = 720\text{ VA}\\
+P &= V_{rms}I_{rms}\cos\theta = (120)(6)\cos(53.13^\circ) = 720(0.6) = 432\text{ W}\\
+Q &= V_{rms}I_{rms}\sin\theta = (120)(6)\sin(53.13^\circ) = 720(0.8) = 576\text{ VAR}
+\end{align*}
+
+Alternatively, using complex power:
+\begin{align*}
+\mathbf{S} &= \mathbf{V}_{rms}\mathbf{I}_{rms}^* = (120\angle 0^\circ)(6\angle 53.13^\circ)\\
+&= 720\angle 53.13^\circ = 432 + j576\text{ VA}
+\end{align*}
+
+\textbf{Answer:} $P = 432$ W, $Q = 576$ VAR (inductive), $S = 720$ VA, $\mathbf{S} = 432 + j576$ VA
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Calculate the power factor and state whether the load is inductive or capacitive. Explain your reasoning.
 
+\begin{solution}
+\begin{align*}
+\text{Power factor} &= \cos\theta = \cos(53.13^\circ) = 0.6\text{ lagging}
+\end{align*}
+
+The load is \textbf{inductive} because:
+\begin{itemize}
+\item The current lags the voltage by $53.13^\circ$ (current phase angle is $-53.13^\circ$ while voltage is at $0^\circ$)
+\item Reactive power $Q > 0$ (positive reactive power indicates inductive load)
+\item The power factor is "lagging"
+\end{itemize}
+
+\textbf{Answer:} Power factor = 0.6 lagging, Load is inductive
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Find the impedance of the load using $\mathbf{Z} = \mathbf{V}_{rms}/\mathbf{I}_{rms}$ in both rectangular and polar forms. What circuit elements could this load represent?
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z} &= \frac{\mathbf{V}_{rms}}{\mathbf{I}_{rms}} = \frac{120\angle 0^\circ}{6\angle -53.13^\circ} = 20\angle 53.13^\circ\,\Omega
+\end{align*}
+
+Convert to rectangular form:
+\begin{align*}
+\mathbf{Z} &= 20\cos(53.13^\circ) + j20\sin(53.13^\circ)\\
+&= 20(0.6) + j20(0.8) = 12 + j16\,\Omega
+\end{align*}
+
+This impedance represents a resistor in series with an inductor:
+\begin{align*}
+R &= 12\,\Omega\\
+X_L &= 16\,\Omega \quad \Rightarrow \quad L = \frac{X_L}{\omega} = \frac{16}{377} = 42.4\text{ mH}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z} = 12 + j16\,\Omega = 20\angle 53.13^\circ\,\Omega$. The load is a $12\,\Omega$ resistor in series with a $42.4$ mH inductor.
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(e)} If you wanted to improve the power factor to unity (1.0), what value of capacitor would you need to place in parallel with this load? (Note: $\omega = 377$ rad/s corresponds to $f = 60$ Hz)
+
+\begin{solution}
+To achieve unity power factor, we need to cancel the reactive power:
+\begin{align*}
+Q_C &= -Q_L = -576\text{ VAR}
+\end{align*}
+
+For a capacitor:
+\begin{align*}
+Q_C &= -V_{rms}^2\omega C \quad \text{(negative because capacitive)}\\
+-576 &= -\frac{V_{rms}^2}{X_C} = -V_{rms}^2\omega C\\
+576 &= (120)^2\omega C\\
+C &= \frac{576}{(120)^2(377)} = \frac{576}{5428800} = 106.1\times10^{-6}\text{ F}
+\end{align*}
+
+\textbf{Answer:} $C = 106.1\,\mu$F (placed in parallel with the load)
+\end{solution}
 
 \vspace{3cm}
 
@@ -301,21 +733,110 @@ i(t) &= 6\sqrt{2}\cos(377t - 53.13^\circ)\text{ A}
 
 \textbf{(a)} Calculate all component impedances at $\omega = 5000$ rad/s.
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{R_1} &= R_1 = 20\,\Omega\\
+\mathbf{Z}_{R_2} &= R_2 = 80\,\Omega\\
+\mathbf{Z}_L &= j\omega L = j(5000)(0.008) = j40\,\Omega\\
+\mathbf{Z}_{C_1} &= \frac{1}{j\omega C_1} = \frac{1}{j(5000)(10\times10^{-6})} = \frac{-j}{0.05} = -j20\,\Omega\\
+\mathbf{Z}_{C_2} &= \frac{1}{j\omega C_2} = \frac{1}{j(5000)(40\times10^{-6})} = \frac{-j}{0.2} = -j5\,\Omega
+\end{align*}
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(b)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
+
+\begin{solution}
+The circuit topology is: $R_1$ in series with $L$, then parallel combination of $(R_2 \parallel C_1 \parallel C_2)$.
+
+First, find the parallel impedance:
+\begin{align*}
+\frac{1}{\mathbf{Z}_{par}} &= \frac{1}{R_2} + \frac{1}{\mathbf{Z}_{C_1}} + \frac{1}{\mathbf{Z}_{C_2}}\\
+&= \frac{1}{80} + \frac{1}{-j20} + \frac{1}{-j5}\\
+&= 0.0125 + j0.05 + j0.2 = 0.0125 + j0.25\\
+\mathbf{Z}_{par} &= \frac{1}{0.0125 + j0.25} = \frac{1}{0.2503\angle 87.1^\circ} = 3.996\angle -87.1^\circ\,\Omega\\
+&= 0.20 - j3.99\,\Omega
+\end{align*}
+
+Total impedance:
+\begin{align*}
+\mathbf{Z}_{tot} &= R_1 + \mathbf{Z}_L + \mathbf{Z}_{par}\\
+&= 20 + j40 + (0.20 - j3.99)\\
+&= 20.20 + j36.01\,\Omega
+\end{align*}
+
+Polar form:
+\begin{align*}
+|\mathbf{Z}_{tot}| &= \sqrt{20.20^2 + 36.01^2} = \sqrt{408.04 + 1296.72} = 41.29\,\Omega\\
+\angle\mathbf{Z}_{tot} &= \tan^{-1}\left(\frac{36.01}{20.20}\right) = 60.7^\circ
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{tot} = 20.20 + j36.01\,\Omega = 41.29\angle 60.7^\circ\,\Omega$
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Find the input current $i_{in}(t)$ in both phasor and time-domain forms.
 
+\begin{solution}
+Source phasor: $\mathbf{V}_s = 100\angle 0^\circ$ V
+
+\begin{align*}
+\mathbf{I}_{in} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{100\angle 0^\circ}{41.29\angle 60.7^\circ} = 2.42\angle -60.7^\circ\text{ A}
+\end{align*}
+
+Time domain:
+\begin{align*}
+i_{in}(t) &= 2.42\cos(5000t - 60.7^\circ)\text{ A}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{I}_{in} = 2.42\angle -60.7^\circ$ A, $i_{in}(t) = 2.42\cos(5000t - 60.7^\circ)$ A
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Calculate the voltage across the parallel branch ($R_2 \parallel C_1 \parallel C_2$).
 
+\begin{solution}
+\begin{align*}
+\mathbf{V}_{par} &= \mathbf{I}_{in} \cdot \mathbf{Z}_{par} = (2.42\angle -60.7^\circ)(3.996\angle -87.1^\circ)\\
+&= 9.67\angle -147.8^\circ\text{ V}
+\end{align*}
+
+Time domain:
+\begin{align*}
+v_{par}(t) &= 9.67\cos(5000t - 147.8^\circ)\text{ V}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{V}_{par} = 9.67\angle -147.8^\circ$ V
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(e)} Find the current through $R_2$, $C_1$, and $C_2$ individually.
+
+\begin{solution}
+Current through $R_2$:
+\begin{align*}
+\mathbf{I}_{R_2} &= \frac{\mathbf{V}_{par}}{R_2} = \frac{9.67\angle -147.8^\circ}{80} = 0.121\angle -147.8^\circ\text{ A}\\
+i_{R_2}(t) &= 0.121\cos(5000t - 147.8^\circ)\text{ A} = 121\cos(5000t - 147.8^\circ)\text{ mA}
+\end{align*}
+
+Current through $C_1$:
+\begin{align*}
+\mathbf{I}_{C_1} &= \frac{\mathbf{V}_{par}}{\mathbf{Z}_{C_1}} = \frac{9.67\angle -147.8^\circ}{-j20} = \frac{9.67\angle -147.8^\circ}{20\angle -90^\circ}\\
+&= 0.484\angle -57.8^\circ\text{ A}\\
+i_{C_1}(t) &= 0.484\cos(5000t - 57.8^\circ)\text{ A} = 484\cos(5000t - 57.8^\circ)\text{ mA}
+\end{align*}
+
+Current through $C_2$:
+\begin{align*}
+\mathbf{I}_{C_2} &= \frac{\mathbf{V}_{par}}{\mathbf{Z}_{C_2}} = \frac{9.67\angle -147.8^\circ}{-j5} = \frac{9.67\angle -147.8^\circ}{5\angle -90^\circ}\\
+&= 1.934\angle -57.8^\circ\text{ A}\\
+i_{C_2}(t) &= 1.934\cos(5000t - 57.8^\circ)\text{ A}
+\end{align*}
+\end{solution}
 
 
 \newpage
@@ -342,25 +863,155 @@ i(t) &= 6\sqrt{2}\cos(377t - 53.13^\circ)\text{ A}
 
 \textbf{(a)} Calculate the impedance of each inductor and the capacitor at $\omega = 4000$ rad/s.
 
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{L_1} &= j\omega L_1 = j(4000)(0.025) = j100\,\Omega\\
+\mathbf{Z}_{L_2} &= j\omega L_2 = j(4000)(0.050) = j200\,\Omega\\
+\mathbf{Z}_C &= \frac{1}{j\omega C} = \frac{1}{j(4000)(5\times10^{-6})} = \frac{-j}{0.02} = -j50\,\Omega
+\end{align*}
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(b)} Calculate the equivalent impedance of the parallel inductor combination ($L_1 \parallel L_2$).
+
+\begin{solution}
+\begin{align*}
+\mathbf{Z}_{L,par} &= \frac{\mathbf{Z}_{L_1} \cdot \mathbf{Z}_{L_2}}{\mathbf{Z}_{L_1} + \mathbf{Z}_{L_2}} = \frac{(j100)(j200)}{j100 + j200}\\
+&= \frac{-20000}{j300} = \frac{-20000}{300\angle 90^\circ} = \frac{20000}{300}\angle -90^\circ\\
+&= 66.67\angle 90^\circ = j66.67\,\Omega
+\end{align*}
+
+Alternatively, for inductors in parallel:
+\begin{align*}
+L_{eq} &= \frac{L_1 L_2}{L_1 + L_2} = \frac{(0.025)(0.050)}{0.025 + 0.050} = \frac{0.00125}{0.075} = 0.01667\text{ H}\\
+\mathbf{Z}_{L,par} &= j\omega L_{eq} = j(4000)(0.01667) = j66.67\,\Omega
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{L,par} = j66.67\,\Omega$
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(c)} Calculate the total impedance $\mathbf{Z}_{tot}$ in both rectangular and polar forms.
 
+\begin{solution}
+First, calculate the series impedance:
+\begin{align*}
+\mathbf{Z}_{series} &= R_1 + \mathbf{Z}_C + R_2\\
+&= 50 - j50 + 100\\
+&= 150 - j50\,\Omega
+\end{align*}
+
+Now find the parallel combination:
+\begin{align*}
+\mathbf{Z}_{tot} &= \frac{\mathbf{Z}_{L,par} \cdot \mathbf{Z}_{series}}{\mathbf{Z}_{L,par} + \mathbf{Z}_{series}} = \frac{(j66.67)(150 - j50)}{j66.67 + 150 - j50}\\
+&= \frac{j66.67(150 - j50)}{150 + j16.67} = \frac{j10000.5 + 3333.5}{150 + j16.67}\\
+&= \frac{3333.5 + j10000.5}{150 + j16.67}
+\end{align*}
+
+Convert to polar:
+\begin{align*}
+\text{Numerator: } &|3333.5 + j10000.5| = \sqrt{3333.5^2 + 10000.5^2} = 10543\,\Omega\\
+&\angle = \tan^{-1}(10000.5/3333.5) = 71.6^\circ\\
+\text{Denominator: } &|150 + j16.67| = \sqrt{150^2 + 16.67^2} = 150.9\,\Omega\\
+&\angle = \tan^{-1}(16.67/150) = 6.34^\circ
+\end{align*}
+
+\begin{align*}
+\mathbf{Z}_{tot} &= \frac{10543\angle 71.6^\circ}{150.9\angle 6.34^\circ} = 69.87\angle 65.3^\circ\,\Omega
+\end{align*}
+
+Convert to rectangular:
+\begin{align*}
+\mathbf{Z}_{tot} &= 69.87\cos(65.3^\circ) + j69.87\sin(65.3^\circ) = 29.1 + j63.5\,\Omega
+\end{align*}
+
+\textbf{Answer:} $\mathbf{Z}_{tot} = 29.1 + j63.5\,\Omega = 69.87\angle 65.3^\circ\,\Omega$
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(d)} Find the total source current $i_s(t)$ in both phasor and time-domain forms.
+
+\begin{solution}
+Source phasor: $\mathbf{V}_s = 60\angle 0^\circ$ V
+
+\begin{align*}
+\mathbf{I}_s &= \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{60\angle 0^\circ}{69.87\angle 65.3^\circ} = 0.859\angle -65.3^\circ\text{ A}
+\end{align*}
+
+Time domain:
+\begin{align*}
+i_s(t) &= 0.859\cos(4000t - 65.3^\circ)\text{ A} = 859\cos(4000t - 65.3^\circ)\text{ mA}
+\end{align*}
+
+\textbf{Answer:} $\mathbf{I}_s = 0.859\angle -65.3^\circ$ A, $i_s(t) = 0.859\cos(4000t - 65.3^\circ)$ A
+\end{solution}
 
 \vspace{3cm}
 
 \textbf{(e)} Find the voltage across the parallel inductor combination, then determine the individual currents $i_1(t)$ and $i_2(t)$ through each inductor.
 
+\begin{solution}
+Since the inductors are in parallel with the entire circuit and connected directly to the source, the voltage across them is the source voltage:
+\begin{align*}
+\mathbf{V}_{L,par} &= \mathbf{V}_s = 60\angle 0^\circ\text{ V}
+\end{align*}
+
+Current through $L_1$:
+\begin{align*}
+\mathbf{I}_1 &= \frac{\mathbf{V}_{L,par}}{\mathbf{Z}_{L_1}} = \frac{60\angle 0^\circ}{100\angle 90^\circ} = 0.6\angle -90^\circ\text{ A}\\
+i_1(t) &= 0.6\cos(4000t - 90^\circ)\text{ A} = 600\cos(4000t - 90^\circ)\text{ mA}
+\end{align*}
+
+Current through $L_2$:
+\begin{align*}
+\mathbf{I}_2 &= \frac{\mathbf{V}_{L,par}}{\mathbf{Z}_{L_2}} = \frac{60\angle 0^\circ}{200\angle 90^\circ} = 0.3\angle -90^\circ\text{ A}\\
+i_2(t) &= 0.3\cos(4000t - 90^\circ)\text{ A} = 300\cos(4000t - 90^\circ)\text{ mA}
+\end{align*}
+
+Current through series branch $(R_1 + C + R_2)$:
+\begin{align*}
+\mathbf{I}_{series} &= \frac{\mathbf{V}_s}{\mathbf{Z}_{series}} = \frac{60\angle 0^\circ}{150 - j50} = \frac{60\angle 0^\circ}{158.1\angle -18.4^\circ}\\
+&= 0.379\angle 18.4^\circ\text{ A}
+\end{align*}
+
+Verification: $\mathbf{I}_s = \mathbf{I}_1 + \mathbf{I}_2 + \mathbf{I}_{series}$ (by current division)
+\end{solution}
+
 \vspace{3cm}
 
 \textbf{(f)} Calculate the total real power, reactive power, and complex power delivered by the source. Express complex power in rectangular form. (Hint:You already know the source voltage and current.)
+
+\begin{solution}
+Convert to RMS values:
+\begin{align*}
+\mathbf{V}_{s,rms} &= \frac{60}{\sqrt{2}}\angle 0^\circ = 42.43\angle 0^\circ\text{ V}\\
+\mathbf{I}_{s,rms} &= \frac{0.859}{\sqrt{2}}\angle -65.3^\circ = 0.607\angle -65.3^\circ\text{ A}
+\end{align*}
+
+Complex power:
+\begin{align*}
+\mathbf{S} &= \mathbf{V}_{s,rms}\mathbf{I}_{s,rms}^* = (42.43\angle 0^\circ)(0.607\angle 65.3^\circ)\\
+&= 25.76\angle 65.3^\circ\text{ VA}
+\end{align*}
+
+Convert to rectangular form:
+\begin{align*}
+\mathbf{S} &= 25.76\cos(65.3^\circ) + j25.76\sin(65.3^\circ)\\
+&= 10.74 + j23.43\text{ VA}
+\end{align*}
+
+Therefore:
+\begin{align*}
+P &= 10.74\text{ W (real power)}\\
+Q &= 23.43\text{ VAR (reactive power, inductive)}\\
+S &= |\mathbf{S}| = 25.76\text{ VA (apparent power)}
+\end{align*}
+
+\textbf{Answer:} $P = 10.74$ W, $Q = 23.43$ VAR, $\mathbf{S} = 10.74 + j23.43$ VA
+\end{solution}
 
 \end{enumerate}
 
