@@ -1,0 +1,233 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{caption}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Assignment 04}}\\
+    {\LARGE \textbf{Diode Rectifier Circuit Simulation}}\\
+    \vspace{0.3cm}
+    {\large ECEN 222, Spring 2026}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Overview}
+
+This assignment focuses on simulating and analyzing diode rectifier circuits using Multisim. You will build and analyze half-wave and full-wave (bridge) rectifiers, and explore the effects of filter capacitors. These circuits are fundamental to power supply design and demonstrate practical applications of diode behavior.
+
+\vspace{0.3cm}
+
+\section*{Submission Requirements}
+
+Submit a \textbf{single PDF document} containing all requested screenshots, measurements, and analysis. Your PDF should include:
+
+\begin{itemize}
+    \item Clear, legible screenshots showing complete circuits with component values visible
+    \item Oscilloscope waveforms with proper scale settings and measurements
+    \item Brief explanations of observed behavior and comparisons to theoretical values
+\end{itemize}
+
+\vspace{0.3cm}
+
+\section*{Software Requirements}
+
+\begin{itemize}
+    \item \textbf{Multisim:} Available through the NI Academic Site License. Download from \url{https://www.ni.com/} or use computers in the lab.
+\end{itemize}
+
+\newpage
+
+\section*{Part 1: Half-Wave Rectifier [25 points]}
+
+Build and simulate a basic half-wave rectifier circuit.
+
+\subsection*{Circuit Specifications:}
+
+\begin{itemize}
+    \item AC voltage source: 12 V$_{RMS}$, 60 Hz
+    \item Diode: 1N4004 or similar silicon diode
+    \item Load resistor: $R_L = 1$ k$\Omega$
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=0.6\textwidth]{figures/half_wave_schem.png}
+    \captionof{figure}{Half-wave rectifier circuit schematic}
+\end{center}
+
+\subsection*{Analysis Tasks:}
+
+\begin{enumerate}[label=\textbf{1.\arabic*}]
+    \item \textbf{Circuit Screenshot [5 points]:} Include a screenshot of your complete half-wave rectifier circuit showing:
+    \begin{itemize}
+        \item AC voltage source with parameters visible
+        \item Diode (1N4004)
+        \item Load resistor with value visible
+        \item Ground connection
+        \item Oscilloscope probes connected to measure input (AC source) and output (across load)
+    \end{itemize}
+    
+    \item \textbf{Transient Analysis [10 points]:} Run a transient analysis and capture oscilloscope waveforms showing:
+    \begin{itemize}
+        \item Both input voltage (Channel A) and output voltage (Channel B)
+        \item At least 3 complete periods
+        \item Time and voltage scales clearly visible
+        \item Include this screenshot in your submission
+    \end{itemize}
+    
+    \item \textbf{Measurements and Calculations [10 points]:} From your simulation, report:
+    \begin{itemize}
+        \item Peak input voltage $V_p$ (measured from oscilloscope)
+        \item Peak output voltage (measured from oscilloscope)
+        \item Average (DC) output voltage (use a multimeter in Multisim or read from oscilloscope)
+        \item Compare your measured DC voltage to the theoretical value $V_{DC} = \frac{V_p - V_D}{\pi}$ (assume $V_D = 0.7$ V). Calculate percent error.
+        \item Briefly explain why the output only shows positive half-cycles.
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Note: Measuring DC Voltage]
+To measure the average (DC) output voltage, you can place a multimeter set to DC voltage mode across the load resistor. Alternatively, use a measurement function on the oscillorscope that can compute the average value of a waveform.
+\end{tcolorbox}
+
+\newpage
+
+\section*{Part 2: Bridge (Full-Wave) Rectifier [25 points]}
+
+Build and simulate a bridge rectifier circuit for improved performance.
+
+\subsection*{Circuit Specifications:}
+
+\begin{itemize}
+    \item AC voltage source: 12 V$_{RMS}$, 60 Hz (same as Part 1)
+    \item Four diodes: 1N4001 or similar (arranged in bridge configuration)
+    \item Load resistor: $R_L = 1$ k$\Omega$
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/full_wave_schem.png}
+    \captionof{figure}{Bridge rectifier circuit schematic}
+\end{center}
+
+\subsection*{Analysis Tasks:}
+
+\begin{enumerate}[label=\textbf{2.\arabic*}]
+    \item \textbf{Circuit Screenshot [5 points]:} Include a screenshot of your bridge rectifier showing:
+    \begin{itemize}
+        \item AC voltage source
+        \item All four diodes properly arranged in bridge configuration
+        \item Load resistor
+        \item Ground connection
+        \item Oscilloscope probes
+    \end{itemize}
+    
+    \item \textbf{Transient Analysis [10 points]:} Run a transient analysis and capture oscilloscope waveforms showing:
+    \begin{itemize}
+        \item Input and output voltages
+        \item At least 3 complete periods
+        \item Both half-cycles of the AC input producing positive output
+        \item Include this screenshot
+    \end{itemize}
+    
+    \item \textbf{Measurements and Comparison [10 points]:} From your simulation, report:
+    \begin{itemize}
+        \item Peak output voltage
+        \item Average (DC) output voltage
+        \item Compare to theoretical: $V_{DC} = \frac{2(V_p - 2V_D)}{\pi}$ (note: two diode drops)
+        \item Compare the DC output voltage to the half-wave rectifier from Part 1. By what factor did it increase?
+        \item Explain why the bridge rectifier produces a higher DC output voltage.
+    \end{itemize}
+\end{enumerate}
+
+
+\newpage
+
+\section*{Part 3: Filtered Rectifier [50 points]}
+
+Add a filter capacitor to your bridge rectifier to reduce ripple voltage.
+
+\subsection*{Circuit Specifications:}
+
+\begin{itemize}
+    \item Use your bridge rectifier from Part 2
+    \item Add a filter capacitor: $C = 470$ $\mu$F in parallel with $R_L$
+    \item Keep $R_L = 1$ k$\Omega$
+\end{itemize}
+
+\begin{center}
+    \includegraphics[width=0.7\textwidth]{figures/full_wave_wlp_schem.png}
+    \captionof{figure}{Bridge rectifier with filter capacitor}
+\end{center}
+
+\subsection*{Analysis Tasks:}
+
+\begin{enumerate}[label=\textbf{3.\arabic*}]
+    \item \textbf{Circuit Screenshot [10 points]:} Include a screenshot showing:
+    \begin{itemize}
+        \item Bridge rectifier with added capacitor
+        \item Capacitor value clearly visible
+        \item Oscilloscope probes measuring output voltage
+    \end{itemize}
+    
+    \item \textbf{Transient Analysis [15 points]:} Run a transient analysis showing:
+    \begin{itemize}
+        \item Output voltage waveform after the circuit reaches steady state
+        \item Zoom in to clearly show the ripple voltage
+        \item Use oscilloscope cursors or measurements to determine peak-to-peak ripple voltage $V_r$
+        \item Include this screenshot with measurements visible
+    \end{itemize}
+    
+    \item \textbf{Ripple Analysis [15 points]:} From your simulation, report:
+    \begin{itemize}
+        \item Measured ripple voltage $V_r$ (peak-to-peak)
+        \item Measured average DC output voltage
+        \item Compare measured ripple to theoretical: $V_r \approx \frac{V_p}{2fR_LC}$ (note: $2f$ for full-wave)
+        \item Calculate percent error
+    \end{itemize}
+    
+    \item \textbf{Capacitor Effect Study [10 points]:} 
+    \begin{itemize}
+        \item Change the capacitor to $C = 100$ $\mu$F and re-run the simulation
+        \item Capture a screenshot showing the increased ripple
+        \item Briefly discuss how capacitor size affects ripple voltage and DC output voltage
+    \end{itemize}
+\end{enumerate}
+
+\vspace{0.5cm}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=Note: Steady State]
+When you first run the transient simulation, the capacitor will charge up from zero. Make sure to run the simulation long enough (e.g., 100 ms) to reach steady state, then zoom in on the later portion of the waveform to see the steady-state ripple.
+\end{tcolorbox}
+
+\newpage
+
+\section*{Tips}
+
+\begin{itemize}
+    
+    \item \textbf{Simulation Settings:} For transient analysis, use appropriate time spans (e.g., 50-100 ms for rectifiers to reach steady state). Set maximum time step small enough to capture waveform details (e.g., 0.1 ms).
+    
+    \item \textbf{Measurements:} Use the oscilloscope measurement functions (mean, peak-to-peak, etc.) to get accurate values rather than estimating from the display. This will also help practice for real lab measurements.
+    
+\end{itemize}
+
+
+
+\end{document}
