@@ -262,8 +262,9 @@ Zener shunt regulators generally have poor efficiency, especially under light lo
 \section{Experimental Procedures}
 
 \subsection{Part 1: Bridge Rectifier with Filter}
+\emph{Observe the behavior of a bridge rectifier with a filtered output}\\
 
-Begin by constructing a full-wave bridge rectifier with filter capacitor as shown in Figure \ref{fig:bridge_filtered}. This circuit should be familiar from Lab 2. Use four rectifier diodes in the bridge configuration, the 1000 $\mu$F filter capacitor, and initially use a 2.2 k$\Omega$ load resistor. Connect your AC source to provide approximately 12 V RMS at 60 Hz.  Verify the polarity of the electrolytic capacitor before applying power.\\
+Begin by constructing a full-wave bridge rectifier with filter capacitor as shown in Figure \ref{fig:bridge_filtered}. This circuit should be familiar from Lab 2. Use four rectifier diodes in the bridge configuration, the 10 $\mu$F filter capacitor, and initially use a 1 k$\Omega$ load resistor. Connect the waveform generator to provide 5 V RMS at 60 Hz. The voltage limit setting of the instrument may have to be adjusted. Make sure set the output impedance setting is specified as \emph{HiZ}. Verify the polarity of the electrolytic capacitor before applying power.\\
 
 \begin{figure}[h]
     \centering
@@ -285,18 +286,26 @@ Begin by constructing a full-wave bridge rectifier with filter capacitor as show
     \label{fig:bridge_filtered}
 \end{figure}
 
-Using the oscilloscope, observe the output voltage $V_o$ across $R_L$; record the peak and minimum output voltage. Use the DMM to measure the DC output voltage. Calculate the peak-to-peak ripple voltage $V_r$. Verify that the ripple frequency of the output is 120Hz (twice the AC input frequency). Also measure the AC input voltage (RMS and peak values).\\
+Using the oscilloscope, observe the output voltage $V_o$ across $R_L$. As in lab 2, the output voltage must be measured using two probes and finding the differece by the Math function. Measure the DC output voltage and the output ripple voltage, $V_r$. Verify that the ripple frequency of the output is 120Hz (twice the AC input frequency). Also measure the AC input voltage amplitude.\\
 
 
-Replace the load resistor with a 1 k$\Omega$ resistor and repeat the measurements. Then use the 4.7 k$\Omega$ resistor and repeat once more. For each load value, calculate the load current as $I_L = V_o / R_L$ and observe how the DC output voltage and ripple voltage change with load current. \\
+Replace the load resistor with a 10 k$\Omega$ resistor and repeat the measurements. Then use the 100 k$\Omega$ resistor and repeat once more. A larger resistance draws less load current. \\
+\emph{Don't disassemble the circuit as it will be used in part 3!}\\
 
-In your lab report, present oscilloscope waveforms for at least one load condition, showing the ripple voltage clearly. Create a table or plot showing how DC output voltage and ripple voltage vary with load resistance.  Explain why the output voltage decreases and ripple increases with heavier loading (smaller resistance). This unregulated bridge rectifier will serve as the baseline for comparison with the regulated version you will build later.\\
+\textbf{Report}
+\begin {enumerate}
+\item Present oscilloscope waveforms for at least one load condition, showing the ripple voltage clearly.
+\item Create a table or plot showing how DC output voltage and ripple voltage vary with load resistance.
+\item Explain why the output voltage decreases and ripple increases with heavier loading (smaller resistance). This unregulated bridge rectifier will serve as the baseline for comparison with the regulated version which will be built later.
+\end{enumerate}
 
 \subsection{Part 2: Design of Zener Shunt Regulator}
 
-You will now design a Zener shunt regulator to provide a stable output voltage from the bridge rectifier circuit. First, determine the characteristics of your Zener diode.  In the datasheet, find the Zener voltage $V_Z$, minimum Zener current $I_{Z,\min}$, and maximum power rating $P_{Z,\max}$. \\
+\emph{Design a Zener shunt regulator to provide a stable output voltage from the bridge rectifier circuit}\\
 
-From Part 1, you have measured the DC output voltage of your bridge rectifier under different load conditions. This will serve as the input voltage $V_{in}$ to your regulator.  Assume you want to design the regulator to supply load currents from 0 mA (no load) up to 20 mA (full load) while maintaining regulation. \\
+First, determine the characteristics of the Zener diode. (The \hyperlink{https://www.mouser.com/datasheet/3/282/1/1N5221B_1THRU1N5281B_1.pdf}{1N5225 3V zener diode} is provided in the lab) In the datasheet, find the Zener voltage $V_Z$, minimum Zener current $I_{Z,\min}$, and maximum power rating $P_{Z,\max}$. \\
+
+From Part 1, the the DC output voltage of the bridge rectifier was measured under different load conditions. This will serve as the input voltage $V_{in}$ to the regulator.  The regulator will be designed to supply load currents from 0 mA (no load) up to 20 mA (full load) while maintaining regulation. \\
 
 Calculate the required series resistance $R_S$ using the following design approach:\\
 
@@ -307,7 +316,7 @@ Calculate the required series resistance $R_S$ using the following design approa
     \begin{equation}
         R_S = \frac{V_{in} - V_Z}{I_S}
     \end{equation}
-    where $V_{in}$ is the measured DC output from your bridge rectifier (use the value measured with 2.2 k$\Omega$ load).
+    where $V_{in}$ is the measured DC output from the bridge rectifier (use the value measured with 1 k$\Omega$ load).
     
     \item Verify that the Zener power dissipation at no load does not exceed the rating:
     \begin{equation}
@@ -322,11 +331,16 @@ Calculate the required series resistance $R_S$ using the following design approa
     This should be greater than $I_{Z,\min}$.
 \end{enumerate}
 
-Show all design calculations in your lab report. If your calculated $R_S$ value does not correspond to an available resistor, select the closest value and recalculate the actual currents and power dissipations.\\
+\textbf{Report}
+\begin {enumerate}
+\item Show all design calculations in the lab report. If the calculated $R_S$ value does not correspond to an available resistor, select the closest value and recalculate the actual currents and power dissipations.\\
+\end{enumerate}
+
 
 \subsection{Part 3: Implementation and Testing of Shunt Regulator}
+\emph{Testing the Zener shunt regulator}\\
 
-Construct the complete regulated power supply by adding the Zener shunt regulator to your bridge rectifier from Part 1. The circuit should include the AC source, bridge rectifier, 1000 $\mu$F filter capacitor, series resistor $R_S$ (the value you calculated in Part 4), Zener diode, and provision for connecting different load resistors as shown in Figure \ref{fig:regulated_supply}.\\
+Construct the complete regulated power supply by adding the Zener shunt regulator to the bridge rectifier from Part 1. The circuit should include the AC source, bridge rectifier, 100 $\mu$F filter capacitor, series resistor $R_S$ (the value calculated in Part 4), Zener diode, and provision for connecting different load resistors as shown in Figure \ref{fig:regulated_supply}.\\
 
 \begin{figure}[h]
 \centering
@@ -382,15 +396,21 @@ Pay careful attention to the polarity of the Zener diode—the cathode should be
 
 First, test the circuit with no load connected (remove $R_L$ or set it to a very high value). Measure the output voltage $V_o$ using the DMM. This should be approximately equal to the Zener voltage $V_Z$. Measure the current through the series resistor by measuring the voltage across it and calculating $I_S = V_{R_S}/R_S$. Since there is no load, this current is entirely flowing through the Zener diode:  $I_Z = I_S$. Verify that the Zener is not overheating—calculate $P_Z = V_Z \cdot I_Z$ and ensure it is within the power rating. \\
 
-Now connect a 4.7 k$\Omega$ load resistor and measure the output voltage. Calculate the load current as $I_L = V_o/R_L$. The output voltage should remain very close to the no-load value, demonstrating voltage regulation. Replace the load with progressively smaller resistances (2.2 k$\Omega$, 1 k$\Omega$, 470 $\Omega$), measuring the output voltage at each value. For each load condition, also measure the voltage across the series resistor to calculate $I_S$, and calculate the Zener current as $I_Z = I_S - I_L$.\\
+Now connect a 10 k$\Omega$ load resistor and measure the output voltage. Calculate the load current as $I_L = V_o/R_L$. The output voltage should remain very close to the no-load value, demonstrating voltage regulation. Replace the load with progressively smaller resistances (between 10k$\Omega$ and 100$\Omega$), measuring the output voltage at each value. For each load condition, also measure the voltage across the series resistor to calculate $I_S$, and calculate the Zener current as $I_Z = I_S - I_L$.\\
 
-Continue decreasing the load resistance until one of the following occurs:  (1) the output voltage begins to drop significantly, indicating loss of regulation, or (2) you reach the minimum safe load resistance based on component ratings.  Loss of regulation occurs when the Zener current becomes too small to maintain breakdown ($I_Z < I_{Z,\min}$).\\
+Continue decreasing the load resistance until one of the following occurs:  (1) the output voltage begins to drop significantly, indicating loss of regulation, or (2) The minimum safe load resistance is reached, based on component ratings.  Loss of regulation occurs when the Zener current becomes too small to maintain breakdown ($I_Z < I_{Z,\min}$). In all, collect measurements for at least 5 different resistances.\\
 
-In your lab report, create a table showing output voltage, load current, series current, Zener current, and Zener power dissipation for each load resistance value tested. Plot output voltage versus load current.  Describe what you observe about the output voltage as load current increases. At what load current does regulation begin to fail? Explain this in terms of Zener current.  Calculate the Zener current for each load condition and verify that regulation is maintained as long as $I_Z \geq I_{Z,\min}$.\\
+\textbf{Report}
+\begin {enumerate}
+\item Construct a table showing the output voltage, load current, series current, Zener current, and Zener power dissipation for each load resistance value tested. Excel will be helpful here.
+\item Describe observations about the output voltage as load current increases. At what load current does regulation begin to fail? Explain this in terms of Zener current.
+\item Calculate the Zener current for each load condition and verify that regulation is maintained as long as $I_Z \geq I_{Z,\min}$.
+\end {enumerate}
 
 \subsection{Part 4: Efficiency Analysis}
+\emph{Efficiency Analysis of the Zener shunt regulator}\\
 
-Calculate the efficiency of your regulated power supply under several different load conditions.  For each load resistance value from Part 5 where regulation was maintained, calculate: \\
+Calculate the efficiency of the regulated power supply under several different load conditions.  For each load resistance value from Part 3 where regulation was maintained, calculate: \\
 
 \begin{enumerate}
     \item Output power:  $P_o = V_o \cdot I_L = V_o^2 / R_L$
@@ -407,12 +427,17 @@ Also calculate the power dissipated in each component:
 
 Verify that power is conserved:  $P_{in} = P_{R_S} + P_Z + P_L$.\\
 
-In your lab report, create a table showing the power dissipations and efficiency for each load condition. Plot efficiency versus load current. Describe how efficiency varies with load.  Explain why efficiency is poor at light loads (the Zener dissipates most of the power) and improves at heavier loads (more power goes to the load, less to the Zener). Discuss the fundamental limitation of shunt regulators. They can never achieve high efficiency because they waste power in the series resistor and Zener diode.  This motivates the development of more sophisticated regulators (series regulators and switching regulators).\\
+\textbf{Report}
+\begin {enumerate}
+\item Create a table showing the power dissipations and efficiency for each load condition. Plot efficiency versus load current.
+\item Describe qualitatively how efficiency varies with load.  Explain why efficiency is poor at light loads (the Zener dissipates most of the power) and improves at heavier loads (more power goes to the load, less to the Zener).
+\item Discuss the fundamental limitation of shunt regulators. They can never achieve high efficiency because they waste power in the series resistor and Zener diode.  This motivates the development of more sophisticated regulators (series regulators and switching regulators).
+\end{enumerate}
 
 \section{Pre-Lab Questions}
 \label{sec:prelab}
 
-Complete these questions before coming to the lab session.  Include your answers and all supporting work in your lab report.\\
+Complete these questions before coming to the lab session.  Include answers and all supporting work in the lab report.\\
 
 \begin{enumerate}
 
