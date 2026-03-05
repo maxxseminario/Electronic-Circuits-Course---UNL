@@ -1,0 +1,106 @@
+\documentclass[10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{ifthen}
+\usepackage[american]{circuitikz}
+\geometry{a4paper, margin=1in}
+
+\pagestyle{empty} % Completely remove page numbers
+
+\title{\vspace{-1.5cm}\Large\textbf{University of Nebraska-Lincoln}\\[0.2cm]
+\Large\textbf{Electronic Circuits: Quiz 2}}
+\date{\vspace{-0.5cm}\small\textbf{February 11, 2026}} 
+
+\newboolean{showresults}
+\setboolean{showresults}{false}
+
+\begin{document}
+
+\maketitle
+
+\noindent\textbf{Name:} \underline{\hspace{10cm}} \hfill \textbf{Total Points: 10}
+
+
+\vspace{0.5cm}
+
+\noindent\textbf{Useful Equations:}
+\[
+v(t) = V_m\cos(\omega t + \phi) \Leftrightarrow \mathbf{V} = V_m\angle\phi
+\]
+\[
+\mathbf{Z}_R = R, \quad \mathbf{Z}_C = \frac{1}{j\omega C}, \quad \mathbf{V} = \mathbf{I}\mathbf{Z}
+\]
+
+\vspace{0.3cm}
+
+\begin{enumerate}
+    \item \textbf{(10 points)} For the circuit shown below, the voltage source is $v_s(t) = 50\cos(2000t)$ V, $R = 60\,\Omega$, and $C = 10\,\mu$F.
+    
+    \begin{center}
+    \begin{circuitikz}[american, scale=1.2]
+        \draw (0,0) to[sinusoidal voltage source, l=$v_s(t)$] (0,3);
+        \draw (0,3) to[R, l=$R$] (2.5,3);
+        \draw (2.5,3) to[C, l=$C$, i^=$i(t)$] (5,3);
+        \draw (5,3) to[short] (5,0);
+        \draw (5,0) to[short] (0,0);
+    \end{circuitikz}
+    \end{center}
+    
+    Find the current $i(t)$ in time-domain form.
+    
+    
+    % \vspace{8cm}
+
+    \ifthenelse{\boolean{showresults}}{
+        \textbf{Solution:}
+        
+        \textbf{Step 1: Source phasor}
+        \[
+        \mathbf{V}_s = 50\angle 0^\circ\text{ V}, \quad \omega = 2000\text{ rad/s}
+        \]
+        
+        \textbf{Step 2: Calculate impedances}
+        \[
+        \mathbf{Z}_R = 60\,\Omega
+        \]
+        \[
+        \mathbf{Z}_C = \frac{1}{j\omega C} = \frac{1}{j(2000)(10 \times 10^{-6})} = \frac{1}{j0.02} = -j50\,\Omega
+        \]
+        
+        \textbf{Step 3: Total impedance}
+        \[
+        \mathbf{Z}_{tot} = \mathbf{Z}_R + \mathbf{Z}_C = 60 - j50\,\Omega
+        \]
+        
+        Converting to polar:
+        \[
+        |\mathbf{Z}_{tot}| = \sqrt{60^2 + 50^2} = \sqrt{6100} = 78.1\,\Omega
+        \]
+        \[
+        \angle\mathbf{Z}_{tot} = \tan^{-1}\left(\frac{-50}{60}\right) = -39.8^\circ
+        \]
+        \[
+        \mathbf{Z}_{tot} = 78.1\angle -39.8^\circ\,\Omega
+        \]
+        
+        \textbf{Step 4: Current phasor}
+        \[
+        \mathbf{I} = \frac{\mathbf{V}_s}{\mathbf{Z}_{tot}} = \frac{50\angle 0^\circ}{78.1\angle -39.8^\circ} = 0.640\angle 39.8^\circ\text{ A}
+        \]
+        
+        \textbf{Step 5: Time domain}
+        \[
+        \boxed{i(t) = 0.640\cos(2000t + 39.8^\circ)\text{ A}}
+        \]
+        
+        \textit{Note: Current leads voltage by $39.8^\circ$, as expected for a capacitive circuit.}
+        
+    }{}
+    \end{enumerate}
+
+\end{document}
