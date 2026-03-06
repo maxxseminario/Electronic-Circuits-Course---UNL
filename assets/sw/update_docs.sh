@@ -40,6 +40,11 @@ copy_pdfs_from_dir() {
     local baseName
     baseName="$(basename "$pdfPath")"
 
+    # Skip ms_lecture_master.pdf and midterm1.pdf (but not midterm1_cheatsheet.pdf)
+    if [[ "$baseName" == "ms_lecture_master.pdf" ]] || [[ "$baseName" == "midterm1.pdf" ]]; then
+      continue
+    fi
+
     # Copy into docs/ (flat). Note: same-named PDFs from different subdirs will overwrite.
     cp -f "$pdfPath" "docs/"
     echo "${green} Copied:  ${baseName}${reset}"
@@ -59,6 +64,7 @@ copy_pdfs_from_dir "lectures" "lectures"
 copy_pdfs_from_dir "labs" "labs"
 copy_pdfs_from_dir "assignments" "assignments"
 copy_pdfs_from_dir "multisim" "multisim"
+copy_pdfs_from_dir "exams" "exams"
 
 # Remove orphaned PDFs from docs/
 echo
