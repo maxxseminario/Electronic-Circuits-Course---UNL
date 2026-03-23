@@ -1,0 +1,325 @@
+\documentclass[11pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{graphicx}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\usepackage{tcolorbox}
+\usepackage{hyperref}
+\usepackage{caption}
+\usepackage{circuitikz}
+
+\pagestyle{fancy}
+\fancyhf{}
+\lhead{ECEN 222 - Electronic Circuits}
+\rhead{Spring 2026}
+\cfoot{\thepage}
+
+\begin{document}
+
+\begin{center}
+    {\LARGE \textbf{Assignment 05}}\\
+    {\LARGE \textbf{Operational Amplifier Applications}}\\
+    \vspace{0.3cm}
+    {\large ECEN 222, Spring 2026}\\
+    \vspace{0.2cm}
+    {\large University of Nebraska-Lincoln}\\
+    \vspace{0.5cm}
+\end{center}
+
+\section*{Overview}
+
+This assignment focuses on operational amplifier circuits and their applications. You will analyze various op-amp configurations using pencil-and-paper calculations, then verify your results using Multisim simulation. Understanding op-amp circuits is fundamental to analog circuit design, signal processing, and instrumentation.
+
+\vspace{0.3cm}
+
+\begin{tcolorbox}[colback=blue!5!white,colframe=blue!75!black,title=\textbf{Unipolar Power Supply Configuration}]
+\textbf{All circuits in this assignment use UNIPOLAR power supplies} (not dual supplies):
+\begin{itemize}
+    \item Power supply voltage: $V_{DD} = 15$ V (positive supply)
+    \item Ground (GND): 0 V
+    \item \textbf{AC Ground (Reference Voltage):} $V_{ref} = \frac{V_{DD}}{2} = 7.5$ V
+\end{itemize}
+
+
+
+In Multisim, you must connect a 7.5 V DC voltage source to these nodes. This provides the DC bias point that allows the op-amp to swing both 'positive' and 'negative' around 7.5 V with a unipolar supply.
+\end{tcolorbox}
+
+\vspace{0.3cm}
+
+\section*{Submission Requirements}
+
+Submit a \textbf{single PDF document} containing:
+
+\begin{itemize}
+    \item All hand-written or typed calculations with clear steps shown
+    \item Written explanations and assumptions
+    \item Multisim screenshots with component values and measurements visible
+    \item Comparison of calculated vs. simulated results with percent error
+\end{itemize}
+
+\vspace{0.3cm}
+
+\section*{Software Requirements}
+
+\begin{itemize}
+    \item \textbf{Multisim:} Available through the NI Academic Site License. Download from \url{https://www.ni.com/} or use computers in the lab.
+\end{itemize}
+
+\newpage
+
+\section*{Part 1: Inverting Amplifier Analysis [30 points]}
+
+Analyze the following inverting amplifier circuit.
+
+\subsection*{Circuit Specifications:}
+
+\begin{itemize}
+    \item Op-amp: LM741 (or similar general-purpose op-amp)
+    \item Input resistor: $R_1 = 10$ k$\Omega$
+    \item Feedback resistor: $R_f = 47$ k$\Omega$
+    \item Input voltage: $v_{in} = 8.0$ V DC (referenced to AC ground as +0.5V, since 8 - 7.5 V = 0.5 V)
+    \item Power supply: $V_{DD} = 15$ V, GND = 0 V
+    \item AC ground (reference): $V_{ref} = 7.5$ V (at non-inverting input)
+\end{itemize}
+
+\begin{center}
+\begin{circuitikz}[scale=1.0, every node/.style={font=\small}]
+    % Op-amp
+    \node[op amp, scale=1.0] (opamp) at (3,0) {};
+
+    % Input
+    \coordinate (vin) at ($(opamp.-)+(-3.0,0)$);
+    \draw (vin) node[left] {$v_{in}$}
+        to[R, l=$R_1$, o-] (opamp.-);
+
+    % Non-inverting input to AC ground (Vref = 7.5V)
+    \coordinate (vref) at ($(opamp.+)+(0,-1.0)$);
+    \draw (opamp.+) -- (vref);
+    \draw (vref) node[ground] {};
+    \node[right, red] at ($(vref)+(0.3,-0.2)$) {$V_{ref}=7.5$V};
+
+    % Output
+    \draw (opamp.out) to[short, -o] (5.2,0) node[right] {$v_{out}$};
+
+    % Feedback resistor
+    \draw (opamp.out) -- ++(0,1.6)
+        to[R, l=$R_f$] ++(-3.0,0)
+        |- (opamp.-);
+
+\end{circuitikz}
+\captionof{figure}{Inverting amplifier circuit (AC ground at $V_{ref}=7.5$ V)}
+\end{center}
+
+\subsection*{Analysis Tasks:}
+
+\begin{enumerate}[label=\textbf{1.\arabic*}]
+    \item \textbf{Theoretical Analysis [15 points]:} Using pencil and paper, calculate:
+    \begin{itemize}
+        \item The voltage gain $A_v = \frac{v_{out}}{v_{in}}$
+        \item The input impedance $R_{in}$
+        \item The output voltage $v_{out}$ for the given input
+    \end{itemize}
+    
+    \textbf{Show all work and clearly label each step of your calculation.}
+    
+    \item \textbf{Assumptions and Explanation [10 points]:} In a written paragraph, explain:
+    \begin{itemize}
+        \item What assumptions you made about the op-amp (list all ideal op-amp assumptions)
+        \item Why the circuit is called an "inverting" amplifier
+        \item How the virtual ground concept applies to this circuit (note: the inverting input will be at 7.5 V, not 0 V)
+        \item Why we need the AC ground reference at 7.5 V for unipolar supply operation
+        \item What would happen if $R_f < R_1$ (would it still be an amplifier?)
+    \end{itemize}
+    
+    \item \textbf{Design Question [5 points]:} If you needed a gain of $A_v = -20$ and wanted to keep $R_1 = 10$ k$\Omega$, what value should $R_f$ be? Show your calculation.
+\end{enumerate}
+
+\newpage
+
+\section*{Part 2: Integrator Circuit Analysis [30 points]}
+
+Analyze the following inverting integrator circuit.
+
+\subsection*{Circuit Specifications:}
+
+\begin{itemize}
+    \item Input resistor: $R = 100$ k$\Omega$
+    \item Feedback capacitor: $C = 1$ $\mu$F
+    \item Input voltage: $v_{in} = 9.0$ V DC (constant, referenced to AC ground)
+    \item Power supply: $V_{DD} = 15$ V, GND = 0 V
+    \item AC ground (reference): $V_{ref} = 7.5$ V (at non-inverting input)
+    \item Initial condition: Assume $v_{out}(0) = 7.5$ V (at AC ground)
+\end{itemize}
+
+\begin{center}
+\begin{circuitikz}[scale=1.0, every node/.style={font=\small}]
+    % Op-amp
+    \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+    % Input resistor
+    \coordinate (invL) at (2.0,0 |- opamp.-);
+    \draw (0.3,0 |- opamp.-) node[left] {$v_{in}$}
+        to[R, l=$R$, o-] (invL) -- (opamp.-);
+
+    % Non-inverting input to AC ground
+    \coordinate (vref) at ($(opamp.+)+(0,-1.2)$);
+    \draw (opamp.+) -- (vref);
+    \draw (vref) node[ground] {};
+    \node[right, red] at ($(vref)+(0.3,-0.2)$) {$V_{ref}=7.5$V};
+
+    % Feedback capacitor
+    \coordinate (fbTop) at ($(opamp.out)+(0,1.4)$);
+    \draw (opamp.out) -- (fbTop)
+        to[C, l^=$C$] ++(-2.0,0)
+        -| (opamp.-);
+
+    % Output
+    \draw (opamp.out) to[short, -o] (4.7,0) node[right] {$v_{out}$};
+
+\end{circuitikz}
+\captionof{figure}{Inverting integrator circuit (AC ground at $V_{ref}=7.5$ V)}
+\end{center}
+
+\subsection*{Analysis Tasks:}
+
+\begin{enumerate}[label=\textbf{2.\arabic*}]
+    \item \textbf{Theoretical Analysis [15 points]:} Using pencil and paper, calculate:
+    \begin{itemize}
+        \item The time constant $\tau = RC$
+        \item The output voltage as a function of time: $v_{out}(t) = -\frac{1}{RC} \int_0^t (v_{in} - V_{ref}) d\tau + v_{out}(0)$
+        \item Note: Since $v_{in}$ is constant at 9.0 V and $V_{ref} = 7.5$ V, the effective input is $(v_{in} - V_{ref}) = 1.5$ V
+        \item Calculate $v_{out}$ at $t = 0.05$ s and $t = 0.1$ s
+        \item How long until the output reaches 5.0 V (referenced to GND, not to $V_{ref}$)?
+    \end{itemize}
+    
+    \textbf{Show all work and clearly label each step of your calculation.}
+    
+    \item \textbf{Circuit Operation Explanation [15 points]:} Explain:
+    \begin{itemize}
+        \item How the integrator works (describe the relationship between capacitor current and output voltage)
+        \item Why the output voltage changes over time even with a constant DC input
+        \item What the negative sign in the transfer function means
+        \item Why we use $(v_{in} - V_{ref})$ instead of just $v_{in}$ in our calculations
+        \item What would happen if you applied a step input (instead of DC) to an integrator
+    \end{itemize}
+    
+    \item \textbf{Frequency Response [BONUS: 5 points]:} The integrator's frequency domain transfer function is $H(j\omega) = -\frac{1}{j\omega RC}$. Calculate the magnitude of the gain $|H(f)|$ at $f = 10$ Hz. Show your work and explain in 1-2 sentences what this tells you about the integrator's behavior at different frequencies.
+\end{enumerate}
+
+\newpage
+
+\section*{Part 3: Summing Amplifier Analysis [40 points]}
+
+Analyze the following three-input summing amplifier circuit.
+
+\subsection*{Circuit Specifications:}
+
+\begin{itemize}
+    \item Input resistors: $R_1 = 10$ k$\Omega$, $R_2 = 20$ k$\Omega$, $R_3 = 5$ k$\Omega$
+    \item Feedback resistor: $R_f = 20$ k$\Omega$
+    \item Input voltages: $v_1 = 8.5$ V DC, $v_2 = 8.0$ V DC, $v_3 = 7.0$ V DC
+    \item Power supply: $V_{DD} = 15$ V, GND = 0 V
+    \item AC ground (reference): $V_{ref} = 7.5$ V (at non-inverting input)
+\end{itemize}
+
+\begin{center}
+\begin{circuitikz}[scale=0.9, every node/.style={font=\small}]
+    % Op-amp (centered)
+    \node[op amp, scale=1.0] (opamp) at (3.2,0) {};
+
+    \coordinate (sum) at (1.5,0 |- opamp.-);
+
+    % Inputs and resistors
+    \draw ([yshift=1.2cm]-1.5, 0 |- opamp.-) node[left] {$v_1$} to[R, l=$R_1$, o-] ([yshift=1.2cm]sum);
+    \draw (-1.5, 0 |- opamp.-) node[left] {$v_2$} to[R, l=$R_2$, o-] (sum);
+    \draw ([yshift=-1.2cm]-1.5, 0 |- opamp.-) node[left] {$v_3$} to[R, l=$R_3$, o-] ([yshift=-1.2cm]sum);
+
+    % Vertical bus + junction dot
+    \draw ([yshift=1.2cm]sum) -- ([yshift=-1.2cm]sum);
+    \fill (sum) circle (1.2pt);
+
+    % Connect to inverting input
+    \draw (sum) -- (opamp.-);
+
+    % Non-inverting input to AC ground
+    \coordinate (vref) at ($(opamp.+)+(0,-1.2)$);
+    \draw (opamp.+) -- (vref);
+    \draw (vref) node[ground] {};
+    \node[right, red] at ($(vref)+(0.3,-0.2)$) {$V_{ref}=7.5$V};
+
+    % Output
+    \draw (opamp.out) to[short, -o] (5.7,0) node[right] {$v_{out}$};
+
+    % Feedback resistor
+    \draw (opamp.out) -- ++(0,1.4)
+        to[R, l^=$R_f$] ++(-2.0,0)
+        -| (opamp.-);
+
+\end{circuitikz}
+\captionof{figure}{Three-input summing amplifier (AC ground at $V_{ref}=7.5$ V)}
+\end{center}
+
+\subsection*{Analysis Tasks:}
+
+\begin{enumerate}[label=\textbf{3.\arabic*}]
+    \item \textbf{Theoretical Analysis [20 points]:} Using pencil and paper, calculate:
+    \begin{itemize}
+        \item The weight (gain coefficient) for each input: $w_1 = \frac{R_f}{R_1}$, $w_2 = \frac{R_f}{R_2}$, $w_3 = \frac{R_f}{R_3}$
+        \item The output voltage using: $v_{out} = -\left(\frac{R_f}{R_1}v_1 + \frac{R_f}{R_2}v_2 + \frac{R_f}{R_3}v_3\right)$
+        \item Verify your calculation by substituting the given input voltages
+    \end{itemize}
+    
+    \item \textbf{Circuit Operation Explanation [15 points]:} Explain:
+    \begin{itemize}
+        \item How the summing amplifier works (describe the current flow from each input)
+        \item Why the inverting input is at virtual AC ground (7.5 V)
+        \item Why the output is inverted and weighted
+        \item What happens if all three inputs are at $V_{ref}$ (7.5 V) - what would the output be?
+        \item Give one practical application where a summing amplifier would be useful
+    \end{itemize}
+    
+    \item \textbf{Design Modification [5 points]:} If you wanted all three inputs to have equal weight (equal gain), what should the values of $R_1$, $R_2$, and $R_3$ be? State your answer and briefly explain your reasoning.
+\end{enumerate}
+
+\newpage
+
+\section*{Part 4: Multisim Simulation and Verification [Bonus: 20 points]}
+
+Choose \textbf{ONE} of the three circuits from Parts 1-3 to build and simulate in Multisim.
+
+\subsection*{Simulation Tasks:}
+
+\begin{enumerate}[label=\textbf{4.\arabic*}]
+    \item \textbf{Circuit Construction [5 points]:} Build your chosen circuit in Multisim showing:
+    \begin{itemize}
+        \item Op-amp (use LM741 or similar from the library)
+        \item All resistors (and capacitor for integrator) with correct values clearly labeled
+        \item DC voltage source(s) for input(s)
+        \item \textbf{Unipolar power supply:} $V_{DD} = 15$ V to $V+$ pin, GND (0 V) to $V-$ pin
+        \item \textbf{AC ground source:} 7.5 V DC source connected to the non-inverting (+) input
+        \item Multimeter or probe at the output to measure $v_{out}$
+    \end{itemize}
+    Include a clear screenshot of your complete circuit.
+    
+    \item \textbf{DC Operating Point Analysis [10 points]:} 
+    \begin{itemize}
+        \item Run a DC Operating Point analysis or use multimeters to measure the output voltage
+        \item Capture a screenshot showing the measured output voltage
+        \item Compare your simulated result to your hand-calculated theoretical value
+        \item Calculate the percent error.
+    \end{itemize}
+    
+    \item \textbf{Analysis and Discussion [5 points]:} In a short paragraph, discuss:
+    \begin{itemize}
+        \item How close your simulation matched your calculations
+        \item Possible reasons for any discrepancy (real vs. ideal op-amp)
+        \item What you learned from building and simulating the circuit
+        \item Any challenges you encountered in Multisim
+    \end{itemize}
+\end{enumerate}
+
+\end{document}
