@@ -293,17 +293,11 @@ The VTC is nonlinear and describes how the transistor transitions between states
 
 Use $R_D = 1$ k$\Omega$ and $V_{DD} = 10$ V. The drain resistor limits the drain current to a safe value and allows easy current measurement via voltage drop. \\
 
-Use the DMM to measure:  (1) $V_{DS}$ directly across the drain-source terminals and  (2) the voltage across $R_D$ to determine $I_D$. \\
+Use the DMM to measure $V_{DS}$ across the drain-source terminals.
 
-Starting with $V_{GS} = 0$ V, gradually increase $V_{GS}$ from 0 to 5 V in increments of 0.25 V initially.  Take finer increments (0.1 V or 0.05 V) in the region where the device begins to turn on (typically 0.5 V to 3 V, depending on the specific transistor). For each value of $V_{GS}$, record: \\
+Starting with $V_{GS} = 0$ V, gradually increase $V_{GS}$ from 0 to 5 V in increments of 0.5 V initially. Use finer increments when $V_{DS}$ begins to change rapidly, in order to sufficiently record the transfer characteristic curve. (Obtain $V_{DS}$ values within at least every 1V) Record both voltages in a table.
 
-\begin{itemize}
-    \item $V_{GS}$ (gate-source voltage)
-    \item $V_{DS}$ (drain-source voltage)
-    \item Voltage across $R_D$
-\end{itemize}
-
-Calculate the drain current for each using Ohm's law: 
+Calculate the drain current for each voltage using Ohm's law: 
 
 \begin{equation}
     I_D = \frac{V_{R_D}}{R_D} = \frac{V_{DD} - V_{DS}}{R_D}
@@ -346,16 +340,16 @@ Alternatively, plot $\log_{10}(I_D)$ versus $V_{GS}$. In the region just above t
 \emph{In this section, The output characteristics of the MOSFET will be recorded by measuring drain current as a function of drain-source voltage for several fixed values of gate-source voltage. These characteristic curves are fundamental to understanding the 2nd order of MOSFET behavior, namely the channel length modulation effect.}\\
 
 
-Using the same circuit as Part 1 (Figure \ref{fig:vth_circuit}), a family of curves will be generated, each corresponding to a different fixed gate-source voltage $V_{GS}$. Select three different gate-source voltages that span from just above threshold to well into strong conduction. For example, if $V_{th} \approx 1. 5$ V, one might choose:  $V_{GS} = 1.5$ V (cutoff), 2.5 V, and 3.5 V.  Adjust these values based on the measured $V_{th}$ from Part 1. \\
+Using the same circuit as Part 1 (Figure \ref{fig:vth_circuit}), a family of curves will be generated, each corresponding to a different fixed gate-source voltage $V_{GS}$. Select three different gate-source voltages that span from just above threshold to well into strong conduction. Values between 2.0V and 2.5V will work well for a threshold voltage of about 2V.\\
 
 For each fixed gate-source voltage: 
 
 \begin{enumerate}
     \item Set $V_{GS}$ to the desired value using the power supply. 
     
-    \item Vary $V_{DD}$ from 0 V to 5 V in increments of 0.5 V.  Take smaller increments (0.2 - 0.25 V) in the region between about 0 to 2 V where the transition from triode to saturation mode occurs.
+    \item Vary $V_{DD}$ from 0 V to 5 V in increments of 0.5 V.
     
-    \item For each $V_{DD}$ setting, measure $V_{DS}$ and the voltage across $R_D$, then calculate $I_D$. 
+    \item For each $V_{DD}$ setting, measure $V_{DS}$ and calculate $I_D$. 
     
     \item Record all values in a table.
 \end{enumerate}
@@ -413,8 +407,8 @@ Using the circuit in Figure \ref{fig:vth_circuit}, set $V_{DD}$ to a fixed value
 For each $V_{GS}$ value:
 
 \begin{enumerate}
-    \item Measure $V_{DS}$ to verify saturation mode. $V_{DS} \geq V_{GS} - V_{th}$
-    \item Measure the voltage across $R_D$ and calculate $I_D$.
+    \item Measure $V_{DS}$ and verify saturation mode. $V_{DS} \geq V_{GS} - V_{th}$
+    \item Calculate $I_D$.
 \end{enumerate}
 
 Create a table with columns for $V_{GS}$, $V_{DS}$, $I_D$, and $\sqrt{I_D}$. Using this data, generate the following three plots:\\
@@ -484,7 +478,8 @@ Vary $V_{in}$ from 0 V to 5 V in increments appropriate to capture the transitio
     \item $V_{out}$ ($V_{DS}$ in this case)
 \end{itemize}
 
-Record $I_D = (V_{DD} - V_{out})/R_D$ for later analysis. \\
+% Record $I_D = (V_{DD} - V_{out})/R_D$ for later analysis. \\
+%this is never used later...
 
 Observe how $V_{out}$ changes as $V_{in}$ increases.  The following three distinct regions should be seen: \\
 
@@ -496,11 +491,11 @@ Observe how $V_{out}$ changes as $V_{in}$ increases.  The following three distin
     \item \textbf{Triode region ($V_{in}-V_{th} > V_{DS}$):} The transistor enters triode mode when $V_{out}$ drops below $V_{in} - V_{th}$ (i.e., when $V_{DS} < V_{GS} - V_{th}$). In this region, $V_{out}$ is low and relatively insensitive to further increases in $V_{in}$. 
 \end{enumerate}
 
-\vspace{1in}
+\vspace{.2in}
 
-Plot the voltage transfer characteristic with $V_{in}$ on the x-axis and $V_{out}$ on the y-axis.  Clearly identify and label the three regions of operation on the plot. 
+Plot the voltage transfer characteristic with $V_{in}$ on the x-axis and $V_{out}$ on the y-axis.  Clearly identify and label the three regions of operation on the plot. \\
 
-Next calculate the slope (voltage gain magnitude) in the saturation region. Since the relationship is nonlinear, the gain varies.  Then calculate the incremental gain at several points: \\
+Next, calculate the slope (voltage gain magnitude) in the saturation region. Since the relationship is nonlinear, the gain varies.  Then calculate the incremental gain at several points: \\
 
 \begin{equation}
     \left|A_v\right| = \left|\frac{\Delta V_{out}}{\Delta V_{in}}\right|
