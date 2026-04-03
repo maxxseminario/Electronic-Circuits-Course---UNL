@@ -131,7 +131,7 @@ The simplified CS amplifier configuration is shown in Figure \ref{fig:cs_basic}.
 
 \begin{figure}[h]
 \centering
-\begin{circuitikz}[american]
+\begin{circuitikz}[american, arrowmos]
   % NMOS transistor
   \node[nmos] (M1) at (5,3) {};
   
@@ -369,6 +369,8 @@ Now you will measure the AC voltage gain of the common-source amplifier. Add the
 
 Configure your DC-offset power supply to provide the DC bias $V_G$ plus a small AC signal superimposed on it. Set the AC component to be a sine wave at 1 kHz with amplitude approximately 10-20 mV peak (20-40 mV peak-to-peak). This small amplitude ensures the transistor will show linear operation without distortion.  You can gradually increase amplitude while monitoring for distortion on an oscilloscope.\\
 
+\textbf{Important:} Make sure to set the waveform generator output impedance to \textbf{High-Z} (high impedance) mode, not 50 $\Omega$. If set to 50 $\Omega$, the generator assumes a matched 50 $\Omega$ load and will display twice the actual output voltage. Since the MOSFET gate presents a very high impedance load, High-Z mode ensures the displayed voltage matches the actual output.\\
+
 Initially, do not connect a load resistor ($C_L = \infty$, or equivalently, open circuit at the output).\\
 
 Measure the AC voltages using an oscilloscope: 
@@ -422,7 +424,7 @@ Include oscilloscope screenshots showing input and output waveforms, clearly lab
 
 \begin{figure}[h]
 \centering
-\begin{circuitikz}[american]
+\begin{circuitikz}[american, arrowmos]
   % NMOS transistor
   \node[nmos] (M1) at (5,3) {};
   
@@ -474,7 +476,7 @@ Include oscilloscope screenshots showing input and output waveforms, clearly lab
 
 In this part, you will investigate the effect of load resistance on the amplifier gain and experimentally determine the output impedance. 
 
-With the circuit from Part 2, connect various load resistors $R_L$ from the output to ground (after the coupling capacitor $C_L$). Use the following values:  10 k$\Omega$, 2.2 k$\Omega$, and 470 $\Omega$.
+With the circuit from Part 2, connect various load resistors $R_L$ from the output to ground. Use the following values:  10 k$\Omega$, 2.2 k$\Omega$, and 470 $\Omega$.
 
 For each load resistor: 
 
