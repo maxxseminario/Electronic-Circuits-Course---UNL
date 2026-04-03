@@ -161,9 +161,6 @@ The simplified CS amplifier configuration is shown in Figure \ref{fig:cs_basic}.
   % Horizontal wire from drain to output
   \draw (M1.drain) -- (VOUT);
   
-  % Load capacitor
-  \draw (VOUT) to[C, l=$C_{L}$] (7,0);
-  
   % Output terminal
   \draw (VOUT) to[short, -o] (8,3.8) node[right] {$v_{out}$};
   
@@ -171,7 +168,7 @@ The simplified CS amplifier configuration is shown in Figure \ref{fig:cs_basic}.
   \node[above] at (0,3) {$V_G + v_{in}$};
   
 \end{circuitikz}
-\caption{Simplified common-source amplifier with DC-offset gate supply and capacitive load.}
+\caption{Simplified common-source amplifier with DC-offset gate supply.}
 \label{fig:cs_basic}
 \end{figure}
 
@@ -216,7 +213,7 @@ where $V_{OV} = V_{GS} - V_{th}$ is the overdrive voltage.  Typically, designing
 
 \textit{For small AC signals superimposed on the DC bias point, we use small-signal analysis to derive the voltage gain and impedance characteristics of the amplifier. This analysis assumes the AC signal is small enough that the transistor operates in the linear region of its transfer characteristic.} \\
 
-For small AC signals superimposed on the DC bias point, we can use small-signal analysis. The small-signal equivalent circuit replaces the MOSFET with its small-signal model, and all DC sources are set to zero (short-circuited for voltage sources, open-circuited for current sources). The output coupling capacitor $C_L$ is assumed to be a short circuit at the signal frequency.\\
+For small AC signals superimposed on the DC bias point, we can use small-signal analysis. The small-signal equivalent circuit replaces the MOSFET with its small-signal model, and all DC sources are set to zero (short-circuited for voltage sources, open-circuited for current sources).\\
 
 The key small-signal parameters are: \\
 
@@ -259,7 +256,7 @@ The negative sign indicates signal inversion.  If $r_o \gg R_D$ (often the case)
     \label{eq:av_cs_simple}
 \end{equation}
 
-With a load resistor $R_L$ connected through the output coupling capacitor $C_{L}$, the effective load becomes $R_D \parallel R_L$, and the voltage gain to the output becomes:
+With a load resistor $R_L$ connected to the output, the effective load becomes $R_D \parallel R_L$, and the voltage gain to the output becomes:
 
 \begin{equation}
     A_v = -g_m (R_D \parallel R_L \parallel r_o) \approx -g_m (R_D \parallel R_L)
@@ -363,21 +360,21 @@ Calculate the small-signal parameters at your measured Q-point: \\
 
 \subsection{Part 2: AC Voltage Gain of CS Amplifier}
 
-\textit{In this part, you will measure the AC voltage gain of the CS amplifier by superimposing a small AC signal on the DC gate bias. The simplified circuit allows you to directly observe amplification without the complexity of coupling capacitors.} \\
+\textit{In this part, you will measure the AC voltage gain of the CS amplifier by superimposing a small AC signal on the DC gate bias.} \\
 
-Now you will measure the AC voltage gain of the common-source amplifier. Add the output coupling capacitor $C_{L}$ to your circuit (between the drain and load resistor).  Choose a large capacitor (e.g., 10 $\mu$F to 100 $\mu$F) to ensure it acts as a short circuit at the signal frequencies you'll use (e.g., 1 kHz). \\
+Now you will measure the AC voltage gain of the common-source amplifier.\\
 
 Configure your DC-offset power supply to provide the DC bias $V_G$ plus a small AC signal superimposed on it. Set the AC component to be a sine wave at 1 kHz with amplitude approximately 10-20 mV peak (20-40 mV peak-to-peak). This small amplitude ensures the transistor will show linear operation without distortion.  You can gradually increase amplitude while monitoring for distortion on an oscilloscope.\\
 
 \textbf{Important:} Make sure to set the waveform generator output impedance to \textbf{High-Z} (high impedance) mode, not 50 $\Omega$. If set to 50 $\Omega$, the generator assumes a matched 50 $\Omega$ load and will display twice the actual output voltage. Since the MOSFET gate presents a very high impedance load, High-Z mode ensures the displayed voltage matches the actual output.\\
 
-Initially, do not connect a load resistor ($C_L = \infty$, or equivalently, open circuit at the output).\\
+Initially, do not connect a load resistor ($R_L = \infty$, or equivalently, open circuit at the output).\\
 
 Measure the AC voltages using an oscilloscope: 
 
 \begin{itemize}
     \item $v_{in}$: Measure the AC component at the gate. This is your input signal.
-    \item $v_{out}$: Measure the AC component at the output (after $C_L$).
+    \item $v_{out}$: Measure the AC component at the output (at the drain).
 \end{itemize}
     
 Measure the peak-to-peak amplitude of both signals.  Verify that the output is inverted (180° phase shift) relative to the input. \\
@@ -454,29 +451,26 @@ Include oscilloscope screenshots showing input and output waveforms, clearly lab
   % Horizontal wire from drain to output
   \draw (M1.drain) -- (VOUT);
   
-  % Load capacitor
-  \draw (VOUT) to[C, l=$C_{L}$] (7,0);
-  
-  % Load resistor to the right of capacitor
-  \draw (8.5,3.8) to[R, l=$R_{L}$] (8.5,0);
+  % Load resistor
+  \draw (7,3.8) to[R, l=$R_{L}$] (7,0);
   
   % Connect resistor to output node
-  \draw (VOUT) -- (8.5,3.8);
+  \draw (VOUT) -- (7,3.8);
   
   % Output terminal
-  \draw (8.5,3.8) to[short, -o] (9.5,3.8) node[right] {$v_{out}$};
+  \draw (7,3.8) to[short, -o] (8,3.8) node[right] {$v_{out}$};
   
   % Voltage label
   \node[above] at (0,3) {$V_G + v_{in}$};
   
 \end{circuitikz}
-\caption{Common-source amplifier with resistive and capacitive load for measuring loading effect.}
+\caption{Common-source amplifier with resistive load for measuring loading effect.}
 \label{fig:cs_loaded}
 \end{figure}
 
 In this part, you will investigate the effect of load resistance on the amplifier gain and experimentally determine the output impedance. 
 
-With the circuit from Part 2, connect various load resistors $R_L$ from the output to ground. Use the following values:  10 k$\Omega$, 2.2 k$\Omega$, and 470 $\Omega$.
+With the circuit from Part 2, connect various load resistors $R_L$ from the output (drain) to ground. Use the following values:  10 k$\Omega$, 2.2 k$\Omega$, and 470 $\Omega$.
 
 For each load resistor: 
 
