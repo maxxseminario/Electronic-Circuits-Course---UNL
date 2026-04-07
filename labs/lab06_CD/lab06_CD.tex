@@ -1,0 +1,578 @@
+\DocumentMetadata{
+  pdfversion=2.0,
+  pdfstandard=ua-2,
+  testphase={phase-III,math,table,title}
+}
+
+\documentclass[10pt]{article}
+\usepackage{geometry}
+\geometry{a4paper}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{extramarks}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{graphicx}
+\usepackage{listings}
+\usepackage{courier}
+\usepackage{lipsum}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{epstopdf}
+\usepackage{placeins}
+\usepackage{color} 
+\usepackage{fancyvrb} 
+\usepackage{setspace}
+\usepackage{bookmark}
+\usepackage{pdfpages}
+\usepackage{enumitem}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\usepackage{hyperref}
+\usepackage{circuitikz}
+\usepackage{siunitx}
+\usepackage{titling}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\graphicspath{{../figs/}}
+
+\usetikzlibrary{positioning}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=newest} 
+
+\setlength{\parindent}{0pt}
+
+\singlespacing
+
+% Margins
+\topmargin=-0.45in
+\evensidemargin=0in
+\oddsidemargin=0in
+\textwidth=6.5in
+\textheight=9.0in
+\headsep=0.25in
+
+
+
+% Header and footer
+\pagestyle{fancy}
+
+
+% Ensure the plain style (used by \maketitle and some environments) matches
+\fancypagestyle{plain}{
+  \fancyhf{}
+  \lhead{ECEN 222:  Electronic Circuits II-CE}
+  \chead{Lab 6}
+  \rhead{Page \thepage\ of \pageref{LastPage}}
+  \lfoot{}
+  \cfoot{}
+  \rfoot{Maxx Seminario, mseminario2@huskers.unl.edu}
+  \renewcommand\headrulewidth{0.4pt}
+  \renewcommand\footrulewidth{0.4pt}
+}
+
+% Fancy layout (same as above) for normal pages
+\fancyhf{}
+\lhead{ECEN 222: Electronic Circuits II-CE}
+\chead{Lab 6}
+\rhead{Page \thepage\ of \pageref{LastPage}}
+\lfoot{}
+\cfoot{}
+\rfoot{Maxx Seminario, mseminario2@huskers. unl.edu}
+\renewcommand\headrulewidth{0.4pt}
+\renewcommand\footrulewidth{0.4pt}
+
+% Avoid head height warnings
+\setlength{\headheight}{14pt}
+
+
+
+\title{\textbf{\Huge Source Follower (Common-Drain Amplifier)}\\
+\large Lab 6 — ECEN 222: Electronic Circuits II-CE}
+\author{
+    % Maxx Seminario\\
+\large University of Nebraska–Lincoln \\
+\large Department of Electrical and Computer Engineering
+}
+\date{} % specific date
+
+
+\begin{document}
+\thispagestyle{fancy}
+\maketitle
+\rule{\textwidth}{0.5pt}
+
+
+\section{Objectives}
+
+The primary objective of this lab is to design, construct, and characterize the source follower (CD) amplifier, one of the fundamental MOSFET amplifier configurations. Upon completion of this lab, students will understand how to design and bias a source follower amplifier for specific DC operating points using a DC-offset power supply, measure and characterize voltage gain, input impedance, and output impedance of the CD amplifier, observe the effects of load resistance on amplifier gain and understand output impedance implications, and compare experimental measurements with theoretical predictions based on DC bias calculations and AC small-signal models.  Through hands-on design and measurement, students will develop practical skills in MOSFET amplifier circuits essential for analog signal processing systems.
+
+
+\section{Background Theory}
+
+\textit{This section provides the fundamental theory of the source follower amplifier configuration, including DC biasing considerations and small-signal AC analysis. Understanding these concepts is essential for designing and analyzing the amplifier performance in the lab.} \\
+
+\subsection{Source Follower Amplifier}
+
+The source follower (common-drain or CD) amplifier is one of the fundamental MOSFET amplifier configurations, analogous to the emitter follower for BJTs. It provides unity voltage gain (gain close to but less than 1) with no signal inversion (0° phase shift), very high input impedance, and very low output impedance. The basic source follower consists of a MOSFET with a source resistor (output taken at source), the drain connected to $V_{DD}$, and appropriate biasing. The source follower is primarily used as a buffer to drive low-impedance loads without loading the previous stage.
+
+\subsubsection{DC Biasing}
+
+\textit{Proper DC biasing establishes the quiescent operating point (Q-point) of the transistor in the saturation region, where it can provide linear amplification. In this lab, we use a simplified approach with a DC-offset power supply directly driving the gate, eliminating the need for AC coupling capacitors and gate biasing resistors.} \\
+
+In this lab, we will use a DC-offset power supply to directly provide the gate voltage $V_G$, which includes both the DC bias and the small AC signal. This eliminates the need for AC coupling capacitors and gate voltage divider resistors, simplifying the circuit while maintaining the essential amplifier functionality. \\
+
+The simplified source follower (common-drain) amplifier configuration is shown in Figure \ref{fig:cd_basic}. 
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american, arrowmos]
+  % NMOS transistor
+  \node[nmos] (M1) at (5,3) {};
+  
+  % Ground symbol
+  \draw (5,0) node[ground] {};
+  
+  % Ground bus
+  \draw (0,0) -- (8,0);
+  
+  % VDD power pin
+  \draw (5,6.2) node[vcc] {};
+  \node at (5,7) {$V_{DD}$};
+  
+  % Input DC-offset source
+  \draw (0,3) to[sV, l=$v_G$] (0,0);
+  \draw (0,3) -- (M1.gate);
+  
+  % Drain connected to VDD
+  \draw (M1.drain) -- (5,6.2);
+  
+  % Source resistor
+  \draw (M1.source) to[R, l=$R_S$] (5,0);
+  
+  % Output connection at top of RS (at source terminal)
+  \draw (M1.source) -- (5,1.8);
+  \draw (5,1.8) to[short, -o] (6.5,1.8) node[right] {$v_{out}$};
+  
+  % Voltage label
+  \node[above] at (0,3) {$V_G + v_{in}$};
+  
+\end{circuitikz}
+\caption{Simplified source follower (common-drain) amplifier with DC-offset gate supply.}
+\label{fig:cd_basic}
+\end{figure}
+
+The DC analysis proceeds as follows.  The gate voltage $V_G$ is set directly by the DC-offset power supply.  Since the gate draws negligible DC current ($I_G \approx 0$), the gate-source voltage and source voltage are related by: 
+
+\begin{equation}
+    V_S = I_D R_S
+    \label{eq:vs}
+\end{equation}
+
+\begin{equation}
+    V_{GS} = V_G - V_S = V_G - I_D R_S
+    \label{eq:vgs}
+\end{equation}
+
+Assuming the MOSFET is in saturation, the drain current is:
+
+\begin{equation}
+    I_D = \frac{1}{2} k_n (V_{GS} - V_{th})^2 = \frac{1}{2} k_n (V_G - I_D R_S - V_{th})^2
+    \label{eq:id_dc}
+\end{equation}
+
+This equation must be solved iteratively or graphically for $I_D$. The source voltage (which is also the DC output voltage) is:
+
+\begin{equation}
+    V_{out,DC} = V_S = I_D R_S
+    \label{eq:vout_dc}
+\end{equation}
+
+The drain is connected directly to $V_{DD}$, so:
+
+\begin{equation}
+    V_D = V_{DD}
+    \label{eq:vd}
+\end{equation}
+
+And the drain-source voltage is:
+
+\begin{equation}
+    V_{DS} = V_D - V_S = V_{DD} - I_D R_S
+    \label{eq:vds}
+\end{equation}
+
+For saturation mode operation (required for linear amplification), we must ensure: 
+
+\begin{equation}
+    V_{DS} \geq V_{GS} - V_{th} = V_{OV}
+    \label{eq:sat_condition}
+\end{equation}
+
+where $V_{OV} = V_{GS} - V_{th}$ is the overdrive voltage.  Typically, designing for $V_{DS} \geq 2V_{OV}$ provides good signal swing capability.
+
+\subsubsection{Small-Signal Analysis}
+
+\textit{For small AC signals superimposed on the DC bias point, we use small-signal analysis to derive the voltage gain and impedance characteristics of the amplifier. This analysis assumes the AC signal is small enough that the transistor operates in the linear region of its transfer characteristic.} \\
+
+For small AC signals superimposed on the DC bias point, we can use small-signal analysis. The small-signal equivalent circuit replaces the MOSFET with its small-signal model, and all DC sources are set to zero (short-circuited for voltage sources, open-circuited for current sources).\\
+
+The key small-signal parameters are: \\
+
+\textbf{Transconductance: }
+\begin{equation}
+    g_m = \frac{\partial i_D}{\partial v_{GS}}\bigg|_{Q} = k_n (V_{GS} - V_{th}) = \sqrt{2 k_n I_D}
+    \label{eq:gm}
+\end{equation}
+
+The transconductance relates the small-signal drain current to the small-signal gate-source voltage.  It is a function of the bias point through $I_D$ or equivalently $V_{GS}$. \\
+
+\textbf{Output resistance:}
+\begin{equation}
+    r_o = \frac{1}{\lambda I_D} = \frac{V_A}{I_D}
+    \label{eq:ro}
+\end{equation}
+
+where $\lambda$ is the channel-length modulation parameter and $V_A = 1/\lambda$ is the Early voltage.  For many discrete transistors, $r_o$ is large (tens of k$\Omega$), often allowing it to be neglected in first-order analysis. \\
+
+The small-signal model of the MOSFET consists of a voltage-controlled current source $g_m v_{gs}$ between drain and source, with the output resistance $r_o$ in parallel.  The gate has infinite input impedance. \\
+
+For the source follower, the drain is connected to $V_{DD}$ (AC ground), and the output is taken at the source. The small-signal current through $R_S$ is $i_d = g_m v_{gs}$, and the output voltage at the source is:
+
+\begin{equation}
+    v_{out} = i_d (R_S \parallel r_o) = g_m v_{gs} (R_S \parallel r_o)
+    \label{eq:vout_ss}
+\end{equation}
+
+However, $v_{gs} = v_{in} - v_{out}$, so:
+
+\begin{equation}
+    v_{out} = g_m (v_{in} - v_{out}) (R_S \parallel r_o)
+    \label{eq:vout_vgs}
+\end{equation}
+
+Solving for the voltage gain:
+
+\begin{equation}
+    A_v = \frac{v_{out}}{v_{in}} = \frac{g_m (R_S \parallel r_o)}{1 + g_m (R_S \parallel r_o)}
+    \label{eq:av_cd}
+\end{equation}
+
+The gain is positive (no signal inversion) and always less than 1. If $r_o \gg R_S$ (often the case), this simplifies to:
+
+\begin{equation}
+    A_v \approx \frac{g_m R_S}{1 + g_m R_S}
+    \label{eq:av_cd_simple}
+\end{equation}
+
+If $g_m R_S \gg 1$ (typical for practical designs), the gain approaches unity:
+
+\begin{equation}
+    A_v \approx 1
+    \label{eq:av_cd_unity}
+\end{equation}
+
+With a load resistor $R_L$ connected to the output, the effective load becomes $R_S \parallel R_L$, and the voltage gain to the output becomes:
+
+\begin{equation}
+    A_v = \frac{g_m (R_S \parallel R_L \parallel r_o)}{1 + g_m (R_S \parallel R_L \parallel r_o)} \approx \frac{g_m (R_S \parallel R_L)}{1 + g_m (R_S \parallel R_L)}
+    \label{eq:av_cd_loaded}
+\end{equation}
+
+This shows that the output impedance of the source follower affects its performance when driving loads. \\
+
+\textbf{Input impedance:} The input impedance at the gate is extremely high because the gate draws no DC current and minimal AC current. The DC-offset source has its own output impedance $R_{sig}$, which forms part of the signal path, but the MOSFET gate itself presents infinite impedance:
+
+\begin{equation}
+    R_{in} \approx \infty 
+    \label{eq:rin_cs}
+\end{equation}
+
+\textbf{Output impedance:} Looking back into the source with the input set to zero (AC ground), the output impedance of the source follower is very low: 
+
+\begin{equation}
+    R_{out} = \frac{1}{g_m} \parallel R_S \parallel r_o \approx \frac{1}{g_m}
+    \label{eq:rout_cd}
+\end{equation}
+
+This is typically in the range of tens to hundreds of $\Omega$, making the source follower an excellent buffer for driving low-impedance loads without significant loading effects.
+
+\section{Experimental Procedures}
+
+\textit{The experimental procedures guide you through designing, building, and characterizing a source follower amplifier. You will verify DC biasing, measure voltage gain, and investigate loading effects systematically.} \\
+
+\subsection{Part 1: DC Biasing and Operating Point of CD Amplifier}
+
+\textit{In this part, you will set up the DC operating point of the CD amplifier using a DC-offset power supply to provide the gate bias voltage. Proper DC biasing ensures the transistor operates in the saturation region for linear amplification.} \\
+
+In this first part, you will design, construct, and verify the DC operating point of a source follower amplifier. Begin by selecting your MOSFET and determining its parameters $k_n$ and $V_{th}$ from Lab 4 measurements or datasheet values. Choose a target operating point with $I_D \approx 2$ mA and $V_{DS} \approx 3$ V ($V_{DD} = 5$ V).
+
+Using the simplified design equations from the Background Theory section, calculate the required values. A typical design procedure is:
+
+\begin{enumerate}
+    \item Choose $V_{DD} = 5$ V. 
+    
+    \item Choose target $I_D = 2$ mA and $V_S \approx 1$ V (giving $V_{DS} \approx 4$ V for good saturation margin). 
+    
+    \item Calculate $R_S$ from the desired source voltage:
+    \begin{equation}
+        R_S = \frac{V_S}{I_D} = \frac{1\text{ V}}{2\text{ mA}} = 500\ \Omega
+    \end{equation}
+    
+    \item Calculate required $V_G$ from Equation \ref{eq:vgs}:
+    \begin{equation}
+        V_G = V_{GS} + V_S = \left(V_{th} + \sqrt{\frac{2 I_D}{k_n}}\right) + I_D R_S
+    \end{equation}
+    
+\end{enumerate}
+
+Complete these calculations in the pre-lab with your specific transistor parameters.  Construct the circuit on your breadboard following Figure \ref{fig:cd_basic}. Use a DC power supply with offset capability (or two power supplies in series) to provide both the DC bias voltage $V_G$ and the small AC signal superimposed on it. You may initially apply only the DC voltage for DC analysis.  \\
+
+Measure and record the following DC voltages: 
+
+\begin{itemize}
+    \item $V_G$ (gate voltage, set by your DC-offset supply)
+    \item $V_S$ (source voltage, which is also the output voltage)
+\end{itemize}
+
+Calculate from these measurements: 
+
+\begin{itemize}
+    \item $V_{GS} = V_G - V_S$
+    \item $V_{DS} = V_{DD} - V_S$ (drain is connected to $V_{DD}$)
+    \item $I_D = V_S/R_S$
+\end{itemize}
+
+Verify that: 
+\begin{enumerate}
+    \item The transistor is in saturation:  $V_{DS} \geq V_{GS} - V_{th}$
+    \item The measured $I_D$ is close to your design target (within 20\% is acceptable given component tolerances)
+\end{enumerate}
+
+If the operating point is significantly off, identify the discrepancy. You may need to adjust $V_G$ or $R_S$ to achieve the target operating point. Document any changes. \\
+
+In your lab report, create a table comparing designed vs. measured values for all DC quantities. Calculate percentage errors.  Discuss sources of error. \\
+
+Calculate the small-signal parameters at your measured Q-point: \\
+
+\begin{equation}
+    g_m = k_n (V_{GS} - V_{th}) = \sqrt{2 k_n I_D}
+\end{equation}
+
+\begin{equation}
+    r_o = \frac{V_A}{I_D}
+\end{equation}
+
+(Use $V_A$ from Lab 4). These parameters will be used to predict AC gain.   \\
+
+\textbf{Report}
+\begin{enumerate}
+    \item Provide a table comparing expected vs. measured values for all DC quantities: $V_G$, $V_S$, $V_{DS}$, $V_{GS}$, $I_D$, and calculated $g_m$ and $r_o$.
+    \item Verify and document that the transistor is in saturation mode ($V_{DS} \geq V_{GS} - V_{th}$).
+    \item Discuss sources of error in the DC operating point measurements.\\
+\end{enumerate}
+
+
+\subsection{Part 2: AC Voltage Gain of CD Amplifier}
+
+\textit{In this part, you will measure the AC voltage gain of the CD amplifier by superimposing a small AC signal on the DC gate bias.} \\
+
+Now you will measure the AC voltage gain of the source follower amplifier.\\
+
+Configure your DC-offset power supply to provide the DC bias $V_G$ plus a small AC signal superimposed on it. Set the AC component to be a sine wave at 1 kHz with amplitude approximately 10-20 mV peak (20-40 mV peak-to-peak). This small amplitude ensures the transistor will show linear operation without distortion.  You can gradually increase amplitude while monitoring for distortion on an oscilloscope.\\
+
+\textbf{Important:} Make sure to set the waveform generator output impedance to \textbf{High-Z} (high impedance) mode, not 50 $\Omega$. If set to 50 $\Omega$, the generator assumes a matched 50 $\Omega$ load and will display twice the actual output voltage. Since the MOSFET gate presents a very high impedance load, High-Z mode ensures the displayed voltage matches the actual output.\\
+
+Initially, do not connect a load resistor ($R_L = \infty$, or equivalently, open circuit at the output).\\
+
+Measure the AC voltages using an oscilloscope: 
+
+\begin{itemize}
+    \item $v_{in}$: Measure the AC component at the gate. This is your input signal.
+    \item $v_{out}$: Measure the AC component at the output (at the source).
+\end{itemize}
+    
+Measure the peak-to-peak amplitude of both signals.  Verify that the output is NOT inverted (in phase) relative to the input. \\
+
+Calculate the voltage gain:
+
+\begin{equation}
+    A_v^{measured} = \frac{V_{out, pp}}{V_{in, pp}}
+\end{equation}
+
+The gain should be positive (no inversion) and less than 1.  \\
+
+Compare with the theoretical prediction from Equation \ref{eq:av_cd_simple}:
+
+\begin{equation}
+    A_v^{theoretical} = \frac{g_m R_S}{1 + g_m R_S}
+\end{equation}
+
+Calculate the percentage error.  Discuss agreement or discrepancy.  Factors affecting agreement include:
+
+\begin{itemize}
+    \item Accuracy of $g_m$ calculation (depends on $k_n$, $V_{th}$, and measured $I_D$)
+    \item Finite output resistance $r_o$ (affects the precise gain value)
+    \item Parasitic capacitances at higher frequencies
+    \item Measurement accuracy
+\end{itemize}
+
+Gradually increase the input signal amplitude and observe the output waveform. At some point, you will see clipping or distortion. Note the maximum undistorted output swing.  This is limited by the DC bias point and supply voltage. \\
+
+
+Include oscilloscope screenshots showing input and output waveforms, clearly labeled or annotated. The oscilloscopes have USB ports to save professional quality images on flash drives. \\
+
+\textbf{Report}
+\begin{enumerate}
+    \item Provide a table summarizing measured $g_m$, theoretical $A_v$, measured $A_v$, and percentage error.
+    \item Include oscilloscope screenshots showing input and output waveforms with clear labels indicating amplitude and phase relationship (in phase, no inversion).
+    \item Report the maximum undistorted output swing observed before clipping occurs.
+    \item Compare theoretical gain ($A_v = \frac{g_m R_S}{1 + g_m R_S}$) with measured gain and discuss factors affecting agreement (accuracy of parameters, finite $r_o$, measurement errors).\\
+\end{enumerate}
+
+\subsection{Part 3: Loading Effect and Output Impedance}
+
+\textit{This part investigates how connecting different load resistances affects the amplifier's voltage gain, demonstrating the importance of output impedance in practical applications.} \\
+
+\begin{figure}[h]
+\centering
+\begin{circuitikz}[american, arrowmos]
+  % NMOS transistor
+  \node[nmos] (M1) at (5,3) {};
+  
+  % Ground symbol
+  \draw (5,0) node[ground] {};
+  
+  % Ground bus
+  \draw (0,0) -- (9,0);
+  
+  % VDD power pin
+  \draw (5,6.2) node[vcc] {};
+  \node at (5,7) {$V_{DD}$};
+  
+  % Input DC-offset source
+  \draw (0,3) to[sV, l=$v_G$] (0,0);
+  \draw (0,3) -- (M1.gate);
+  
+  % Drain connected to VDD
+  \draw (M1.drain) -- (5,6.2);
+  
+  % Source resistor
+  \draw (M1.source) to[R, l=$R_S$] (5,0);
+  
+  % Output connection at top of RS (at source terminal)
+  \draw (M1.source) -- (5,1.8);
+  
+  % Load resistor
+  \draw (6.5,1.8) to[R, l=$R_{L}$] (6.5,0);
+  
+  % Connect to load resistor
+  \draw (5,1.8) -- (6.5,1.8);
+  
+  % Output terminal
+  \draw (6.5,1.8) to[short, -o] (8,1.8) node[right] {$v_{out}$};
+  
+  % Voltage label
+  \node[above] at (0,3) {$V_G + v_{in}$};
+  
+\end{circuitikz}
+\caption{Source follower (common-drain) amplifier with resistive load for measuring loading effect.}
+\label{fig:cd_loaded}
+\end{figure}
+
+In this part, you will investigate the effect of load resistance on the amplifier gain and experimentally determine the output impedance. 
+
+With the circuit from Part 2, connect various load resistors $R_L$ from the output (source) to ground. Use the following values:  10 k$\Omega$, 2.2 k$\Omega$, and 470 $\Omega$.
+
+For each load resistor: 
+
+\begin{enumerate}
+    \item Apply the same input signal as Part 2 (1 kHz, small amplitude).
+    
+    \item Measure $v_{in}$ and $v_{out}$. 
+    
+    \item Calculate the voltage gain $A_v = v_{out}/v_{in}$. 
+    
+    \item Record the results. 
+\end{enumerate}
+
+You should observe that as $R_L$ decreases, the gain decreases.  This is the loading effect. \\
+
+The theoretical gain with load is (from Equation \ref{eq:av_cd_loaded}):
+
+\begin{equation}
+    A_v = \frac{g_m (R_S \parallel R_L)}{1 + g_m (R_S \parallel R_L)}
+\end{equation}
+
+For each load value, calculate the theoretical gain and compare with measurement.\\
+
+The output impedance can be determined from the measurement. The unloaded gain is:
+
+\begin{equation}
+    A_v^{NL} = \frac{g_m R_S}{1 + g_m R_S}
+\end{equation}
+
+The loaded gain is:
+
+\begin{equation}
+    A_v^{L} = \frac{g_m (R_{out} \parallel R_L)}{1 + g_m (R_{out} \parallel R_L)}
+\end{equation}
+
+The ratio is:
+
+\begin{equation}
+    \frac{A_v^{L}}{A_v^{NL}} = \frac{R_{out} \parallel R_L}{R_{out}} = \frac{R_L}{R_{out} + R_L}
+\end{equation}
+
+Rearranging:
+
+\begin{equation}
+    R_{out} = R_L \left( \frac{A_v^{NL}}{A_v^{L}} - 1 \right)
+\end{equation}
+
+Use this equation with your measurements for several load values to calculate $R_{out}$. Compare with the expected value (approximately $1/g_m$, which should be in the range of tens to hundreds of ohms). \\
+
+In your lab report, create a table with columns:  $R_L$, $A_v^{measured}$, $A_v^{theoretical}$, percentage error.  Plot $|A_v|$ versus $R_L$ on a semi-log scale (log axis for $R_L$). This clearly shows the loading effect. \\
+
+Report the measured output impedance and compare with $1/g_m$. Discuss the practical implication:  the source follower has very low output impedance, making it an excellent buffer for driving low-impedance loads without significant loading effects.\\
+
+\textbf{Report}
+\begin{enumerate}
+    \item Create a table with columns: $R_L$, $A_v^{measured}$, $A_v^{theoretical}$, and percentage error for each load resistor value tested.
+    \item Plot $|A_v|$ versus $R_L$ on a semi-log scale (log axis for $R_L$) to clearly show the loading effect.
+    \item Calculate and report the measured output impedance $R_{out}$ using the equation provided. Compare with the expected value (approximately $1/g_m$).
+    \item Discuss the loading effect and explain why the gain decreases as $R_L$ decreases.
+    \item Explain the practical implications of the CD amplifier's output impedance when driving loads.\\
+\end{enumerate}
+
+\section{Pre-Lab Questions}
+\label{sec:prelab}
+
+Complete these questions before coming to the lab session.  Include your answers and all supporting work in your lab report.  Use your MOSFET parameters from Lab 4 ($k_n$ and $V_{th}$).
+
+\begin{enumerate}
+    
+    \item \textbf{Simplified source follower amplifier design:} Design a source follower (CD amplifier) with the following specifications:  $V_{DD} = 5$ V, $I_D = 2$ mA, $V_S \approx 1$ V.  Assume $k_n = 2$ mA/V$^2$ and $V_{th} = 1.5$ V (or use your measured values from Lab 4).
+    \begin{enumerate}
+        \item Calculate $R_S$ to achieve $V_S = 1$ V with $I_D = 2$ mA. 
+        \item Calculate the required $V_G$ using $V_G = V_{GS} + V_S$ where $V_{GS} = V_{th} + \sqrt{2I_D/k_n}$.
+        \item Calculate $V_{DS} = V_{DD} - V_S$ and verify that the transistor will be in saturation ($V_{DS} \geq V_{GS} - V_{th}$). 
+        \item Calculate the small-signal parameters $g_m$ and $r_o$ (assume $V_A = 50$ V).
+        \item Predict the voltage gain $A_v = \frac{g_m R_S}{1 + g_m R_S}$ (assuming $r_o \gg R_S$).
+    \end{enumerate}
+    Show all calculations and clearly indicate your final values for $V_G$ and $R_S$.
+    
+    \item \textbf{Loading effect analysis:} For the source follower designed in Question 1:
+    \begin{enumerate}
+        \item Calculate the theoretical voltage gain when driving a load of $R_L = 1$ k$\Omega$.  Use $A_v = \frac{g_m (R_S \parallel R_L)}{1 + g_m (R_S \parallel R_L)}$.
+        \item By what percentage does the gain decrease compared to the no-load case?
+        \item What load resistance would reduce the gain to half its no-load value?
+    \end{enumerate}
+    
+    
+\end{enumerate}
+
+
+\end{document}\end{document}
