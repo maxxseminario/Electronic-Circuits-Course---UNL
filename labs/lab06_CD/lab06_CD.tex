@@ -381,7 +381,7 @@ Calculate the small-signal parameters at your measured Q-point: \\
 
 Now you will measure the AC voltage gain of the source follower amplifier.\\
 
-Configure your DC-offset power supply to provide the DC bias $V_G$ plus a small AC signal superimposed on it. Set the AC component to be a sine wave at 1 kHz with amplitude approximately 10-20 mV peak (20-40 mV peak-to-peak). This small amplitude ensures the transistor will show linear operation without distortion.  You can gradually increase amplitude while monitoring for distortion on an oscilloscope.\\
+Configure your DC-offset power supply to provide the DC bias $V_G$ plus a small AC signal superimposed on it. Set the AC component to be a sine wave at 1 kHz with amplitude approximately 100 mV peak (200 mV peak-to-peak). This small amplitude ensures the transistor will show linear operation without distortion.  Gradually increase the amplitude to 500mV peak, or until you see distortion on the oscilloscope.\\
 
 \textbf{Important:} Make sure to set the waveform generator output impedance to \textbf{High-Z} (high impedance) mode, not 50 $\Omega$. If set to 50 $\Omega$, the generator assumes a matched 50 $\Omega$ load and will display twice the actual output voltage. Since the MOSFET gate presents a very high impedance load, High-Z mode ensures the displayed voltage matches the actual output.\\
 
@@ -484,7 +484,7 @@ Include oscilloscope screenshots showing input and output waveforms, clearly lab
 
 In this part, you will investigate the effect of load resistance on the amplifier gain and experimentally determine the output impedance. 
 
-With the circuit from Part 2, connect various load resistors $R_L$ from the output (source) to ground. Use the following values:  10 k$\Omega$, 2.2 k$\Omega$, and 470 $\Omega$.
+With the circuit from Part 2, connect various load resistors $R_L$ from the output (source) to ground. Use the following values:  1 k$\Omega$, 330$\Omega$, and 100 $\Omega$.
 
 For each load resistor: 
 
