@@ -1,0 +1,417 @@
+\documentclass[10pt, aspectratio=169]{beamer}
+\usefonttheme{professionalfonts}
+
+\mode<presentation>
+{
+  \usetheme{Berkeley}
+  \usecolortheme{beaver}
+  \usefonttheme{default}
+  \setbeamertemplate{navigation symbols}{}
+  \setbeamertemplate{caption}[numbered]
+} 
+
+\setbeamertemplate{footline}{%
+  \leavevmode%
+  \hbox{%
+    \begin{beamercolorbox}[wd=.85\paperwidth,ht=2.5ex,dp=1ex,left]{author in head/foot}%
+      \usebeamerfont{author in head/foot}Maxx Seminario, Electronic Circuits, Spring 2026%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[wd=.15\paperwidth,ht=2.5ex,dp=1ex,right]{date in head/foot}%
+      \hspace*{0.5em}\insertframenumber{} / \inserttotalframenumber\hspace*{0.5em}%
+    \end{beamercolorbox}%
+  }%
+  \vskip0pt%
+}
+
+\usepackage[english]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric}
+\usepackage{pgfplots}
+\usepackage{array}
+\usepackage{makecell}
+\usepackage{verbatim}
+\usepackage{graphicx}
+\usepackage{subcaption}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{epstopdf}
+\usepackage{circuitikz}
+\usepackage{caption}
+\usepackage{multirow}
+\captionsetup{compatibility=false}
+\usepackage[absolute,overlay]{textpos}
+\usetikzlibrary{calc}
+\usetikzlibrary{pgfplots.fillbetween, backgrounds}
+\usetikzlibrary{positioning}
+\usetikzlibrary{pgfplots.groupplots}
+\usetikzlibrary{plotmarks}
+\usetikzlibrary{calc}
+
+\pgfplotsset{compat=1.16}
+
+% Added by Maxx Seminario 01/06/2026 - for colored icons in itemize labels
+\usepackage{wasysym} % for smiles and frowns
+\newcommand{\neutralface}{%
+  \tikz[baseline=-0.6ex]{
+    \draw (0,0) circle (0.9ex);
+    \fill (-0.35ex,0.25ex) circle (0.12ex);
+    \fill ( 0.35ex,0.25ex) circle (0.12ex);
+    \draw (-0.35ex,-0.25ex) -- (0.35ex,-0.25ex);
+  }%
+}
+
+\newcommand{\baditem}{\textcolor{red!70!black}{\frownie}}
+\newcommand{\gooditem}{\textcolor{green!60!black}{\smiley}}
+\newcommand{\mehitem}{\textcolor{orange!80!black}{\neutralface}}
+
+
+% =========================
+% Solution toggle 
+% =========================
+\newif\ifshowsolutions
+\showsolutionstrue   %  compile WITH solutions
+%\showsolutionsfalse %  compile WITHOUT solutions
+
+
+
+\title{MOSFET Amplifier Configurations}
+\subtitle{Unit 5: Field-Effect Transistors}
+\author{Maxx Seminario}
+\institute{University of Nebraska-Lincoln}
+\date{Spring 2026}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage
+\end{frame}
+
+% Slide 2: Lecture Overview
+\begin{frame}{Lecture Overview}
+\begin{columns}[T]
+\begin{column}{0.45\textwidth}
+\textbf{Review from Last Lecture}
+\begin{itemize}
+\item MOSFET small-signal models
+\item Transconductance ($g_m$)
+\item Output resistance ($r_o$)
+\item AC analysis techniques
+\end{itemize}
+\end{column}
+
+\begin{column}{0.45\textwidth}
+\textbf{Today's Topics}
+\begin{itemize}
+\item Common-Source (CS) Amplifier
+\item Common-Drain (CD) Amplifier
+\item Common-Gate (CG) Amplifier
+\item Comparison of configurations
+\end{itemize}
+\end{column}
+\end{columns}
+\end{frame}
+
+%==============================================================================
+% COMMON-SOURCE AMPLIFIER
+%==============================================================================
+
+\begin{frame}{Common-Source (CS) Amplifier}
+\begin{columns}[c]
+\begin{column}{0.45\textwidth}
+\textbf{Basic Configuration}
+\begin{center}
+\begin{circuitikz}[scale=0.8, transform shape, american, arrowmos]
+  \node[nmos] (M1) at (3,2) {};
+  \draw (3,0) node[ground] {};
+  \draw (3,4.5) node[vcc] {};
+  \node at (3,5) {$V_{DD}$};
+  \node[left] at (M1.gate) {$v_{in}$};
+  \draw (M1.source) -- (3,0);
+  \draw (3,4.5) to[R, l=$R_D$] (M1.drain);
+  \draw (M1.drain) -- (3,3);
+  \draw (3,3) -- (4,3);
+  \draw (4,3) to[short, -o] (5,3) node[right] {$v_{out}$};
+\end{circuitikz}
+\end{center}
+\end{column}
+
+\begin{column}{0.50\textwidth}
+\textbf{Key Characteristics}
+\begin{itemize}
+\item Input at gate, output at drain
+\item Source is AC ground (common)
+\item Most commonly used configuration
+\item Provides voltage gain with inversion
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Basic Formulas}
+\begin{align*}
+A_v &\approx -g_m R_D \\
+R_{in} &\approx \infty \\
+R_{out} &\approx R_D
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Common-Source Amplifier: Voltage Gain}
+\textbf{Voltage Gain Derivation}
+\begin{itemize}
+\item Output voltage: $v_{out} = -g_m v_{gs} \cdot R_D$
+\item Input voltage: $v_{in} = v_{gs}$ (infinite gate impedance)
+\item Voltage gain: $A_v = \frac{v_{out}}{v_{in}} = -g_m R_D$
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Key Points}
+\begin{itemize}
+\item \baditem Negative sign indicates 180° phase inversion
+\item \gooditem Gain magnitude can be large 
+\item \gooditem High input impedance (gate draws no current)
+\item \mehitem Moderate output impedance 
+\end{itemize}
+\end{frame}
+
+%==============================================================================
+% COMMON-DRAIN AMPLIFIER (SOURCE FOLLOWER)
+%==============================================================================
+
+\begin{frame}{Common-Drain (CD) Amplifier - Source Follower}
+\begin{columns}[c]
+\begin{column}{0.45\textwidth}
+\textbf{Basic Configuration}
+\begin{center}
+\begin{circuitikz}[scale=0.8, transform shape, american, arrowmos]
+  \node[nmos] (M1) at (3,2) {};
+  \draw (3,0) node[ground] {};
+  \draw (3,4.5) node[vcc] {};
+  \node at (3,5) {$V_{DD}$};
+  \node[left] at (M1.gate) {$v_{in}$};
+  \draw (M1.drain) -- (3,4.5);
+  \draw (M1.source) to[R, l=$R_S$] (3,0);
+  \draw (M1.source) -- (4,1.2);
+  \draw (4,1.2) to[short, -o] (5,1.2) node[right] {$v_{out}$};
+\end{circuitikz}
+\end{center}
+\end{column}
+
+\begin{column}{0.50\textwidth}
+\textbf{Key Characteristics}
+\begin{itemize}
+\item Input at gate, output at source
+\item Drain is AC ground (common)
+\item Also called ``source follower''
+\item Output follows input (no inversion)
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Basic Formulas}
+\begin{align*}
+A_v &\approx \frac{g_m R_S}{1 + g_m R_S} < 1 \\
+R_{in} &\approx \infty \\
+R_{out} &\approx \frac{1}{g_m}
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Common-Drain Amplifier: Voltage Gain}
+\textbf{Voltage Gain Derivation}
+\begin{itemize}
+\item Output voltage: $v_{out} = g_m v_{gs} \cdot R_S$
+\item But $v_{gs} = v_{in} - v_{out}$ (negative feedback)
+\item Solving: $A_v = \frac{v_{out}}{v_{in}} = \frac{g_m R_S}{1 + g_m R_S}$
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Key Points}
+\begin{itemize}
+\item \gooditem No phase inversion (output in phase with input)
+\item \baditem Voltage gain always less than 1 
+\item \gooditem Very high input impedance
+\item \gooditem Very low output impedance ($\approx 1/g_m$, tens of $\Omega$)
+\item \gooditem Excellent buffer for driving low-impedance loads
+\end{itemize}
+\end{frame}
+
+%==============================================================================
+% COMMON-GATE AMPLIFIER
+%==============================================================================
+
+\begin{frame}{Common-Gate (CG) Amplifier}
+\begin{columns}[c]
+\begin{column}{0.45\textwidth}
+\textbf{Basic Configuration}
+\begin{center}
+\begin{circuitikz}[scale=0.8, transform shape, american, arrowmos]
+  \node[nmos] (M1) at (3,2) {};
+  \draw (3,0) node[ground] {};
+  \draw (3,4.5) node[vcc] {};
+  \node at (3,5) {$V_{DD}$};
+  \draw (M1.gate) -- (2,2.5);
+  \draw (2,2.5) node[left] {$V_{bias}$};
+  \draw (M1.source) to[sV, l=$v_{in}$] (3,0);
+  \draw (3,4.5) to[R, l=$R_D$] (M1.drain);
+  \draw (M1.drain) -- (3,3);
+  \draw (3,3) -- (4,3);
+  \draw (4,3) to[short, -o] (5,3) node[right] {$v_{out}$};
+\end{circuitikz}
+\end{center}
+\end{column}
+
+\begin{column}{0.50\textwidth}
+\textbf{Key Characteristics}
+\begin{itemize}
+\item Input at source, output at drain
+\item Gate is AC ground (common)
+\item Less commonly used
+\item No phase inversion
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Basic Formulas}
+\begin{align*}
+A_v &\approx g_m R_D \\
+R_{in} &\approx \frac{1}{g_m} \\
+R_{out} &\approx R_D
+\end{align*}
+\end{column}
+\end{columns}
+\end{frame}
+
+\begin{frame}{Common-Gate Amplifier: Characteristics}
+\textbf{Voltage Gain Derivation}
+\begin{itemize}
+\item Output voltage: $v_{out} = g_m v_{gs} \cdot R_D$
+\item Input voltage: $v_{in} = -v_{gs}$ (gate at AC ground)
+\item Voltage gain: $A_v = \frac{v_{out}}{v_{in}} = g_m R_D$
+\end{itemize}
+
+\vspace{0.5cm}
+\textbf{Key Points}
+\begin{itemize}
+\item \gooditem No phase inversion (positive gain)
+\item \gooditem Voltage gain similar to CS amplifier
+\item \baditem Low input impedance ($\approx 1/g_m$, tens of $\Omega$)
+\item \mehitem Moderate output impedance ($R_D$)
+\end{itemize}
+\end{frame}
+
+%==============================================================================
+% COMPARISON TABLE
+%==============================================================================
+
+\begin{frame}{MOSFET Amplifier Configurations: Summary Comparison}
+\begin{table}
+\centering
+\small
+\begin{tabular}{|l|c|c|c|}
+\hline
+\textbf{Parameter} & \textbf{Common-Source} & \textbf{Common-Drain} & \textbf{Common-Gate} \\
+\hline
+\hline
+\textbf{Input Terminal} & Gate & Gate & Source \\
+\hline
+\textbf{Output Terminal} & Drain & Source & Drain \\
+\hline
+\textbf{Common Terminal} & Source & Drain & Gate \\
+\hline
+\hline
+\textbf{Voltage Gain $A_v$} & $-g_m R_D$ & $\dfrac{g_m R_S}{1 + g_m R_S} < 1$ & $g_m R_D$ \\
+& (10-100) & (0.8-0.95) & (10-100) \\
+\hline
+\textbf{Phase Shift} & 180° (inverted) & 0° (in phase) & 0° (in phase) \\
+\hline
+\hline
+\textbf{Input Impedance} & Very High & Very High & Low \\
+$R_{in}$ & $\approx \infty$ & $\approx \infty$ & $\approx 1/g_m$ \\
+\hline
+\textbf{Output Impedance} & Moderate & Very Low & Moderate \\
+$R_{out}$ & $R_D \| r_o$ & $\dfrac{1}{g_m} \| R_S \| r_o$ & $R_D \| r_o$ \\
+& (few k$\Omega$) & (tens of $\Omega$) & (few k$\Omega$) \\
+\hline
+\hline
+\textbf{Primary Application} & Voltage amplifier & Buffer/Driver & Wideband amp \\
+& & & Current buffer \\
+\hline
+\end{tabular}
+\end{table}
+\end{frame}
+
+\begin{frame}{Choosing the Right Configuration}
+\textbf{Common-Source (CS)}
+\begin{itemize}
+\item Use when: High voltage gain needed, phase inversion acceptable
+\item Advantages: Large gain, high input impedance
+\item Disadvantages: Phase inversion, moderate output impedance
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Common-Drain (CD) - Source Follower}
+\begin{itemize}
+\item Use when: Need to drive low-impedance loads, buffering required
+\item Advantages: Unity gain, very low output impedance, no inversion
+\item Disadvantages: Gain less than 1, no voltage amplification
+\end{itemize}
+
+\vspace{0.3cm}
+\textbf{Common-Gate (CG)}
+\begin{itemize}
+\item Use when: Wideband operation needed, current buffering
+\item Advantages: Good gain, no inversion, low Miller capacitance
+\item Disadvantages: Low input impedance (hard to drive)
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Multi-Stage Amplifiers}
+\textbf{Cascading Configurations}
+\begin{itemize}
+\item Often multiple stages are cascaded to achieve desired performance
+\item Example: CS followed by CD
+  \begin{itemize}
+  \item CS stage provides voltage gain
+  \item CD stage provides buffering and low output impedance
+  \end{itemize}
+\item Total voltage gain: $A_{v,total} = A_{v,CS} \times A_{v,CD}$
+\item Design considerations:
+  \begin{itemize}
+  \item Input impedance determined by first stage
+  \item Output impedance determined by last stage
+  \item Overall gain is product of individual gains
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Key Takeaways}
+\begin{enumerate}
+\item \textbf{Three basic MOSFET amplifier configurations:}
+   \begin{itemize}
+   \item Common-Source: High gain, inverted output
+   \item Common-Drain: Unity gain buffer, very low $R_{out}$
+   \item Common-Gate: High gain, low $R_{in}$, no inversion
+   \end{itemize}
+
+\vspace{0.3cm}
+\item \textbf{Key trade-offs:}
+   \begin{itemize}
+   \item Voltage gain vs. input/output impedance
+   \item Phase relationship (inverted vs. non-inverted)
+   \item Application-specific requirements
+   \end{itemize}
+
+\vspace{0.3cm}
+\item \textbf{Configuration selection based on:}
+   \begin{itemize}
+   \item Required voltage gain
+   \item Input/output impedance matching
+   \item Load driving capability
+   \item Frequency response requirements
+   \end{itemize}
+\end{enumerate}
+\end{frame}
+
+
+\end{document}
