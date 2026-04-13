@@ -51,6 +51,10 @@
 
 \pgfplotsset{compat=1.16}
 
+\usepackage{ifthen}
+\newboolean{showresults}
+\setboolean{showresults}{true}
+
 % Added by Maxx Seminario 01/06/2026 - for colored icons in itemize labels
 \usepackage{wasysym} % for smiles and frowns
 \newcommand{\neutralface}{%
@@ -411,6 +415,88 @@ $R_{out}$ & $R_D \| r_o$ & $\dfrac{1}{g_m} \| R_S \| r_o$ & $R_D \| r_o$ \\
    \end{itemize}
 \end{enumerate}
 \end{frame}
+
+%==============================================================================
+% SMALL SIGNAL DERIVATIONS
+%==============================================================================
+
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Small-Signal Analysis: CS Amplifier (continued)}
+\textbf{Derivation Steps}:
+
+\begin{enumerate}
+\item \textbf{Identify small-signal voltage}: $v_{gs} = v_{in}$
+
+\vspace{0.3cm}
+\item \textbf{Apply KCL at drain node}:
+\begin{align*}
+\frac{v_{out}}{R_D} + \frac{v_{out}}{r_o} + g_m v_{gs} &= 0\\
+v_{out}\left(\frac{1}{R_D} + \frac{1}{r_o}\right) &= -g_m v_{in}\\
+v_{out} &= -g_m v_{in} \left(\frac{R_D \cdot r_o}{R_D + r_o}\right)\\
+v_{out} &= -g_m v_{in} (R_D \| r_o)
+\end{align*}
+
+\vspace{0.3cm}
+\item \textbf{Voltage gain}:
+\begin{align*}
+A_v = \frac{v_{out}}{v_{in}} = -g_m(R_D \| r_o) \approx -g_m R_D \quad \text{(when } r_o \gg R_D\text{)}
+\end{align*}
+\end{enumerate}
+\end{frame}
+}{}
+
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Small-Signal Analysis: CD Amplifier (continued)}
+\textbf{Derivation Steps}:
+
+\begin{enumerate}
+\item \textbf{Identify voltages}: $v_{gs} = v_{in} - v_{out}$ (gate relative to source)
+
+\vspace{0.3cm}
+\item \textbf{Apply KCL at source node}:
+\begin{align*}
+g_m v_{gs} + \frac{0 - v_{out}}{r_o} &= \frac{v_{out}}{R_S}\\
+g_m(v_{in} - v_{out}) - \frac{v_{out}}{r_o} &= \frac{v_{out}}{R_S}\\
+g_m v_{in} &= v_{out}\left(g_m + \frac{1}{r_o} + \frac{1}{R_S}\right)\\
+g_m v_{in} &= v_{out}\left(g_m + \frac{1}{r_o \| R_S}\right)
+\end{align*}
+
+% \vspace{0.3cm}
+\item \textbf{Voltage gain}:
+\begin{align*}
+A_v = \frac{v_{out}}{v_{in}} = \frac{g_m}{g_m + \frac{1}{r_o \| R_S}} = \frac{g_m(r_o \| R_S)}{1 + g_m(r_o \| R_S)} \approx \frac{g_m R_S}{1 + g_m R_S} < 1
+\end{align*}
+\end{enumerate}
+\end{frame}
+}{}
+
+
+\ifthenelse{\boolean{showresults}}{
+\begin{frame}{Small-Signal Analysis: CG Amplifier (continued)}
+\textbf{Derivation Steps}:
+
+\begin{enumerate}
+\item \textbf{Identify small-signal voltage}: $v_{gs} = 0 - v_{in} = -v_{in}$ (gate is at AC ground)
+
+\vspace{0.3cm}
+\item \textbf{Apply KCL at drain node}:
+\begin{align*}
+\frac{v_{out}}{R_D} + \frac{v_{out}}{r_o} + g_m v_{gs} &= 0\\
+v_{out}\left(\frac{1}{R_D} + \frac{1}{r_o}\right) &= -g_m(-v_{in})\\
+v_{out}\left(\frac{1}{R_D} + \frac{1}{r_o}\right) &= g_m v_{in}\\
+v_{out} &= g_m v_{in} (R_D \| r_o)
+\end{align*}
+
+% \vspace{0.3cm}
+\item \textbf{Voltage gain}:
+\begin{align*}
+A_v = \frac{v_{out}}{v_{in}} = g_m(R_D \| r_o) \approx g_m R_D \quad \text{(when } r_o \gg R_D\text{)}
+\end{align*}
+
+% \textbf{Note}: Positive gain (no phase inversion) because $v_{gs}$ is negative of input.
+\end{enumerate}
+\end{frame}
+}{}
 
 
 \end{document}
