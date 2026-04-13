@@ -11,6 +11,20 @@
 \usepackage{caption}
 \usepackage{circuitikz}
 
+% Boolean to show/hide results
+\newif\ifshowresults
+\showresultstrue  % Set to \showresultsfalse to hide solutions
+
+% Environment for solutions
+\usepackage{comment}
+\ifshowresults
+    \newenvironment{solution}
+    {\color{blue}\textbf{Solution:}\\}
+    {}
+\else
+    \excludecomment{solution}
+\fi
+
 \pagestyle{fancy}
 \fancyhf{}
 \lhead{ECEN 222 - Electronic Circuits}
@@ -124,6 +138,41 @@ Analyze the following inverting amplifier circuit.
         \item The output voltage $v_{out}$ for the given input
     \end{itemize}
     
+\begin{solution}
+\textbf{Voltage Gain:}
+
+For an inverting amplifier, the gain is:
+\begin{align*}
+A_v &= -\frac{R_f}{R_1} = -\frac{47\text{ k}\Omega}{10\text{ k}\Omega} = -4.7
+\end{align*}
+
+\textbf{Input Impedance:}
+
+The input impedance seen by the source is simply $R_1$ (since the inverting input is at virtual ground):
+\begin{align*}
+R_{in} = R_1 = 10\text{ k}\Omega
+\end{align*}
+
+\textbf{Output Voltage:}
+
+The input voltage referenced to AC ground is:
+\begin{align*}
+v_{in,ac} &= v_{in} - V_{ref} = 8.0 - 7.5 = 0.5\text{ V}
+\end{align*}
+
+The output referenced to AC ground:
+\begin{align*}
+v_{out,ac} &= A_v \cdot v_{in,ac} = -4.7 \times 0.5 = -2.35\text{ V}
+\end{align*}
+
+The absolute output voltage (referenced to GND):
+\begin{align*}
+v_{out} &= V_{ref} + v_{out,ac} = 7.5 + (-2.35) = 5.15\text{ V}
+\end{align*}
+\end{solution}
+
+\vspace{1cm}
+    
     \item \textbf{Assumptions and Explanation [10 points]:} In a written paragraph, explain:
     \begin{itemize}
         \item What assumptions you made about the op-amp (list all ideal op-amp assumptions)
@@ -133,7 +182,39 @@ Analyze the following inverting amplifier circuit.
         \item What would happen if $R_f < R_1$ (would it still be an amplifier?)
     \end{itemize}
     
+\begin{solution}
+\textbf{Ideal Op-Amp Assumptions:}
+\begin{enumerate}
+    \item Infinite input impedance (no current flows into op-amp inputs)
+    \item Zero output impedance (can source/sink any current)
+    \item Infinite open-loop gain ($A_{OL} \to \infty$)
+    \item Infinite bandwidth (gain constant at all frequencies)
+    \item Zero offset voltage (when inputs equal, output is zero)
+\end{enumerate}
+
+\textbf{Why "Inverting":} The circuit is called inverting because the output signal is 180° out of phase with the input signal. When the input increases above $V_{ref}$, the output decreases below $V_{ref}$, and vice versa. The negative sign in $A_v = -4.7$ indicates this phase inversion.
+
+\textbf{Virtual Ground Concept:} In this circuit, the non-inverting input is connected to $V_{ref} = 7.5$ V. Due to negative feedback and infinite gain, the inverting input is forced to the same voltage as the non-inverting input, creating a "virtual AC ground" at 7.5 V. This is NOT 0 V (true ground), but it acts as a reference point that remains constant as signals vary around it.
+
+\textbf{Why AC Ground at 7.5 V:} With a unipolar supply (0 V to 15 V), the op-amp can only output voltages within this range. Setting the reference at $V_{ref} = V_{DD}/2 = 7.5$ V allows the output to swing both "positive" (toward 15 V) and "negative" (toward 0 V) around this midpoint, maximizing the dynamic range.
+
+\textbf{If $R_f < R_1$:} If $R_f < R_1$, the magnitude of the gain would be less than 1 ($|A_v| < 1$). The circuit would still invert the signal, but it would attenuate rather than amplify. For example, if $R_f = 5$ k$\Omega$ and $R_1 = 10$ k$\Omega$, then $A_v = -0.5$ — this is an inverting attenuator, not an amplifier.
+\end{solution}
+
+\vspace{1cm}
+    
     \item \textbf{Design Question [5 points]:} If you needed a gain of $A_v = -20$ and wanted to keep $R_1 = 10$ k$\Omega$, what value should $R_f$ be? Show your calculation.
+
+\begin{solution}
+Using the gain formula for an inverting amplifier:
+\begin{align*}
+A_v &= -\frac{R_f}{R_1}\\
+-20 &= -\frac{R_f}{10\text{ k}\Omega}\\
+R_f &= 20 \times 10\text{ k}\Omega = 200\text{ k}\Omega
+\end{align*}
+
+\textbf{Answer:} $R_f = 200$ k$\Omega$
+\end{solution}
 \end{enumerate}
 
 \newpage
@@ -194,6 +275,47 @@ Analyze the following inverting integrator circuit.
         \item How long until the output reaches 5.0 V (referenced to GND, not to $V_{ref}$)?
     \end{itemize}
     
+\begin{solution}
+\textbf{Time Constant:}
+\begin{align*}
+\tau = RC = (100 \times 10^3\,\Omega)(1 \times 10^{-6}\text{ F}) = 0.1\text{ s}
+\end{align*}
+
+\textbf{Output Voltage Function:}
+
+The effective input relative to AC ground is:
+\begin{align*}
+v_{in, eff} = v_{in} - V_{ref} = 9.0 - 7.5 = 1.5\text{ V}
+\end{align*}
+
+For a constant input, the integrator output is:
+\begin{align*}
+v_{out}(t) &= -\frac{1}{RC} \int_0^t v_{in, eff} \, d\tau + v_{out}(0)\\
+&= -\frac{1}{RC} \cdot v_{in, eff} \cdot t + v_{out}(0)\\
+&= -\frac{1.5}{0.1} \cdot t + 7.5\\
+&= -15t + 7.5\text{ V}
+\end{align*}
+
+\textbf{At $t = 0.05$ s:}
+\begin{align*}
+v_{out}(0.05) = -15(0.05) + 7.5 = -0.75 + 7.5 = 6.75\text{ V}
+\end{align*}
+
+\textbf{At $t = 0.1$ s:}
+\begin{align*}
+v_{out}(0.1) = -15(0.1) + 7.5 = -1.5 + 7.5 = 6.0\text{ V}
+\end{align*}
+
+\textbf{Time to reach 5.0 V:}
+\begin{align*}
+5.0 &= -15t + 7.5\\
+15t &= 2.5\\
+t &= \frac{2.5}{15} = 0.167\text{ s} = 167\text{ ms}
+\end{align*}
+\end{solution}
+
+\vspace{1cm}
+    
     \item \textbf{Circuit Operation Explanation [15 points]:} Explain:
     \begin{itemize}
         \item How the integrator works (describe the relationship between capacitor current and output voltage)
@@ -203,7 +325,47 @@ Analyze the following inverting integrator circuit.
         \item What would happen if you applied a step input (instead of DC) to an integrator
     \end{itemize}
     
+\begin{solution}
+\textbf{How the Integrator Works:}
+
+The inverting input is at virtual AC ground (7.5 V). Current flows through $R$ from the input: $i = \frac{v_{in} - V_{ref}}{R}$. This current cannot flow into the op-amp (infinite input impedance), so it must flow into the capacitor. The capacitor equation is $i = C \frac{dv}{dt}$, which means $v_{out} = -\frac{1}{C}\int i \, dt$. Combining these gives the integrator transfer function.
+
+\textbf{Why Output Changes with Constant DC Input:}
+
+Even though the input is constant DC, there is a constant current flowing through $R$ into the capacitor. This constant current continuously charges (or discharges) the capacitor, causing the voltage across it to change linearly over time. The integrator integrates the DC offset relative to $V_{ref}$, resulting in a ramp output. In an ideal integrator with DC input, the output would eventually saturate at the power supply rail.
+
+\textbf{Negative Sign Meaning:}
+
+The negative sign indicates phase inversion. When the input is above $V_{ref}$ (positive), current flows into the capacitor's negative plate, causing the output voltage to decrease (ramp downward). Conversely, when input is below $V_{ref}$, the output ramps upward. This is characteristic of inverting op-amp configurations.
+
+\textbf{Why $(v_{in} - V_{ref})$:}
+
+We use $(v_{in} - V_{ref})$ because the inverting input is held at $V_{ref}$ by the virtual ground principle. Only the voltage difference drives current through $R$. If $v_{in} = V_{ref} = 7.5$ V, then $(v_{in} - V_{ref}) = 0$, no current flows, and the output remains constant. The circuit integrates relative to the AC ground reference.
+
+\textbf{Step Input Response:}
+
+If a step input is applied, the integrator produces a ramp output. For a positive step (sudden increase), the output ramps down linearly. For a negative step (sudden decrease), the output ramps up linearly. The slope of the ramp is determined by $-\frac{\Delta V_{in}}{RC}$. This is why integrators are used in waveform generation (e.g., triangle waves from square waves).
+\end{solution}
+
+\vspace{1cm}
+    
     \item \textbf{Frequency Response [BONUS: 5 points]:} The integrator's frequency domain transfer function is $H(j\omega) = -\frac{1}{j\omega RC}$. Calculate the magnitude of the gain $|H(f)|$ at $f = 10$ Hz. Show your work and explain in 1-2 sentences what this tells you about the integrator's behavior at different frequencies.
+
+\begin{solution}
+The magnitude of the transfer function is:
+\begin{align*}
+|H(j\omega)| &= \left|-\frac{1}{j\omega RC}\right| = \frac{1}{\omega RC} = \frac{1}{2\pi f RC}
+\end{align*}
+
+At $f = 10$ Hz with $R = 100$ k$\Omega$ and $C = 1$ $\mu$F:
+\begin{align*}
+|H(10\text{ Hz})| &= \frac{1}{2\pi (10)(100 \times 10^3)(1 \times 10^{-6})}\\
+&= \frac{1}{2\pi (10)(0.1)}\\
+&= \frac{1}{2\pi} = \frac{1}{6.283} \approx 0.159\text{ or } 15.9\%
+\end{align*}
+
+\textbf{Interpretation:} The integrator has a gain that decreases with increasing frequency ($-20$ dB/decade slope). At low frequencies, the gain is high, amplifying low-frequency signals and DC offsets significantly. At high frequencies, the gain is low, attenuating high-frequency components. This makes the integrator act as a low-pass filter.
+\end{solution}
 \end{enumerate}
 
 \newpage
@@ -269,6 +431,46 @@ Analyze the following three-input summing amplifier circuit.
         \item Verify your calculation by substituting the given input voltages
     \end{itemize}
     
+\begin{solution}
+\textbf{Weight Coefficients:}
+\begin{align*}
+w_1 &= \frac{R_f}{R_1} = \frac{20\text{ k}\Omega}{10\text{ k}\Omega} = 2.0\\
+w_2 &= \frac{R_f}{R_2} = \frac{20\text{ k}\Omega}{20\text{ k}\Omega} = 1.0\\
+w_3 &= \frac{R_f}{R_3} = \frac{20\text{ k}\Omega}{5\text{ k}\Omega} = 4.0
+\end{align*}
+
+\textbf{Output Voltage Calculation:}
+
+First, convert inputs to AC voltages (relative to $V_{ref} = 7.5$ V):
+\begin{align*}
+v_{1,ac} &= v_1 - V_{ref} = 8.5 - 7.5 = 1.0\text{ V}\\
+v_{2,ac} &= v_2 - V_{ref} = 8.0 - 7.5 = 0.5\text{ V}\\
+v_{3,ac} &= v_3 - V_{ref} = 7.0 - 7.5 = -0.5\text{ V}
+\end{align*}
+
+The output relative to $V_{ref}$:
+\begin{align*}
+v_{out,ac} &= -(w_1 v_{1,ac} + w_2 v_{2,ac} + w_3 v_{3,ac})\\
+&= -(2.0 \times 1.0 + 1.0 \times 0.5 + 4.0 \times (-0.5))\\
+&= -(2.0 + 0.5 - 2.0)\\
+&= -0.5\text{ V}
+\end{align*}
+
+The absolute output voltage (referenced to GND):
+\begin{align*}
+v_{out} &= V_{ref} + v_{out,ac} = 7.5 + (-0.5) = 7.0\text{ V}
+\end{align*}
+
+\textbf{Verification using absolute voltages:}
+\begin{align*}
+v_{out} &= V_{ref} - \left(\frac{R_f}{R_1}(v_1 - V_{ref}) + \frac{R_f}{R_2}(v_2 - V_{ref}) + \frac{R_f}{R_3}(v_3 - V_{ref})\right)\\
+&= 7.5 - \left(2.0(1.0) + 1.0(0.5) + 4.0(-0.5)\right)\\
+&= 7.5 - 0.5 = 7.0\text{ V} \quad \checkmark
+\end{align*}
+\end{solution}
+
+\vspace{1cm}
+    
     \item \textbf{Circuit Operation Explanation [15 points]:} Explain:
     \begin{itemize}
         \item How the summing amplifier works (describe the current flow from each input)
@@ -278,7 +480,47 @@ Analyze the following three-input summing amplifier circuit.
         \item Give one practical application where a summing amplifier would be useful
     \end{itemize}
     
+\begin{solution}
+\textbf{How the Summing Amplifier Works:}
+
+Current flows from each input through its respective resistor toward the inverting input (virtual ground at 7.5 V). The current from input $i$ is $i_i = \frac{v_i - V_{ref}}{R_i}$. Since no current flows into the op-amp (infinite input impedance), all input currents sum together and flow through the feedback resistor $R_f$. By KCL at the inverting node: $i_1 + i_2 + i_3 = i_f$. The voltage across $R_f$ creates the output: $v_{out} - V_{ref} = -i_f R_f$.
+
+\textbf{Virtual AC Ground:}
+
+The non-inverting input is connected to $V_{ref} = 7.5$ V. Due to negative feedback and the op-amp's infinite gain, the inverting input is forced to match this voltage. This creates a "virtual AC ground" at 7.5 V. It's called virtual because no current flows into the op-amp terminal, yet the voltage remains fixed at 7.5 V, serving as a stable reference point for the circuit.
+
+\textbf{Inverted and Weighted Output:}
+
+The output is inverted because current flowing into the inverting node (from positive input voltages) must flow out through $R_f$, pulling the output below $V_{ref}$. Each input is weighted by its ratio $\frac{R_f}{R_i}$, meaning inputs with smaller resistors have larger weights (contribute more to the output). This allows precise control of how much each signal contributes to the sum.
+
+\textbf{All Inputs at $V_{ref}$:}
+
+If $v_1 = v_2 = v_3 = V_{ref} = 7.5$ V, then $(v_i - V_{ref}) = 0$ for all inputs. No current flows through any input resistor, so $i_f = 0$, and $v_{out} = V_{ref} = 7.5$ V. The output remains at the AC ground reference.
+
+\textbf{Practical Application:}
+
+Audio mixing consoles use summing amplifiers to combine multiple audio signals (microphones, instruments) into a single output channel. Each input can be weighted differently (volume control) by choosing appropriate resistor values, and the mixed signal can be inverted back if needed with another stage.
+\end{solution}
+
+\vspace{1cm}
+    
     \item \textbf{Design Modification [5 points]:} If you wanted all three inputs to have equal weight (equal gain), what should the values of $R_1$, $R_2$, and $R_3$ be? State your answer and briefly explain your reasoning.
+
+\begin{solution}
+For equal weights, we need:
+\begin{align*}
+w_1 = w_2 = w_3 \quad \Rightarrow \quad \frac{R_f}{R_1} = \frac{R_f}{R_2} = \frac{R_f}{R_3}
+\end{align*}
+
+This requires:
+\begin{align*}
+R_1 = R_2 = R_3
+\end{align*}
+
+\textbf{Answer:} All three input resistors should be equal. A practical choice would be $R_1 = R_2 = R_3 = 20$ k$\Omega$ (equal to $R_f$), which gives each input a weight of $w = 1.0$.
+
+\textbf{Reasoning:} Since the weight for each input is $w_i = \frac{R_f}{R_i}$, making all input resistors equal ensures all weights are equal. Choosing them equal to $R_f$ gives unity weight, meaning each input contributes equally to the inverted sum. For example, if $R_1 = R_2 = R_3 = R_f = 20$ k$\Omega$, then $v_{out} = -(v_1 + v_2 + v_3)$ (referenced to AC ground).
+\end{solution}
 \end{enumerate}
 
 \newpage
@@ -317,5 +559,28 @@ Choose \textbf{ONE} of the three circuits from Parts 1-3 to build and simulate i
         \item Any challenges you encountered in Multisim
     \end{itemize}
 \end{enumerate}
+
+\begin{solution}
+\textbf{Expected Simulation Results:}
+
+\begin{itemize}
+    \item \textbf{Part 1 (Inverting Amplifier):} The simulated output should be very close to the calculated 5.15 V. Real op-amps have finite gain (typically 100,000 for LM741), which may cause a small error (< 1\%). The output may also show a slight offset voltage (typically ± few mV).
+    
+    \item \textbf{Part 2 (Integrator):} In transient analysis, the output should ramp down linearly from 7.5 V at a rate of -15 V/s. At $t = 0.05$ s, expect $\approx 6.75$ V; at $t = 0.1$ s, expect $\approx 6.0$ V. In practice, the integrator may saturate toward the lower rail if run too long. Real op-amps have input bias currents that can cause drift.
+    
+    \item \textbf{Part 3 (Summing Amplifier):} The simulated output should be very close to 7.0 V. Small discrepancies (< 1\%) can arise from resistor tolerances (use exact values in simulation) and op-amp imperfections (finite gain, offset voltage).
+\end{itemize}
+
+\textbf{Common Discrepancies:}
+\begin{itemize}
+    \item Finite open-loop gain causes small gain errors.
+    \item Input offset voltage (1-5 mV for LM741) shifts the output slightly.
+    \item Input bias current causes voltage drops across high-value resistors.
+    \item Slew rate limitations affect transient response (not DC steady-state).
+\end{itemize}
+
+\textbf{Key Learning Points:}
+Students should observe that real op-amps behave very close to ideal for these low-frequency DC circuits. The virtual ground concept can be verified by probing the inverting input (should measure 7.5 V). Understanding the unipolar supply configuration is crucial for single-supply designs.
+\end{solution}
 
 \end{document}

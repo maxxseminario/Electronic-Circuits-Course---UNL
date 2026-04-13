@@ -3,3 +3,11 @@ exams/
 *.synctex.gz
 *.log
 *.out
+
+# Ignore .tex source files for assignments, labs, quizzes, syllabus, multisim
+# (but allow .tex files in lectures/ directory)
+assignments/**/*.tex
+labs/**/*.tex
+quizzes/**/*.tex
+syllabus/**/*.tex
+multisim/**/*.tex

@@ -1,0 +1,8 @@
+{
+    "chat.tools.terminal.autoApprove": {
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment06\"; Copy-Item assignment06_new\\.tex assignment06\\.tex -Force$/": {
+            "approve": true,
+            "matchCommandLine": true
+        }
+    }
+}
