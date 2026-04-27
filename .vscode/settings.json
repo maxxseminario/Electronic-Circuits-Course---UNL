@@ -3,6 +3,38 @@
         "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment06\"; Copy-Item assignment06_new\\.tex assignment06\\.tex -Force$/": {
             "approve": true,
             "matchCommandLine": true
+        },
+        "/^New-Item -ItemType Directory -Path \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\lectures\\\\lecture19_DIC_Intro\" -Force$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^New-Item -ItemType Directory -Path \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\" -Force$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\"; pdflatex -interaction=nonstopmode assignment08\\.tex$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\"; if \\(Test-Path assignment08\\.pdf\\) \\{ Write-Host \"SUCCESS: PDF generated successfully\" \\} else \\{ Get-Content assignment08\\.log \\| Select-String -Pattern \"!\" -Context 1,3 \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\"; pdflatex -interaction=nonstopmode assignment08\\.tex; if \\(Test-Path assignment08\\.pdf\\) \\{ Write-Host \"SUCCESS: PDF compiled successfully\" \\} else \\{ Write-Host \"ERROR: Compilation failed\" \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\"; if \\(Test-Path assignment08\\.pdf\\) \\{ Write-Host \"✓ PDF compiled successfully\" \\} else \\{ Write-Host \"✗ Compilation failed\" \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\"; pdflatex -interaction=nonstopmode assignment08\\.tex; if \\(Test-Path assignment08\\.pdf\\) \\{ Write-Host \"SUCCESS: PDF compiled - all solutions removed\" \\} else \\{ Write-Host \"ERROR: Compilation failed\" \\}$/": {
+            "approve": true,
+            "matchCommandLine": true
+        },
+        "/^cd \"c:\\\\Users\\\\Maxx Seminario\\\\Home_sync\\\\courses\\\\instructor\\\\ECEN222\\\\latek\\\\assignments\\\\assignment08\"; pdflatex -interaction=nonstopmode assignment08\\.tex 2>&1 \\| Select-String -Pattern \"Error\\|error\\|!\" -Context 1,2$/": {
+            "approve": true,
+            "matchCommandLine": true
         }
     }
 }
